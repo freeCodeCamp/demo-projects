@@ -1,3 +1,4 @@
+require('dotenv').config();
 const cors = require('cors');
 const fetch = require('node-fetch');
 const express = require('express');
