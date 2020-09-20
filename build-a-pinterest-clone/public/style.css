@@ -1,0 +1,74 @@
+
+nav.navbar form.add-form {
+  padding: 5px; }
+  nav.navbar form.add-form input {
+    margin-bottom: 5px; }
+  nav.navbar form.add-form button {
+    margin-top: 10px; }
+
+nav.navbar img.gh-icon {
+  width: 18px; }
+
+nav.navbar img.brand-img {
+  position: relative;
+  top: -10px;
+  width: 40px;
+  box-shadow: 0 1px 3px rgba(68, 68, 68, 0.5); }
+
+.grid {
+  margin: 0 auto; }
+
+.grid-item {
+  background-color: #f8f8f8;
+  padding: 5px;
+  width: 190px;
+  text-align: center;
+  margin: 5px;
+  box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.5); }
+  .grid-item:hover {
+    box-shadow: 5px 5px 7px rgba(102, 102, 102, 0.5); }
+  .grid-item .main-img img {
+    width: 180px; }
+  .grid-item .main-img p {
+    background-color: #e8e8e8;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 0.9em;
+    color: #444; }
+  .grid-item .info {
+    background-color: #e8e8e8;
+    margin-top: 5px;
+    padding: 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between; }
+    .grid-item .info img {
+      width: 35px; }
+    .grid-item .info .like {
+      color: #444; }
+    .grid-item .info .liked {
+      color: #4183D7; }
+
+body {
+  background-color: #ccc; }
+
+.c-hide {
+  display: none; }
+
+.preloader {
+  text-align: center; }
+
+a:focus {
+  outline: none; }
