@@ -1,0 +1,16 @@
+{
+  "name": "fcc-weather-api",
+  "version": "1.0.0",
+  "description": "fCC Weather API Passthrough",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.15.3",
+    "got": "7.1.0",
+    "request": "^2.81.0"
+  }
+}

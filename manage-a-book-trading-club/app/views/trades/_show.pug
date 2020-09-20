@@ -1,0 +1,19 @@
+.row
+  .col-sm-6
+    h5.request-btns-push-left
+      span: +userLink(trade.accepter)
+      span= ' gets:'
+    ul.list-group
+      each book in trade.gives
+        li.list-group-item
+          h4= book.name
+          p= book.description
+  .col-sm-6
+    h5
+      span: +userLink(trade.requester)
+      span= ' gets:'
+    ul.list-group
+      each book in trade.takes
+        li.list-group-item
+          h4= book.name
+          p= book.description

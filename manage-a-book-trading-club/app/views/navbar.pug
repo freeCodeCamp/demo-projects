@@ -1,0 +1,39 @@
+mixin incomingNav
+  if ((user || {}).receivedRequests || {}).length
+    li(class=`${active === 'incoming' ? 'active' : ''}`): a(href='/requests/incoming')
+      | Incoming Requests
+      | &nbsp;
+      span.label.label-warning= `${user.receivedRequests.length}`
+block navbar
+  nav.navbar.navbar-default
+    .container
+      .navbar-header
+        a.navbar-brand(href='/books') Book Exchange
+      ul.nav.navbar-nav
+        li(class=`${active === 'books' ? 'active' : ''}`): a(href='/books') Books
+        if user
+          li.drop
+            a(href='#')
+              | Requests &nbsp;
+              if (user.receivedRequests || []).length
+                span.label.label-warning= `${user.receivedRequests.length}`
+              span.caret
+            ul
+              li(class=`${active === 'requests' ? 'active' : ''}`): a(href='/requests') All Requests
+              + incomingNav
+              li: a(href='/requests/new') Create Request
+        else
+          li(class=`${active === 'requests' ? 'active' : ''}`): a(href='/requests') Requests
+        li(class=`${active === 'trades' ? 'active' : ''}`): a(href='/trades') Trades
+        li(class=`${active === 'users' ? 'active' : ''}`): a(href='/users') Users
+      ul.nav.navbar-nav.navbar-right
+        if user
+          li.drop
+            a(href='#') #{user.username} <span class="caret"></span>
+            ul
+              li(class=`${active === 'profile' ? 'active' : ''}`): a(href=`/users/${user.id}`) Profile
+              li(class=`${active === 'editprofile' ? 'active' : ''}`): a(href='/users/edit') Edit Profile
+              li(class=`${active === 'mybooks' ? 'active' : ''}`): a(href='/books/my') My Books
+              li: a(href='/logout') Logout
+        else
+          li(class=`${active === 'login' ? 'active' : ''}`): a(href='/login') Login

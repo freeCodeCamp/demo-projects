@@ -1,0 +1,28 @@
+{
+  "name": "stock-checker-proxy",
+  "version": "1.0.0",
+  "description": "API Proxy with cache",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.19.0",
+    "nedb": "^1.8.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/repeated-alpaca"
+  },
+  "author": "Em-Ant",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Secure Real-Time Multiplayer Game</title>
+    <meta
+      name="description"
+      content="An example for the fCC InfoSec Secure Real-Time Multiplayer Game project"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../public/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Information Security 5: Secure Real Time Multiplayer Game
+      </h1>
+    </header>
+    <div id="user-stories">
+      <h3>User Stories</h3>
+      Develop a 2D real time multiplayer game using the HTML Canvas API and <a href="https://socket.io/">Socket.io</a>. The game can be as simple or complex as you like, as long as all the following user stories are implemented.
+      <ol>
+        <li>
+          Multiple players can connect to a server and play.
+        </li>
+        <li>
+          Each player has an avatar.
+        </li>
+        <li>
+          Each player is represented by an object created by the <code>Player</code> class in <code>Player.mjs</code>.
+        </li>
+        <li>
+          At a minimum, each player object should contain a unique <code>id</code>, a <code>score</code>, along with 
+          <code>x</code> and <code>y</code> coordinates representing the player's current position.
+        </li>
+        <li>
+          The game has at least one type of collectible item. Complete the <code>Collectible</code> class in 
+          <code>Collectible.mjs</code> to implement this.
+        </li>
+        <li>
+          At a minimum, each collectible item object created by the <code>Collectible</code> class should contain 
+          a unique <code>id</code>, along with <code>x</code> and <code>y</code> coordinates representing the item's 
+          current position.
+        </li>
+        <li>
+          Players can use the WASD and/or arrow keys to move their avatar. Complete the <code>movePlayer</code> 
+          method in <code>Player.mjs</code> to implement this.
+        </li>
+        <li>
+          The <code>movePlayer</code> method should accept two arguments: a string of "up", "down", "left", or "right", 
+          and a number for the amount of pixels the player's position should change. <code>movePlayer</code> should 
+          adjust the <code>x</code> and <code>y</code> coordinates of the player object it's called from.
+        </li>
+        <li>
+          The player's score should be used to calculate their rank among the other players. Complete the 
+          <code>calculateRank</code> method in the <code>Player</code> class to implement this.
+        </li>
+        <li>
+          The <code>calculateRank</code> method should accept an array of objects representing all connected players 
+          and return the string <code>Rank: currentRanking/totalPlayers</code>. For example, in a game with two players, 
+          if Player A has a score of 3 and Player B has a score of 5, <code>calculateRank</code> for Player A should 
+          return <code>Rank: 2/2</code>.
+        </li>
+        <li>
+          Players can collide with a collectible item. Complete the <code>collision</code> method in 
+          <code>Player.mjs</code> to implement this.
+        </li>
+        <li>
+          The <code>collision</code> method should accept a collectible item's object as an argument. If the player's 
+          avatar intersects with the item, the <code>collision</code> method should return <code>true</code>.
+        </li>
+        <li>
+          All players are kept in sync.
+        </li>
+        <li>
+          Players can disconnect from the game at any time.
+        </li>
+        <li>
+          Prevent the client from trying to guess / sniff the MIME type.
+        </li>
+        <li>
+          Prevent cross-site scripting (XSS) attacks.
+        </li>
+        <li>
+          Nothing from the website is cached in the client.
+        </li>
+        <li>
+          The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
+        </li>
+      </ol>
+    </div>
+    <hr style="margin: 25px" />
+    <div class="container">
+      <canvas 
+        ref="game"
+        id="game-window" 
+        width="640" 
+        height="480"
+      >
+      </canvas>
+    </div>
+  </body>
+  <script src="../public/game.mjs" type="module"></script>
+</html>

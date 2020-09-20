@@ -1,0 +1,31 @@
+extends ../layout
+
+mixin requestButtons(user, request)
+  if user
+    ul.nav.nav-pills
+      - bookOwners = request.takes.map(book => book.owner._id.toString())
+      if bookOwners && bookOwners.includes(user.id)
+        li: a.success(href=`/requests/${request._id.toString()}/select`) Select
+        li: a.warning(href=`/requests/${request._id.toString()}/reject`) Reject
+      if user.id === request.requester.id
+        li: a.warning(href=`/requests/${request._id.toString()}/cancel`) Cancel Request
+  
+block content
+  .panel.panel-default
+    .panel-heading: h2.text-center #{title} <small> #{subtitle} </small>
+    ul.list-group
+      each request in requests
+        li.list-group-item
+          .well
+            include _show
+            .request-btns
+              +requestButtons(user, request)
+      else 
+        li.list-group-item: h4.list-group-item-heading.text-center There are currently no requests
+    .panel-footer.text-center
+      if user
+        a.btn.btn-default(href='/requests/new') New Request
+      else
+        a.btn.btn-default(href='/login') Login to Submit Requests
+
+

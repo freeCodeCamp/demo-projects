@@ -1,0 +1,24 @@
+div#userstories {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+form input {
+  width: 100px;
+}
+
+hr {
+  margin: 50px
+}
+
+hr:last-of-type {
+  margin-top: 200px
+}
+
+div#testui {
+  margin-left: 5%;
+}
+
+div#testui h2 {
+  text-align: left;
+}

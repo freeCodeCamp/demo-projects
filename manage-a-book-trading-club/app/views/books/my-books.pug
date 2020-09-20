@@ -1,0 +1,11 @@
+extends ../layout
+block content
+  include _add-book-form
+  form(action='/requests/new/gives' method='post')
+    .panel.panel-default
+      .panel-heading: h2.text-center #{user.username}'s Books <small>available for trade</small>
+      include _select
+      if books.length
+        .panel-footer
+          .row
+            button.btn.btn-default.col-xs-offset-2(type='submit') New Request

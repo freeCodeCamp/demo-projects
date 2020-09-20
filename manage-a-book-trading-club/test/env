@@ -1,0 +1,8 @@
+APP_URL='http://localhost:3002/'
+PORT=3002
+GOOGLE_KEY=foo
+GOOGLE_SECRET=bar
+GITHUB_KEY=foo
+GITHUB_SECRET=bar
+MONGO_URI=mongodb://localhost:27017/thingexchangetest
+

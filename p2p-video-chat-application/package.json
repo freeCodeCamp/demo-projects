@@ -1,0 +1,19 @@
+{
+  "name": "p2p-video-chat",
+  "version": "1.0.0",
+  "description": "A simple socket.io based video chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "getusermedia": "^2.0.1",
+    "jquery": "^3.2.1",
+    "simple-peer": "^8.2.0",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
+    "browserify-middleware": "^8.0.0"
+  }
+}

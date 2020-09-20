@@ -1,0 +1,20 @@
+ul.list-group
+  each book in books
+    li.list-group-item
+      if (user || {}).id === book.owner.id
+        a.btn.btn-danger.list-item-delete(title=`Delete "${book.name}" from your collection` href=`/books/${book.id}/delete`) &times;
+      .row
+        - const checked = (selected || []).includes(book.id)
+        - const isOwner = (user || {}).id === book.owner.id
+        input.col-xs-2(class=`${isOwner ? 'gives' : 'takes'}` checked=checked type='checkbox' id=`book${book.id}` name=`book${book.id}`)
+        label.col-xs-10(for=`book${book.id}`)
+          +requestsBadge(book)
+          h4.list-group-item-heading= book.name
+          span.pull-right: +requestersLinks(book)
+          p.list-group-item-text= book.description
+          p.text-muted.small
+            = 'from '
+            +userLink(book.owner)
+            = ` in ${book.owner.city}`
+  else
+    li.list-group-item: h4.list-group-item-heading.text-center #{noItems}

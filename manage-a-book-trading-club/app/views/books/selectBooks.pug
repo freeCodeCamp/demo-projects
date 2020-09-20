@@ -1,0 +1,13 @@
+extends ../layout
+block content
+  form(action=`/requests/new/${type}` method='post')
+    .panel.panel-default
+      .panel-heading: h2.text-center #{title} <small>select what to trade</small>
+      include _select
+      .panel-footer
+        .row
+          if (books.length)
+            button.btn.btn-default.col-xs-offset-2(type='submit') Continue
+          else
+            a.btn.btn-default.center-block(href='/books/my') Add Books
+

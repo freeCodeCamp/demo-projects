@@ -1,0 +1,13 @@
+ul.list-group
+  each book in request.takes
+    li.list-group-item
+      .row
+        - const checked = (selectedTakes || []).includes(book.id)
+        input.col-xs-2(class='gives' checked=checked type='checkbox' id=`take${book.id}` name=`take${book.id}`)
+        label.col-xs-10(for=`take${book.id}`)
+          +requestsBadge(book)
+          h4.list-group-item-heading= book.name
+          p.list-group-item-text= book.description
+          p.text-muted.small
+            = 'from '
+            +userLink(book.owner)

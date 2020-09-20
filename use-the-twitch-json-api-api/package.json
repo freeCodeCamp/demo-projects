@@ -1,0 +1,22 @@
+{
+  "name": "fcc-twitch-api-passthrough",
+  "version": "2.0.0",
+  "description": "fCC Twitch API passthrough server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.1",
+    "dotenv": "^6.2.0",
+    "express": "^5.0.0-alpha.2",
+    "nedb": "^1.8.0",
+    "request": "^2.79.0",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "license": "MIT"
+}

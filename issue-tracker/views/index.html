@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issue Tracker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Quality Assurance 2: Issue Tracker
+      </h1>
+    </header>
+    <div id='userstories' style='margin-left: 5%; margin-top: 5%'>
+      <h3>User Stories</h3>
+      <ol>
+        <li>
+          I can <strong>POST</strong> <code>/api/issues/{projectName}</code> with form data containing required <i>issue_title</i>, <i>issue_text</i>, and <i>created_by</i> fields. In addition to the required fields, I can optionally send <i>assigned_to</i> and <i>status_text</i>.
+        </li>
+        <li>
+          The object saved (and returned) will include all of those fields (blank if there was no input) and also include <i>created_on</i> (date/time), <i>updated_on</i> (date/time), <i>open</i> (boolean -- true for open, false for closed), and <i>_id</i>.
+        </li>
+        <li>
+          I can <strong>PUT</strong> <code>/api/issues/{projectName}</code> with an <i>_id</i> and any fields in the object I want to update. Return the message 'Successfully updated' if the update was successful, or 'Could not update {_id}' if it was not. Successfully updating an object should also update the <i>updated_on</i> field. If no fields are sent, return 'No updated fields sent'.
+        </li>
+        <li>
+          I can <strong>DELETE</strong> <code>/api/issues/{projectName}</code> with an <i>_id</i> to completely delete an issue. If no <i>_id</i> is sent return '_id error'. Return 'Deleted {_id}' if you successfully delete an issue, and 'Could not delete {_id}' if you could not.
+        </li>
+        <li>
+          I can <strong>GET</strong> <code>/api/issues/{projectName}</code> for an array of all issues on that specific project with all the information for each issue as was returned when posted.
+
+          I can <strong>GET</strong> <code>/api/issues/{projectName}</code> for an array of all issues on that specific project will all the information for each issue.
+        </li>
+        <li>
+          I can filter my <strong>GET</strong> request by also passing along any field and value in the query (for example, <code>/api/issues/{project}?open=false</code>). I can pass along as many fields/values as I want.
+        </li>
+        <li>
+          All 11 functional tests are complete and passing.
+        </li>
+      </ol>
+      <br>
+      <h3>Example get usage:</h3>
+      <code>/api/issues/{project}</code><br>
+      <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br>
+      <h3>Example return:</h3>
+      <code>[{ "_id": "5871dda29faedc3491ff93bb", "issue_title": "Fix error in posting data", "issue_text": "When we post data it has an error.", "created_on": "2017-01-08T06:35:14.240Z", "updated_on": "2017-01-08T06:35:14.240Z", "created_by": "Joe", "assigned_to": "Joe", "open": true, "status_text": "In QA" },...]</code>
+      <br><br>
+      <h2><a href='/apitest/'>EXAMPLE: Go to <i>/apitest/</i> project issues</a></h2>
+    </div>
+    <hr style='margin: 50px'>
+    <div id='testui' style='margin-left: 5%'>
+      <h2 style="text-align: left">API Tests:</h2>
+      <h3>Submit issue on <i>apitest</i></h3>
+      <form id="testForm" class="border">
+        <input type="text" name="issue_title" placeholder="*Title" style="width: 100px" required=''><br>
+        <textarea type="text" name="issue_text" placeholder="*Text" style="width: 100px" required=''></textarea><br>
+        <input type="text" name="created_by" placeholder="*Created by" style="width: 100px" required=''><br>
+        <input type="text" name="assigned_to" placeholder="(Opt.) Assigned to" style="width: 100px"><br>
+        <input type="text" name="status_text" placeholder="(Opt.)  Status text" style="width: 100px"><br>
+        <button type="submit">Submit Issue</button>
+      </form><br>
+      <h3>Update issue on <i>apitest</i> (Change any or all to update issue on the _id supplied)</h3>
+      <form id="testForm2" class="border">
+        <input type="text" name="_id" placeholder="*_id" style="width: 100px" required=''><br>
+        <input type="text" name="issue_title" placeholder="(Opt.) Title" style="width: 100px"><br>
+        <textarea type="text" name="issue_text" placeholder="(Opt.) Text" style="width: 100px"></textarea><br>
+        <input type="text" name="created_by" placeholder="(Opt.) Created by" style="width: 100px"><br>
+        <input type="text" name="assigned_to" placeholder="(Opt.) Assigned to" style="width: 100px"><br>
+        <input type="text" name="status_text" placeholder="(Opt.) Status text" style="width: 100px"><br>
+        <label><input type="checkbox" name="open" value=false> Check to close issue</label><br>
+        <button type="submit">Submit Issue</button>
+      </form><br>
+      <h3>Delete issue on <i>apitest</i></h3>
+      <form id="testForm3" class="border">
+        <input type="text" name="_id" placeholder="_id" style="width: 100px" required=''><br>
+        <button type="submit">Delete Issue</button>
+      </form>
+      <code id='jsonResult'></code>
+    </div>
+    <hr style='margin: 50px; margin-top: 200px'>
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+        $('#testForm').submit(function(e) {
+          $.ajax({
+            url: '/api/issues/apitest',
+            type: 'post',
+            data: $('#testForm').serialize(),
+            success: function(data) {
+              $('#jsonResult').text(JSON.stringify(data));
+            }
+          });
+          e.preventDefault();
+        });
+        $('#testForm2').submit(function(e) {
+          $.ajax({
+            url: '/api/issues/apitest',
+            type: 'put',
+            data: $('#testForm2').serialize(),
+            success: function(data) {
+              $('#jsonResult').text(JSON.stringify(data));
+            }
+          });
+          e.preventDefault();
+        });
+        $('#testForm3').submit(function(e) {
+          $.ajax({
+            url: '/api/issues/apitest',
+            type: 'delete',
+            data: $('#testForm3').serialize(),
+            success: function(data) {
+              $('#jsonResult').text(JSON.stringify(data));
+            }
+          });
+          e.preventDefault();
+        });
+      });
+   </script>
+  </body>
+</html>

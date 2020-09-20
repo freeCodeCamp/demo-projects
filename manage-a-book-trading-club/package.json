@@ -1,0 +1,46 @@
+{
+  "name": "book-exchange",
+  "version": "0.1.0",
+  "description": "Trade books with other users",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Motardo/book-exchange.git"
+  },
+  "author": "Nathan Wilson <nswilson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Motardo/book-exchange/issues"
+  },
+  "homepage": "https://github.com/Motardo/book-exchange#readme",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-dom": "^1.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.0",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
+    "helmet": "^3.9.0",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "pug": "^2.0.0-rc.2"
+  }
+}

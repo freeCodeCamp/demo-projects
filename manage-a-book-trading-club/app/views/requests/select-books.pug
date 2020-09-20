@@ -1,0 +1,21 @@
+extends ../layout
+block content
+  form(action=`/requests/${request._id.toString()}/accept` method='post')
+    .panel.panel-default
+      .panel-heading: h2.text-center #{title} <small>select what to trade</small>
+      .panel-body
+        .row
+          .col-sm-6
+            h5.request-btns-push-left
+              span: +userLink(request.requester)
+              span= ' wants to give you:'
+            include _select-gives
+          .col-sm-6
+            h5
+              = 'and wants to take from you:'
+            include _select-takes
+      .panel-footer
+        .row
+          button.btn.btn-default.center-block(type='submit') Accept Trade
+
+

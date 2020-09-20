@@ -1,0 +1,27 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "personal-library",
+  "version": "0.0.1",
+  "description": "Quality Assurance 3: Personal Library",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "PORT=3005 mocha --exit --ui tdd tests/"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "mongodb": "^3.5.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.1.1",
+    "zombie": "^6.1.4",
+    "helmet": "^3.21.3",
+    "nocache": "^2.1.0",
+    "shortid": "^2.2.15"
+  },
+  "license": "MIT"
+}

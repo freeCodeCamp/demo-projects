@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": "31604589760",
+      "user_id": "71852806",
+      "user_name": "OgamingSC2",
+      "game_id": "490422",
+      "community_ids": [
+        "3e6b5265-75c9-4098-a390-ada312d360b5",
+        "4ba83f3c-5118-4d94-8cc3-7838e9940744"
+      ],
+      "type": "live",
+      "title": "Gamez Invitational #1 - Showmatch",
+      "viewer_count": 359,
+      "started_at": "2018-12-09T17:13:26Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-{width}x{height}.jpg",
+      "tag_ids": ["6f655045-9989-4ef7-8f85-1edcec42d648"]
+    },
+    {
+      "id": "31600566256",
+      "user_id": "30220059",
+      "user_name": "ESL_SC2",
+      "game_id": "490422",
+      "community_ids": [],
+      "type": "live",
+      "title": "RERUN: Maru [T] vs. Rogue [Z] - Semifinal - IEM Katowice 2018",
+      "viewer_count": 266,
+      "started_at": "2018-12-09T11:14:19Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-{width}x{height}.jpg",
+      "tag_ids": ["6ea6bca4-4712-4ab9-a906-e3336a9d8039"]
+    },
+    {
+      "id": "31604287680",
+      "user_id": "90401618",
+      "user_name": "cretetion",
+      "game_id": "504689",
+      "community_ids": [],
+      "type": "live",
+      "title": "Lets Go To Church Pack",
+      "viewer_count": 15,
+      "started_at": "2018-12-09T16:53:04Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-{width}x{height}.jpg",
+      "tag_ids": ["6ea6bca4-4712-4ab9-a906-e3336a9d8039"]
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6M319"
+  }
+}

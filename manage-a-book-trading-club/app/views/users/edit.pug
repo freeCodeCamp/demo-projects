@@ -1,0 +1,33 @@
+extends ../layout
+block content
+  form.form-horizontal(method='post' action='/users/update')
+    .form-group
+      h3.col-sm-offset-2 Update Profile <small> for #{user.username}</small>
+    .form-group
+      label.col-sm-2.control-label(for='username') Username:
+      .col-sm-10
+        input#username.form-control(
+          name='username'
+          value=`${user.username}`
+          placeholder='Can not be blank'
+          type='text'
+          required)
+    .form-group
+      label.col-sm-2.control-label(for='fullName') Full Name:
+      .col-sm-10
+        input#fullName.form-control(name='fullName' value=`${user.fullName || ''}` placeholder='Jane Q. Smith...' type='text')
+    .form-group
+      label.col-sm-2.control-label(for='city') City:
+      .col-sm-10
+        input#city.form-control(name='city' value=`${user.city || ''}` placeholder='City name...' type='text')
+    .form-group
+      label.col-sm-2.control-label(for='state') State:
+      .col-sm-10
+        input#state.form-control(name='state' value=`${user.state || ''}` placeholder='State...' type='text')
+    .form-group
+      label.col-sm-2.control-label(for='address') Address:
+      .col-sm-10
+        input#address.form-control(name='address' value=`${user.address || ''}` placeholder='Mailing address...' type='text')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-default(type='submit') Save Changes

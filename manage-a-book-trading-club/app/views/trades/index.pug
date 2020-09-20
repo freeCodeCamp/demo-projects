@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  .panel.panel-default
+    .panel-heading: h2.text-center #{title} <small> #{subtitle} </small>
+    ul.list-group
+      each trade in trades
+        li.list-group-item
+          .well
+            include _show
+      else 
+        li.list-group-item: h4.list-group-item-heading.text-center There are currently no trades

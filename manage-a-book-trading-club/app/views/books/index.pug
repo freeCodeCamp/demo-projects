@@ -1,0 +1,14 @@
+extends ../layout
+block content
+  form(action='/requests/new/books' method='post')
+    .panel.panel-default
+      .panel-heading: h2.text-center #{title} <small>available for trade</small>
+      include _select
+      .panel-footer
+        .row
+          if user
+            span.nav-pills.col-xs-offset-2
+              button.btn.btn-default(type='submit') New Request
+              a.btn.btn-default(href='/books/my') Add Book
+          else
+            a.btn.btn-default.col-xs-offset-2(href='/login') Login to Add Books and Submit Requests

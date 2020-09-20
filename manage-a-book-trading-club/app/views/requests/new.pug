@@ -1,0 +1,39 @@
+extends ../layout
+block content
+  .panel.panel-default
+    .panel-heading: h2.text-center Create Request <small>for trade</small>
+    .panel-body
+      .row
+        .col-sm-6
+          h4.request-btns-push-left
+            span: +userLink(user)
+            span= ' wants to give:'
+          ul.list-group.warning
+            each book in gives
+              li.list-group-item
+                h4= book.name
+                p= book.description
+            a.list-btn.btn.btn-default(href='/books/select/gives' type='button') Edit Books to Give
+        .col-sm-6
+          h4
+            = 'and wants to take:'
+          ul.list-group.success
+            each book in takes
+              li.list-group-item
+                h4
+                  = `${book.name}`
+                  small.text-muted
+                    | &nbsp;from&nbsp;
+                    span: +userLink(book.owner)
+                p= book.description
+            a.list-btn.btn.btn-default(href='/books/select/takes' type='button') Edit Books to Take
+    .panel-footer
+      .row
+        if user
+          form(action='/requests/create' method='post')
+            button.btn.btn-primary.center-block(type='submit') Submit Request
+            input(type=text name='gives' value=JSON.stringify(gives) hidden required)
+            input(type=text name='takes' value=JSON.stringify(takes) hidden required)
+        else
+          a.btn.btn-default.col-xs-offset-2(href='/login') Login to Submit Requests
+

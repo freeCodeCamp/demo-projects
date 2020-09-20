@@ -1,0 +1,92 @@
+{
+  "data": [
+    {
+      "id": "30220059",
+      "login": "esl_sc2",
+      "display_name": "ESL_SC2",
+      "type": "",
+      "broadcaster_type": "partner",
+      "description": "For standings, schedule, and results, visit http://www.intelextrememasters.com/",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
+      "offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/e45cc5e329eb5d52-channel_offline_image-1920x1080.jpeg",
+      "view_count": 75936948
+    },
+    {
+      "id": "71852806",
+      "login": "ogamingsc2",
+      "display_name": "OgamingSC2",
+      "type": "",
+      "broadcaster_type": "partner",
+      "description": "",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/e066dae0-60c1-4570-8d08-c95f1c528142-profile_image-300x300.png",
+      "offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/bdc4be6e-fe18-477b-adc8-758015fdc628-channel_offline_image-1920x1080.png",
+      "view_count": 41482348
+    },
+    {
+      "id": "90401618",
+      "login": "cretetion",
+      "display_name": "cretetion",
+      "type": "",
+      "broadcaster_type": "affiliate",
+      "description": "I am a retired Police Officer.  I believe in the Thin Blue Line.  I support Law Enforcement, Firefighters, and EMS.  I am a Sheep Dog and I am part of a Pack.  I want you to join my Pack.  We can fight the Evil in the world together.",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
+      "offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-channel_offline_image-0410bb4dec3a9991-1920x1080.jpeg",
+      "view_count": 40695
+    },
+    {
+      "id": "79776140",
+      "login": "freecodecamp",
+      "display_name": "FreeCodeCamp",
+      "type": "",
+      "broadcaster_type": "",
+      "description": "We help you learn to code, then practice by building projects for nonprofits. Learn Full-stack JavaScript, build a portfolio, and get a coding job by joining our open source community at https://freecodecamp.com",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+      "offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-channel_offline_image-b8e133c78cd51cb0-1920x1080.png",
+      "view_count": 217359
+    },
+    {
+      "id": "152475255",
+      "login": "storbeck",
+      "display_name": "storbeck",
+      "type": "",
+      "broadcaster_type": "",
+      "description": "",
+      "profile_image_url": "https://static-cdn.jtvnw.net/user-default-pictures/49988c7b-57bc-4dee-bd4f-6df4ad215d3a-profile_image-300x300.jpg",
+      "offline_image_url": "",
+      "view_count": 1866
+    },
+    {
+      "id": "6726509",
+      "login": "habathcx",
+      "display_name": "habathcx",
+      "type": "",
+      "broadcaster_type": "",
+      "description": "League of Legends, Music, Nerd Stuff, Chat.. blah blah blah",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
+      "offline_image_url": "",
+      "view_count": 2655
+    },
+    {
+      "id": "54925078",
+      "login": "robotcaleb",
+      "display_name": "RobotCaleb",
+      "type": "",
+      "broadcaster_type": "",
+      "description": "",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png",
+      "offline_image_url": "",
+      "view_count": 6696
+    },
+    {
+      "id": "82534701",
+      "login": "noobs2ninjas",
+      "display_name": "noobs2ninjas",
+      "type": "",
+      "broadcaster_type": "affiliate",
+      "description": "Live Programming my face off while hanging out with the best viewers Twitch has to offer!",
+      "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
+      "offline_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-channel_offline_image-7f974925e9dc942c-1920x1080.jpeg",
+      "view_count": 55203
+    }
+  ]
+}

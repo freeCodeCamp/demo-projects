@@ -1,0 +1,15 @@
+extends ../layout
+block content
+  h1 Users
+  ul.list-group
+    each user in users
+      li.list-group-item
+        h4.list-group-item-heading: a(href=`/users/${user.id}`) #{user.username}
+        p.list-group-item-text= `City: ${user.city}`
+        p.list-group-item-text
+          if (user.books || {}).length
+            span.label.label-info= `Books: ${user.books.length}`
+          if (user.receivedRequests || {}).length
+            span.label.label-warning= `Incoming Requests: ${user.receivedRequests.length}`
+          if (user.trades || {}).length
+            span.label.label-success= `Trades: ${user.trades.length}`

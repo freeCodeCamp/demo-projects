@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>fCC Twitch API Passthrough</title>
+    <style media="screen">
+      body {
+        font-family: sans-serif;
+        color: #222;
+        background-color: #f7f7f7;
+        padding: 10px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      code {
+        background-color: #ff9;
+        padding: 3px;
+      }
+      p.usage {
+        display: block;
+        background-color: #d0e7d0;
+        padding: 15px;
+        border-radius: 15px;
+        max-width: 900px;
+        line-height: 1.5em;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Free Code Camp Twitch API Pass-through</h2>
+    <p class="usage">
+      USAGE:<br />
+      Replace the Twitch API <strong>base URL</strong>
+      <code>https://api.twitch.tv/helix</code> with
+      <code>https://fcc-twitch-api.freecodecamp.repl.co/helix</code>. Use this endpoint according
+      to the
+      <a href="https://dev.twitch.tv/docs/api/" target="_blank"
+        >Twitch API documentation</a
+      >.<br /><br />
+      NOTES:<br />
+      - This server caches data to lower the request rate. To prevent abuses
+      this server accepts <code>GET</code> requests only, and serves only routes
+      <code>/users?(login=|id=)</code>, <code>/games?id=</code>, and
+      <code>/streams?(user_id|user_login)</code>. These are more than enough to
+      complete the challenge.<br /><br />
+      - This server will keep providing a static snapshot of the old API data,
+      for the routes
+      <code>/streams/:user | users/:user | /channels/:channel</code> at the
+      endpoint <code>https://fcc-twitch-api.freecodecamp.repl.co/twitch-api</code>. It will serve
+      data ONLY for the streamers profiles listed in the challenge description,
+      at
+      <a
+        href="https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/use-the-twitch-json-api"
+        >freeCodeCamp - Use the Twitch JSON API</a
+      >.
+    </p>
+  </body>
+</html>

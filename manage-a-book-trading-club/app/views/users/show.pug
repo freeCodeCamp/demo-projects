@@ -1,0 +1,30 @@
+extends ../layout
+block content
+  form.form-horizontal
+    .form-group
+      h3.col-sm-offset-2 #{showUser.username}'s <small> profile</small>
+    .form-group
+      label.col-sm-2.control-label Username:
+      .col-sm-10
+        p.form-control-static #{showUser.username}
+    .form-group
+      label.col-sm-2.control-label Full Name:
+      .col-sm-10
+        p.form-control-static #{showUser.fullName}
+    .form-group
+      label.col-sm-2.control-label City:
+      .col-sm-10
+        p.form-control-static #{showUser.city}
+    .form-group
+      label.col-sm-2.control-label State:
+      .col-sm-10
+        p.form-control-static #{showUser.state}
+    .form-group
+      label.col-sm-2.control-label Address:
+      .col-sm-10
+        p.form-control-static #{showUser.address}
+    .form-group
+      ul.nav.nav-pills.col-sm-offset-2
+        li: a.btn.btn-default(href=`/users/${showUser.id}/books`)= `${showUser.username}'s Books`
+        if (user || {}).id === showUser.id
+          li: a.btn.btn-default(href=`/users/edit`) Edit Profile

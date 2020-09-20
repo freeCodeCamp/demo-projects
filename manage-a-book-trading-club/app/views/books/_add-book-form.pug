@@ -1,0 +1,19 @@
+form.form-horizontal(method='post' action='/books/create')
+  h3.col-sm-offset-2 Add Book <small> for #{user.username}</small>
+  .form-group
+    label.col-sm-2.control-label(for='bookName') Title
+    .col-sm-10
+      input#bookName.form-control(
+        type='text'
+        name='bookName'
+        required)
+  .form-group
+    label.col-sm-2.control-label(for='bookDescription') Description
+    .col-sm-10
+      input#bookDescription.form-control(
+        type='text'
+        name='bookDescription'
+        placeholder='Author, condition...')
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      button.btn.btn-default(type='submit') Add Book to Exchange
