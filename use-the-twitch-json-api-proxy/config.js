@@ -5,7 +5,7 @@ module.exports = {
   twitchCID: process.env.TWITCH_CLIENT_ID,
   accessTOKEN: process.env.ACCESS_TOKEN,
   port: parseInt(process.env.PORT) || 3000,
-  host: "https://fcc-twitch-api.freecodecamp.repl.co/",
+  host: "https://use-the-twitch-json-api-proxy.freecodecamp.rocks/",
   logLevels: {
     _default: "info",
     file: "warn",
