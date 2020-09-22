@@ -22,5 +22,5 @@ app.use((err, req, res, next) => {
 const portNum = process.env.PORT || 3000;
 
 const listener = app.listen(portNum, () => {
-  console.log("stock proxy is listening on port " + listener.address().port);
+  console.log("stock proxy is listening on port " + portNum);
 });
