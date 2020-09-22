@@ -13,7 +13,7 @@ const request = require('request');
 function StockHandler() {
   this.getData = function(stock, callback) {
     request(
-      `https://Stock-Price-Checker-Proxy--freecodecamp.repl.co/v1/stock/${stock}/quote`,
+      `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${stock}/quote`,
       function(error, response, body) {
         if (!error && response.statusCode == 200) {
           const result = JSON.parse(body);
