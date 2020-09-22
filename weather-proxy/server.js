@@ -94,6 +94,9 @@ app.get("/api/current", function(req, res) {
   }
 });
 
-app.listen(process.env.PORT, function () {
-  console.log('App is listening on port ' + process.env.PORT);
+const portNum = process.env.PORT || 3000;
+
+//Start our server and tests!
+app.listen(portNum, function () {
+  console.log("Listening on port " + portNum);
 });

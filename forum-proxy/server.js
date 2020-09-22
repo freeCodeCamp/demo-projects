@@ -23,8 +23,8 @@ app.use((req, res) => res.status(404).send('not found'));
 
 app.use((err, req, res, next) => res.status(500).json(err));
 
-const port = process.env.PORT || 8080;
+const portNum = process.env.PORT || 3000;
 
-const listener = app.listen(port, function() {
-  console.log(`Your app is listening on port ${port}`);
+const listener = app.listen(portNum, function() {
+  console.log(`Your app is listening on port ${portNum}`);
 });

@@ -52,9 +52,11 @@ app.use(function(req, res, next) {
     .send('Not Found');
 });
 
+const portNum = process.env.PORT || 3000;
+
 // Start our server and tests
-app.listen(process.env.PORT || 3000, function () {
-  console.log("Listening on port " + process.env.PORT);
+app.listen(portNum, function () {
+  console.log("Listening on port " + portNum);
   if(process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
     setTimeout(function () {

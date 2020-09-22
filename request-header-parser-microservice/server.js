@@ -31,6 +31,10 @@ app.use(function(req, res, next) {
     .send('Not Found');
 })
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Node.js listening ...');
+
+const portNum = process.env.PORT || 3000;
+
+//Start our server and tests!
+app.listen(portNum, function () {
+  console.log("Listening on port " + portNum);
 });
