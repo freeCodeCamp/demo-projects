@@ -2,7 +2,7 @@
 
 usage:
 
-`GET https://Stock-Price-Checker-Proxy--freecodecamp.repl.co/v1/stock/[symbol]/quote`
+`GET https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/[symbol]/quote`
 
 where:
 
