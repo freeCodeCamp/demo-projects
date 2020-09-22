@@ -17,13 +17,12 @@
     "node": "10.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/repeated-alpaca"
+    "url": "https://stock-price-checker-proxy.freecodecamp.rocks"
   },
   "author": "Em-Ant",
   "license": "MIT",
   "keywords": [
     "node",
-    "glitch",
     "express"
   ]
 }

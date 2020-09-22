@@ -36,7 +36,7 @@ module.exports = React.createClass({
               <span className="icon-bar"></span>
             </button>
             <a className="navbar-brand" href="#">
-              <img alt="Brand" src="https://pinterest-clone.freecodecamp.repl.co/assets/logo.png" className="brand-img" title="Pic-terest"/>
+              <img alt="Brand" src="https://cdn.freecodecamp.org/demo-projects/images/pinterest-logo.png" className="brand-img" title="Pic-terest"/>
             </a>
           </div>
 
@@ -65,7 +65,7 @@ module.exports = React.createClass({
               <a
                 href="/auth/github"
                 className={"btn btn-default navbar-btn" + hideIfLoggedIn}>
-                <img className="gh-icon" src="https://pinterest-clone.freecodecamp.repl.co/assets/ghb_32.png"/> Login
+                <img className="gh-icon" src="https://cdn.freecodecamp.org/demo-projects/images/ghb_32.png"/> Login
               </a>
               <a
                 href="/logout"
