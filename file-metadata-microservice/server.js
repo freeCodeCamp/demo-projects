@@ -35,6 +35,8 @@ app.post('/api/fileanalyse',upload.single('upfile'), function(req, res){
    res.type('txt').send('Not found');
  });
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Node.js listening ...');
+const portNum = process.env.PORT || 3000;
+
+app.listen(portNum, function () {
+  console.log("Listening on port " + portNum);
 });

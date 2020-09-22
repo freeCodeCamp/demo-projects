@@ -7,8 +7,11 @@ const browserify = require('browserify-middleware');
 app.get('/bundle.js', browserify('public/client.js'));
 app.use(express.static('public'));
 
-server.listen(3000,function(){
-  console.log("Listening at 3000");
+const portNum = process.env.PORT || 3000;
+
+//Start our server and tests!
+app.listen(portNum, function () {
+  console.log("Listening on port " + portNum);
 });
 
 io.on('connection',function(socket){
