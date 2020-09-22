@@ -93,10 +93,10 @@ var App = React.createClass({
     return {user: {github:{}}, page: 'all', pics:[]}
   },
   imgReplacer: function(e) {
-    e.target.src = "https://pinterest-clone.freecodecamp.repl.co/assets/placeholder.png";
+    e.target.src = "https://cdn.freecodecamp.org/demo-projects/images/placeholder.png";
   },
     idReplacer: function(e) {
-    e.target.src = "https://pinterest-clone.freecodecamp.repl.co/assets/ghb_32.png";
+    e.target.src = "https://cdn.freecodecamp.org/demo-projects/images/ghb_32.png";
   },
   setPage: function  (page) {
     var self = this;

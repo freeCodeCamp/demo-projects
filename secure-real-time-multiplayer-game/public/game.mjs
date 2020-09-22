@@ -14,11 +14,11 @@ const loadImage = src => {
   return img;
 }
 
-const bronzeCoinArt = loadImage('./assets/bronze-coin.png');
-const silverCoinArt = loadImage('./assets/silver-coin.png');
-const goldCoinArt = loadImage('./assets/gold-coin.png');
-const mainPlayerArt = loadImage('./assets/main-player.png');
-const otherPlayerArt = loadImage('./assets/other-player.png');
+const bronzeCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/bronze-coin.png');
+const silverCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/silver-coin.png');
+const goldCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/gold-coin.png');
+const mainPlayerArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/main-player.png');
+const otherPlayerArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/other-player.png');
 
 let tick;
 let currPlayers = [];
