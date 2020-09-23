@@ -4,7 +4,7 @@
   "description": "A proxy for the fCC forum",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

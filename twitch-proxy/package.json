@@ -4,7 +4,7 @@
   "description": "fCC Twitch API passthrough server",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.1",

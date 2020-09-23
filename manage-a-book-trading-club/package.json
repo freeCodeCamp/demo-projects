@@ -4,7 +4,7 @@
   "description": "Trade books with other users",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "mocha"
   },
   "repository": {
