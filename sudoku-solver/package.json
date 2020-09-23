@@ -2,7 +2,7 @@
   "name": "sudoku-solver",
   "version": "1.0.0",
   "description": "Quality Assurance 4: Sudoku Solver",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "mocha --timeout 5000 --require @babel/register --recursive --exit --ui tdd tests/"
