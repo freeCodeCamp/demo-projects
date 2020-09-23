@@ -10,10 +10,6 @@ canvas {
   margin: auto;
 }
 
-#user-stories {
-  font-size: 1.3rem;
-}
-
 .container {
   display: flex;
   flex-direction: column;

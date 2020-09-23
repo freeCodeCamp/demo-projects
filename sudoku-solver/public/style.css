@@ -15,10 +15,6 @@ textarea {
   width: 100%;
 }
 
-#user-stories {
-  font-size: 1.2em;
-}
-
 #error-msg {
   color: red;
   display: inline;

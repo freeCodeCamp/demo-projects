@@ -22,12 +22,6 @@ h3 {
 	margin-top: 40px;
 }
 
-.user-stories {
-  position: relative;
-  text-align: justify;
-  max-width: 700px;
-  margin: 15px auto;
-}
 code {
   font-family: monospace;
   padding: 2px;

@@ -1,9 +1,6 @@
-**freeCodeCamp** - Information Security 5: Secure Real Time Multiplayer Game
-------
+# Secure Real Time Multiplayer Game
 
-### User stories:
-
-Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io](https://socket.io/). The game can be as simple or complex as you like, as long as all the following user stories are implemented:
+## User stories:
 
 1. Multiple players can connect to a server and play.
 1. Each player has an avatar.
@@ -24,7 +21,7 @@ Develop a 2D real time multiplayer game using the HTML Canvas API and [Socket.io
 1. Nothing from the website is cached in the client.
 1. The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
-### Testing and additional notes
+## Additional notes:
 
-* To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes in the `.env` file.
-* To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
+- To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes in the `.env` file.
+- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".

@@ -13,34 +13,7 @@
         Quality Assurance 2: Issue Tracker
       </h1>
     </header>
-    <div id='userstories' style='margin-left: 5%; margin-top: 5%'>
-      <h3>User Stories</h3>
-      <ol>
-        <li>
-          I can <strong>POST</strong> <code>/api/issues/{projectName}</code> with form data containing required <i>issue_title</i>, <i>issue_text</i>, and <i>created_by</i> fields. In addition to the required fields, I can optionally send <i>assigned_to</i> and <i>status_text</i>.
-        </li>
-        <li>
-          The object saved (and returned) will include all of those fields (blank if there was no input) and also include <i>created_on</i> (date/time), <i>updated_on</i> (date/time), <i>open</i> (boolean -- true for open, false for closed), and <i>_id</i>.
-        </li>
-        <li>
-          I can <strong>PUT</strong> <code>/api/issues/{projectName}</code> with an <i>_id</i> and any fields in the object I want to update. Return the message 'Successfully updated' if the update was successful, or 'Could not update {_id}' if it was not. Successfully updating an object should also update the <i>updated_on</i> field. If no fields are sent, return 'No updated fields sent'.
-        </li>
-        <li>
-          I can <strong>DELETE</strong> <code>/api/issues/{projectName}</code> with an <i>_id</i> to completely delete an issue. If no <i>_id</i> is sent return '_id error'. Return 'Deleted {_id}' if you successfully delete an issue, and 'Could not delete {_id}' if you could not.
-        </li>
-        <li>
-          I can <strong>GET</strong> <code>/api/issues/{projectName}</code> for an array of all issues on that specific project with all the information for each issue as was returned when posted.
-
-          I can <strong>GET</strong> <code>/api/issues/{projectName}</code> for an array of all issues on that specific project will all the information for each issue.
-        </li>
-        <li>
-          I can filter my <strong>GET</strong> request by also passing along any field and value in the query (for example, <code>/api/issues/{project}?open=false</code>). I can pass along as many fields/values as I want.
-        </li>
-        <li>
-          All 11 functional tests are complete and passing.
-        </li>
-      </ol>
-      <br>
+    <div style='margin-left: 5%; margin-top: 5%'>
       <h3>Example get usage:</h3>
       <code>/api/issues/{project}</code><br>
       <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br>
