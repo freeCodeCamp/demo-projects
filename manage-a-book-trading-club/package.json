@@ -2,7 +2,7 @@
   "name": "book-exchange",
   "version": "0.1.0",
   "description": "Trade books with other users",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "mocha"

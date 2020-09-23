@@ -2,7 +2,7 @@
   "name": "fcc-twitch-api-passthrough",
   "version": "2.0.0",
   "description": "fCC Twitch API passthrough server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },

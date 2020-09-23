@@ -2,7 +2,7 @@
   "name": "fcc-forum-proxy",
   "version": "0.0.1",
   "description": "A proxy for the fCC forum",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
