@@ -16,22 +16,7 @@
       IS 5 - Nasdaq Stock Price Checker
     </h1>
   </header>
-  <div id="serstories">
-    <h3>User Stories</h3>
-    <ol>
-      <li>Set the content security policies to only allow loading of scripts and CSS from your server.</li>
-      <li>I can <b>GET</b> <code>/api/stock-prices</code> with form data containing a Nasdaq <i>stock</i> ticker and
-        recieve back an object <i>stockData</i>.</li>
-      <li>In <i>stockData</i>, I can see the <i>stock</i> (the ticker as a string), <i>price</i> (decimal in string format),
-        and <i>likes</i> (int).</li>
-      <li>I can also pass along the field <i>like</i> as <b>true</b> (boolean) to have my like added to the stock(s). Only 1
-        like per IP should be accepted.</li>
-      <li>If I pass along 2 stocks, the return object will be an array with information about both stocks. Instead of
-        <i>likes</i>, it will display <i>rel_likes</i> (the difference between the likes) on both.</li>
-      <li>A good way to receive current prices is through our stock price proxy (replacing 'GOOG' with your stock symbol):
-        <code>https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/GOOG/quote</code></li>
-      <li>All 5 functional tests are complete and passing.</li>
-    </ol>
+  <div id="examples">
     <h3>Example usage:</h3>
     <code>/api/stock-prices?stock=GOOG</code><br>
     <code>/api/stock-prices?stock=GOOG&amp;like=true</code><br>

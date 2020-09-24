@@ -1,7 +1,6 @@
-**freeCodeCamp** - Quality Assurance 4: Sudoku Solver
-------
+# Sudoku Solver
 
-### User stories:
+## User stories:
 
 1.  I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell. 
 1. When a valid number is entered in the text area, the same number is applied to the correct cell of the sudoku grid.
@@ -16,9 +15,9 @@
 1. All 6 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 1. All 4 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
-### Testing and additional notes
+## Additional notes:
 
-* To run the tests on Repl.it, set NODE_ENV to test without quotes.
-* To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
-* All logic can go into `public/sudoku-solver.js`.
-* Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
+- To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes.
+- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
+- All logic can go into `public/sudoku-solver.js`.
+- Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.

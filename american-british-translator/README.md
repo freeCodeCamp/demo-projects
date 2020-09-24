@@ -1,7 +1,6 @@
-**freeCodeCamp** - Quality Assurance 5: American / British English Translator
-------
+# American British Translator
 
-### User stories:
+## User stories:
 
 1. I can enter a simple sentence into the text area and select whether to translate to British or American English from the dropdown menu.
 1. When the "Translate" button is pressed, append the translated sentence to the `translated-sentence` `div`. See the JavaScript files in `/public` for the different spelling and terms your application should translate.
@@ -14,9 +13,9 @@
 1. All 20 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the sentences you should write tests for.
 1. All 4 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
-### Testing and additional notes
+## Additional notes:
 
-* All logic can go into `public/translator.js`.
-* Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
-* To run the tests on Repl.it, set NODE_ENV to test without quotes.
-* To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
+- All logic can go into `public/translator.js`.
+- Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
+- To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes.
+- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
