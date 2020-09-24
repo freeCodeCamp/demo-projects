@@ -12,6 +12,6 @@
 
 ## Additional notes:
 
-- Set `NODE_ENV` to `test` without quotes and set DB to your Mongo connection string in .env file
+- Set `NODE_ENV` to `test` without quotes and set `DB_URI` to your Mongo connection string in .env file
 - Complete the project in `routes/api.js` or by creating a handler/controller
 - You will create all of the functional tests in `tests/2_functional-tests.js`
