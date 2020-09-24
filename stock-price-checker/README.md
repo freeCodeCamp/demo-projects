@@ -10,21 +10,8 @@
 1. A good way to receive current prices is through our stock price proxy (replacing 'GOOG' with your stock symbol): `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/GOOG/quote`
 1. All 5 functional tests are complete and passing.
 
-## Example usage:
-
-- `/api/stock-prices?stock=GOOG`
-- `/api/stock-prices?stock=GOOG&amp;like=true`
-- `/api/stock-prices?stock=GOOG&amp;stock=MSFT`
-- `/api/stock-prices?stock=GOOG&amp;stock=MSFT&amp;like=true`
-
-## Example return:
-
-- `{ "stockData": { "stock": "GOOG", "price": "786.90", "likes": 1 } }`
-- `{ "stockData": [{"stock": "MSFT", "price": "62.30", "rel_likes": -1 }, { "stock": "GOOG", "price": "786.90", "rel_likes": 1 }] }`
-
 ## Additional notes:
 
 - SET NODE_ENV to `test` without quotes and set DB to your Mongo connection string
 - You will add any security features to `server.js`
 - You will create all of the functional/unit tests in `tests/2_functional-tests.js` and `tests/1_unit-tests.js`
-
