@@ -1,0 +1,2 @@
+This project should fulfill all the user stories referenced in [Chart the Stock Market project](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/chart-the-stock-market/)
+).  We do not have access to the [heroku version]https://watchstocks.herokuapp.com/), so this demo should be a completely new version instead of a duplicate.
