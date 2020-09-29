@@ -1,0 +1,2 @@
+
+This project should fulfill all the user stories referenced in [Nightlife Coordination App project](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app).  The [heroku version](https://whatsgoinontonight.herokuapp.com/) was built using Angular.  The repo for the app resides at [https://github.com/clnhll/whatstonight](https://github.com/clnhll/whatstonight). This demo should be a completely new version instead of a duplicate.
