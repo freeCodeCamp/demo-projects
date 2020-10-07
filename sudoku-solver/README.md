@@ -1,23 +1,21 @@
-# Sudoku Solver
+**freeCodeCamp** - Quality Assurance 4: Sudoku Solver
+------
 
-## User stories:
+[![Run on Repl.it](https://repl.it/badge/github/freeCodeCamp/boilerplate-project-sudoku-solver)](https://repl.it/github/freeCodeCamp/boilerplate-project-sudoku-solver)
 
-1.  I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell. 
-1. When a valid number is entered in the text area, the same number is applied to the correct cell of the sudoku grid.
-1. I can enter a sudoku puzzle by adding numbers directly to the sudoku grid.
-1. When a valid number is entered in the sudoku grid, the same number appears in the correct position in the text area.
-1. The text area should only update the corresponding sudoku grid cell when a whole number between 1 and 9 is entered.
-1. The sudoku grid should only update the puzzle string in the text area when a whole number between 1 and 9 is entered into a cell.
-1. I can solve an incomplete puzzle by clicking the "Solve" button. When a solution is found, the sudoku grid and text area are automatically populated with the correct numbers for each cell in the grid or position in the text area.
-1. This sudoku solver is not expected to be able to solve every incomplete puzzle. See `/public/puzzle-strings.js` for a list of puzzle strings it should be able to solve along with their solutions.
-1. If the puzzle is not 81 numbers or periods long, append the message "Error: Expected puzzle to be 81 characters long." to the `error-msg` `div` so the text appears in red.
-1. I can clear the text area and sudoku grid by clicking the "Clear" button.
-1. All 6 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
-1. All 4 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
+### User stories:
 
-## Additional notes:
-
-- To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes.
-- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell".
-- All logic can go into `public/sudoku-solver.js`.
-- Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
+1. I can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain `solution` with the solved puzzle.
+1. If the object submitted to `/api/solve` is missing `puzzle`, the returned value will be `{ error: 'Required field missing' }`
+1. If the puzzle submitted to `/api/solve` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
+1. If the puzzle submitted to `/api/solve` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
+1. If the puzzle submitted to `/api/solve` is invalid or cannot be solved, the returned value will be `{ error: 'Puzzle cannot be solved' }`
+1. I can `POST` to `/api/check` an object containing `puzzle`, `coordinate`, and `value` where the `coordinate` is the letter A-I indicating the row, followed by a number 1-9 indicating the column, and `value` is a number from 1-9.
+1. The return value will be an object containing `valid`, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain `conflict` which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid. 
+1. If the submitted puzzle contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
+1. If the puzzle submitted to `/api/check` is greater or less than 81 characters, the returned value will be `{ error: 'Expected puzzle to be 81 characters long' }`
+1. If the object submitted to `/api/check` is missing `puzzle`, `coordinate` or `value`, the returned value will be `{ error: 'Required field(s) missing' }`
+1. If the coordinate does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
+1. If the `value` is not a number between 1 and 9, the returned values will be `{ error: 'Invalid value' }`
+1. All 12 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
+1. All 14 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.

@@ -15,6 +15,10 @@ textarea {
   width: 100%;
 }
 
+#user-stories {
+  font-size: 1.2em;
+}
+
 #error-msg {
   color: red;
   display: inline;
@@ -37,8 +41,8 @@ td {
   padding: 0.3em;
 }
 
-input[type="text"] {
-  border: 0px;
+.sudoku-input {
+  border: 1px solid black;
   width: 2em;
   height: 2em;
   text-align: center;

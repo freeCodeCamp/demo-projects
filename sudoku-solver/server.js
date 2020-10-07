@@ -1,5 +1,3 @@
-'use strict';
-
 require('dotenv').config();
 const express     = require('express');
 const bodyParser  = require('body-parser');
@@ -7,6 +5,7 @@ const expect      = require('chai').expect;
 const cors        = require('cors');
 
 const fccTestingRoutes  = require('./routes/fcctesting.js');
+const apiRoutes         = require('./routes/api.js');
 const runner            = require('./test-runner');
 
 const app = express();
@@ -25,6 +24,9 @@ app.route('/')
 
 //For FCC testing purposes
 fccTestingRoutes(app);
+
+// User routes
+apiRoutes(app);
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
@@ -33,11 +35,10 @@ app.use(function(req, res, next) {
     .send('Not Found');
 });
 
-const portNum = process.env.PORT || 3000;
-
 //Start our server and tests!
-app.listen(portNum, function () {
-  console.log("Listening on port " + portNum);
+const PORT = process.env.PORT || 3000
+app.listen(PORT, function () {
+  console.log("Listening on port " + PORT);
   // process.env.NODE_ENV='test'
   if (process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
