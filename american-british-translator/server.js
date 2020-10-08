@@ -6,6 +6,7 @@ const cors        = require('cors');
 
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
+const userRoutes        = require('./routes/api.js');
 
 const app = express();
 
@@ -23,6 +24,9 @@ app.route('/')
 
 //For FCC testing purposes
 fccTestingRoutes(app);
+
+// User routes
+userRoutes(app);
     
 // 404 Not Found Middleware
 app.use(function(req, res, next) {

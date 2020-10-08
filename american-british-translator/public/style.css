@@ -15,6 +15,10 @@ textarea {
   width: 100%;
 }
 
+#user-stories {
+  font-size: 1.2em;
+}
+
 #output-container,
 #solution-container,
 #text-input,

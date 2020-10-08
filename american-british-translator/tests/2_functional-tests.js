@@ -7,99 +7,109 @@
  */
 
 const chai = require('chai');
+const chaiHttp = require('chai-http');
 const assert = chai.assert;
+const server = require('../server.js');
 
-let Translator;
+chai.use(chaiHttp);
+
+let Translator = require('../components/translator.js');
 
 suite('Functional Tests', () => {
-  suiteSetup(() => {
-    // DOM already mocked -- load translator then run tests
-    Translator = require('../public/translator.js');
-  });
 
-  suite('Function displayTranslation()', () => {
-    /* 
-      The translated sentence is appended to the `translated-sentence` `div`
-      and the translated words or terms are wrapped in 
-      `<span class="highlight">...</span>` tags when the "Translate" button is pressed.
-    */
-    test("Translation appended to the `translated-sentence` `div`", done => {
-      const textArea = document.getElementById('text-input');
-      const translationDiv = document.getElementById('translated-sentence');
-      const output = 'freeCodeCamp is my <span class="highlight">favourite</span>.';
-
-      // Simulate click
-      textArea.value = "freeCodeCamp is my favorite.";
-      Translator.translateSentence(textArea.value, 'british');
-
-      assert.strictEqual(translationDiv.innerHTML, output);
-      done();
+  suite('"POST" to /api/translate', () => {
+    test('POST with text and locale fields populated', done => { 
+      const text = "Mangoes are my favorite fruit.";
+      const locale = 'american-to-british';
+      const output = {
+        text: "Mangoes are my favorite fruit.", 
+        translation: 'Mangoes are my <span class="highlight">favourite</span> fruit.'
+      };
+      chai.request(server)
+        .post('/api/translate/')
+        .send({text, locale})
+        .end((err, res) => {
+          assert.property(res.body, "text");
+          assert.equal(res.body.text, output.text);
+          assert.property(res.body, 'translation');
+          assert.equal(res.body.translation, output.translation);
+          done();
+        })
     });
 
-    /* 
-      If there are no words or terms that need to be translated,
-      the message 'Everything looks good to me!' is appended to the
-      `translated-sentence` `div` when the "Translate" button is pressed.
-    */
-    test("'Everything looks good to me!' message appended to the `translated-sentence` `div`", done => {
-      const textArea = document.getElementById('text-input');
-      textArea.value = "I saw a mum pushing a pram.";
-      const translationDiv = document.getElementById('translated-sentence');
-      const output = 'Everything looks good to me!';
-
-      // Simulate click
-      Translator.translateSentence(textArea.value, 'british');
-
-      assert.strictEqual(translationDiv.textContent, output);
-      done();
+    test('POST with text and invalid locale', done => {
+      const text = "Mangoes are my favorite fruit.";
+      const locale = 'russian-to-spanish';
+      const error = { error: 'Invalid value for locale field' };
+      chai.request(server)
+        .post('/api/translate/')
+        .send({text, locale})
+        .end((err, res) => {
+          assert.property(res.body, 'error');
+          assert.equal(res.body.error, error.error);
+          done();
+        });
     });
 
-    /* 
-      If the text area is empty when the "Translation" button is
-      pressed, append the message 'Error: No text to translate.' to 
-      the `error-msg` `div`.
-    */
-    test("'Error: No text to translate.' message appended to the `translated-sentence` `div`", done => {
-      const textArea = document.getElementById('text-input');
-      textArea.value = "";
-      const errorDiv = document.getElementById('error-msg');
-      const output = 'Error: No text to translate.';
-
-      // Simulate click
-      Translator.translateSentence(textArea.value, 'british');
-
-      assert.strictEqual(errorDiv.textContent, output);
-      done();
+    test('POST with missing text field', done => {
+      const locale = "american-to-british";
+      const error = { error: 'Required field(s) missing' }
+      chai.request(server)
+        .post('/api/translate')
+        .send({locale})
+        .end((err, res) => {
+          assert.property(res.body, 'error');
+          assert.equal(res.body.error, error.error);
+          done();
+        });
     });
-
-  });
-
-  suite('Function clearAll()', () => {
-    /* 
-      The text area and both the `translated-sentence` and `error-msg`
-      `divs` are cleared when the "Clear" button is pressed.
-    */
-    test("Text area, `translated-sentence`, and `error-msg` are cleared", done => {
-      const textArea = document.getElementById('text-input');
-      const translationDiv = document.getElementById('translated-sentence');
-      const errorDiv = document.getElementById('error-msg');
-
-      // Simulate translation
-      textArea.value = "biro";
-      translationDiv.textContent = "ballpoint pen";
+    
+    test('POST with missing locale field', done => {
+      const text = "freeCodeCamp rocks!";
+      const error = { error: 'Required field(s) missing' }
+      chai.request(server)
+        .post('/api/translate')
+        .send({text})
+        .end((err, res) => {
+          assert.property(res.body, 'error');
+          assert.equal(res.body.error, error.error);
+          done();
+        })
       
-      // Simulate error message
-      errorDiv.textContent = 'Error: No text to translate.';
-
-      // Simulate clicks
-      Translator.clearAll();
-
-      assert.strictEqual(textArea.value, '');
-      assert.strictEqual(translationDiv.textContent, '');
-      assert.strictEqual(errorDiv.textContent, '');
-      done();
+    });
+    
+    test('POST with missing text', done => {
+      const text = "";
+      const locale = "american-to-british";
+      const error = { error: 'No text to translate' }
+      
+      chai.request(server)
+        .post('/api/translate')
+        .send({text, locale})
+        .end((err, res) => {
+          assert.property(res.body, 'error');
+          assert.equal(res.body.error, error.error);
+          done();
+        });
     });
 
-  });
-
+    test('POST with text that needs no translation', done => {
+      const text = "SaintPeter and nhcarrigan say hello!";
+      const locale = "british-to-american"
+      const output = {
+        text: "SaintPeter and nhcarrigan say hello!", 
+        translation: "Everything looks good to me!"
+        }
+      chai.request(server)
+        .post('/api/translate')
+        .send({text, locale})
+        .end((err, res) => {
+          assert.property(res.body, 'text');
+          assert.property(res.body, 'translation');
+          assert.equal(res.body.text, output.text);
+          assert.equal(res.body.translation, output.translation);
+          done();
+        })
+    });
+  });  
 });

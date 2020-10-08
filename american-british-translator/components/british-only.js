@@ -1,6 +1,6 @@
 // American equivalents of British words
 
-export const britishOnly = {
+module.exports = {
   "abseil": "rappel",
   "accountancy": "accounting",
   "advert": "advertisement",
