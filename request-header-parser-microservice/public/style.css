@@ -28,18 +28,13 @@ code {
   color: black;
   background-color: #fff;
 }
-ol {
-	list-style-position: outside;
-}
+
 ul {
 	list-style-type: none;
 }
 
 li {
   margin-bottom: 0.5em;
-}
-.user-stories li {
-  margin-bottom: 1em;
 }
 
 a {
