@@ -49,15 +49,6 @@ module.exports = function (app) {
         res.type('txt').send(data.toString());
       });
     });
-  app.route('/_api/controllers/convertHandler.js')
-    .get(function(req, res, next) {
-      console.log('requested');
-      fs.readFile(__dirname + '/controllers/convertHandler.js', function(err, data) {
-        if(err) return next(err);
-        res.type('txt').send(data.toString());
-      });
-    });
-    
   let error;
   app.get('/_api/get-tests', cors(), function(req, res, next){
     if(!error && process.env.NODE_ENV === 'test') return next();
