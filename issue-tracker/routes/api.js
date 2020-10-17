@@ -11,87 +11,133 @@
 const expect = require('chai').expect;
 const MongoClient = require('mongodb');
 const ObjectId = require('mongodb').ObjectID;
+const IssueModel = require('../models/issue').IssueModel;
 
-const CONNECTION_STRING = process.env.DB_URI;
+const mongoose = require('mongoose');
+const connection = mongoose.connect(process.env.DB, {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+});
 
-module.exports = (app) => {
+mongoose.set('useCreateIndex', true);
 
-  app.route('/api/issues/:project')
-  
-    .get((req, res) => {
-      const project = req.params.project;
-      const searchQuery = req.query;
-      if (searchQuery._id) { searchQuery._id = new ObjectId(searchQuery._id)}
-      if (searchQuery.open) { searchQuery.open = String(searchQuery.open) == "true" }
-      MongoClient.connect(CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        const db = client.db('issue-tracker-v0');
-        db.collection(project).find(searchQuery).toArray((err, docs) => res.json(docs));
-        // console.log(doc.value);
-      });
+const updatable_fields = [
+  "issue_title",
+  "issue_text",
+  "created_by",
+  "assigned_to",
+  "status_text",
+  "open"
+]
+
+const field_list = updatable_fields.concat([
+  "_id",
+  "created_on",
+  "updated_on"
+]);
+
+module.exports = function (app) {
+
+ app.route('/api/issues/:project')
+
+    .get(function (req, res){
+      var project = req.params.project;
+
+      // Build Query
+      let query = { project: project };  // We always filter by project
+      field_list.forEach(field => {
+        if(req.query.hasOwnProperty(field)) {
+          query[field] = req.query[field];
+        }
+      })
+
+      IssueModel.find(query, (err, docs) => {
+        return res.json(docs);
+      })
     })
-    
-    .post((req, res) => {
-      const project = req.params.project;
-      let issue = {
+
+    .post(function (req, res){
+      let project = req.params.project;
+
+      // check required fields
+      let missing_fields = ['issue_title', 'issue_text', 'created_by']
+        .filter( field => !req.body.hasOwnProperty(field))
+        .join(',');
+
+      if(missing_fields) {
+        return res.send({ error: 'required field(s) missing' });
+      }
+
+      // Otherwise, create the object
+      let issue = new IssueModel({
+        project: project,
         issue_title: req.body.issue_title,
         issue_text: req.body.issue_text,
-        created_on: new Date(),
-        updated_on: new Date(),
         created_by: req.body.created_by,
-        assigned_to: req.body.assigned_to || '',
-        open: true,
+        assigned_to: req.body.assigned_to  || '',
         status_text: req.body.status_text || ''
-      };
-      if(!issue.issue_title || !issue.issue_text || !issue.created_by) {
-        res.send('missing inputs');
-      } else {
-        MongoClient.connect(CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-          const db = client.db('issue-tracker-v0');
-          db.collection(project).insertOne(issue, (err, doc) => {
-            issue._id = doc.insertedId;
-            res.json(issue);
-            // console.log(doc.value);
-          });
-        });
-      }
+      });
+
+      issue.save(function(err, result) {
+        if(err) { console.log(err) }
+        res.json(result.toJSON());
+      })
+
     })
-    
-    .put((req, res) => {
-      const project = req.params.project;
-      const issue = req.body._id;
-      delete req.body._id;
-      let updates = req.body;
-      // convert open field to boolean if necessary
-      if (typeof updates.open === 'string') {
-        updates.open.toLowerCase() === 'true' ? updates.open = true : updates.open = false;
+
+    .put(function (req, res){
+      let project = req.params.project;
+      let id = req.body._id;
+
+      // No id passed
+      if(!id) {
+        return res.json({ error: 'missing _id' })
       }
-      if (Object.keys(updates).length === 0) {
-        res.send('no updated field sent');
-      } else {
-        updates.updated_on = new Date();
-        MongoClient.connect(CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-          const db = client.db('issue-tracker-v0');
-          db.collection(project).findOneAndUpdate({_id: new ObjectId(issue)}, {$set: updates}, {new: true}, (err, doc) => {
-            (!err && doc.value) ? res.send('successfully updated') : res.send('could not update ' + issue);
-            // console.log(doc.value);
-          });
-        });  
+
+      // Build update object
+      let update = {};
+      let count = 0;
+      updatable_fields.forEach(field => {
+        if(req.body.hasOwnProperty(field)) {
+          update[field] = req.body[field];
+          count++;
+        }
+      })
+
+      if(!count) {
+        return res.json({ error: 'no update field(s) sent', '_id': id })
       }
+
+      IssueModel.updateOne({ project, _id: id }, update, (err, result) => {
+        if(err) console.log(err);
+
+        // id not found
+        if(result.nModified === 0 || result.n === 0) {
+          return res.json({ error: 'could not update', '_id': id });
+        }
+
+        // Success!
+        res.json({ result: 'successfully updated', '_id': id })
+      });
     })
-    
-    .delete((req, res) => {
-      const project = req.params.project;
-      const issue = req.body._id;
-      if (!issue) {
-        res.send('_id error');
-      } else {
-        MongoClient.connect(CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-          const db = client.db('issue-tracker-v0');
-          db.collection(project).findOneAndDelete({_id: new ObjectId(issue)}, (err, doc) => {
-            (!err && doc.value) ? res.send('deleted ' + issue) : res.send('could not delete ' + issue);
-          });
-        });
+
+    .delete(function (req, res){
+      let project = req.params.project;
+      let id = req.body._id;
+
+      // No id passed
+      if(!id) {
+        return res.json({ error: 'missing _id' });
       }
+
+      IssueModel.deleteOne({ project, '_id': id })
+        .then(result => {
+          if(result.deletedCount === 1) {
+            return res.json({ result: 'successfully deleted', '_id': id });
+          } else {
+            return res.json({ error: 'could not delete', '_id': id });
+          }
+        });
     });
     
 };

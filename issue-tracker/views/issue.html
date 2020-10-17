@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to HyperDev!</title>
-    <meta name="description" content="A cool thing made with HyperDev">
-    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon-app.ico" type="image/x-icon">
+    <title>Issue Tracker - Project Page</title>
+    <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,20 +36,20 @@
             crossorigin="anonymous"></script>
     <script>
       $(function() {
-        var currentProject = window.location.pathname.replace(/\//g, "");;
-        var url = "/api/issues/"+currentProject;
+        let currentProject = window.location.pathname.replace(/\//g, "");;
+        let url = "/api/issues/"+currentProject;
         $('#projectTitle').text('All issues for: '+currentProject)
         $.ajax({
           type: "GET",
           url: url,
           success: function(data)
           {
-            var issues= [];
+            let issues= [];
             data.forEach(function(ele) {
               console.log(ele);
-              var openstatus;
+              let openstatus;
               (ele.open) ? openstatus = 'open' : openstatus = 'closed';
-              var single = [
+              let single = [
                 '<div class="issue '+openstatus+'">',
                 '<p class="id">id: '+ele._id+'</p>',
                 '<h3>'+ele.issue_title+' -  ('+openstatus+')</h3>',
@@ -82,7 +81,7 @@
         });
         
         $('#issueDisplay').on('click','.closeIssue', function(e) {
-          var url = "/api/issues/"+currentProject;
+          let url = "/api/issues/"+currentProject;
           $.ajax({
             type: "PUT",
             url: url,
@@ -92,7 +91,7 @@
           e.preventDefault();
         });
         $('#issueDisplay').on('click','.deleteIssue', function(e) {
-          var url = "/api/issues/"+currentProject;
+          let url = "/api/issues/"+currentProject;
           $.ajax({
             type: "DELETE",
             url: url,
