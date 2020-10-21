@@ -41,7 +41,11 @@ class Translator {
     }
 
     // Time Replacement, colon to period replacement
-    input = input.replace(/(\d{1,2}):(\d{1,2})/gi, '<span class="highlight">\$1.\$2</span>');
+    if(highlight) {
+      input = input.replace(/(\d{1,2}):(\d{1,2})/gi, '<span class="highlight">\$1.\$2</span>');
+    } else {
+      input = input.replace(/(?<=\d{1,2}):(?=\d{1,2})/gi, '.');
+    }
 
     // Uppercase start of sentence
     input = input.replace(/^([a-z])/ig, letter => letter.toUpperCase());
@@ -70,8 +74,12 @@ class Translator {
         Translator.replaceCurry(british,american,highlight, true));
     }
 
-    // Time Replacement, colon to period replacement
-    input = input.replace(/(\d{1,2}).(\d{1,2})/gi, '<span class="highlight">\$1:\$2</span>');
+    // Time Replacement, period to colon replacement
+    if(highlight) {
+      input = input.replace(/(\d{1,2}).(\d{1,2})/gi, '<span class="highlight">\$1:\$2</span>');
+    } else {
+      input = input.replace(/(?<=\d{1,2})\.(?=\d{1,2})/gi, ':');
+    }
 
     // Uppercase start of sentence
     input = input.replace(/^([a-z])/ig, letter => letter.toUpperCase());
