@@ -1,0 +1,16 @@
+{
+  "name": "twitch-proxy-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for updating the Twitch Proxy API key and restarting the project",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-3-Clause"
+}
