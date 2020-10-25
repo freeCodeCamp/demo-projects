@@ -14,11 +14,12 @@ const updateApiKey = async () => {
     .then(res => res.json())
     .catch(err => console.log(err));
 
-  // Remove access token line from .env file
-  const regex = /ACCESS\_TOKEN\=[\w\d]*\n?/gm;
-  fs.writeFileSync(envFilePath, envFileText.replace(regex, ''));
-  // Write new access token line to the end of the file
-  fs.appendFileSync(envFilePath, `ACCESS_TOKEN=${keyObj.access_token}\n`);
+  // Write new file with updated token
+  fs.writeFileSync(envFilePath, `TWITCH_CLIENT_ID=${TWITCH_CLIENT_ID}
+TWITCH_CLIENT_SECRET=${TWITCH_CLIENT_SECRET}
+# Expires in ~60 days
+ACCESS_TOKEN=${keyObj.access_token}
+`);
 }
 
 updateApiKey();
