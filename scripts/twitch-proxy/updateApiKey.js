@@ -1,6 +1,5 @@
 const path = require('path');
 const envFilePath = path.join(`${__dirname}/../../twitch-proxy/`, '.env');
-console.log(envFilePath);
 require('dotenv').config({ path: envFilePath });
 const fetch = require('node-fetch');
 const fs = require('fs');
