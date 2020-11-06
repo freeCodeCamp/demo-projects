@@ -51,7 +51,7 @@ class SudokuSolver {
     // Row is 'A' minus the row letter's ascii value
     // only if it's A-I
     if(coord[0].match(/[A-I]/)) {
-      row = 'A'.charCodeAt(0) - coord.charCodeAt(0);
+      row = coord.charCodeAt(0) - 'A'.charCodeAt(0);
     } else {
       return [true, null, null]
     }
