@@ -7,79 +7,269 @@
 */
 
 const chai = require("chai");
+const chaiHttp = require('chai-http');
 const assert = chai.assert;
+const server = require('../server');
 
-let Solver;
+chai.use(chaiHttp);
 
 suite('Functional Tests', () => {
-  suiteSetup(() => {
-    // DOM already mocked -- load sudoku solver then run tests
-    Solver = require('../public/sudoku-solver.js');
-  });
+  suite('POST to /api/solve', () => {
+    test('Solvable puzzle posted returns completed puzzle', done => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = '769235418851496372432178956174569283395842761628713549283657194516924837947381625'
 
-  suite('Text area and sudoku grid update automatically', () => {
-    // Entering a valid number in the text area populates 
-    // the correct cell in the sudoku grid with that number
-    test('Valid number in text area populates correct cell in grid', done => {
-      const textArea = document.getElementById('text-input');
-      textArea.value = '123';
-      Solver.setGrid(textArea.value);
-      const testArr = Array.from(document.querySelectorAll('.sudoku-input')).map(cell => cell.value).filter(str => str);
-      const expected = ['1', '2', '3'];
+      chai.request(server)
+        .post('/api/solve')
+        .send({ puzzle: input })
+        .end((err, res) =>{
+          assert.isObject(res.body);
+          assert.property(res.body, 'solution');
+          assert.equal(res.body.solution, output);
 
-      assert.deepStrictEqual(testArr, expected);
-      done();
+          done();
+        })
     });
 
-    // Entering a valid number in the grid automatically updates
-    // the puzzle string in the text area
-    test('Valid number in grid updates the puzzle string in the text area', done => {
-      const textArea = document.getElementById('text-input');
-      const gridCells = Array.from(document.querySelectorAll('.sudoku-input')).map(cell => cell);
-      gridCells[0].value = '5';
-      gridCells[1].value = '4';
-      gridCells[2].value = '3';
-      const expected = '543..............................................................................';
+    test('Puzzle Field Missing', done => {
+      const error = { error: 'Required field missing' };
 
-      // Run function now that grid cells have changed
-      Solver.setTextArea();
+      chai.request(server)
+        .post('/api/solve')
+        .end((err, res) =>{
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
 
-      assert.strictEqual(textArea.value, expected);
-      done();
+          done();
+        })
+    });
+
+    test('Invalid Characters in Puzzle', done => {
+      const input = "..X..5.1.85.4....2432.. ...1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const error = { error: 'Invalid characters in puzzle' };
+      chai.request(server)
+        .post('/api/solve')
+        .send({ puzzle: input })
+        .end((err, res) =>{
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+
+          done();
+        });
+    });
+
+    test('Puzzle incorrect length', done => {
+      const shortStr = '83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const longStr = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6...';
+      const error = { error: 'Expected puzzle to be 81 characters long' };
+
+      chai.request(server)
+        .post('/api/solve')
+        .send({ puzzle: shortStr })
+        .end((err, res) =>{
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+
+          chai.request(server)
+            .post('/api/solve')
+            .send({ puzzle: longStr })
+            .end((err, res) => {
+              assert.isObject(res.body);
+              assert.property(res.body, 'error');
+              assert.deepEqual(res.body, error);
+              done();
+            });
+        });
+    });
+
+    test('Puzzle Cannot be Solved', done => {
+      const input = '779235418851496372432178956174569283395842761628713549283657194516924837947381625';
+      const error = {error: 'Puzzle cannot be solved'};
+
+      chai.request(server)
+        .post('/api/solve')
+        .send({puzzle: input})
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+          done();
+        });
     });
   });
   
-  suite('Clear and solve buttons', () => {
-    // Pressing the "Clear" button clears the sudoku 
-    // grid and the text area
-    test('Function clearInput()', done => {
-      // Populate text area and sudoku grid
-      const puzzleStr = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
-      const textArea = document.getElementById('text-input');
-      textArea.value = puzzleStr;
-      Solver.setGrid(puzzleStr);
-      
-      // Invoke function and grab array of grid values to test
-      Solver.clearInput();
-      const gridValues = Array.from(document.querySelectorAll('.sudoku-input')).map(cell => cell).filter(cell => cell.value);
-      
-      assert.strictEqual(textArea.value, '');
-      assert.deepStrictEqual(gridValues, []);
-      done();
-    });
+  suite('POST to /api/check', () => {
     
-    // Pressing the "Solve" button solves the puzzle and
-    // fills in the grid with the solution
-    test('Function showSolution(solve(input))', done => {
-      const puzzleStr = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+    test('All fields filled in correctly, valid placement', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
+      const coordinate = "A1";
+      const value = "7";
+      const status = { valid: true };
 
-      Solver.showSolution(Solver.solve(puzzleStr));
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate, value })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'valid');
+          assert.deepEqual(res.body, status);
+          done();
+        });
+    })
 
-      const rowA = Array.from(document.querySelectorAll('.sudoku-input')).filter((cell, i) => i < 9).map(cell => cell.value);
-      const rowAExpected = ["7", "6", "9", "2", "3", "5", "4", "1", "8"];
+    test('All fields filled in correctly, invalid placement, single conflict', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
+      const coordinate = "A2";
+      const value = "1";
+      const status = {valid: false, conflict: [ 'row' ]};
 
-      assert.deepStrictEqual(rowA, rowAExpected);
-      done();
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate, value })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'valid');
+          assert.property(res.body, 'conflict');
+          assert.deepEqual(res.body, status);
+          done();
+        });
+    })
+
+    test('All fields filled in correctly, invalid placement, multiple conflicts', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
+      const coordinate = "A1";
+      const value = "1";
+      const status = {valid: false, conflict: [ 'row', 'column' ]};
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate, value })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'valid');
+          assert.property(res.body, 'conflict');
+          assert.deepEqual(res.body, status);
+          done();
+        });
+    })
+
+    test('All fields filled in correctly, invalid placement, all conflicts', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
+      const coordinate = "A1";
+      const value = "5";
+      const status = {valid: false, conflict: [ 'row', 'column', 'region' ]};
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate, value })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'valid');
+          assert.property(res.body, 'conflict');
+          assert.deepEqual(res.body, status);
+          done();
+        });
+    })
+
+    test('Required Field(s) Missing', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const error = { error: 'Required field(s) missing' };
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+          done();
+        });
     });
+
+    test('Invalid Characters in Puzzle', done => {
+      const input = "..9.X5.1.85.4....2432... ..1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const error = { error: 'Invalid characters in puzzle' };
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate: 'A1', value: '2' })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+          done();
+        });
+    });
+
+    test('Puzzle incorrect length', done => {
+      const shortStr = '83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const longStr = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6...';
+      const error = { error: 'Expected puzzle to be 81 characters long' };
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: shortStr, coordinate: 'A1', value: '2' })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+
+          chai.request(server)
+            .post('/api/check')
+            .send({ puzzle: longStr, coordinate: 'A1', value: '2' })
+            .end((err, res) => {
+              assert.isObject(res.body);
+              assert.property(res.body, 'error');
+              assert.deepEqual(res.body, error);
+              done();
+            });
+        });
+    });
+
+    test('Coordinate Out of Bounds', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const coordinate1 = "K1";
+      const coordinate2 = "A11";
+      const error = { error: 'Invalid coordinate'};
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate: coordinate1, value: '2' })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+
+          chai.request(server)
+            .post('/api/check')
+            .send({ puzzle: input, coordinate: coordinate2, value: '2' })
+            .end((err, res) => {
+              assert.isObject(res.body);
+              assert.property(res.body, 'error');
+              assert.deepEqual(res.body, error);
+              done();
+            });
+        });
+    })
+
+    test('Invalid Value', done => {
+      const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const error = { error: 'Invalid value' };
+
+      chai.request(server)
+        .post('/api/check')
+        .send({ puzzle: input, coordinate: "A1", value: 'X' })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+          done();
+        });
+    });
+
   });
 });
+
