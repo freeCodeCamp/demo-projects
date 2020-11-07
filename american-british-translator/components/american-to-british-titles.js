@@ -1,4 +1,4 @@
-export const americanToBritishTitles = {
+module.exports = {
   'mr.': 'mr',
   'mrs.': 'mrs',
   'ms.': 'ms',
