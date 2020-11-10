@@ -1,10 +1,9 @@
 {
-	"name": "fcc-library",
+	"name": "fcc-library-example",
 	"version": "1.0.0",
-	"description": "boilerplate",
+	"description": "example",
 	"main": "server.js",
 	"scripts": {
-		"dev": "nodemon server.js",
 		"start": "nodemon server.js",
 		"test": "mocha -u tdd ./tests/*.js"
 	},
@@ -25,11 +24,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-library"
+		"url": "https://github.com/freeCodeCamp/demo-projects"
 	},
 	"keywords": [
 		"node",
-		"hyperdev",
 		"express"
 	],
 	"license": "MIT",
