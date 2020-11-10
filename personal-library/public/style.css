@@ -1,5 +1,5 @@
 .border {
-  border-style: inset;
+  border-style: solid;
   border-width: 1px;
   margin: 10px;
 }
@@ -16,6 +16,19 @@
   margin-left: 5%;
 }
 
+#userstories {
+  margin-left: 5%;
+}
+
 form {
   padding: 5px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  margin-bottom: 5px;
 }
