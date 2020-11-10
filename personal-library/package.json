@@ -4,18 +4,20 @@
 	"description": "boilerplate",
 	"main": "server.js",
 	"scripts": {
+		"dev": "nodemon server.js",
 		"start": "node server.js"
 	},
 	"dependencies": {
-		"express": "^4.14.0",
-		"cors": "^2.8.1",
 		"body-parser": "^1.15.2",
 		"chai": "^4.2.0",
 		"chai-http": "^4.3.0",
-		"mongodb": "^3.6.2",
-		"zombie": "^5.0.5",
+		"cors": "^2.8.1",
+		"dotenv": "^8.2.0",
+		"express": "^4.14.0",
 		"mocha": "^3.2.0",
-		"dotenv": "^8.2.0"
+		"mongodb": "^3.6.2",
+		"mongoose": "^5.10.13",
+		"zombie": "^5.0.5"
 	},
 	"engines": {
 		"node": "^12.*"
@@ -29,5 +31,8 @@
 		"hyperdev",
 		"express"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.6"
+	}
 }
