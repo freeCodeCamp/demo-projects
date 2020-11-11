@@ -57,6 +57,10 @@ module.exports = function (app) {
     .route("/api/books/:id")
     .get(async function (req, res) {
       let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
       const book = await BookModel.findOne({ _id: bookid });
       if (!book) {
         res.status(200).send("no book exists");
@@ -67,6 +71,10 @@ module.exports = function (app) {
 
     .post(async function (req, res) {
       let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
       let comment = req.body.comment;
       if (!comment) {
         res.status(200).send("missing required field comment");
@@ -89,6 +97,10 @@ module.exports = function (app) {
 
     .delete(async function (req, res) {
       let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
       const todelete = await BookModel.findOne({ _id: bookid });
       if (!todelete) {
         res.status(200).send("no book exists");
