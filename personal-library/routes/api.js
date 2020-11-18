@@ -1,126 +1,112 @@
 /*
-*
-*
-*       FILL IN EACH ROUTE BELOW COMPLETELY
-*       
-*       
-*/
+ *
+ *
+ *       Complete the API routing below
+ *
+ *
+ */
 
-'use strict';
+"use strict";
 
-const expect = require('chai').expect;
-const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectId;
-const MONGODB_CONNECTION_STRING = process.env.DB_URI;
+const MongoClient = require("mongodb").MongoClient;
+const ObjectId = require("mongodb").ObjectId;
+const MONGODB_CONNECTION_STRING = process.env.DB;
+const Mongoose = require("mongoose");
+const BookModel = require("../db/BookModel").BookModel;
+//Example connection: MongoClient.connect(MONGODB_CONNECTION_STRING, function(err, db) {});
+
+Mongoose.connect(MONGODB_CONNECTION_STRING,  { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+  if (err) {
+    console.error(err);
+  }
+});
 
 module.exports = function (app) {
-
-  app.route('/api/books')
-    .get(function (req, res){
-      MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        expect(err, 'database error').to.not.exist;
-        const db = client.db('personal-library-v0');
-        const collection = db.collection('books');
-        collection.find().toArray(function(err, result) {
-          expect(err, 'database find error').to.not.exist;
-          expect(result).to.exist;
-          expect(result).to.be.a('array');
-          for(var i=0;i<result.length;i++) {
-            result[i].commentcount = result[i].comments.length;
-            delete result[i].comments;
-          }
-          res.json(result);
-        });
-      });
+  app
+    .route("/api/books")
+    .get(async function (req, res) {
+      const books = await BookModel.find();
+      res.status(200).json(books);
     })
-    .post(function (req, res){
-      var title = req.body.title;
-      if(!title) {
-        res.send('missing title');
-      } else {
-        expect(title, 'posted title').to.be.a('string');
-         MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-          expect(err, 'database error').to.not.exist;
-          const db = client.db('personal-library-v0');
-          const collection = db.collection('books');
-          var doc = { title: title, comments: [] };
-          collection.findOne({ title: doc.title }, (err, result) => {
-            expect(err, 'database insert error').to.not.exist;
-            // Exit if title already exists in library
-            if (result) return res.send('title already exists');
 
-            collection.insertOne(doc, (err, result) => {
-              res.json(result.ops[0]);
-            });
-          }); 
-        });
+    .post(async function (req, res) {
+      let title = req.body.title;
+      if (!title) {
+        res.status(200).send("missing required field title");
+        return;
       }
+      const data = await BookModel.create({
+        title,
+        comments: [],
+        commentcount: 0,
+      });
+      res.status(200).json({ _id: data._id, title: data.title });
     })
-    .delete(function(req, res){
-      MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        expect(err, 'database error').to.not.exist;
-        const db = client.db('personal-library-v0');
-        const collection = db.collection('books');
-        collection.deleteMany({});
-        res.send("complete delete successful");
+
+    .delete(async function (req, res) {
+      await BookModel.deleteMany({}, (err) => {
+        if (err) {
+          res.status(200).send("Error");
+          return;
+        }
+        res.status(200).send("complete delete successful");
       });
     });
-    
-  app.route('/api/books/:id')
-    .get(function (req, res){
-      var bookid = req.params.id;
-      //expect(bookid).to.have.lengthOf(24);
-      var oid = new ObjectId(bookid); //Must convert to mongo object id to search by it in db
-      MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        expect(err, 'database error').to.not.exist;
-        const db = client.db('personal-library-v0');
-        const collection = db.collection('books');
-        collection.find({_id:oid}).toArray(function(err, result) {
-          expect(err, 'database find error').to.not.exist;
-          if(result.length === 0) {
-            res.send('no book exists');
-          } else {
-            res.json(result[0]);
-          }
-        });
-      });
-      //format: {"bookid": bookid, "title": book_title, "comments": [comment,comment,...]}
+
+  app
+    .route("/api/books/:id")
+    .get(async function (req, res) {
+      let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      const book = await BookModel.findOne({ _id: bookid });
+      if (!book) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      res.status(200).json(book);
     })
-    .post(function(req, res){
-      var bookid = req.params.id;
-      var oid = new ObjectId(bookid); //Must convert to mongo object id to search by it in db
-      var comment = req.body.comment;
-    
-      // Exit early if there is no comment
-      if (!comment) return res.send('missing comment');
-    
-      MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        expect(err, 'database error').to.not.exist;
-        const db = client.db('personal-library-v0');
-        const collection = db.collection('books');
-        collection.findOneAndUpdate(
-          {_id: oid},
-          {$push: { comments: comment }},
-          { returnOriginal: false },
-          function(err, result){
-            expect(err, 'database findAndModify error').to.not.exist;
-            res.json(result.value);
-          });
+
+    .post(async function (req, res) {
+      let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      let comment = req.body.comment;
+      if (!comment) {
+        res.status(200).send("missing required field comment");
+        return;
+      }
+      const book = await BookModel.findById(bookid, (err) => {
+        if (err) {
+          return undefined;
+        }
       });
+      if (!book) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      book.comments.push(comment);
+      book.commentcount++;
+      await book.save();
+      res.status(200).json(book);
     })
-    .delete(function(req, res){
-      var bookid = req.params.id;
-      var oid = new ObjectId(bookid); //Must convert to mongo object id to search by it in db
-      MongoClient.connect(MONGODB_CONNECTION_STRING, { useUnifiedTopology: true }, (err, client) => {
-        expect(err, 'database error').to.not.exist;
-        const db = client.db('personal-library-v0');
-        const collection = db.collection('books');
-        collection.findOneAndDelete({_id:oid}, function(err, result) {
-          expect(err, 'database findOneAndDelete error').to.not.exist;
-          expect(result, 'result error').to.exist;
-          res.send("delete successful");
-        });
-      });
+
+    .delete(async function (req, res) {
+      let bookid = req.params.id;
+      if (!Mongoose.Types.ObjectId.isValid(bookid)) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      const todelete = await BookModel.findOne({ _id: bookid });
+      if (!todelete) {
+        res.status(200).send("no book exists");
+        return;
+      }
+      const deleted = await BookModel.deleteOne({ _id: bookid });
+      res.status(200).send("delete successful");
     });
-  
 };

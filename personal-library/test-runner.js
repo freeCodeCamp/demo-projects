@@ -25,15 +25,15 @@
 *
 */
 
-var analyser = require('./assertion-analyser');
-var EventEmitter = require('events').EventEmitter;
+const analyser = require('./assertion-analyser');
+const EventEmitter = require('events').EventEmitter;
 
-var Mocha = require('mocha'),
+const Mocha = require('mocha'),
     fs = require('fs'),
     path = require('path');
 
-var mocha = new Mocha();
-var testDir = './tests'
+const mocha = new Mocha();
+const testDir = './tests'
 
 
 // Add each .js file to the mocha instance
@@ -47,21 +47,21 @@ fs.readdirSync(testDir).filter(function(file){
     );
 });
 
-var emitter = new EventEmitter();  
+let emitter = new EventEmitter();  
 emitter.run = function() {
 
-  var tests = [];
-  var context = "";
-  var separator = ' -> ';
+  let tests = [];
+  let context = "";
+  let separator = ' -> ';
   // Run the tests.
   try {
-  var runner = mocha.ui('tdd').run()
+  let runner = mocha.ui('tdd').run()
     .on('test end', function(test) {
         // remove comments
-        var body = test.body.replace(/\/\/.*\n|\/\*.*\*\//g, '');
+        let body = test.body.replace(/\/\/.*\n|\/\*.*\*\//g, '');
         // collapse spaces
         body = body.replace(/\s+/g,' ');
-        var obj = {
+        let obj = {
           title: test.title,
           context: context.slice(0, -separator.length),
           state: test.state,
