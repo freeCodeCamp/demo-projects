@@ -8,32 +8,35 @@
 
 'use strict';
 
-var expect = require('chai').expect;
-var ConvertHandler = require('../controllers/convertHandler.js');
+const expect = require('chai').expect;
+const ConvertHandler = require('../controllers/convertHandler.js');
 
 module.exports = function (app) {
-
-  var convertHandler = new ConvertHandler();
+  
+  let convertHandler = new ConvertHandler();
 
   app.route('/api/convert')
     .get(function (req, res){
-      var input = req.query.input;
-      var initNum = Number(convertHandler.getNum(input));
-      var initUnit = convertHandler.getUnit(input);
-      let unitInvalid=initUnit.match(/invalid/);
-      let noUnit=initUnit.match(/no/);
-    
-      if (typeof(initNum)!='number' || !initNum) {
-        if (unitInvalid) return res.status(400).json({error:'invalid number and unit'})
-        return res.status(400).json({error:'invalid number'})
-      } else if (unitInvalid) return res.status(400).json({error:'invalid unit'})
-      else if (noUnit) return res.status(400).json({error:'no unit'});
+      let input = req.query.input;
+      let initNum = convertHandler.getNum(input);
+      let initUnit = convertHandler.getUnit(input);
 
-      var returnNum = convertHandler.convert(initNum, initUnit);
-      var returnUnit = convertHandler.getReturnUnit(initUnit);
-      var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+      // Check for invalid inputs
+      if(!initNum || !initUnit) {
+        if(!initUnit && initNum) {
+          return res.send("invalid unit")
+        } else if(!initNum && initUnit) {
+          return res.send("invalid number")
+        }
+        return res.send('invalid number and unit')
+      }
 
-      return res.json({initNum,initUnit,returnNum,returnUnit,string:toString})
+
+      let returnNum = convertHandler.convert(initNum, initUnit);
+      let returnUnit = convertHandler.getReturnUnit(initUnit);
+      let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+
+      res.json({ initNum, initUnit, returnNum, returnUnit, string: toString});
     });
-
+    
 };
