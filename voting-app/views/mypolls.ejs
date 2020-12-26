@@ -7,9 +7,8 @@
   <% include ./navigation %>
 
   <div class="content-wrap">
-    <div class="element-wrap">
-      <h1 class="block">My Polls</h1><br>
-    
+    <h1 class="block">My Polls</h1><br>
+    <div class="element-wrap">    
       <% if (usersPolls) { %>    
         <% usersPolls.forEach(poll => { %>
           <h2><%= poll['question'] %></h2>
