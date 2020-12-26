@@ -31,8 +31,7 @@ module.exports = function(app) {
     });
 
     client.search(searchQuery, {size: sizes, page: pages}).then(images => {
-      console.log(images);
-        return res.json({images});
+      return res.json({images});
      });
   }
 
