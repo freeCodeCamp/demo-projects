@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<% include ./head %>
+  
+<body>
+  <% include ./navigation %>
+
+  <div class="content-wrap">
+    <% if (singlePoll) { %>
+     <% var options = JSON.stringify(singlePoll['options']) %>
+     <% var keys = Object.keys(JSON.parse(options)) %>
+       
+     <div class="poll-wrap">
+       <div class="poll-title">
+        <div><%= singlePoll['question'] %></div>
+        <div>Created by: <%= singlePoll['creator'] %></div>            
+       </div>
+    
+       <form class="form" enctype="x-www-form-urlencoded" action="/vote/<%= singlePoll['_id'] %>" method="post">
+        <div class="form-options">
+          <select name="voteOptions" class="form-select">
+            <% keys.forEach(key => { %>
+              <option value="<%- key %>"><%= key %></option>
+            <% }) %>
+              <option value="Add option">Add option</option>
+          </select> 
+          <input type="text" name="newOption" value="New option" disabled>
+        </div>
+        <input type="submit" value="Vote">
+      </form>
+       
+      <div class="chart-wrap">
+         <canvas class="chart" id="<%= singlePoll['_id'] %>"></canvas>
+
+        <script type="text/javascript">
+          var keys = Object.keys(<%- options %>);
+          var values = [];
+          var bgColor = [];
+          var colorSets = [
+            ['#000000','#4D0000','#800000','#B30000','#E60000','#FF1A1A','#FF4D4D','#FF8080','#FFB3B3','#FFFFFF'], //red
+            ['#000000','#4D3800','#805E00','#B38300','#E6A800','#FFC21A','#FFCF4D','#FFDD80','#FFEBB3','#FFFFFF'], //gold
+            ['#000000','#262626','#404040','#595959','#737373','#8C8C8C','#A6A6A6','#BFBFBF','#D9D9D9','#FFFFFF']  //black
+          ];
+          
+          var currentColor = Math.floor(Math.random() * 3);
+          var currentShade = Math.floor(Math.random() * 10);
+          
+          keys.forEach(key => {
+            values.push(<%- options %>[key]);          
+            bgColor.push(colorSets[currentColor][currentShade]);  
+            if(currentShade >= 9){
+              currentShade = 0;                
+            } else {
+              currentShade++;                
+            }
+          });
+          
+          new Chart(document.getElementById("<%- singlePoll['_id'] %>"), {
+              type: 'pie',
+              data: {
+                labels: keys,
+                datasets: [{
+                    backgroundColor: bgColor,
+                    borderColor: 'black',
+                    data: values
+                }]
+               },
+               options: {
+                 responsive: false,
+                legend: {
+                   display: true,
+                    labels: {
+                        fontColor: 'black'
+                    }
+                 }
+               }
+          });
+        </script>
+      </div>
+    </div>
+    
+    <% } %>
+  </div>
+
+  <% include ./footer %>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<% include ./head %>
+
+<body>
+  <% include ./navigation %>
+
+  <div class="content-wrap">
+    <div class="element-wrap">
+      <h1 class="block">My Polls</h1><br>
+    
+      <% if (usersPolls) { %>    
+        <% usersPolls.forEach(poll => { %>
+          <h2><%= poll['question'] %></h2>
+          <a href="/delete/<%= poll['_id'] %>" %>">Delete</a>
+          <a href="/share/<%= poll['_id'] %>">Share</a>
+         
+          <% for (var prop in poll['options']) { %>
+            <h4><%= prop +':'+ poll['options'][prop] %></h4>
+          <% } %>
+          <br>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+  
+  <% include ./footer %>
+</body>
+</html>

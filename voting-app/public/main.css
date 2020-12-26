@@ -1,0 +1,142 @@
+* {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100%;
+  background: linear-gradient(
+    to right,
+    black 10%,
+    red 10%,
+    red 11%,
+    black 11%,
+    black 80%,
+    #FFBA00 80%,
+    #FFBA00 85%,
+    black 85%,
+    black 86%,
+    red 86%,
+    red 90%,
+    black 90%
+  );
+}
+  
+.nav {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-variant: small-caps;
+  width: 100%;
+  height: 50px;
+  background-color: #FFBA00; 
+  border-bottom: 2px solid black;
+  position: fixed;
+  top: 0px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+ 
+.nav-btn {
+  margin: 0 10px 0 0;
+  align-self: flex-end;
+  font-size: 16px;
+  color: #000000;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid black;
+  -webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+  -moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+  -ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+  -o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+  transition: background 0.3s linear 0s, color 0.3s linear 0s;
+}
+    
+.nav-btn:hover { 
+  background-color: #CC0000;
+}
+   
+h1 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.content-wrap {
+  background-color: rgba(0,0,0,0);
+  padding: 15px;
+  margin: 80px 20px 20px 20px;
+}
+
+.element-wrap {
+  padding: 50px;
+  background-color: #aaa;
+  border: 2px solid black;
+}
+  
+.textarea {
+  resize: none;
+  min-height: 150px;
+  min-width: 30%;
+  max-width: 100%;
+}
+  
+.block {
+  display: block;
+}
+  
+.poll-wrap {
+  cursor: pointer;
+  color: black;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 25px;
+  background-color: #aaa;
+}
+
+.poll-title {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+   
+.form {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 300px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-options {
+  display: flex;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+.chart-wrap {
+  display:none;
+}
+
+.chart {
+  margin: 40px auto;
+  max-width: 80%;
+}
