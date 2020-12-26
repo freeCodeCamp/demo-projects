@@ -12,40 +12,40 @@ size.getElementsByTagName('option')[0].selected = 'selected';
 
 //enables fields based on what is selected
 function enableInputs() {
-	var selected = selection.options[selection.selectedIndex].value;
+  var selected = selection.options[selection.selectedIndex].value;
 
-	if(selected == "query") {
-		query.removeAttribute('disabled');
-		page.removeAttribute('disabled');
-		size.removeAttribute('disabled');
-		updateURL();
-	} else if(selected = "recent") {
-		query.setAttribute('disabled', "true");
-		page.setAttribute('disabled', "true");
-		size.setAttribute('disabled', "true");
-		updateURL();
-	}
+  if(selected == "query") {
+    query.removeAttribute('disabled');
+    page.removeAttribute('disabled');
+    size.removeAttribute('disabled');
+    updateURL();
+  } else if(selected = "recent") {
+    query.setAttribute('disabled', "true");
+    page.setAttribute('disabled', "true");
+    size.setAttribute('disabled', "true");
+    updateURL();
+  }
 }
 
 //changes the url displayed
 function updateURL() {
-	var url = "https://web-searcher.glitch.me/";
-	var selected = selection.options[selection.selectedIndex].value;
-	var queryValue = query.value;
-	var pageValue = page.value;
-	var sizeValue = size.value;
-	var queryTest = /\S/;
-	
-	if (selected == "query" && queryTest.test(queryValue)) {
-		url += 'query/' + queryValue + '?page=' +pageValue;
-		if(sizeValue != 'All') {
-			url += '&size=' + sizeValue;
-		}
-	}
-	if (selected == "recent") { url += 'recent/'; }
-	
+  var url = "https://web-searcher.glitch.me/";
+  var selected = selection.options[selection.selectedIndex].value;
+  var queryValue = query.value;
+  var pageValue = page.value;
+  var sizeValue = size.value;
+  var queryTest = /\S/;
   
-	urlDiv.innerHTML = url;
+  if (selected == "query" && queryTest.test(queryValue)) {
+    url += 'query/' + queryValue + '?page=' +pageValue;
+    if(sizeValue != 'All') {
+      url += '&size=' + sizeValue;
+    }
+  }
+  if (selected == "recent") { url += 'recent/'; }
+  
+  
+  urlDiv.innerHTML = url;
   urlDiv.setAttribute('href', url);
 }
 
