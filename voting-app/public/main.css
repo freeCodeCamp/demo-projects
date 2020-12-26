@@ -12,28 +12,28 @@ body {
   min-height: 100%;
   background: linear-gradient(
     to right,
-    black 10%,
-    red 10%,
-    red 11%,
-    black 11%,
-    black 80%,
-    #FFBA00 80%,
-    #FFBA00 85%,
-    black 85%,
-    black 86%,
-    red 86%,
-    red 90%,
-    black 90%
+    #f5f6f7 10%,
+    #0a0a23 10%,
+    #0a0a23 11%,
+    #f5f6f7 11%,
+    #f5f6f7 80%,
+    #d0d0d5 80%,
+     #d0d0d5 85%,
+    #f5f6f7 85%,
+    #f5f6f7 86%,
+    #0a0a23 86%,
+    #0a0a23 90%,
+     #f5f6f7 90%
   );
 }
   
 .nav {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-variant: small-caps;
+  color: #ffffff;
   width: 100%;
   height: 50px;
-  background-color: #FFBA00; 
-  border-bottom: 2px solid black;
+  background-color: #0a0a23;
   position: fixed;
   top: 0px;
   display: -webkit-box;
@@ -49,10 +49,10 @@ body {
   margin: 0 10px 0 0;
   align-self: flex-end;
   font-size: 16px;
-  color: #000000;
+  color: #ffffff;
   padding: 5px 10px;
   text-decoration: none;
-  border: 1px solid black;
+  border: 1px solid #ffffff;
   -webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
   -moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
   -ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
@@ -61,11 +61,11 @@ body {
 }
     
 .nav-btn:hover { 
-  background-color: #CC0000;
+  background-color: #3b3b4f;
 }
    
 h1 {
-  color: #aaa;
+  color: #0a0a23;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
@@ -78,8 +78,8 @@ h1 {
 
 .element-wrap {
   padding: 50px;
-  background-color: #aaa;
-  border: 2px solid black;
+  background-color: #d0d0d5;
+  border: 2px solid #0a0a23;
 }
   
 .textarea {
@@ -95,12 +95,12 @@ h1 {
   
 .poll-wrap {
   cursor: pointer;
-  color: black;
+  color: #0a0a23;
   margin: 10px;
-  border: 2px solid black;
+  border: 2px solid #0a0a23;
   border-radius: 7px;
   padding: 25px;
-  background-color: #aaa;
+  background-color: #d0d0d5;
 }
 
 .poll-title {

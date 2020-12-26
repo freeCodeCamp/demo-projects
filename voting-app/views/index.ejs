@@ -38,18 +38,18 @@
               var values = [];
               var bgColor = [];
               var colorSets = [
-                ['#000000','#4D0000','#800000','#B30000','#E60000','#FF1A1A','#FF4D4D','#FF8080','#FFB3B3','#FFFFFF'], //red
-                ['#000000','#4D3800','#805E00','#B38300','#E6A800','#FFC21A','#FFCF4D','#FFDD80','#FFEBB3','#FFFFFF'], //gold
-                ['#000000','#262626','#404040','#595959','#737373','#8C8C8C','#A6A6A6','#BFBFBF','#D9D9D9','#FFFFFF']  //black
+                ['#29004c', '#520198', '#6d01cb', '#941bfe', '#b867fe', '#dbb3ff'],
+                ['#fcf0cf', '#f7d988', '#f2c240', '#f0bb28', '#d7a10f', '#a77d0c'],
+                ['#00471b', '#008031', '#00b344', '#00e658', '#33ff81', '#80ffb0']
               ];
               
               var currentColor = Math.floor(Math.random() * 3);
-              var currentShade = Math.floor(Math.random() * 10);
+              var currentShade = Math.floor(Math.random() * 6);
               
               keys.forEach(key => {
                 values.push(<%- options %>[key]);          
                 bgColor.push(colorSets[currentColor][currentShade]);  
-                if(currentShade >= 9){
+                if(currentShade >= 6){
                   currentShade = 0;                
                 } else {
                   currentShade++;                
