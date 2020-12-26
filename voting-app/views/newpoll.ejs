@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<% include ./head %>
+
+<body>
+  <% include ./navigation %>
+  
+  <div class="content-wrap">
+    <div class="element-wrap">
+      <form enctype="x-www-form-urlencoded" action="/newpoll" method="post" id="newpoll">
+        Question: <input type="text" name="newquestion"><br>
+        Options (separated by commas):<br>
+        <textarea type="textarea" form="newpoll" class="textarea" name="newoptions"></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
+    
+      <a href="/mypolls">Cancel</a>
+    </div>
+  </div>
+</body>
+
+</html>

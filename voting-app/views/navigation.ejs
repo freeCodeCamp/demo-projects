@@ -1,0 +1,24 @@
+<div>
+   <% if (user) { %>
+    <div class="nav">
+      <div>&nbsp;&nbsp;Welcome To My Voting App, <%= user %></div>
+      <div class="logo"></div>
+      <div>
+          <a class="nav-btn" href="/">Home</a>
+          <a class="nav-btn" href="/mypolls">My Polls</a>
+          <a class="nav-btn" href="/newpoll">New Poll</a>
+          <a class="nav-btn" href="/logout">Log out</a>
+        </div>
+    </div>
+   <% } else { %>
+    <div class="nav">
+      <div>&nbsp;&nbsp;Welcome to my voting app</div>
+      <div class="logo"></div>
+      <div>
+          <a class="nav-btn" href="/">Home</a>
+          <a class="nav-btn" href="/login">Log in</a>
+          <a class="nav-btn" href="/signup">Sign up</a>
+        </div>
+    </div>
+   <% } %>
+</div>
