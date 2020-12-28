@@ -29,7 +29,7 @@ function enableInputs() {
 
 //changes the url displayed
 function updateURL() {
-  var url = "https://web-searcher.glitch.me/";
+  var url = "https://image-search-abstraction-layer.freecodecamp.rocks/";
   var selected = selection.options[selection.selectedIndex].value;
   var queryValue = query.value;
   var pageValue = page.value;
