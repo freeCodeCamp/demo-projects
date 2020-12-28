@@ -56,6 +56,18 @@
   - [Example project](https://secure-real-time-multiplayer-game.freecodecamp.rocks/)
 
 ## Coding Interview Prep
+* Build a Pinterest Clone
+  - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-pinterest-clone)
+  - [Example project](https://build-a-pinterest-clone.freecodecamp.rocks/)
+
+* Chart the Stock Market
+  - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/chart-the-stock-market)
+  - [Landing page](https://chart-the-stock-market.freecodecamp.rocks/)
+
+* Image Search Abstraction Layer
+  - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-an-image-search-abstraction-layer)
+  - [Landing page](https://image-search-abstraction-layer.freecodecamp.rocks/)
+
 * P2P Video Chat Application
   - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/p2p-video-chat-application)
   - [Example project](https://p2p-video-chat-application.freecodecamp.rocks/)
@@ -64,9 +76,9 @@
   - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/manage-a-book-trading-club)
   - [Example project](https://manage-a-book-trading-club.freecodecamp.rocks/)
 
-* Build a Pinterest Clone
-  - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-pinterest-clone)
-  - [Example project](https://build-a-pinterest-clone.freecodecamp.rocks/)
+* Voting App
+  - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-voting-app)
+  - [Landing page](https://voting-app.freecodecamp.rocks/)
 
 ## APIs and Proxies
 
