@@ -34,7 +34,7 @@
     - Copy the `sample.env`
     - Set `.env` variables
     - `npm install`
-	  - anything else
+    - anything else
   - Start the project with `pm2 start <server-file> —name <project-name> --max-memory-restart 200M`
 - Add the `https://<project>.freecodecamp.rocks` URL to our [Cloudflare](https://www.cloudflare.com/) by:
   - Going to our [Cloudflare Dashboard](https://dash.cloudflare.com/)
