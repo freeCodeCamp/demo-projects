@@ -66,6 +66,12 @@ class SudokuSolver {
     return [false, row, col];
   }
 
+  clearTargetCellInPuzzle(puzzleString, row, col) {
+    this.importString(puzzleString);
+    this._puzzle[row][col] = 0;
+    return this.exportString();
+  }
+
   importString(input) {
     this._puzzle = [];
     for (let row = 0; row < WIDTH; row++) {

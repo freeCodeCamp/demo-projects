@@ -35,9 +35,11 @@ module.exports = function (app) {
         return res.json({error: 'Invalid coordinate'})
       }
 
-      let rowCheck = solver.checkRowPlacement(req.body.puzzle, row, value);
-      let colCheck = solver.checkColPlacement(req.body.puzzle, col, value);
-      let regionCheck = solver.checkRegionPlacement(req.body.puzzle,
+      const puzzle = solver.clearTargetCellInPuzzle(req.body.puzzle, row, col);
+
+      let rowCheck = solver.checkRowPlacement(puzzle, row, value);
+      let colCheck = solver.checkColPlacement(puzzle, col, value);
+      let regionCheck = solver.checkRegionPlacement(puzzle,
         row - row % 3,
         col - col % 3,
         value);
