@@ -1,7 +1,7 @@
-*/.env
 node_modules
 .DS_Store
 .vscode/*
-stock-price-checker-proxy/cache/
-twitch-proxy/.data/
-twitch-proxy/.logs/
+.env
+apps/stock-price-checker-proxy/cache/
+apps/twitch-proxy/.data/
+apps/twitch-proxy/.logs/

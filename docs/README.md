@@ -1,4 +1,5 @@
 # Updating/Adding a demo project
+
 ## After a PR has been merged to the demo-projects repo:
 - SSH into the VM with `ssh freecodecamp@<ip>`
 - `cd` to the `demo-projects` folder
