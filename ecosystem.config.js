@@ -9,6 +9,15 @@ const applist = [
     env: {
       DB_URI: process.env.anonymous_message_board_DB_URI
     }
+  },
+  {
+    name: 'build-a-pinterest-clone',
+    env: {
+      GITHUB_KEY: process.env.build_a_pinterest_clone_GITHUB_KEY,
+      GITHUB_SECRET: process.env.build_a_pinterest_clone_GITHUB_SECRET,
+      DB_URI: process.env.build_a_pinterest_clone_DB_URI,
+      APP_URL: process.env.build_a_pinterest_clone_APP_URL
+    }
   }
 ];
 
