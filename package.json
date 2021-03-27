@@ -1,11 +1,16 @@
 {
-  "name": "root",
+  "name": "@freecodecamp/demo-projects",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "pm2": "^4.5.5"
   },
   "scripts": {
+    "postinstall": "npm run bootstrap",
     "bootstrap": "lerna bootstrap --ci",
-    "postinstall": "npm run bootstrap"
+    "start": "pm2 start ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js --update-env",
+    "stop": "pm2 stop ecosystem.config.js",
+    "delete": "pm2 delete ecosystem.config.js"
   }
 }
