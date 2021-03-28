@@ -18,6 +18,12 @@ const applist = [
       DB_URI: process.env.build_a_pinterest_clone_DB_URI,
       APP_URL: process.env.build_a_pinterest_clone_APP_URL
     }
+  },
+  {
+    name: 'chart-the-stock-market',
+    env: {
+      APP_URL: process.env.chart_the_stock_market_APIKEY
+    }
   }
 ];
 
