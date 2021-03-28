@@ -24,6 +24,12 @@ const applist = [
     env: {
       APP_URL: process.env.chart_the_stock_market_APIKEY
     }
+  },
+  {
+    name: 'exercise-tracker',
+    env: {
+      DB_URI: process.env.exercise_tracker_DB_URI
+    }
   }
 ];
 
