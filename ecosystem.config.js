@@ -30,6 +30,9 @@ const applist = [
     env: {
       DB_URI: process.env.exercise_tracker_DB_URI
     }
+  },
+  {
+    name: 'file-metadata-microservice'
   }
 ];
 
