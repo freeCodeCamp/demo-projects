@@ -33,6 +33,9 @@ const applist = [
   },
   {
     name: 'file-metadata-microservice'
+  },
+  {
+    name: 'forum-proxy'
   }
 ];
 
