@@ -36,6 +36,14 @@ const applist = [
   },
   {
     name: 'forum-proxy'
+  },
+  {
+    name: 'image-search-abstraction-layer',
+    env: {
+      DB_URI: process.env.image_search_abstraction_layer_DB_URI,
+      CSEID: process.env.image_search_abstraction_layer_CSEID,
+      APIKEY: process.env.image_search_abstraction_layer_APIKEY
+    }
   }
 ];
 
