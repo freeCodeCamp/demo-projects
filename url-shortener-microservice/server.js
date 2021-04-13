@@ -26,10 +26,7 @@ app.get('/', (req, res) => {
 // support legacy paths
 app.post(['/api/shorturl', '/api/shorturl/new'], urlHandler.addUrl);
 
-app.get(
-  ['/api/shorturl/:shurl', '/api/shorturl/:shurl'],
-  urlHandler.processShortUrl
-);
+app.get('/api/shorturl/:shurl', urlHandler.processShortUrl);
 
 // Answer not found to all the wrong routes
 app.use((req, res) => {
