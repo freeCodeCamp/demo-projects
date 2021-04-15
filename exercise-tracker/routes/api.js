@@ -3,7 +3,13 @@ const Exercises = require('../models/exercises');
 
 const router = require('express').Router();
 
-router.post('/new-user', (req, res, next) => {
+router.get('/users', (req, res, next) => {
+  Users.find({}, (err, data) => {
+    res.json(data)
+  })
+})
+
+router.post('/users', (req, res, next) => {
   const user = new Users(req.body);
   user.save((err, savedUser) => {
     if(err) {
@@ -25,8 +31,10 @@ router.post('/new-user', (req, res, next) => {
   })
 })
 
-router.post('/add', (req, res, next) => {
-  Users.findById(req.body.userId, (err, user) => {
+router.post('/users/:userId/exercises', (req, res, next) => {
+  const userId = req.url.split('/')[2];
+
+  Users.findById(userId, (err, user) => {
     if(err) return next(err)
     if(!user) {
       return next({
@@ -34,7 +42,8 @@ router.post('/add', (req, res, next) => {
         message: 'Unknown userId'
       })
     }
-    const exercise = new Exercises(req.body)
+
+    const exercise = new Exercises({...req.body, userId})
     exercise.username = user.username
     exercise.save((err, savedExercise) => {
       if(err) return next(err)
@@ -56,23 +65,19 @@ router.post('/add', (req, res, next) => {
   })
 })
 
-router.get('/users', (req, res, next) => {
-  Users.find({}, (err, data) => {
-    res.json(data)
-  })
-})
-router.get('/log', (req, res, next) => {
+router.get('/users/:userId/logs', (req, res, next) => {
+  const userId = req.url.split('/')[2];
   const from = new Date(req.query.from)
   const to = new Date(req.query.to)
 
-  Users.findById(req.query.userId, (err, user) => {
+  Users.findById(userId, (err, user) => {
     if(err) return next(err);
     if(!user) {
       return next({ status:400, message: 'Unknown userId' });
     }
     
     Exercises.find({
-      userId: req.query.userId,
+      userId: userId,
         date: {
           $lte: to != 'Invalid Date' ? to.toISOString() : Date.now() ,
           $gte: from != 'Invalid Date' ? from.toISOString() : 0
@@ -86,7 +91,7 @@ router.get('/log', (req, res, next) => {
     .exec((err, exercises) => {
       if(err) return next(err)
       const out = {
-          _id: req.query.userId,
+          _id: userId,
           username: user.username,
           from : from != 'Invalid Date' ? from.toDateString() : undefined,
           to : to != 'Invalid Date' ? to.toDateString(): undefined,

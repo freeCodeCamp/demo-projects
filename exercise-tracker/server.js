@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const mongoose = require('mongoose');
@@ -10,10 +9,9 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
 mongoose.connect(process.env.DB_URI || 'mongodb://localhost/exercise-track', { useNewUrlParser: true });
 
+app.use(express.urlencoded({'extended': false}));
+app.use(express.json());
 app.use(cors());
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 
 app.use(express.static('public'))
 app.get('/', (req, res) => {
@@ -21,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 const apiRouter = require('./routes/api');
-app.use('/api/exercise', apiRouter);
+app.use('/api', apiRouter);
 
 // Not found middleware
 app.use((req, res, next) => {
