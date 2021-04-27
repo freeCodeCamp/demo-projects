@@ -11,10 +11,12 @@ function ReplyHandler() {
       const collection = db.collection(board);
       collection.find({_id: new ObjectId(req.query.thread_id)},
       {
-        reported: 0,
-        delete_password: 0,
-        "replies.delete_password": 0,
-        "replies.reported": 0
+        projection: {
+          reported: 0,
+          delete_password: 0,
+          "replies.delete_password": 0,
+          "replies.reported": 0
+        }
       })
       .toArray((err, doc) => {
         res.json(doc[0]);
