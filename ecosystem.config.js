@@ -44,6 +44,12 @@ const applist = [
       CSEID: process.env.image_search_abstraction_layer_CSEID,
       APIKEY: process.env.image_search_abstraction_layer_APIKEY
     }
+  },
+  {
+    name: 'issue-tracker',
+    env: {
+      DB_URI: process.env.issue_tracker_DB_URI
+    }
   }
 ];
 
