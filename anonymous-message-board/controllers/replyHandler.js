@@ -26,10 +26,11 @@ function ReplyHandler() {
   
   this.newReply = function(req, res) {
     const board = req.params.board;
+    const now = new Date();
     const reply = {
       _id: new ObjectId(),
       text: req.body.text,
-      created_on: new Date(),
+      created_on: now,
       reported: false,
       delete_password: req.body.delete_password,
     };
@@ -39,7 +40,7 @@ function ReplyHandler() {
       collection.findOneAndUpdate(
         {_id: new ObjectId(req.body.thread_id)},
         {
-          $set: {bumped_on: new Date()},
+          $set: { bumped_on: now },
           $push: { replies: reply  }
         },
         (err, doc) => {
