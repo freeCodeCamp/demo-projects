@@ -63,7 +63,7 @@ function ThreadHandler() {
         {$set: {reported: true}},
         (err, doc) => {});
     });
-    res.send('reported');
+    res.send('success');
   };
   
   //check doc return to return right res

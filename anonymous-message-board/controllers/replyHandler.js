@@ -63,7 +63,7 @@ function ReplyHandler() {
         (err, doc) => {
         });
     });
-    res.send('reported');
+    res.send('success');
   };
   
   this.deleteReply = function(req, res) {

@@ -56,8 +56,6 @@ suite('Functional Tests', function() {
           assert.property(res.body[0], 'bumped_on');
           assert.property(res.body[0], 'text');
           assert.property(res.body[0], 'replies');
-          assert.property(res.body[0], 'reported');
-          assert.property(res.body[0], 'delete_password');
           assert.isArray(res.body[0].replies);
           assert.isBelow(res.body[0].replies.length, 4);
           testId = res.body[0]._id;
@@ -102,7 +100,7 @@ suite('Functional Tests', function() {
         .send({report_id:testId2})
         .end(function(err, res){
           assert.equal(res.status, 200);
-          assert.equal(res.text, 'reported');
+          assert.equal(res.text, 'success');
           done();
         });
       });
@@ -141,12 +139,10 @@ suite('Functional Tests', function() {
           assert.property(res.body, 'bumped_on');
           assert.property(res.body, 'text');
           assert.property(res.body, 'replies');
-          assert.property(res.body, 'delete_password');
-          assert.property(res.body, 'reported');
           assert.isArray(res.body.replies);
-          assert.property(res.body.replies[0], 'delete_password');
-          assert.property(res.body.replies[0], 'reported');
+          assert.property(res.body.replies[0], '_id');
           assert.equal(res.body.replies[0].text, 'a reply'+testText);
+          assert.property(res.body.replies[0], 'created_on');
           done();
         });
       });
@@ -161,7 +157,7 @@ suite('Functional Tests', function() {
         .send({thread_id:testId2 ,reply_id:testId2})
         .end(function(err, res){
           assert.equal(res.status, 200);
-          assert.equal(res.text, 'reported');
+          assert.equal(res.text, 'success');
           done();
         });
       });
