@@ -19,7 +19,8 @@ module.exports = function (app) {
     .get(function (req, res){
       var stock = req.query.stock;
       var like = req.query.like || false;
-      var reqIP = req.get('x-forwarded-for')?.split(",")[0] || req.ip?.split(",")[0];
+      var requestIP = req.get('x-forwarded-for') || req.ip;
+      var reqIP = requestIP.split(",")[0];
       var stockData = null;
       var likeData = null;
       var multiple = false;
