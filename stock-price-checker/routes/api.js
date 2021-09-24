@@ -19,7 +19,10 @@ module.exports = function (app) {
     .get(function (req, res){
       var stock = req.query.stock;
       var like = req.query.like || false;
-      var reqIP = req.connection.remoteAddress;
+      var requestIP = req.get('x-forwarded-for') || req.ip;
+      var reqIP = requestIP.split(",")[0];
+      reqIP = reqIP.replace(/\.\d*$/, '.0'); // ipv4
+      reqIP = reqIP.replace(/[\da-f]*:[\da-f]*$/i, '0:0'); // ipv6
       var stockData = null;
       var likeData = null;
       var multiple = false;
