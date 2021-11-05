@@ -14,7 +14,8 @@ const updateApiKey = async () => {
     .catch(err => console.log(err));
 
   // Write new file with updated token
-  fs.writeFileSync(envFilePath, `TWITCH_CLIENT_ID=${TWITCH_CLIENT_ID}
+  fs.writeFileSync(envFilePath, `PORT=${PORT}
+TWITCH_CLIENT_ID=${TWITCH_CLIENT_ID}
 TWITCH_CLIENT_SECRET=${TWITCH_CLIENT_SECRET}
 # Expires in ~60 days
 ACCESS_TOKEN=${keyObj.access_token}
