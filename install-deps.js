@@ -14,7 +14,7 @@ const workspaces = [
   "issue-tracker",
   "manage-a-book-trading-club",
   "metric-imperial-converter",
-  "nightlife-coordination-app",
+  // "nightlife-coordination-app" - uncomment when this is ported,
   "p2p-video-chat-application",
   "personal-library",
   "request-header-parser-microservice",
