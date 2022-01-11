@@ -1,0 +1,44 @@
+{
+  "name": "@freecodecamp/demo-projects",
+  "version": "0.0.0",
+  "description": "Example projects for the freeCodeCamp.org curriculum",
+  "workspaces": [
+    "american-british-translator",
+    "anonymous-message-board",
+    "build-a-pinterest-clone",
+    "chart-the-stock-market",
+    "exercise-tracker",
+    "file-metadata-service",
+    "forum-proxy",
+    "image-search-abstraction-layer",
+    "issue-tracker",
+    "manage-a-book-trading-club",
+    "metric-imperial-converter",
+    "nightlife-coordination-app",
+    "p2p-video-chat-application",
+    "personal-library",
+    "request-header-parser-microservice",
+    "secure-real-time-multiplayer-game",
+    "stock-price-checker",
+    "stock-price-checker-proxy",
+    "sudoku-solver",
+    "timestamp-microservice",
+    "twitch-proxy",
+    "url-shortener-microservice",
+    "voting-app",
+    "weather-proxy"
+  ],
+  "scripts": {
+    "test": "npm-run-all -s test:*",
+    "test:american-british-translator": "cd american-british-translator && npm run test",
+    "test:anonymous-message-board": "DB_URI='mongodb://localhost:27017/message-board' cd anonymous-message-board && npm run test",
+    "test:issue-tracker": "DB='mongodb://localhost:27017/issue-tracker' cd issue-tracker && npm run test",
+    "test:manage-a-book-trading-club": "MONGO_URI='mongodb://localhost:27017/book-club' cd manage-a-book-trading-club && npm run test",
+    "test:personal-library": "DB='mongodb://localhost:27017/library' cd personal-library && npm run test",
+    "test:secure-real-time-multiplayer-game": "cd secure-real-time-multiplayer-game && npm run test",
+    "test:sudoku-solver": "cd sudoku-solver && npm run test"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
