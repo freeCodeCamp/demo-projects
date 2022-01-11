@@ -14,7 +14,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.2",
-    "connect-mongo": "^2.0.0",
+    "connect-mongo": "^3.0.0",
     "dotenv": "^8.2.0",
     "express": "^5.0.0-alpha.2",
     "express-babelify-middleware": "^0.2.1",

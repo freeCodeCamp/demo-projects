@@ -18,6 +18,6 @@
     "express": "^4.15.3",
     "google-images": "^2.1.0",
     "moment": "^2.18.1",
-    "mongodb": "^2.2.30"
+    "mongodb": "^3.0.0"
   }
 }
