@@ -141,6 +141,11 @@ suite('Functional Tests', function() {
           assert.property(res.body, 'bumped_on');
           assert.property(res.body, 'text');
           assert.property(res.body, 'replies');
+          /**
+           * The current implementation doesn't send these back in the response.
+           * These are disabled for now, but we may want to look in to whether or not
+           * we want to send these back in the future.
+           */
           // assert.property(res.body, 'delete_password');
           // assert.property(res.body, 'reported');
           assert.isArray(res.body.replies);
