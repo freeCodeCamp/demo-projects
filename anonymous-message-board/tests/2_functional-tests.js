@@ -135,7 +135,6 @@ suite('Functional Tests', function() {
         .get('/api/replies/fcc-test')
         .query({thread_id: testId2})
         .end(function(err, res){
-          console.log(res.body);
           assert.equal(res.status, 200);
           assert.property(res.body, '_id');
           assert.property(res.body, 'created_on');
