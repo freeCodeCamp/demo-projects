@@ -8,6 +8,7 @@
     "test:american-british-translator": "cd american-british-translator && npm run test",
     "test:anonymous-message-board": "cd anonymous-message-board && cp sample.env .env && npm run test",
     "test:exercise-tracker": "cd exercise-tracker && cp sample.env .env && npm run test",
+    "test:file-metadata-microservice": "cd file-metadata-microservice && npm run test",
     "test:issue-tracker": "cd issue-tracker && cp sample.env .env && npm run test",
     "test:manage-a-book-trading-club": "cd manage-a-book-trading-club && cp sample.env .env && npm run test",
     "test:metric-imperial-converter": "cd metric-imperial-converter && npm run test",
