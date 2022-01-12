@@ -5,6 +5,8 @@ const Request = require('../app/models/Request');
 // Users
 const alice = {
   username: 'alice',
+  provider: 'google',
+  providerId: '1',
   google: {
     id: '1',
     username: 'googleAlice',
@@ -16,6 +18,8 @@ const alice = {
 
 const bob = {
   username: 'bob',
+  provider: 'github',
+  providerId: '1',
   github: {
     id: '1',
     username: 'githubBob',
@@ -27,6 +31,8 @@ const bob = {
 
 const charlie = {
   username: 'charlie',
+  provider: 'github',
+  providerId: '1',
   github: {
     id: '2',
     username: 'githubChuck',

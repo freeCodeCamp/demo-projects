@@ -13,7 +13,7 @@ const {
 const user = testData.users[0];
 const loggedInNavText = [
   'Logout',
-  `>${user.username}</a>`,
+  `>${user.username} <span`,
   'href="/users/',
   'My Books',
 ];
@@ -55,11 +55,11 @@ describe('Navbar', () => {
     );
     notLoggedInNavText.concat(alwaysNavText).forEach((text) => {
       it(`should contain ${text}`, () =>
-        response.text.should.contain(text));
+        response.text.match(/<nav(.*)<\/nav>/)[0].should.contain(text));
     });
     loggedInNavText.forEach((text) => {
       it(`should not contain ${text}`, () =>
-        response.text.should.not.contain(text));
+        response.text.match(/<nav(.*)<\/nav>/)[0].should.not.contain(text));
     });
   });
 });
