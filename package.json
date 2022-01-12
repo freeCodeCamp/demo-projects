@@ -22,7 +22,12 @@
     "test:url-shortener-microservice": "cd url-shortener-microservice && cp sample.env .env && npm run test",
     "__comment": "These don't currently have actual tests, but will assert the server starts.",
     "pretest:build-a-pinterest-clone": "cd build-a-pinterest-clone && cp sample.env .env",
-    "test:build-a-pinterest-clone": "node test-server-starts.js build-a-pinterest-clone"
+    "test:build-a-pinterest-clone": "node test-server-starts.js build-a-pinterest-clone",
+    "test:chart-the-stock-market": "node test-server-starts.js chart-the-stock-market",
+    "test:image-search-abstraction-layer": "node test-server-starts.js image-search-abstraction-layer",
+    "test:p2p-video-chat-application": "node test-server-starts.js p2p-video-chat-application",
+    "pretest:voting-app": "cd voting-app && cp sample.env .env",
+    "test:voting-app": "node test-server-starts.js voting-app"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",
