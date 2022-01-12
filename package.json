@@ -13,6 +13,7 @@
     "test:manage-a-book-trading-club": "cd manage-a-book-trading-club && cp sample.env .env && npm run test",
     "test:metric-imperial-converter": "cd metric-imperial-converter && npm run test",
     "test:personal-library": "cd personal-library && cp sample.env .env && npm run test",
+    "test:request-header-parser-microservice": "cd request-header-parser-microservice && npm run test",
     "test:secure-real-time-multiplayer-game": "cd secure-real-time-multiplayer-game && npm run test",
     "test:stock-price-checker": "cd stock-price-checker && cp sample.env .env && npm run test",
     "test:sudoku-solver": "cd sudoku-solver && npm run test"
