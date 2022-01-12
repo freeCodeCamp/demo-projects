@@ -19,10 +19,15 @@
     "test:stock-price-checker": "cd stock-price-checker && cp sample.env .env && npm run test",
     "test:sudoku-solver": "cd sudoku-solver && npm run test",
     "test:timestamp-microservice": "cd timestamp-microservice && npm run test",
-    "test:url-shortener-microservice": "cd url-shortener-microservice && cp sample.env .env && npm run test"
+    "test:url-shortener-microservice": "cd url-shortener-microservice && cp sample.env .env && npm run test",
+    "__comment": "These don't currently have actual tests, but will assert the server starts.",
+    "pretest:build-a-pinterest-clone": "cd build-a-pinterest-clone && cp sample.env .env",
+    "test:build-a-pinterest-clone": "node test-server-starts.js build-a-pinterest-clone"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "concurrently": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "wait-port": "^0.2.9"
   },
   "dependencies": {}
 }
