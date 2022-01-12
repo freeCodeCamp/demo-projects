@@ -32,6 +32,6 @@ const workspaces = [
 (async () => {
   for (const workspace of workspaces) {
     console.log(`Installing: ${workspace}`);
-    await asyncExec(`cd ${workspace} && npm install`);
+    await asyncExec(`cd ${workspace} && npm ci`);
   }
 })();
