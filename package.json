@@ -17,7 +17,8 @@
     "test:secure-real-time-multiplayer-game": "cd secure-real-time-multiplayer-game && npm run test",
     "test:stock-price-checker": "cd stock-price-checker && cp sample.env .env && npm run test",
     "test:sudoku-solver": "cd sudoku-solver && npm run test",
-    "test:timestamp-microservice": "cd timestamp-microservice && npm run test"
+    "test:timestamp-microservice": "cd timestamp-microservice && npm run test",
+    "test:url-shortener-microservice": "cd url-shortener-microservice && cp sample.env .env && npm run test"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
