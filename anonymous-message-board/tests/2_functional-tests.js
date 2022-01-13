@@ -58,8 +58,6 @@ suite('Functional Tests', function() {
           assert.property(res.body[0], 'bumped_on');
           assert.property(res.body[0], 'text');
           assert.property(res.body[0], 'replies');
-          // assert.property(res.body[0], 'reported');
-          // assert.property(res.body[0], 'delete_password');
           assert.isArray(res.body[0].replies);
           assert.isBelow(res.body[0].replies.length, 4);
           done();
@@ -141,16 +139,7 @@ suite('Functional Tests', function() {
           assert.property(res.body, 'bumped_on');
           assert.property(res.body, 'text');
           assert.property(res.body, 'replies');
-          /**
-           * The current implementation doesn't send these back in the response.
-           * These are disabled for now, but we may want to look in to whether or not
-           * we want to send these back in the future.
-           */
-          // assert.property(res.body, 'delete_password');
-          // assert.property(res.body, 'reported');
           assert.isArray(res.body.replies);
-          // assert.property(res.body.replies[0], 'delete_password');
-          // assert.property(res.body.replies[0], 'reported');
           assert.equal(res.body.replies[0].text, 'a reply'+testText);
           done();
         });
