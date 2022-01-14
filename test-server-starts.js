@@ -25,7 +25,7 @@ const test = async () => {
  */
 test()
   .then((result) => {
-    console.log(result);
+    console.log('Successfully started', process.argv[2])
     process.exit(0);
   })
   .catch((err) => {
