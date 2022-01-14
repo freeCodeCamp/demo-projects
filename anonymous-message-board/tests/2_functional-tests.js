@@ -48,6 +48,8 @@ suite('Functional Tests', function() {
         chai.request(server)
         .get('/api/threads/fcc-test')
         .end(function(err, res) {
+          testId = res.body[0]._id;
+          testId2 = res.body[1]._id;
           assert.equal(res.status, 200);
           assert.isArray(res.body);
           assert.isBelow(res.body.length, 11);
@@ -56,12 +58,8 @@ suite('Functional Tests', function() {
           assert.property(res.body[0], 'bumped_on');
           assert.property(res.body[0], 'text');
           assert.property(res.body[0], 'replies');
-          assert.property(res.body[0], 'reported');
-          assert.property(res.body[0], 'delete_password');
           assert.isArray(res.body[0].replies);
           assert.isBelow(res.body[0].replies.length, 4);
-          testId = res.body[0]._id;
-          testId2 = res.body[1]._id;
           done();
         });
       });
@@ -141,11 +139,7 @@ suite('Functional Tests', function() {
           assert.property(res.body, 'bumped_on');
           assert.property(res.body, 'text');
           assert.property(res.body, 'replies');
-          assert.property(res.body, 'delete_password');
-          assert.property(res.body, 'reported');
           assert.isArray(res.body.replies);
-          assert.property(res.body.replies[0], 'delete_password');
-          assert.property(res.body.replies[0], 'reported');
           assert.equal(res.body.replies[0].text, 'a reply'+testText);
           done();
         });

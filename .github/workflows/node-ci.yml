@@ -1,0 +1,32 @@
+name: Node.js CI
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ci:
+    name: Lint / Build / Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Start database
+        uses: supercharge/mongodb-github-action@1.6.0
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm run test-local-or-ci

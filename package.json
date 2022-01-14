@@ -1,0 +1,39 @@
+{
+  "name": "@freecodecamp/demo-projects",
+  "version": "0.0.0",
+  "description": "Example projects for the freeCodeCamp.org curriculum",
+  "scripts": {
+    "postinstall": "node install-deps.js",
+    "test": "echo 'The test suite is meant to run locally or in a CI environment. \u001b[31mDo NOT run this in production.\u001b[37m If you intend to run the tests, use \"npm run test-local-or-ci\".'",
+    "test-local-or-ci": "npm-run-all -s test:*",
+    "test:american-british-translator": "cd american-british-translator && npm run test",
+    "test:anonymous-message-board": "cd anonymous-message-board && cp sample.env .env && npm run test",
+    "test:exercise-tracker": "cd exercise-tracker && cp sample.env .env && npm run test",
+    "test:file-metadata-microservice": "cd file-metadata-microservice && npm run test",
+    "test:forum-proxy": "cd forum-proxy && npm run test",
+    "test:issue-tracker": "cd issue-tracker && cp sample.env .env && npm run test",
+    "test:manage-a-book-trading-club": "cd manage-a-book-trading-club && cp sample.env .env && npm run test",
+    "test:metric-imperial-converter": "cd metric-imperial-converter && npm run test",
+    "test:personal-library": "cd personal-library && cp sample.env .env && npm run test",
+    "test:request-header-parser-microservice": "cd request-header-parser-microservice && npm run test",
+    "test:secure-real-time-multiplayer-game": "cd secure-real-time-multiplayer-game && npm run test",
+    "test:stock-price-checker": "cd stock-price-checker && cp sample.env .env && npm run test",
+    "test:sudoku-solver": "cd sudoku-solver && npm run test",
+    "test:timestamp-microservice": "cd timestamp-microservice && npm run test",
+    "test:url-shortener-microservice": "cd url-shortener-microservice && cp sample.env .env && npm run test",
+    "__comment": "These don't currently have actual tests, but will assert the server starts.",
+    "pretest:build-a-pinterest-clone": "cd build-a-pinterest-clone && cp sample.env .env",
+    "test:build-a-pinterest-clone": "node test-server-starts.js build-a-pinterest-clone",
+    "test:chart-the-stock-market": "node test-server-starts.js chart-the-stock-market",
+    "test:image-search-abstraction-layer": "node test-server-starts.js image-search-abstraction-layer",
+    "test:p2p-video-chat-application": "node test-server-starts.js p2p-video-chat-application",
+    "pretest:voting-app": "cd voting-app && cp sample.env .env",
+    "test:voting-app": "node test-server-starts.js voting-app"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "wait-port": "^0.2.9"
+  },
+  "dependencies": {}
+}

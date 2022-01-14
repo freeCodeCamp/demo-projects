@@ -4,12 +4,16 @@
 	"description": "API project for freeCodeCamp",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node server.js",
+		"test": "PORT=3005 mocha --exit --ui tdd tests/"
 	},
 	"dependencies": {
+		"chai": "^4.3.4",
+		"chai-http": "^4.3.0",
 		"cors": "^2.8.1",
 		"dotenv": "^8.2.0",
 		"express": "^5.0.0-alpha.2",
+		"mocha": "^7.2.0",
 		"multer": "^1.1.0"
 	},
 	"engines": {

@@ -33,11 +33,11 @@ describe('Books controller', () => {
     );
   });
 
-  describe('GET /mybooks when logged in', () => {
+  describe('GET /books/my when logged in', () => {
     let res;
     before(() =>
       chai.request(mockApp)
-        .get('/mybooks')
+        .get('/books/my')
         .then((response) => { res = response; }),
     );
 
@@ -45,7 +45,7 @@ describe('Books controller', () => {
       res.should.have.status(200);
       // eslint-disable-next-line no-unused-expressions
       res.should.not.redirect;
-      res.req.path.should.equal('/mybooks');
+      res.req.path.should.equal('/books/my');
       res.text.should.contain('form');
     });
   });

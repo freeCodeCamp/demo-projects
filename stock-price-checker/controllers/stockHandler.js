@@ -5,7 +5,7 @@
  *
  *
  */
-
+require('dotenv').config();
 const MongoClient = require('mongodb');
 const CONNECTION_STRING = process.env.DB_URI;
 const request = require('request');
