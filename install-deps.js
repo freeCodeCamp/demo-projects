@@ -29,9 +29,7 @@ const workspaces = [
   "weather-proxy",
 ];
 
-(async () => {
-  for (const workspace of workspaces) {
-    console.log(`Installing: ${workspace}`);
-    await asyncExec(`cd ${workspace} && npm ci`);
-  }
-})();
+for (const workspace of workspaces) {
+  console.log(`Installing: ${workspace}`);
+  asyncExec(`cd ${workspace} && npm ci`);
+}
