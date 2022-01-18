@@ -23,8 +23,8 @@
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
     "passport-twitter": "^1.0.4",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-masonry-component": "^6.0.1"
   }
 }
