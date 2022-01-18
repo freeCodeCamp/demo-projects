@@ -44,16 +44,15 @@ module.exports = function(app) {
       var collection = db.collection('searches');
 
       collection.find( {}, { _id:0 } ).toArray(function(err, result) {
-        if(err) {
-          return res.send(err);
-        } else if (result.length) {
+        db.close();
+        if (err) return res.send(err);
+        
+        if (result.length) {
           return res.json(result);
         } else {
           return res.send('No Documents Found.');        
         }
       });
-
-      db.close();
     });
   }
 };
