@@ -13,7 +13,7 @@
 		"cors": "^2.8.1",
 		"dotenv": "^8.2.0",
 		"express": "^5.0.0-alpha.2",
-		"mocha": "^7.2.0"
+		"mocha": "^9.1.4"
 	},
 	"engines": {
 		"node": "4.4.5"
