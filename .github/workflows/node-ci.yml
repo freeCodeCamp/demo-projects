@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12, 14, 16]
+      fail-fast: false
 
     steps:
       - name: Checkout Source Files
