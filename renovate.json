@@ -6,6 +6,7 @@
   "major": {
     "dependencyDashboardApproval": true
   },
+  "rangeStrategy": "pin",
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
