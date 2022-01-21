@@ -6,9 +6,9 @@
 - `git pull origin master` to add the new changes
 
 ## If updating a project:
-- If needed: `cd` into the project folder
+- If needed: update packages
   - Make sure the environment variables are set
-  - `npm install` to add new modules
+  - `npm ci -w=project-name` to update modules
   - anything else needed
 - `pm2 list` to find the id of the project to restart
 
