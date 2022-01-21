@@ -28,19 +28,19 @@
     "mocha": "8.4.0"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "connect-flash": "^0.1.1",
-    "connect-mongo": "^2.0.0",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^4.0.0",
-    "express": "^4.16.2",
-    "express-session": "^1.15.6",
-    "font-awesome": "^4.7.0",
-    "helmet": "^3.9.0",
-    "mongoose": "^5.10.0",
-    "morgan": "^1.9.0",
-    "passport": "^0.4.0",
-    "passport-github": "^1.1.0",
+    "body-parser": "1.19.1",
+    "connect-flash": "0.1.1",
+    "connect-mongo": "2.0.3",
+    "cookie-parser": "1.4.6",
+    "dotenv": "4.0.0",
+    "express": "4.17.2",
+    "express-session": "1.17.2",
+    "font-awesome": "4.7.0",
+    "helmet": "3.23.3",
+    "mongoose": "5.13.14",
+    "morgan": "1.10.0",
+    "passport": "0.4.1",
+    "passport-github": "1.1.0",
     "pug": "^2.0.0-rc.2"
   }
 }
