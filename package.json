@@ -30,9 +30,9 @@
     "test:voting-app": "node test-server-starts.js voting-app"
   },
   "devDependencies": {
-    "concurrently": "^7.0.0",
-    "npm-run-all": "^4.1.5",
-    "wait-port": "^0.2.9"
+    "concurrently": "7.0.0",
+    "npm-run-all": "4.1.5",
+    "wait-port": "0.2.9"
   },
   "dependencies": {},
   "workspaces": [

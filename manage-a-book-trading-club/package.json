@@ -18,14 +18,14 @@
   },
   "homepage": "https://github.com/Motardo/book-exchange#readme",
   "devDependencies": {
-    "chai": "^4.1.0",
-    "chai-as-promised": "^7.1.1",
-    "chai-dom": "^1.5.0",
-    "chai-http": "^3.0.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.4.2"
+    "chai": "4.3.4",
+    "chai-as-promised": "7.1.1",
+    "chai-dom": "1.11.0",
+    "chai-http": "4.3.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb-base": "11.3.2",
+    "eslint-plugin-import": "2.25.4",
+    "mocha": "8.4.0"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
