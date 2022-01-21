@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "dotenv": "^8.2.0",
-    "ejs": "^2.5.7",
-    "express": "^4.15.3",
-    "mongodb": "^2.2.30"
+    "body-parser": "1.19.1",
+    "dotenv": "8.6.0",
+    "ejs": "2.7.4",
+    "express": "4.17.2",
+    "mongodb": "2.2.36"
   }
 }

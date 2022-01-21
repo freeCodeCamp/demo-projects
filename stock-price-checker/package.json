@@ -11,17 +11,17 @@
     "test": "PORT=3005 mocha --exit --ui tdd tests/"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "chai": "^4.3.4",
-    "chai-http": "^3.0.0",
-    "cors": "^2.8.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.14.0",
-    "helmet": "^3.21.0",
-    "mocha": "^3.2.0",
-    "mongodb": "^3.5.7",
-    "request": "^2.88.2",
-    "zombie": "^5.0.5"
+    "body-parser": "1.19.1",
+    "chai": "4.3.4",
+    "chai-http": "3.0.0",
+    "cors": "2.8.5",
+    "dotenv": "8.6.0",
+    "express": "4.17.2",
+    "helmet": "3.23.3",
+    "mocha": "3.5.3",
+    "mongodb": "3.7.3",
+    "request": "2.88.2",
+    "zombie": "5.0.8"
   },
   "engines": {
     "node": "10.15.3"
