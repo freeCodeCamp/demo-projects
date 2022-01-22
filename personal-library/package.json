@@ -19,9 +19,6 @@
 		"mongoose": "5.13.14",
 		"zombie": "5.0.8"
 	},
-	"engines": {
-		"node": "12.22.9"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/freeCodeCamp/demo-projects"

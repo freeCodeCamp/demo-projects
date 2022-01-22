@@ -15,8 +15,5 @@
     "winston": "3.4.0",
     "winston-daily-rotate-file": "3.10.0"
   },
-  "engines": {
-    "node": "10.24.1"
-  },
   "license": "MIT"
 }
