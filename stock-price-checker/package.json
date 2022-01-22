@@ -24,7 +24,7 @@
     "zombie": "5.0.8"
   },
   "engines": {
-    "node": "10.24.1"
+    "node": "10.15.3"
   },
   "repository": {
     "type": "git",
