@@ -23,9 +23,6 @@
     "request": "2.88.2",
     "zombie": "5.0.8"
   },
-  "engines": {
-    "node": "10.24.1"
-  },
   "repository": {
     "type": "git",
     "url": "https://hyperdev.com/#!/project/welcome-project"

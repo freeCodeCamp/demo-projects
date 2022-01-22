@@ -15,9 +15,6 @@
 		"express": "5.0.0-alpha.8",
 		"mocha": "7.2.0"
 	},
-	"engines": {
-		"node": "4.9.1"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://hyperdev.com/#!/project/welcome-project"

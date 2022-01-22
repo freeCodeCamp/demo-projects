@@ -27,7 +27,7 @@ jobs:
         run: npm i -g npm@8
 
       - name: Start database
-        uses: supercharge/mongodb-github-action@1.7.0
+        uses: supercharge/mongodb-github-action@1.6.0
 
       - name: Install Dependencies
         run: npm ci
