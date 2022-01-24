@@ -19,7 +19,7 @@
     "express": "4.17.2",
     "helmet": "3.23.3",
     "jsdom": "16.7.0",
-    "mocha": "9.1.4",
+    "mocha": "9.2.0",
     "nodemon": "2.0.15",
     "socket.io": "2.4.1",
     "socket.io-client": "2.4.0"
