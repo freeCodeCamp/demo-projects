@@ -4,19 +4,17 @@
 	"description": "Metric / Imperial Unit Converter",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node server.js",
+		"test": "PORT=3005 mocha --exit --ui tdd tests/"
 	},
 	"dependencies": {
-		"body-parser": "^1.19.0",
-		"chai": "^4.2.0",
-		"chai-http": "^4.3.0",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"mocha": "^8.1.3"
-	},
-	"engines": {
-		"node": "12.*"
+		"body-parser": "1.19.1",
+		"chai": "4.3.4",
+		"chai-http": "4.3.0",
+		"cors": "2.8.5",
+		"dotenv": "8.6.0",
+		"express": "4.17.2",
+		"mocha": "9.2.0"
 	},
 	"repository": {
 		"type": "git",

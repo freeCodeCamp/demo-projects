@@ -28,3 +28,5 @@ const portNum = process.env.PORT || 3000;
 const listener = app.listen(portNum, function() {
   console.log(`Your app is listening on port ${portNum}`);
 });
+
+module.exports = app;

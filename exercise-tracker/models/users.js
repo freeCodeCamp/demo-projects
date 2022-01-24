@@ -6,7 +6,7 @@ const Users = new Schema({
     type: String, 
     required: true,
     unique: true,
-    maxlength: [20, 'username too long']
+    maxlength: [30, 'username too long']
   }
 });
 

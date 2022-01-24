@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha --exit --ui tdd test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -18,29 +18,29 @@
   },
   "homepage": "https://github.com/Motardo/book-exchange#readme",
   "devDependencies": {
-    "chai": "^4.1.0",
-    "chai-as-promised": "^7.1.1",
-    "chai-dom": "^1.5.0",
-    "chai-http": "^3.0.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.4.2"
+    "chai": "4.3.4",
+    "chai-as-promised": "7.1.1",
+    "chai-dom": "1.11.0",
+    "chai-http": "4.3.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb-base": "11.3.2",
+    "eslint-plugin-import": "2.25.4",
+    "mocha": "9.2.0"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "connect-flash": "^0.1.1",
-    "connect-mongo": "^2.0.0",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^4.0.0",
-    "express": "^4.16.2",
-    "express-session": "^1.15.6",
-    "font-awesome": "^4.7.0",
-    "helmet": "^3.9.0",
-    "mongoose": "^5.10.0",
-    "morgan": "^1.9.0",
-    "passport": "^0.4.0",
-    "passport-github": "^1.1.0",
+    "body-parser": "1.19.1",
+    "connect-flash": "0.1.1",
+    "connect-mongo": "2.0.3",
+    "cookie-parser": "1.4.6",
+    "dotenv": "4.0.0",
+    "express": "4.17.2",
+    "express-session": "1.17.2",
+    "font-awesome": "4.7.0",
+    "helmet": "3.23.3",
+    "mongoose": "5.13.14",
+    "morgan": "1.10.0",
+    "passport": "0.4.1",
+    "passport-github": "1.1.0",
     "pug": "^2.0.0-rc.2"
   }
 }

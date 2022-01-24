@@ -47,6 +47,8 @@ suite("Functional Tests", function () {
           .request(server)
           .get("/api/threads/fcc-test")
           .end(function (err, res) {
+            testId = res.body[0]._id;
+            testId2 = res.body[1]._id;
             assert.equal(res.status, 200);
             assert.isArray(res.body);
             assert.isBelow(res.body.length, 11);
@@ -57,8 +59,6 @@ suite("Functional Tests", function () {
             assert.property(res.body[0], "replies");
             assert.isArray(res.body[0].replies);
             assert.isBelow(res.body[0].replies.length, 4);
-            testId = res.body[0]._id;
-            testId2 = res.body[1]._id;
             done();
           });
       });

@@ -7,10 +7,10 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "cors": "^2.8.4",
-    "dotenv": "^8.2.0",
-    "express": "^4.15.3",
+    "cors": "2.8.5",
+    "dotenv": "8.6.0",
+    "express": "4.17.2",
     "got": "7.1.0",
-    "request": "^2.81.0"
+    "request": "2.88.2"
   }
 }
