@@ -7,6 +7,10 @@
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
+    "start": "pm2 start ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js --update-env",
+    "stop": "pm2 stop ecosystem.config.js",
+    "delete": "pm2 delete ecosystem.config.js",
     "test": "echo 'The test suite is meant to run locally or in a CI environment. \u001b[31mDo NOT run this in production.\u001b[37m If you intend to run the tests, use \"npm run test-local-or-ci\".'",
     "test-local-or-ci": "npm-run-all -s test:*",
     "test:american-british-translator": "cd american-british-translator && npm run test",
@@ -38,7 +42,10 @@
     "npm-run-all": "4.1.5",
     "wait-port": "0.2.9"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^14.3.0",
+    "pm2": "^5.1.2"
+  },
   "workspaces": [
     "american-british-translator",
     "anonymous-message-board",
