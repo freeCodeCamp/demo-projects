@@ -8,7 +8,7 @@
     "test": "PORT=3005 mocha --exit --ui tdd tests/"
   },
   "dependencies": {
-    "chai": "4.3.4",
+    "chai": "4.3.5",
     "chai-http": "4.3.0",
     "cors": "2.8.5",
     "dotenv": "8.6.0",
