@@ -1,10 +1,18 @@
-const parseEnv = require("./parse-package");
+const fs = require("fs");
+const dotenv = require("dotenv");
+const path = require("path");
+
 const { workspaces } = require("./package.json");
 
 const applist = workspaces.map((name) => ({
   name,
-  env: parseEnv(name),
+  env: parsePackage(name),
 }));
+
+function parsePackage(pkg) {
+  const filePath = path.resolve(pkg, ".env");
+  return dotenv.parse(fs.readFileSync(filePath));
+}
 
 // watch does not work if the script is npm. Also, watching in production is
 // unwise. Finally, the proxy apps alter their own files on start, so would end
