@@ -6,14 +6,14 @@ const applist = workspaces.map((name) => ({
   env: parseEnv(name),
 }));
 
+// watch does not work if the script is npm. Also, watching in production is
+// unwise. Finally, the proxy apps alter their own files on start, so would end
+// up in a loop. In short, we should not use watch.
 module.exports = {
   apps: applist.map(({ name, env }, index) => ({
     name,
     script: `npm start`,
     cwd: `./${name}`,
-    watch: true,
-    watch_delay: 5000,
-    ignore_watch: ["node_modules"],
     env: { ...env, PORT: 50000 + 10 * (index + 1) },
   })),
 };
