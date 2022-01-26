@@ -14,7 +14,7 @@
     "update-and-reload-twitch-proxy": "pm2 start scripts/twitch-proxy/updateApiKey.js --no-autorestart --cron \"0 0 1 * *\" && pm2 reload apps/twitch-proxy --update-env",
     "test": "echo 'The test suite is meant to run locally or in a CI environment. \u001b[31mDo NOT run this in production.\u001b[37m If you intend to run the tests, use \"npm run test-local-or-ci\".'",
     "test-local-or-ci": "npm-run-all -s test:*",
-    "test:american-british-translator": "cd apps/american-british-translator run test",
+    "test:american-british-translator": "cd apps/american-british-translator && npm run test",
     "test:anonymous-message-board": "cd apps/anonymous-message-board && cp sample.env .env && npm run test",
     "test:exercise-tracker": "cd apps/exercise-tracker && cp sample.env .env && npm run test",
     "test:file-metadata-microservice": "cd apps/file-metadata-microservice && npm run test",
