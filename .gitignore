@@ -2,6 +2,6 @@
 node_modules
 .DS_Store
 .vscode/*
-stock-price-checker-proxy/cache/
+apps/stock-price-checker-proxy/cache/
 apps/twitch-proxy/.data/
 apps/twitch-proxy/.logs/
