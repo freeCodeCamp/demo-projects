@@ -9,7 +9,7 @@ const applist = workspaces.map((name) => ({
 module.exports = {
   apps: applist.map(({ name, env }, index) => ({
     name,
-    script: `server.js`,
+    script: `npm start`,
     cwd: `./${name}`,
     watch: true,
     watch_delay: 5000,
