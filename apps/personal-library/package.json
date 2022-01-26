@@ -4,7 +4,7 @@
 	"description": "example",
 	"main": "server.js",
 	"scripts": {
-		"start": "nodemon server.js",
+		"start": "node server.js",
 		"test": "mocha --exit -u tdd ./tests/*.js"
 	},
 	"dependencies": {
@@ -27,8 +27,5 @@
 		"node",
 		"express"
 	],
-	"license": "MIT",
-	"devDependencies": {
-		"nodemon": "2.0.15"
-	}
+	"license": "MIT"
 }
