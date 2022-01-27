@@ -11,7 +11,7 @@
     "chai": "4.3.6",
     "chai-http": "4.3.0",
     "cors": "2.8.5",
-    "dotenv": "8.6.0",
+    "dotenv": "14.3.2",
     "express": "4.17.2",
     "mocha": "9.2.0",
     "node-fetch": "2.6.7"

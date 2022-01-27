@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "cors": "2.8.5",
-    "dotenv": "8.6.0",
+    "dotenv": "14.3.2",
     "express": "4.17.2",
     "got": "7.1.0",
     "request": "2.88.2"
