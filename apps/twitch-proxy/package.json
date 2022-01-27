@@ -12,7 +12,7 @@
     "express": "5.0.0-alpha.8",
     "nedb": "1.8.0",
     "request": "2.88.2",
-    "winston": "3.4.0",
+    "winston": "3.5.0",
     "winston-daily-rotate-file": "3.10.0"
   },
   "license": "MIT"
