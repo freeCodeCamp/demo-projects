@@ -3,13 +3,19 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 const { workspaces } = require("./package.json");
+const portMap = require("./port-map.json");
 
-const applist = workspaces.map((name) => ({
-  name,
-  env: parsePackage(name),
+const applist = workspaces.map((pkg) => ({
+  cwd: pkg,
+  name: getName(pkg),
+  env: parsePackageEnv(pkg),
 }));
 
-function parsePackage(pkg) {
+function getName(pkg) {
+  return pkg.split("/").pop();
+}
+
+function parsePackageEnv(pkg) {
   const filePath = path.resolve(pkg, ".env");
   return dotenv.parse(fs.readFileSync(filePath));
 }
@@ -18,10 +24,10 @@ function parsePackage(pkg) {
 // unwise. Finally, the proxy apps alter their own files on start, so would end
 // up in a loop. In short, we should not use watch.
 module.exports = {
-  apps: applist.map(({ name, env }, index) => ({
+  apps: applist.map(({ name, env, cwd }) => ({
     name,
     script: `npm start`,
-    cwd: `./${name}`,
-    env: { ...env, PORT: 50000 + 10 * (index + 1) },
+    cwd,
+    env: { ...env, PORT: portMap[name] },
   })),
 };
