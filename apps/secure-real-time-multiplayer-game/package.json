@@ -1,11 +1,11 @@
 {
-  "name": "american-british-english-translator",
-  "version": "2.0.0",
-  "description": "Quality Assurance 5: American / British English Translator",
+  "name": "secure-real-time-multiplayer-game",
+  "version": "1.0.0",
+  "description": "Information Security 5: Secure Real-Time Multiplayer Game",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "mocha --timeout 5000 --require @babel/register --recursive --exit --ui tdd tests/"
+    "start": "node server.js",
+    "test": "PORT=3005 mocha --require @babel/register --recursive --exit --ui tdd tests/"
   },
   "dependencies": {
     "@babel/core": "7.16.12",
@@ -17,9 +17,11 @@
     "cors": "2.8.5",
     "dotenv": "8.6.0",
     "express": "4.17.2",
+    "helmet": "3.23.3",
     "jsdom": "16.7.0",
     "mocha": "9.2.0",
-    "nodemon": "2.0.15"
+    "socket.io": "2.4.1",
+    "socket.io-client": "2.4.0"
   },
   "license": "MIT"
 }
