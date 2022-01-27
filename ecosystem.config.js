@@ -29,5 +29,6 @@ module.exports = {
     script: `npm start`,
     cwd,
     env: { ...env, PORT: portMap[name] },
+    max_memory_restart: "200M",
   })),
 };
