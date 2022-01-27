@@ -1,5 +1,20 @@
 # Updating/Adding a demo project
 
+## How do I update everything in one go?
+
+- SSH into the VM with `ssh freecodecamp@<ip>`
+- Run all the commands in `./scripts/update.sh`
+
+### But just wanted to run a single script!
+
+Fine. You can just run
+
+```sh
+./scripts/update.sh
+```
+
+but I *strongly* recommend at least reading it first. Just in case it has not been updated to match new workflows.
+
 ## After a PR has been merged to the demo-projects repo:
 
 - SSH into the VM with `ssh freecodecamp@<ip>`
