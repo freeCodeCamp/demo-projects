@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.19.1",
-    "dotenv": "8.6.0",
+    "dotenv": "14.3.2",
     "ejs": "2.7.4",
     "express": "4.17.2",
     "mongodb": "2.2.36"

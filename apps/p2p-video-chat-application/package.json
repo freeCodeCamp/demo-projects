@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "browserify-middleware": "8.1.1",
-    "dotenv": "8.6.0",
+    "dotenv": "14.3.2",
     "express": "4.17.2",
     "getusermedia": "2.0.1",
     "jquery": "3.6.0",

@@ -47,7 +47,7 @@
     "wait-port": "0.2.9"
   },
   "dependencies": {
-    "dotenv": "14.3.0",
+    "dotenv": "14.3.2",
     "node-fetch": "2.6.7",
     "pm2": "5.1.2"
   },

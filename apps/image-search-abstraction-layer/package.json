@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "8.6.0",
+    "dotenv": "14.3.2",
     "express": "4.17.2",
     "google-images": "2.1.0",
     "moment": "2.29.1",
