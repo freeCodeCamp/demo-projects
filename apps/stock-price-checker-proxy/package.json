@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@seald-io/nedb": "^2.2.1",
+    "@seald-io/nedb": "2.2.1",
     "axios": "0.25.0",
     "cors": "2.8.5",
     "dotenv": "14.3.2",
