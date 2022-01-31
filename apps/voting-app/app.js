@@ -13,7 +13,8 @@ app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-mongo.connect(process.env.MONGO_URI, function(err, db) {
+mongo.connect(process.env.MONGO_URI, function(err, client) {
+  var db = client.db();
   console.log('Successfully connected to MongoDB');
 
   app.locals.user = null;
