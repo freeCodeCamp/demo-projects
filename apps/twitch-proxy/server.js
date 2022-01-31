@@ -10,7 +10,7 @@ const blacklist = require("./utilities/blacklist");
 const { validate, validateLegacy } = require("./utilities/req-validate");
 
 if (!config.serveStaticData) {
-  var Datastore = require("nedb");
+  var Datastore = require("@seald-io/nedb");
   var db = new Datastore({ filename: config.db.dbPath });
   db.loadDatabase();
 

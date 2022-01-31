@@ -4,7 +4,7 @@ const router = express.Router();
 const axios = require("axios");
 const cors = require("cors");
 
-const Datastore = require("nedb");
+const Datastore = require("@seald-io/nedb");
 const db = new Datastore({
   filename: "./cache/db",
   autoload: true
