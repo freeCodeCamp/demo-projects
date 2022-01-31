@@ -7,11 +7,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@seald-io/nedb": "^2.2.1",
     "axios": "0.25.0",
     "cors": "2.8.5",
     "dotenv": "14.3.2",
-    "express": "4.17.2",
-    "nedb": "1.8.0"
+    "express": "4.17.2"
   },
   "repository": {
     "url": "https://stock-price-checker-proxy.freecodecamp.rocks"
