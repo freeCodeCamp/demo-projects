@@ -38,6 +38,6 @@
     "morgan": "1.10.0",
     "passport": "0.4.1",
     "passport-github": "1.1.0",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^3.0.2"
   }
 }
