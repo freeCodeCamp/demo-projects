@@ -22,9 +22,6 @@
     "chai-as-promised": "7.1.1",
     "chai-dom": "1.11.0",
     "chai-http": "4.3.0",
-    "eslint": "8.7.0",
-    "eslint-config-airbnb-base": "11.3.2",
-    "eslint-plugin-import": "2.25.4",
     "mocha": "9.2.0"
   },
   "dependencies": {
@@ -41,6 +38,6 @@
     "morgan": "1.10.0",
     "passport": "0.4.1",
     "passport-github": "1.1.0",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^3.0.2"
   }
 }
