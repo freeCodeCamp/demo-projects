@@ -197,7 +197,6 @@ class SudokuSolver {
   // for Sudoku solution (non-duplication across rows, columns, and boxes)
   solveSudoku(grid) {
     this._recursions++;
-    console.log(this._recursions);
     // Tested the recursion count for the "hardest sudoku" puzzle
     // Puzzle was fetched from https://www.conceptispuzzles.com/index.aspx?uri=info/article/424
     // Recursion count was 49559 - rounded to 50000 for nice number + a bit of buffer.
