@@ -5,6 +5,7 @@ ports:
 tasks:
   - init: |
       npm ci
+      mongod --fork --dbpath /data/db
     command: |
       npm i -g pm2
       for file in apps/**/sample.env; do cp $file ${file/sample/}; done;
