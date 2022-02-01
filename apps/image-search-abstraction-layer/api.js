@@ -36,7 +36,8 @@ module.exports = function(app) {
   }
 
   function getRecent(req, res) {
-    mongo.connect(process.env.MONGO_URI, function (err, db) {
+    mongo.connect(process.env.MONGO_URI, function (err, client) {
+      var db = client.db();
       if (err) throw err;
       console.log('Connection Established');
       
