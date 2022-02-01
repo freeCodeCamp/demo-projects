@@ -1,8 +1,14 @@
+image: gitpod/workspace-mongodb
+ports:
+  - port: 27017
+    onOpen: ignore
 tasks:
   - init: |
       npm ci
-      npm i -g pm2
+      mkdir /workspace/log
+      mongod --fork --dbpath /data/db --logpath /workspace/log/mongod.log
     command: |
+      npm i -g pm2
       for file in apps/**/sample.env; do cp $file ${file/sample/}; done;
       npm run start
 vscode:
