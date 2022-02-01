@@ -5,8 +5,8 @@ ports:
 tasks:
   - init: |
       npm ci
-      mkdir /data/log
-      mongod --fork --dbpath /data/db --logpath /data/log/mongod.log
+      mkdir /workspace/log
+      mongod --fork --dbpath /data/db --logpath /workspace/log/mongod.log
     command: |
       npm i -g pm2
       for file in apps/**/sample.env; do cp $file ${file/sample/}; done;
