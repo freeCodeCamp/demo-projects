@@ -93,6 +93,10 @@ module.exports = function (app) {
       if(!id) {
         return res.json({ error: 'missing _id' })
       }
+      
+      if(!mongoose.Types.ObjectId.isValid(id)) {
+        return res.json({ error: 'could not update', '_id': id })
+      }
 
       // Build update object
       let update = {};
