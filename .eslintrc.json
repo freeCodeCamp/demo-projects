@@ -1,0 +1,22 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "globals": {
+    "Promise": true,
+    "window": true,
+    "$": true,
+    "ga": true,
+    "jQuery": true,
+    "router": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.2"
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"]
+}
