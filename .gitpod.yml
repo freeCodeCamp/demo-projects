@@ -1,8 +1,9 @@
+image: gitpod/workspace-mongodb
 tasks:
   - init: |
       npm ci
-      npm i -g pm2
     command: |
+      npm i -g pm2
       for file in apps/**/sample.env; do cp $file ${file/sample/}; done;
       npm run start
 vscode:
