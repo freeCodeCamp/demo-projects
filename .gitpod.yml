@@ -1,4 +1,7 @@
 image: gitpod/workspace-mongodb
+ports:
+  - port: 27017
+    onOpen: ignore
 tasks:
   - init: |
       npm ci
