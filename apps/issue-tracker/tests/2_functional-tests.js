@@ -327,6 +327,8 @@ suite("Functional Tests", function () {
 
     test('Invalid _id => { error: "could not update", _id: _id }', function (done) {
       const badId = "5f665eb46e296f6b9b6a504d";
+      const worseId = "this is terrible";
+
       chai
         .request(server)
         .put("/api/issues/test")
@@ -335,7 +337,18 @@ suite("Functional Tests", function () {
           assert.isObject(res.body);
           assert.equal(res.body.error, "could not update");
           assert.equal(res.body._id, badId);
-          done();
+
+          chai
+            .request(server)
+            .put("/api/issues/test")
+            .send({ _id: worseId, created_by: "oliver" })
+            .end(function (req, res) {
+              assert.isObject(res.body);
+              assert.equal(res.body.error, "could not update");
+              assert.equal(res.body._id, worseId);
+              done();
+            });
+
         });
     });
 
