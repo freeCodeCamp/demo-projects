@@ -1,6 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import nodePolyfills from 'rollup-plugin-polyfill-node';
+import nodePolyfills from "rollup-plugin-polyfill-node";
+import { terser } from "rollup-plugin-terser";
 
 export default {
   input: "src/client.js",
@@ -15,5 +16,6 @@ export default {
     commonjs({
       include: /node_modules/,
     }),
+    terser(),
   ],
 };
