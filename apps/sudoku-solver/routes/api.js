@@ -26,7 +26,7 @@ module.exports = function (app) {
       }
 
       let value = parseInt(req.body.value);
-      if(!Number.isInteger(value) || value < 0 || value > 9) {
+      if(!Number.isInteger(value) || value < 1 || value > 9) {
         return res.json({ error: 'Invalid value' });
       }
 
