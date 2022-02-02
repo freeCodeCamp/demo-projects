@@ -1,11 +1,11 @@
-var React = require('react');
+import React from 'react';
 
 /**
  * TODO: I assume at some point we'll bump the React version.
  * When we do, we'll need to update this.
  */
 // eslint-disable-next-line react/no-deprecated
-module.exports = React.createClass({
+export default React.createClass({
   submit: function(e) {
     e.preventDefault();
     if(this.refs.url.value) {
@@ -18,8 +18,8 @@ module.exports = React.createClass({
     var hideIfLoggedOut = this.props.loggedIn ? '' : ' hide';
     var hideIfLoggedIn = this.props.loggedIn ? ' hide' : '';
     var dOL = this.props.setPageDisabled;
-    var myPics;
-    var all = myPics = '';
+    var all = ''; 
+    var myPics = '';
     switch (this.props.page) {
       case 'all' :
         all = 'active';

@@ -16,7 +16,8 @@
   "extends": ["eslint:recommended", "prettier"],
   "overrides": [
     {
-      "files": ["apps/secure-real-time-multiplayer-game/tests/1_unit-tests.js"],
+      "files": ["apps/secure-real-time-multiplayer-game/tests/1_unit-tests.js",
+      "apps/build-a-pinterest-clone/client/*", "apps/build-a-pinterest-clone/rollup.config.js"],
       "parserOptions": {
         "sourceType": "module"
       }

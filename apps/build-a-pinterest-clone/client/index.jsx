@@ -1,12 +1,13 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
 
-var Ajax = (require('./ajax-functions.js'));
+import React from 'react';
+import { render } from 'react-dom';
+import Masonry from 'react-masonry-component';
 
-var Masonry = require('react-masonry-component');
+import Ajax from './ajax-functions';
 
-var Pic = require('./pic.jsx');
-var Nav = require('./navbar.jsx');
+
+import Pic from './pic.jsx';
+import Nav from './navbar.jsx';
 
 var appUrl = window.location.origin;
 
@@ -175,4 +176,4 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(<App/>, document.getElementById('appView'));
+render(<App/>, document.getElementById('appView'));
