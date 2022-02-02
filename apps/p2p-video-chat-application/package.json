@@ -8,13 +8,12 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "browserify-middleware": "8.1.1",
     "dotenv": "14.3.2",
     "express": "4.17.2",
     "getusermedia": "2.0.1",
     "jquery": "3.6.0",
+    "rollup-plugin-polyfill-node": "^0.8.0",
     "simple-peer": "8.5.0",
-    "socket.io": "2.4.1",
-    "socket.io-client": "2.4.0"
+    "socket.io": "^4.4.1"
   }
 }

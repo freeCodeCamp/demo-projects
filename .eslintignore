@@ -2,6 +2,7 @@
 apps/voting-app/public/*.min.js
 # Ignore bundles
 apps/build-a-pinterest-clone/public/bundle.js
+apps/p2p-video-chat-application/public/bundle.js
 # Ignore test runner files?
 apps/**/assertion-analyser.js
 apps/**/test-runner.js
