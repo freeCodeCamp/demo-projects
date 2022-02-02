@@ -4,6 +4,7 @@
   "description": "A simple socket.io based video chat app",
   "main": "server.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "wait-port -t 10000 3000",
     "start": "node server.js"
   },

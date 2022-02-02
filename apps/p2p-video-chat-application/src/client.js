@@ -1,6 +1,6 @@
 /* global io SimplePeer */
 import $, { trim } from "jquery";
-import "simple-peer/simplepeer.min.js";
+import SimplePeer from "simple-peer/simplepeer.min.js";
 
 $(document).ready(async function () {
   let peer;
