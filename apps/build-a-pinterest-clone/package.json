@@ -22,7 +22,6 @@
     "mongoose": "5.13.14",
     "passport": "0.4.1",
     "passport-github": "1.1.0",
-    "passport-twitter": "1.0.4",
     "react": "15.7.0",
     "react-dom": "15.7.0",
     "react-masonry-component": "6.3.0"
