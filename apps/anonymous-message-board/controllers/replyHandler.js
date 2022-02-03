@@ -52,7 +52,7 @@ function ReplyHandler() {
             $set: { bumped_on: now },
             $push: { replies: reply },
           },
-          (err, doc) => {}
+          () => {}
         );
       }
     );
@@ -73,7 +73,7 @@ function ReplyHandler() {
             "replies._id": new ObjectId(req.body.reply_id),
           },
           { $set: { "replies.$.reported": true } },
-          (err, doc) => {}
+          () => {}
         );
       }
     );
