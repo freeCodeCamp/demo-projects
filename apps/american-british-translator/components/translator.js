@@ -5,11 +5,11 @@ const britishOnly = require('./british-only.js')
 
 class Translator {
   
-  static replaceCurry(word, replacement, highlight, adjustCase = false)  {
+  static replaceCurry(_, replacement, highlight, adjustCase = false)  {
     if(adjustCase) {
       replacement = replacement.replace(/^([a-z])/ig, letter => letter.toUpperCase());
     }
-    return (word) => {
+    return () => {
       if(highlight) {
         return `<span class="highlight">${replacement}</span>`.replace(/\s/g,"\0");
       } else {
@@ -35,14 +35,14 @@ class Translator {
 
     // Title Replacement
     for([american, british] of Object.entries(americanToBritishTitles) ) {
-      american = american.replace('.', '\.');
+      american = american.replace('.', '\\.');
       input = input.replace(new RegExp(`\\b${american}`,'gi'),
         Translator.replaceCurry(american,british,highlight, true));
     }
 
     // Time Replacement, colon to period replacement
     if(highlight) {
-      input = input.replace(/(\d{1,2}):(\d{1,2})/gi, '<span class="highlight">\$1.\$2</span>');
+      input = input.replace(/(\d{1,2}):(\d{1,2})/gi, '<span class="highlight">$1.$2</span>');
     } else {
       input = input.replace(/(?<=\d{1,2}):(?=\d{1,2})/gi, '.');
     }
@@ -76,7 +76,7 @@ class Translator {
 
     // Time Replacement, period to colon replacement
     if(highlight) {
-      input = input.replace(/(\d{1,2}).(\d{1,2})/gi, '<span class="highlight">\$1:\$2</span>');
+      input = input.replace(/(\d{1,2}).(\d{1,2})/gi, '<span class="highlight">$1:$2</span>');
     } else {
       input = input.replace(/(?<=\d{1,2})\.(?=\d{1,2})/gi, ':');
     }
