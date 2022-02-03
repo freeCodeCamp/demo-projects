@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   if (err) {
     console.log(err.message, err.stack);
     res.status(500).json({ status: "internal server error" });
@@ -21,6 +21,6 @@ app.use((err, req, res, next) => {
 
 const portNum = process.env.PORT || 3000;
 
-const listener = app.listen(portNum, () => {
+app.listen(portNum, () => {
   console.log("stock proxy is listening on port " + portNum);
 });
