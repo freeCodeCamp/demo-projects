@@ -114,7 +114,7 @@ function ConvertHandler() {
       }
 
       // If unit exists, return it
-      if(units.hasOwnProperty(unit)) {
+      if(unit in units) {
         if(unit === "l") {
           return "L";
         }
