@@ -89,7 +89,7 @@ mongo.connect(process.env.MONGO_URI, function(err, client) {
       options[optionArray[i]] = 0;
     }
     
-    polls.insert({ 'creator':app.locals.user, 'question': req.body.newquestion, 'options': options }, function(err, result) {
+    polls.insert({ 'creator':app.locals.user, 'question': req.body.newquestion, 'options': options }, function() {
       return mypolls(req, res);    
     });
   });
@@ -105,7 +105,7 @@ mongo.connect(process.env.MONGO_URI, function(err, client) {
   });
   
   app.get('/delete/:id', function(req, res){
-    polls.remove({ _id : ObjectID(req.params.id)}, function(err, result) {  
+    polls.remove({ _id : ObjectID(req.params.id)}, function() {  
       return mypolls(req, res);
     });
   });
