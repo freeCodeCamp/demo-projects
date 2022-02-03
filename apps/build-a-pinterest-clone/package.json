@@ -7,6 +7,7 @@
     "start": "node server.js",
     "test": "wait-port -t 10000 3000",
     "build": "rollup -c",
+    "dev": "concurrently \"rollup -c -w\" \"nodemon server.js\"",
     "prepare": "npm run build"
   },
   "keywords": [],
@@ -33,5 +34,9 @@
     "react-masonry-component": "6.3.0",
     "rollup": "^2.67.0",
     "rollup-plugin-terser": "^7.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }
