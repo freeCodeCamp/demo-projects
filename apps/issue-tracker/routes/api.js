@@ -8,13 +8,10 @@
 
 'use strict';
 
-const expect = require('chai').expect;
-const MongoClient = require('mongodb');
-const ObjectId = require('mongodb').ObjectID;
 const IssueModel = require('../models/issue').IssueModel;
 
 const mongoose = require('mongoose');
-const connection = mongoose.connect(process.env.DB, {
+mongoose.connect(process.env.DB, {
   useNewUrlParser: true, 
   useUnifiedTopology: true
 });
@@ -46,7 +43,7 @@ module.exports = function (app) {
       // Build Query
       let query = { project: project };  // We always filter by project
       field_list.forEach(field => {
-        if(req.query.hasOwnProperty(field)) {
+        if(field in req.query) {
           query[field] = req.query[field];
         }
       })
@@ -61,7 +58,7 @@ module.exports = function (app) {
 
       // check required fields
       let missing_fields = ['issue_title', 'issue_text', 'created_by']
-        .filter( field => !req.body.hasOwnProperty(field))
+        .filter( field => !(field in req.body))
         .join(',');
 
       if(missing_fields) {
@@ -98,7 +95,7 @@ module.exports = function (app) {
       let update = {};
       let count = 0;
       updatable_fields.forEach(field => {
-        if(req.body.hasOwnProperty(field)) {
+        if(field in req.body) {
           update[field] = req.body[field];
           count++;
         }
