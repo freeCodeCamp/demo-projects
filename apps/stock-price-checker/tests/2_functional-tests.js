@@ -65,15 +65,12 @@ suite('Functional Tests', function() {
           done();
         });
       });
-      
-      var rel_likes;
-      
+            
       test('2 stocks', function(done) {
        chai.request(server)
         .get('/api/stock-prices')
         .query({stock: ['goog','msft']})
         .end(function(err, res){
-          rel_likes = Math.abs(res.body.stockData[0].rel_likes);
           assert.equal(res.status, 200);
           assert.isArray(res.body.stockData);
           assert.property(res.body.stockData[0], 'stock');
