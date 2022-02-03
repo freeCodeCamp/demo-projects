@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c",
     "test": "wait-port -t 10000 3000",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",

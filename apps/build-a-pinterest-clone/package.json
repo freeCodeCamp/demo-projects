@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "wait-port -t 10000 3000",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
