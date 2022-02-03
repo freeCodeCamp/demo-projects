@@ -3,7 +3,7 @@ const Exercises = require('../models/exercises');
 
 const router = require('express').Router();
 
-router.get('/users', (req, res, next) => {
+router.get('/users', (req, res) => {
   Users.find({}, (err, data) => {
     res.json(data)
   })

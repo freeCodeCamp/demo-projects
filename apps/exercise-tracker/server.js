@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 })
 
 // Error Handling middleware
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   let errCode, errMessage
 
   if (err.errors) {
