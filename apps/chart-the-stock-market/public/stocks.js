@@ -1,3 +1,4 @@
+/* global io, Chart */
 var stockData = {};
 
 /////////// socket connection ////////////
