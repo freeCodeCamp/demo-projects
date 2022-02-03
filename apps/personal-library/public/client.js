@@ -50,7 +50,7 @@ $( document ).ready(function() {
       type: 'post',
       dataType: 'json',
       data: $('#newCommentForm').serialize(),
-      success: function(data) {
+      success: function() {
         comments.unshift(newComment); //adds new comment to top of list
         $('#detailComments').html(comments.join(''));
       }
@@ -63,7 +63,7 @@ $( document ).ready(function() {
       type: 'post',
       dataType: 'json',
       data: $('#newBookForm').serialize(),
-      success: function(data) {
+      success: function() {
         //update list
       }
     });
@@ -75,7 +75,7 @@ $( document ).ready(function() {
       type: 'delete',
       dataType: 'json',
       data: $('#newBookForm').serialize(),
-      success: function(data) {
+      success: function() {
         //update list
       }
     });
