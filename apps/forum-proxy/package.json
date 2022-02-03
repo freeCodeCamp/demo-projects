@@ -4,7 +4,7 @@
   "description": "A proxy for the fCC forum",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.mjs",
     "test": "PORT=3005 mocha --exit --ui tdd tests/"
   },
   "dependencies": {

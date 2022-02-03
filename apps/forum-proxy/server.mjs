@@ -1,12 +1,17 @@
-require('dotenv').config();
-const cors = require('cors');
-const fetch = require('node-fetch');
-const express = require('express');
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+import 'dotenv/config';
+import cors from 'cors';
+import fetch from 'node-fetch';
+import express from 'express';
 
 const app = express();
 
+const __dirname = dirname(fileURLToPath(new URL(import.meta.url)));
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(join(__dirname, './views/index.html'));
 })
 
 app.use(cors({optionsSuccessStatus: 200}));
@@ -29,4 +34,4 @@ app.listen(portNum, function() {
   console.log(`Your app is listening on port ${portNum}`);
 });
 
-module.exports = app;
+export default app;

@@ -1,7 +1,9 @@
-const chaiHttp = require("chai-http");
-const chai = require("chai");
+import chaiHttp from "chai-http";
+import chai from "chai";
+
+import server from "../server.mjs";
+
 const assert = chai.assert;
-const server = require("../server");
 
 chai.use(chaiHttp);
 
