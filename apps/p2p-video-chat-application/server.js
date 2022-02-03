@@ -22,7 +22,6 @@ io.on('connection',function(socket){
     io.in(room).clients(function(error, clients){
       if (error) {
         throw error;
-        return;
       }
 
       if(clients.length >= 2)
@@ -56,7 +55,6 @@ io.on('connection',function(socket){
     io.in(roomMessage.room).clients(function(error, clients){
       if (error) {
         throw error;
-        return;
       }
 
       if(clients.indexOf(socket.id)!==-1) {
