@@ -10,6 +10,11 @@ var Nav = require('./navbar.jsx');
 
 var appUrl = window.location.origin;
 
+/**
+ * TODO: I assume at some point we'll bump the React version.
+ * When we do, we'll need to update this.
+ */
+// eslint-disable-next-line react/no-deprecated
 var App = React.createClass({
   componentDidMount: function () {
     var self = this;
@@ -83,7 +88,7 @@ var App = React.createClass({
   deletePic: function(index) {
     var self = this;
     var id = this.state.pics[index]._id;
-    Ajax.delete(appUrl + '/api/pics/' + id, {}, function(err, d){
+    Ajax.delete(appUrl + '/api/pics/' + id, {}, function(){
       var pics = self.state.pics;
       pics.splice(index,1);
       self.setState({pics: pics});

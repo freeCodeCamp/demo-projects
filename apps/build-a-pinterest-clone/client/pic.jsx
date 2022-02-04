@@ -1,6 +1,10 @@
 var React = require('react');
-var appUrl = window.location.origin;
 
+/**
+ * TODO: I assume at some point we'll bump the React version.
+ * When we do, we'll need to update this.
+ */
+// eslint-disable-next-line react/no-deprecated
 module.exports = React.createClass({
   render: function() {
     var likeClass = this.props.liked ? "liked btn btn-default btn-sm" : 'like btn btn-default btn-sm';

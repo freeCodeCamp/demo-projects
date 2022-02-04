@@ -28,6 +28,9 @@
           "version": "15.7.0"
         }
       },
+      "rules": {
+        "react/no-string-refs": "off"
+      },
       "extends": ["plugin:react/recommended"],
       "parserOptions": {
         "ecmaFeatures": {
