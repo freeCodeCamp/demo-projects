@@ -10,11 +10,10 @@ const chaiHttp = require("chai-http");
 const chai = require("chai");
 const assert = chai.assert;
 const server = require("../server");
-const assertionAnalyser = require("../assertion-analyser");
 
 chai.use(chaiHttp);
 
-let id1, id2;
+let id1;
 const idFake = "5f665eb46e296f6b9b6a504d"
 
 suite("Functional Tests", function () {

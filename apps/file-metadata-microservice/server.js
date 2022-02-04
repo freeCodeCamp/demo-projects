@@ -30,7 +30,7 @@ app.post('/api/fileanalyse',upload.single('upfile'), function(req, res){
     
 
  // 404-NOT FOUND Middleware
- app.use(function(req, res, next){
+ app.use(function(req, res){
    res.status(404);
    res.type('txt').send('Not found');
  });

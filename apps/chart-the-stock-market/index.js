@@ -24,7 +24,7 @@ io.on('connection', function(socket) {
   emitStockData();
 
   socket.on('newStock', function(stock) {
-    if(!currentStockData.hasOwnProperty(stock.symbol) && Object.keys(currentStockData).length < 4) {
+    if(!(stock.symbol in currentStockData) && Object.keys(currentStockData).length < 4) {
       const requestUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock.symbol}&apikey=${process.env.APIKEY}`;
     
       https.get(requestUrl, res => {
@@ -60,7 +60,7 @@ io.on('connection', function(socket) {
   socket.on('deleteStock', function(stock) {
     console.log('delete' + stock);
     console.log(stock.symbol);
-    if(currentStockData.hasOwnProperty(stock.symbol)) {
+    if(stock.symbol in currentStockData) {
       delete currentStockData[stock.symbol];
 
       emitStockData();

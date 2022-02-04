@@ -88,7 +88,7 @@ class SudokuSolver {
     }
   }
 
-  exportString(input) {
+  exportString() {
     let output = "";
     for (let row = 0; row < WIDTH; row++) {
       for (let col = 0; col < HEIGHT; col++) {

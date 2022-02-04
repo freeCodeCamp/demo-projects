@@ -20,11 +20,11 @@ $(document).ready(function () {
 
     const localVideo = document.querySelector("#localVideo");
     localVideo.srcObject = stream;
-    localVideo.onloadedmetadata = function (e) {
+    localVideo.onloadedmetadata = function () {
       localVideo.play();
     };
 
-    const room = prompt("Type a room name");
+    let room = prompt("Type a room name");
 
     while ($.trim(room) === "") room = prompt("Type a room name");
 
@@ -90,7 +90,7 @@ $(document).ready(function () {
         console.log("Streaming Remote Video!");
         const remoteVideo = document.querySelector("#remoteVideo");
         remoteVideo.srcObject = stream;
-        remoteVideo.onloadedmetadata = function (e) {
+        remoteVideo.onloadedmetadata = function () {
           remoteVideo.play();
         };
       });

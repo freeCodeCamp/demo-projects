@@ -73,7 +73,7 @@ const getKrakenUserData = async user => {
   });
 };
 const getAllKrakenData = async () =>
-  Promise.all(_users.map(getKrakenUserData)).then((data, i) => {
+  Promise.all(_users.map(getKrakenUserData)).then((data) => {
     const out = {};
     data.forEach((d, i) => {
       out[_users[i]] = d;

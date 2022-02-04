@@ -41,7 +41,7 @@ app.route(['/api/timestamp/:date?', '/api/:date?']).get((req, res) => {
 });
 
 // 404 Not Found Middleware
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).type('text').send('Not Found');
 });
 

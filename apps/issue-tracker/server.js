@@ -3,7 +3,6 @@
 require('dotenv').config(); 
 const express     = require('express');
 const bodyParser  = require('body-parser');
-const expect      = require('chai').expect;
 const cors        = require('cors');
 
 const apiRoutes         = require('./routes/api.js');
@@ -40,7 +39,7 @@ fccTestingRoutes(app);
 apiRoutes(app);  
     
 //404 Not Found Middleware
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   res.status(404)
     .type('text')
     .send('Not Found');

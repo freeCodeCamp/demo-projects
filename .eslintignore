@@ -1,0 +1,6 @@
+# Ignore minified libraries
+apps/voting-app/public/*.min.js
+# Ignore test runner files?
+apps/**/assertion-analyser.js
+apps/**/test-runner.js
+apps/**/fcctesting.js

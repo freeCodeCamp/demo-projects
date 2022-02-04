@@ -8,8 +8,6 @@
 
 "use strict";
 
-const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectId;
 const MONGODB_CONNECTION_STRING = process.env.DB;
 const Mongoose = require("mongoose");
 const BookModel = require("../db/BookModel").BookModel;
@@ -106,7 +104,7 @@ module.exports = function (app) {
         res.status(200).send("no book exists");
         return;
       }
-      const deleted = await BookModel.deleteOne({ _id: bookid });
+      await BookModel.deleteOne({ _id: bookid });
       res.status(200).send("delete successful");
     });
 };

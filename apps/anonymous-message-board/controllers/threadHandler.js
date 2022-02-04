@@ -73,7 +73,7 @@ function ThreadHandler() {
         collection.findOneAndUpdate(
           { _id: new ObjectId(req.body.report_id) },
           { $set: { reported: true } },
-          (err, doc) => {}
+          () => {}
         );
       }
     );

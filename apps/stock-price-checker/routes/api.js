@@ -8,7 +8,6 @@
 
 'use strict';
 
-var expect = require('chai').expect;
 var StockHandler = require('../controllers/stockHandler.js');
 
 module.exports = function (app) {

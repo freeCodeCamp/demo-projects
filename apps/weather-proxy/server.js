@@ -10,19 +10,19 @@ var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?units=metric&ap
 
 function replaceIconsWithLinks(data){
   for(var i = 0; i < data.weather.length; ++i){
-    if(data.weather[0].hasOwnProperty('icon')){
+    if('icon' in data.weather[0]){
       data.weather[0].icon = imgLinks[data.weather[0].icon];
     }
   }
 }
 
-function getBestCachedData(lon, lat){
+function getBestCachedData(){
   var fs = require('fs');
   var obj = JSON.parse(fs.readFileSync('./data/cache.json', 'utf8'));
   return obj;
 }
 
-function addToCache(data){
+function addToCache(){
   //For now does nothing. We aren't saving data.
 }
 
@@ -67,7 +67,7 @@ app.get("/api/current", function(req, res) {
           console.log("REQUEST:" + req.body);
           console.log("REQUESTED URL:" + url);
         }
-        if(data.hasOwnProperty('weather')){
+        if('weather' in data){
           addToCache(data);
         } else {
           data = getBestCachedData(longitude, latitude);

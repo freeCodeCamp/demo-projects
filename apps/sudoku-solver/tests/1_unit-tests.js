@@ -22,7 +22,7 @@ suite('UnitTests', () => {
     test('Valid Characters, length of 81', (done) => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
 
-      let [err, errString] = solver.validate(input);
+      let [err] = solver.validate(input);
       assert.isFalse(err);
 
       done();
@@ -63,7 +63,6 @@ suite('UnitTests', () => {
     test('Valid placement for a row', done => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const row = 0;
-      const col = 0;
       const value = 3;
 
       assert.isTrue(solver.checkRowPlacement(input, row, value));
@@ -74,7 +73,6 @@ suite('UnitTests', () => {
     test('Invalid placement for a row', done => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const row = 0;
-      const col = 0;
       const value = 9;
 
       assert.isFalse(solver.checkRowPlacement(input, row, value));
@@ -88,7 +86,6 @@ suite('UnitTests', () => {
     test('Valid placement for a column', done => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const row = 0;
-      const col = 0;
       const value = 3;
 
       assert.isTrue(solver.checkRowPlacement(input, row, value));
@@ -99,7 +96,6 @@ suite('UnitTests', () => {
     test('Invalid placement for a column', done => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const row = 0;
-      const col = 0;
       const value = 9;
 
       assert.isFalse(solver.checkRowPlacement(input, row, value));

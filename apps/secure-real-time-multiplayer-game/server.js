@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const expect = require('chai');
 const helmet = require('helmet');
 const cors = require('cors');
 const socket = require('socket.io');
@@ -32,7 +31,7 @@ app.route('/')
 fccTestingRoutes(app);
     
 // 404 Not Found Middleware
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   res.status(404)
     .type('text')
     .send('Not Found');

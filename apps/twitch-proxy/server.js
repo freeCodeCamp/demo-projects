@@ -202,7 +202,7 @@ app.use(function(req, res) {
   sendData(req, res, null, { status: 404, error: "not found" });
 });
 
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   log.error(`!! ${err.message || err.msg || err.error}`);
   err.status = err.status || 500;
   err.error = err.error || "internal server error";

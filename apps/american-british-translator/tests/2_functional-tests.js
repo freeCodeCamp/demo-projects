@@ -13,8 +13,6 @@ const server = require('../server.js');
 
 chai.use(chaiHttp);
 
-let Translator = require('../components/translator.js');
-
 suite('Functional Tests', () => {
 
   suite('"POST" to /api/translate', () => {

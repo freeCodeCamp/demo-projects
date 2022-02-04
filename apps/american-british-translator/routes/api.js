@@ -15,7 +15,7 @@ module.exports = function (app) {
   app.route('/api/translate')
     .post((req, res) => {
       let text = req.body.text;
-      if(!req.body.hasOwnProperty('text') || !req.body.locale) {
+      if(!("text" in req.body) || !req.body.locale) {
         return res.json({ error: 'Required field(s) missing' });
       }
 

@@ -19,7 +19,7 @@ function enableInputs() {
     page.removeAttribute('disabled');
     size.removeAttribute('disabled');
     updateURL();
-  } else if(selected = "recent") {
+  } else if(selected == "recent") {
     query.setAttribute('disabled', "true");
     page.setAttribute('disabled', "true");
     size.setAttribute('disabled', "true");

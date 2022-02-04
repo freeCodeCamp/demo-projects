@@ -19,7 +19,7 @@ const IssueSchema = new mongoose.Schema({
 // Hide project and __v fields from JSON
 // Ref: https://stackoverflow.com/a/17063594/1420506
 IssueSchema.set('toJSON', {
-  transform: function(doc, ret, options) {
+  transform: function(doc, ret) {
     delete ret.project;
     delete ret.__v;
     return ret;

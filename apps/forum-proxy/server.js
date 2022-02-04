@@ -21,11 +21,11 @@ app.get('/latest', (req, res, next) => {
 
 app.use((req, res) => res.status(404).send('not found'));
 
-app.use((err, req, res, next) => res.status(500).json(err));
+app.use((err, req, res) => res.status(500).json(err));
 
 const portNum = process.env.PORT || 3000;
 
-const listener = app.listen(portNum, function() {
+app.listen(portNum, function() {
   console.log(`Your app is listening on port ${portNum}`);
 });
 
