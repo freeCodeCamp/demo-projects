@@ -13,17 +13,26 @@
     "jQuery": true,
     "router": true
   },
-  "settings": {
-    "react": {
-      "version": "16.4.2"
-    }
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": ["eslint:recommended", "prettier"],
   "overrides": [
     {
       "files": ["apps/secure-real-time-multiplayer-game/tests/1_unit-tests.js"],
       "parserOptions": {
         "sourceType": "module"
+      }
+    },
+    {
+      "files": ["**/*.jsx"],
+      "settings": {
+        "react": {
+          "version": "15.7.0"
+        }
+      },
+      "extends": ["plugin:react/recommended"],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
       }
     }
   ]
