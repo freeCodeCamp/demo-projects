@@ -36,6 +36,7 @@
     "pretest:build-a-pinterest-clone": "cd apps/build-a-pinterest-clone && cp sample.env .env",
     "test:build-a-pinterest-clone": "node test-server-starts.js apps/build-a-pinterest-clone",
     "test:chart-the-stock-market": "node test-server-starts.js apps/chart-the-stock-market",
+    "pretest:image-search-abstraction-layer": "cd apps/image-search-abstraction-layer && cp sample.env .env",
     "test:image-search-abstraction-layer": "node test-server-starts.js apps/image-search-abstraction-layer",
     "test:p2p-video-chat-application": "node test-server-starts.js apps/p2p-video-chat-application",
     "pretest:voting-app": "cd apps/voting-app && cp sample.env .env",
