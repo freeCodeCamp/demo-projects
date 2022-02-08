@@ -17,7 +17,8 @@ module.exports = function (app) {
     var sizes = req.query.size;
     var client = new googleSearch(process.env.CSEID, process.env.APIKEY);
 
-    mongo.connect(process.env.MONGO_URI, function (err, db) {
+    mongo.connect(process.env.MONGO_URI, function (err, client) {
+      var db = client.db();
       if (err) throw err;
       console.log('Connected to mongoDB');
 
