@@ -1,4 +1,4 @@
-/* global io SimplePeer */
+/* global io */
 import $, { trim } from "jquery";
 import SimplePeer from "simple-peer/simplepeer.min.js";
 
