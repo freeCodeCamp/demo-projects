@@ -20,7 +20,7 @@
     "express-babelify-middleware": "0.2.1",
     "express-session": "1.17.2",
     "mongoose": "5.13.14",
-    "passport": "0.4.1",
+    "passport": "0.5.2",
     "passport-github": "1.1.0",
     "react": "15.7.0",
     "react-dom": "15.7.0",
