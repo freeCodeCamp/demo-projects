@@ -1,5 +1,5 @@
 const path = require('path');
-const envFilePath = path.join(`${__dirname}/../../twitch-proxy/`, '.env');
+const envFilePath = path.join(`${__dirname}/../../apps/twitch-proxy/`, '.env');
 require('dotenv').config({ path: envFilePath });
 const fetch = require('node-fetch');
 const fs = require('fs');
@@ -12,13 +12,18 @@ const updateApiKey = async () => {
   })
     .then(res => res.json())
     .catch(err => console.log(err));
+  
+  const accessToken = keyObj.access_token;
+  if (!accessToken) {
+    return console.error('Twitch api did not return an accessToken');
+  }
 
   // Write new file with updated token
   fs.writeFileSync(envFilePath, `PORT=${PORT}
 TWITCH_CLIENT_ID=${TWITCH_CLIENT_ID}
 TWITCH_CLIENT_SECRET=${TWITCH_CLIENT_SECRET}
 # Expires in ~60 days
-ACCESS_TOKEN=${keyObj.access_token}
+ACCESS_TOKEN=${accessToken}
 `);
 }
 
