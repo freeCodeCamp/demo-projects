@@ -13,7 +13,7 @@
     "restart": "pm2 restart ecosystem.config.js",
     "stop": "pm2 stop ecosystem.config.js",
     "delete": "pm2 delete ecosystem.config.js",
-    "update-and-reload-twitch-proxy": "pm2 start scripts/twitch-proxy/updateApiKey.js --no-autorestart --cron \"0 0 1 * *\" && npm run reload -- --only twitch-proxy",
+    "update-and-reload-twitch-proxy": "pm2 start scripts/twitch-proxy/updateApiKey.mjs --no-autorestart --cron \"0 0 1 * *\" && npm run reload -- --only twitch-proxy",
     "test": "echo 'The test suite is meant to run locally or in a CI environment. \u001b[31mDo NOT run this in production.\u001b[37m If you intend to run the tests, use \"npm run test-local-or-ci\".'",
     "test-local-or-ci": "npm-run-all -s test:*",
     "test:config": "jest --rootDir=test",
@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "dotenv": "14.3.2",
-    "node-fetch": "2.6.7"
+    "node-fetch": "3.2.0"
   },
   "workspaces": [
     "apps/american-british-translator",
