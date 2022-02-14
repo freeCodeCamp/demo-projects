@@ -64,4 +64,4 @@ var AjaxFunctions = {
 
 }
 
-module.exports = AjaxFunctions;
+export default AjaxFunctions;

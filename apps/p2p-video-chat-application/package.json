@@ -4,17 +4,26 @@
   "description": "A simple socket.io based video chat app",
   "main": "server.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "wait-port -t 10000 3000",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "concurrently \"rollup -c -w\" \"nodemon server.js\"",
+    "prepare": "npm run build"
   },
   "dependencies": {
-    "browserify-middleware": "8.1.1",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "dotenv": "14.3.2",
     "express": "4.17.2",
-    "getusermedia": "2.0.1",
     "jquery": "3.6.0",
+    "rollup": "^2.67.0",
+    "rollup-plugin-polyfill-node": "^0.8.0",
+    "rollup-plugin-terser": "^7.0.2",
     "simple-peer": "8.5.0",
-    "socket.io": "2.4.1",
-    "socket.io-client": "2.4.0"
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }

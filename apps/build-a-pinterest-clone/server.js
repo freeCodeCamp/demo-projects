@@ -18,15 +18,6 @@ app.use(bodyParser.json());
 
 mongoose.connect(process.env.DB_URI);
 
-var babelify = require( 'express-babelify-middleware');
-app.get('/bundle.js', babelify('client/index.jsx',
-{ // browserify options
-  grep: /\.jsx?$/
-  }, { // babelify options
-    presets: ["react"]
-  }
-));
-
 app.use('/', express.static(process.cwd() +  '/public'));
 app.use('/assets', express.static(process.cwd() +  '/assets'));
         
