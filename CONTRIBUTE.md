@@ -73,3 +73,12 @@ but I *strongly* recommend at least reading it first. Just in case it has not be
   - Set the new record `name` to the name of the project (sub-domain)
   - Set the new record `IPv4 address` to the ip of the VM
   - Click `save`
+
+## After changing node version
+
+Run
+
+- `pm2 unstartup systemd`
+- `pm2 startup`
+
+Then run the command it says to run. Now it should restart after VM reboots.
