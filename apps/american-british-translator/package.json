@@ -11,7 +11,7 @@
     "@babel/core": "7.17.4",
     "@babel/preset-env": "7.16.11",
     "@babel/register": "7.17.0",
-    "body-parser": "1.19.1",
+    "body-parser": "1.19.2",
     "chai": "4.3.6",
     "chai-http": "4.3.0",
     "cors": "2.8.5",
