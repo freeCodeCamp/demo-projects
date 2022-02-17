@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "1.19.1",
+    "body-parser": "1.19.2",
     "dotenv": "14.3.2",
     "ejs": "2.7.4",
     "express": "4.17.3",
