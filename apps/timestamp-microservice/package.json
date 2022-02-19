@@ -13,7 +13,7 @@
     "cors": "2.8.5",
     "dotenv": "14.3.2",
     "express": "4.17.3",
-    "mocha": "9.2.0"
+    "mocha": "9.2.1"
   },
   "license": "MIT"
 }
