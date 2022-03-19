@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.8",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
     "@rollup/plugin-babel": "5.3.1",
