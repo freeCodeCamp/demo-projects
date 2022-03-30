@@ -1,5 +1,27 @@
 # Example Certification Projects
 
+## Responsive Web Design
+
+* Tribute Page
+  - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
+  - [Example project](https://tribute-page.freecodecamp.rocks/)
+
+* Survey Form
+  - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form)
+  - [Example Project](https://survey-form.freecodecamp.rocks/)
+
+* Product Landing Page
+  - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
+  - [Example Project](https://product-landing-page.freecodecamp.rocks/)
+
+* Technical Documentation Page
+  - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page)
+  - [Example Project](https://technical-documentation-page.freecodecamp.rocks/)
+
+* Personal Portfolio
+  - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
+  - [Example Project](https://personal-portfolio.freecodecamp.rocks/)
+
 ## APIs and Microservices
 * Timestamp
   - [Project description](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice)
