@@ -43,7 +43,7 @@
     "test:voting-app": "node test-server-starts.js apps/voting-app"
   },
   "devDependencies": {
-    "concurrently": "7.0.0",
+    "concurrently": "7.1.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "7.29.4",
     "jest": "27.5.1",
