@@ -16,7 +16,7 @@
     "dotenv": "14.3.2",
     "express": "4.18.1",
     "jquery": "3.6.0",
-    "rollup": "2.71.0",
+    "rollup": "2.71.1",
     "rollup-plugin-polyfill-node": "0.8.0",
     "rollup-plugin-terser": "7.0.2",
     "simple-peer": "8.5.0",
