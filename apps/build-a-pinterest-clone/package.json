@@ -32,7 +32,7 @@
     "react": "15.7.0",
     "react-dom": "15.7.0",
     "react-masonry-component": "6.3.0",
-    "rollup": "2.72.1",
+    "rollup": "2.73.0",
     "rollup-plugin-terser": "7.0.2"
   },
   "devDependencies": {
