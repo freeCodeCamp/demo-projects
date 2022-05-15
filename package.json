@@ -47,7 +47,7 @@
     "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page"
   },
   "devDependencies": {
-    "concurrently": "7.1.0",
+    "concurrently": "7.2.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "7.29.4",
     "jest": "27.5.1",

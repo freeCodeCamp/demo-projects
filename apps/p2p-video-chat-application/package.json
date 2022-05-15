@@ -23,7 +23,7 @@
     "socket.io": "2.4.1"
   },
   "devDependencies": {
-    "concurrently": "7.1.0",
+    "concurrently": "7.2.0",
     "nodemon": "2.0.16"
   }
 }
