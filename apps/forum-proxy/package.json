@@ -14,6 +14,6 @@
     "dotenv": "14.3.2",
     "express": "4.18.1",
     "mocha": "9.2.2",
-    "node-fetch": "3.2.4"
+    "node-fetch": "3.2.5"
   }
 }
