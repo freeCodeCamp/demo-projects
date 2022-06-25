@@ -27,7 +27,7 @@
     "express": "5.0.0-alpha.8",
     "express-session": "1.17.3",
     "mongoose": "5.13.14",
-    "passport": "0.5.2",
+    "passport": "0.6.0",
     "passport-github": "1.1.0",
     "react": "15.7.0",
     "react-dom": "15.7.0",
