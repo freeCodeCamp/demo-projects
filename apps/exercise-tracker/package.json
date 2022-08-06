@@ -15,7 +15,7 @@
     "express": "4.18.1",
     "mocha": "9.2.2",
     "mongodb": "3.7.3",
-    "mongoose": "5.13.14"
+    "mongoose": "6.4.6"
   },
   "license": "MIT"
 }
