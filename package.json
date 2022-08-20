@@ -2,7 +2,7 @@
   "name": "@freecodecamp/demo-projects",
   "version": "0.0.0",
   "engines": {
-    "node": "16.16.0",
+    "node": "16.17.0",
     "npm": "8.17.0"
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
