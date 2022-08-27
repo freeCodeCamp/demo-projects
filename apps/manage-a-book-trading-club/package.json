@@ -34,7 +34,7 @@
     "express-session": "1.17.3",
     "font-awesome": "4.7.0",
     "helmet": "3.23.3",
-    "mongoose": "5.13.14",
+    "mongoose": "5.13.15",
     "morgan": "1.10.0",
     "passport": "0.5.2",
     "passport-github": "1.1.0",
