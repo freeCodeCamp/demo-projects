@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "engines": {
     "node": "16.17.0",
-    "npm": "8.18.0"
+    "npm": "8.19.1"
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
