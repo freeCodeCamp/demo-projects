@@ -45,7 +45,7 @@ but I *strongly* recommend at least reading it first. Just in case it has not be
 
 ## If adding a new project:
 
-- Make sure the new project is in the `port-map.json` file.
+- Make sure the new project is in the `port-map.json` file and in the `package.json` file.
 - Make a PR to the `demo-projects-nginx-config` repo to configure the new app:
   - Add config in  `/etc/nginx/sites-enabled/10-freecodecamp.rocks.conf` by copying config for one of the other projects and changing the names.
   - Also add the title at the top.
