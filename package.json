@@ -48,7 +48,8 @@
     "test:bar-chart": "node test-server-starts.js apps/bar-chart",
     "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph",
     "test:heat-map": "node test-server-starts.js apps/heat-map",
-    "test:choropleth-map": "node test-server-starts.js apps/choropleth-map"
+    "test:choropleth-map": "node test-server-starts.js apps/choropleth-map",
+    "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -91,6 +92,7 @@
     "apps/survey-form",
     "apps/technical-documentation-page",
     "apps/timestamp-microservice",
+    "apps/treemap-diagram",
     "apps/tribute-page",
     "apps/twitch-proxy",
     "apps/url-shortener-microservice",
