@@ -13,7 +13,7 @@ Fine. You can just run
 ./scripts/update.sh
 ```
 
-but I *strongly* recommend at least reading it first. Just in case it has not been updated to match new workflows.
+but I _strongly_ recommend at least reading it first. Just in case it has not been updated to match new workflows.
 
 ## After a PR has been merged to the demo-projects repo:
 
@@ -47,7 +47,7 @@ but I *strongly* recommend at least reading it first. Just in case it has not be
 
 - Make sure the new project is in the `port-map.json` file.
 - Make a PR to the `demo-projects-nginx-config` repo to configure the new app:
-  - Add config in  `/etc/nginx/sites-enabled/10-freecodecamp.rocks.conf` by copying config for one of the other projects and changing the names.
+  - Add config in `/sites-enabled/10-freecodecamp.rocks.conf` by copying config for one of the other projects and changing the names.
   - Also add the title at the top.
 - Merge the PR
 - In the VM:
