@@ -44,7 +44,8 @@
     "test:tribute-page": "node test-server-starts.js apps/tribute-page",
     "test:survey-form": "node test-server-starts.js apps/survey-form",
     "test:product-landing-page": "node test-server-starts.js apps/product-landing-page",
-    "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page"
+    "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page",
+    "test:bar-chart": "node test-server-starts.js apps/bar-chart"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -62,6 +63,7 @@
   "workspaces": [
     "apps/american-british-translator",
     "apps/anonymous-message-board",
+    "apps/bar-chart",
     "apps/build-a-pinterest-clone",
     "apps/chart-the-stock-market",
     "apps/exercise-tracker",
