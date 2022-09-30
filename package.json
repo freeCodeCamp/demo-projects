@@ -45,7 +45,8 @@
     "test:survey-form": "node test-server-starts.js apps/survey-form",
     "test:product-landing-page": "node test-server-starts.js apps/product-landing-page",
     "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page",
-    "test:bar-chart": "node test-server-starts.js apps/bar-chart"
+    "test:bar-chart": "node test-server-starts.js apps/bar-chart",
+    "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -79,6 +80,7 @@
     "apps/product-landing-page",
     "apps/request-header-parser-microservice",
     "apps/secure-real-time-multiplayer-game",
+    "apps/scatterplot-graph",
     "apps/stock-price-checker",
     "apps/stock-price-checker-proxy",
     "apps/sudoku-solver",

@@ -1,0 +1,14 @@
+{
+  "name": "scatterplot-graph",
+  "version": "0.0.1",
+  "description": "Data Visualization project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "wait-port -t 10000 3000"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
