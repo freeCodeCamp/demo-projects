@@ -47,7 +47,8 @@
     "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page",
     "test:bar-chart": "node test-server-starts.js apps/bar-chart",
     "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph",
-    "test:heat-map": "node test-server-starts.js apps/heat-map"
+    "test:heat-map": "node test-server-starts.js apps/heat-map",
+    "test:choropleth-map": "node test-server-starts.js apps/choropleth-map"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -68,6 +69,7 @@
     "apps/bar-chart",
     "apps/build-a-pinterest-clone",
     "apps/chart-the-stock-market",
+    "apps/choropleth-map",
     "apps/exercise-tracker",
     "apps/file-metadata-microservice",
     "apps/forum-proxy",
