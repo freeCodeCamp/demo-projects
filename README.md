@@ -29,8 +29,26 @@
 ## Data Visualization
 
 - Bar Chart
+
   - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart)
   - [Example Project](https://bar-chart.freecodecamp.rocks/)
+
+- Scatterplot Graph
+
+  - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph)
+  - [Example Project](https://scatterplot-graph.freecodecamp.rocks/)
+
+- Heat Map
+
+  - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map)
+  - [Example Project](https://heat-map.freecodecamp.rocks/)
+
+- Choropleth Map
+  - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map)
+  - [Example Project](https://choropleth-map.freecodecamp.rocks/)
+- Treemap Diagram
+  - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
+  - [Example Project](https://treemap-diagram.freecodecamp.rocks/)
 
 ## APIs and Microservices
 
