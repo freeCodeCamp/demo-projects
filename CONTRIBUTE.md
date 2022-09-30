@@ -52,7 +52,7 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
 - Merge the PR
 - In the VM:
   - `cd` to the `/etc/nginx` folder
-  - `git fetch --all` to get new changes
+  - `git fetch --all` to get new changes. Use `sudo` for the next few commands if you get a permission denied error.
   - `git pull origin master` to add new changes
   - Open the `/etc/nginx/configs/upstreams.conf` file. Set the port for your new project to the value declared in `port-map.json`. I would try to keep them in alphabetical order.
   - Reload `nginx` with the new config using `sudo nginx -s reload`
@@ -62,8 +62,8 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
     - Set `.env` variables
     - `npm install`
     - anything else
-  - `cd` into the `/home/freeCodeCamp/demo-projects/<new_project>` folder
-  - Make sure you're in the project root! Start the project with `npm start -- --only=<project-name>`
+  - `cd` into the `/home/freeCodeCamp/demo-projects/apps` folder
+  - Start the project with `npm start -- --only=<project-name>`
 - Add the `https://<project>.freecodecamp.rocks` URL to our [Cloudflare](https://www.cloudflare.com/) by:
   - Going to our [Cloudflare Dashboard](https://dash.cloudflare.com/)
   - Open the `freecodecamp.rocks` domain
