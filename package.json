@@ -46,7 +46,8 @@
     "test:product-landing-page": "node test-server-starts.js apps/product-landing-page",
     "test:technical-documentation-page": "node test-server-starts.js apps/technical-documentation-page",
     "test:bar-chart": "node test-server-starts.js apps/bar-chart",
-    "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph"
+    "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph",
+    "test:heat-map": "node test-server-starts.js apps/heat-map"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -70,6 +71,7 @@
     "apps/exercise-tracker",
     "apps/file-metadata-microservice",
     "apps/forum-proxy",
+    "apps/heat-map",
     "apps/image-search-abstraction-layer",
     "apps/issue-tracker",
     "apps/manage-a-book-trading-club",
