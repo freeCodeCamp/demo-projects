@@ -45,14 +45,14 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
 
 ## If adding a new project:
 
-- Make sure the new project is in the `port-map.json` file.
+- Make sure the new project is in the `port-map.json` file. Update also `package.json` and `package-lock.json`.
 - Make a PR to the `demo-projects-nginx-config` repo to configure the new app:
   - Add config in `/sites-enabled/10-freecodecamp.rocks.conf` by copying config for one of the other projects and changing the names.
   - Also add the title at the top.
 - Merge the PR
 - In the VM:
   - `cd` to the `/etc/nginx` folder
-  - `git fetch --all` to get new changes
+  - `git fetch --all` to get new changes. Use `sudo` for the next few commands if you get a permission denied error.
   - `git pull origin master` to add new changes
   - Open the `/etc/nginx/configs/upstreams.conf` file. Set the port for your new project to the value declared in `port-map.json`. I would try to keep them in alphabetical order.
   - Reload `nginx` with the new config using `sudo nginx -s reload`
@@ -62,8 +62,8 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
     - Set `.env` variables
     - `npm install`
     - anything else
-  - `cd` into the `/home/freeCodeCamp/demo-projects/<new_project>` folder
-  - Make sure you're in the project root! Start the project with `npm start -- --only=<project-name>`
+  - `cd` into the `/home/freeCodeCamp/demo-projects/apps` folder
+  - Start the project with `npm start -- --only=<project-name>`
 - Add the `https://<project>.freecodecamp.rocks` URL to our [Cloudflare](https://www.cloudflare.com/) by:
   - Going to our [Cloudflare Dashboard](https://dash.cloudflare.com/)
   - Open the `freecodecamp.rocks` domain
