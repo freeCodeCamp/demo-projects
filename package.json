@@ -50,7 +50,8 @@
     "test:heat-map": "node test-server-starts.js apps/heat-map",
     "test:choropleth-map": "node test-server-starts.js apps/choropleth-map",
     "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram",
-    "test:random-quote-machine": "node test-server-starts.js apps/random-quote-machine"
+    "test:random-quote-machine": "node test-server-starts.js apps/random-quote-machine",
+    "test:markdown-previewer": "node test-server-starts.js apps/markdown-previewer"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -79,6 +80,7 @@
     "apps/image-search-abstraction-layer",
     "apps/issue-tracker",
     "apps/manage-a-book-trading-club",
+    "apps/markdown-previewer",
     "apps/metric-imperial-converter",
     "apps/p2p-video-chat-application",
     "apps/personal-library",

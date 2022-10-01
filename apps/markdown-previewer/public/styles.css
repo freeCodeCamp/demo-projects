@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background: #87b5b5;
+  margin: 10px 0;
+}
+
+.colorScheme,
+.previewWrap,
+.editorWrap textarea {
+  background-color: #c0d8d8;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  border-top: none;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #4aa3a3;
+  padding: 0.3rem;
+  border: 1px solid #1d2f2f;
+  box-shadow: 1px 1px 10px 2px #3a5f5f;
+  font-family: Russo One;
+  font-size: 1rem;
+  color: black;
+}
+.toolbar i {
+  width: 25px;
+  margin-left: 5px;
+}
+.toolbar .fa-arrows-alt,
+.toolbar .fa-compress {
+  margin-left: auto;
+}
+
+.fa-retweet:hover,
+.fa-compress:hover,
+.fa-arrows-alt:hover {
+  color: #57e2b1;
+  cursor: pointer;
+}
+
+.fa-free-code-camp {
+  margin-right: 3px;
+}
+
+.editorWrap {
+  max-width: 600px;
+  margin: 1.125rem auto;
+}
+.editorWrap .toolbar {
+  width: 99%;
+}
+.editorWrap textarea {
+  width: 99%;
+  min-height: 200px;
+  margin-bottom: -5px;
+  resize: vertical;
+  outline: none;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 0.875rem;
+}
+
+.converter {
+  width: 100px;
+  text-align: center;
+  font-size: 35px;
+  margin: auto;
+}
+
+.previewWrap {
+  max-width: 800px;
+  margin: 1.25rem auto;
+  min-height: 200px;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 850px) {
+  .previewWrap {
+    max-width: 630px;
+  }
+
+  .editorWrap {
+    max-width: 550px;
+  }
+}
+.maximized {
+  width: 96%;
+  min-height: 100vh;
+  margin: auto;
+}
+.maximized textarea {
+  min-height: 95vh;
+  resize: none;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    margin: 5px 0;
+  }
+
+  .editorWrap {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .maximized {
+    width: 95%;
+    margin: auto;
+  }
+
+  .previewWrap {
+    width: 90vw;
+  }
+}
+#preview {
+  padding: 0 1rem;
+}
+#preview blockquote {
+  border-left: 3px solid #224b4b;
+  color: #224b4b;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+#preview > p > code {
+  padding: 3px;
+}
+#preview code {
+  background: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+#preview pre {
+  display: block;
+  overflow: auto;
+  background: white;
+  padding: 5px;
+  line-height: 1.2;
+}
+#preview h1 {
+  border-bottom: 2px solid #224b4b;
+}
+#preview h2 {
+  border-bottom: 1px solid #224b4b;
+}
+#preview table {
+  border-collapse: collapse;
+}
+#preview td,
+#preview th {
+  border: 2px solid #224b4b;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 0.875rem;
+  }
+}
