@@ -49,7 +49,8 @@
     "test:scatterplot-graph": "node test-server-starts.js apps/scatterplot-graph",
     "test:heat-map": "node test-server-starts.js apps/heat-map",
     "test:choropleth-map": "node test-server-starts.js apps/choropleth-map",
-    "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram"
+    "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram",
+    "test:random-quote-machine": "node test-server-starts.js apps/random-quote-machine"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -83,6 +84,7 @@
     "apps/personal-library",
     "apps/personal-portfolio",
     "apps/product-landing-page",
+    "apps/random-quote-machine",
     "apps/request-header-parser-microservice",
     "apps/secure-real-time-multiplayer-game",
     "apps/scatterplot-graph",
