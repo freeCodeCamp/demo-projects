@@ -1,5 +1,19 @@
 # Updating/Adding a demo project
 
+## Project structure
+
+All projects should have `start` and `test` scripts in their package.json's
+scripts section. `start` is necessary, since `pm2` will use it to start the
+project. `test` is optional, but recommended to ensure that, at bare minimum,
+the project can be started.
+
+### Projects with build steps
+
+If the project needs building starting `start` can be run, the build script must be
+called by the `prepare` script. If this is done, the workflow below trigger the build automatically.
+
+If bundling is required, please follow the example of `build-a-pinterest-clone` and use `rollup` to bundle the project.
+
 ## How do I update everything in one go?
 
 - SSH into the VM with `ssh freecodecamp@<ip>`
