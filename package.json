@@ -51,6 +51,7 @@
     "test:choropleth-map": "node test-server-starts.js apps/choropleth-map",
     "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram",
     "test:random-quote-machine": "node test-server-starts.js apps/random-quote-machine",
+    "pretest:markdown-previewer": "cd apps/markdown-previewer && cp sample.env .env",
     "test:markdown-previewer": "node test-server-starts.js apps/markdown-previewer"
   },
   "devDependencies": {
