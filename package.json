@@ -7,7 +7,7 @@
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
-    "lint": "eslint apps --max-warnings 0",
+    "lint": "eslint --max-warnings 0 .",
     "start": "pm2 start ecosystem.config.js",
     "reload": "pm2 reload ecosystem.config.js",
     "restart": "pm2 restart ecosystem.config.js",

@@ -24,7 +24,7 @@ const test = async () => {
  * to set the root-level process exit code so the CI passes/fails accordingly.
  */
 test()
-  .then((result) => {
+  .then(() => {
     console.log('Successfully started', process.argv[2])
     process.exit(0);
   })
