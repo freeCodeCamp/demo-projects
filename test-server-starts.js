@@ -4,10 +4,11 @@ const { resolve } = require('path');
 const { workspaces } = require('./package.json');
 
 const test = async (pkg, port) => {
+  const tenMinutes = 10 * 60 * 1000;
   const details = await concurrently(
     [
       { command: `PORT=${port} npm start`, cwd: resolve(__dirname, pkg) },
-      { command: `wait-port -t 100000 ${port}`, cwd: resolve(__dirname, pkg) }
+      { command: `wait-port -t ${tenMinutes} ${port}`, cwd: resolve(__dirname, pkg) }
     ],
     {
       killOthers: ['success', 'failure'],
