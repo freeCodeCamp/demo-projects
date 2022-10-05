@@ -66,7 +66,6 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
   - `git fetch --all` to get the new changes
   - `git pull origin main` to add new changes
   - run `npm ci` to install dependencies for all the projects
-  - Add anything needed in any of the projects - likely a `.env` file with values
   - `cd` into the `~/demo-projects/apps` folder
   - Start the project with `npm start -- --only=<project-name>`
 
