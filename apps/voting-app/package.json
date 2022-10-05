@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "wait-port -t 10000 3000"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
