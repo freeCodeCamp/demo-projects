@@ -1,6 +1,7 @@
 const fs = require('fs');
 const dotenv = require('dotenv');
-const path = require('path');
+
+const { createEnvFileIfMissing } = require('./utils');
 
 const { workspaces } = require('./package.json');
 const portMap = require('./port-map.json');
@@ -16,17 +17,8 @@ function getName(pkg) {
 }
 
 function parsePackageEnv(pkg) {
-  const { filePath } = createEnvFileIfMissing(pkg);
-  return dotenv.parse(fs.readFileSync(filePath));
-}
-
-function createEnvFileIfMissing(pkg) {
-  const sampleEnvPath = path.resolve(pkg, 'sample.env');
-  const filePath = path.resolve(pkg, '.env');
-
-  if (!fs.existsSync(filePath)) fs.copyFileSync(sampleEnvPath, filePath);
-
-  return { filePath };
+  const { envPath, usesEnvFile } = createEnvFileIfMissing(pkg);
+  return usesEnvFile ? dotenv.parse(fs.readFileSync(envPath)) : {};
 }
 
 // watch does not work if the script is npm. Also, watching in production is
