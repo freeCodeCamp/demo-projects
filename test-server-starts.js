@@ -7,7 +7,7 @@ const test = async (pkg, port) => {
   const details = await concurrently(
     [
       { command: `PORT=${port} npm start`, cwd: resolve(__dirname, pkg) },
-      { command: `wait-port -t 10000 ${port}`, cwd: resolve(__dirname, pkg) }
+      { command: `wait-port -t 100000 ${port}`, cwd: resolve(__dirname, pkg) }
     ],
     {
       killOthers: ['success', 'failure'],
