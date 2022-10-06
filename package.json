@@ -52,7 +52,9 @@
     "test:treemap-diagram": "node test-server-starts.js apps/treemap-diagram",
     "test:random-quote-machine": "node test-server-starts.js apps/random-quote-machine",
     "pretest:markdown-previewer": "cd apps/markdown-previewer && cp sample.env .env",
-    "test:markdown-previewer": "node test-server-starts.js apps/markdown-previewer"
+    "test:markdown-previewer": "node test-server-starts.js apps/markdown-previewer",
+    "pretest:drum-machine": "cd apps/drum-machine && cp sample.env .env",
+    "test:drum-machine": "node test-server-starts.js apps/drum-machine"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -74,6 +76,7 @@
     "apps/build-a-pinterest-clone",
     "apps/chart-the-stock-market",
     "apps/choropleth-map",
+    "apps/drum-machine",
     "apps/exercise-tracker",
     "apps/file-metadata-microservice",
     "apps/forum-proxy",
