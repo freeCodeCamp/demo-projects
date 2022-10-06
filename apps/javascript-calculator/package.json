@@ -1,0 +1,17 @@
+{
+  "name": "javascript-calculator",
+  "version": "0.0.1",
+  "description": "Front end project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "wait-port -t 10000 3000",
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "rollup": "^2.79.1"
+  }
+}

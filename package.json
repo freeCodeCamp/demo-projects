@@ -54,7 +54,9 @@
     "pretest:markdown-previewer": "cd apps/markdown-previewer && cp sample.env .env",
     "test:markdown-previewer": "node test-server-starts.js apps/markdown-previewer",
     "pretest:drum-machine": "cd apps/drum-machine && cp sample.env .env",
-    "test:drum-machine": "node test-server-starts.js apps/drum-machine"
+    "test:drum-machine": "node test-server-starts.js apps/drum-machine",
+    "pretest:javascript-calculator": "cd apps/javascript-calculator && cp sample.env .env",
+    "test:javascript-calculator": "node test-server-starts.js apps/javascript-calculator"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -83,6 +85,7 @@
     "apps/heat-map",
     "apps/image-search-abstraction-layer",
     "apps/issue-tracker",
+    "apps/javascript-calculator",
     "apps/manage-a-book-trading-club",
     "apps/markdown-previewer",
     "apps/metric-imperial-converter",
