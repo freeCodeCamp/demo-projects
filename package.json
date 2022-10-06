@@ -56,7 +56,9 @@
     "pretest:drum-machine": "cd apps/drum-machine && cp sample.env .env",
     "test:drum-machine": "node test-server-starts.js apps/drum-machine",
     "pretest:javascript-calculator": "cd apps/javascript-calculator && cp sample.env .env",
-    "test:javascript-calculator": "node test-server-starts.js apps/javascript-calculator"
+    "test:javascript-calculator": "node test-server-starts.js apps/javascript-calculator",
+    "pretest:25--5-clock": "cd apps/25--5-clock && cp sample.env .env",
+    "test:25--5-clock": "node test-server-starts.js apps/25--5-clock"
   },
   "devDependencies": {
     "concurrently": "7.4.0",
@@ -72,6 +74,7 @@
     "node-fetch": "3.2.10"
   },
   "workspaces": [
+    "apps/25--5-clock",
     "apps/american-british-translator",
     "apps/anonymous-message-board",
     "apps/bar-chart",
