@@ -1,7 +1,7 @@
 {
   "name": "markdown-previewer",
   "version": "0.0.1",
-  "description": "Responsive Web Design project for freeCodeCamp",
+  "description": "Front end project for freeCodeCamp",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
