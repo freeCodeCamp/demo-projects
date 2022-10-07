@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans+Condensed:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="prism.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khubaibcodes.com</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9KpSr0s-mW9MKrByCBu4g20C_XMB6QZqjTdAZQHxVdt0CO-yHNkSHCYm26eHHTTRVPc8&usqp=CAU" width='40' alt="image can't be loaded"></span>
+        <div class="content">
+            <big><big>. C Cheatsheet</big></big>
+        </div>
+    </nav>
+
+<!-- ------------------------------------------------------------------------ -->
+
+    <div class="container">
+        <big><li><h2><u>1. Basics</u></h2>Basic syntax and functions from the C programming language.<br><br></li></big>
+        
+            <li><big>Boilerplate Code</big>
+                <pre class="language-c"><code>#include&ltstdio.h&gt
+int main(){
+
+    return 0;
+}</code></pre>
+            </li><br>
+
+            <li><big>printf function</big>
+                <pre class="language-c">
+<code>//It is used to show output on the screen
+printf("Hello World!");</code></pre>
+            </li><br>
+            <li><big>scanf function</big>
+                <pre class="language-c">
+<code>//It is used to take input from the user
+scanf("placeholder", variables);</code></pre>
+            </li><hr><br><br>
+
+<!-- ------------------------------------------------------------------------ -->
+
+        <big><li><h2><u>2. Comments</u></h2>A comment is the code that is not executed by the compiler, and the programmer uses it to keep
+            track of the code.<br><br></li></big>
+            <li><big>Single line Comments</big>
+                <pre class="language-c">
+<code>// It's a single line comment</code></pre>
+            </li><br>
+            <li><big>Multi-line comment</big>
+                <pre class="language-c">
+<code>/* It's a
+multi-line
+comment
+*/</code></pre>
+            </li><hr><br><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        
+        <big><li><h2><u>3. Data Types</u></h2>The data type is the type of data<br><br></li></big>
+            <li><big>Character type</big>
+                <pre class="language-c">
+<code>//Typically a single octet(one byte). It is an integer type
+char variable_name;</code></pre>
+            </li><br>
+            <li><big>Integer type</big>
+                <pre class="language-c">
+<code>//The most natural size of integer for the machine
+int variable_name;</code></pre>
+            </li><br>
+            <li><big>Float type</big>
+                <pre class="language-c">
+<code>//A single-precision floating-point value
+float variable_name;</code></pre>
+            </li><br>
+            <li><big>Double type</big>
+                <pre class="language-c">
+<code>//A double-precision floating-point value
+double variable_name;</code></pre>
+            </li><br>
+            <li><big>Void type</big>
+                <pre class="language-c">
+<code>//Represents the absence of the type
+void</code></pre>
+            </li><hr><br><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>4. Escape Sequences</u></h2>It is a sequence of characters starting with a backslash, and it doesn't represent itself when used inside string literal.<br><br></li></big>
+            <li><big>Alarm or Beep</big>
+                <pre class="language-c">
+<code>//It produces a beep sound
+\a</code></pre>
+            </li><br>
+            <li><big>Backspace</big>
+                <pre class="language-c">
+<code>//It adds a backspace
+\b</code></pre>
+            </li><br>
+            <li><big>Newline</big>
+                <pre class="language-c">
+<code>//Newline Character
+\n</code></pre>
+            </li><br>
+            <li><big>Tab</big>
+                <pre class="language-c">
+<code>//It gives a tab space
+\t</code></pre>
+            </li><br>
+            <li><big>Backslash</big>
+                <pre class="language-c">
+<code>//It adds a backslash
+\\</code></pre>
+            </li><br>
+            <li><big>Single quote</big>
+                <pre class="language-c">
+<code>//It adds a single quotation mark
+\'</code></pre>
+            </li><br>
+            <li><big>Question mark</big>
+                <pre class="language-c">
+<code>//It adds a question mark
+\?</code></pre>
+            </li><br>
+            <li><big>Null</big>
+                <pre class="language-c">
+<code>//The null character is usually used to terminate a string
+\0</code></pre>
+            </li><hr><br><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>5. Conditional Instructions</u></h2>Conditional statements are used to perform operations based on some condition.<br><br></li></big>
+            <li><big>If Statement</big>
+                <pre class="language-c">
+<code>if(/* condition */)
+{
+/* code */
+}</code></pre>
+            </li><br>
+            <li><big>If-else Statement</big>
+                <pre class="language-c">
+<code>if(/* condition */)
+{
+/* code */
+}
+else
+{
+/* Code */
+}</code></pre>
+            </li><br>
+            <li><big>if else-if Statement</big>
+                <pre class="language-c">
+<code>if(/* condition */)
+{
+// Statements;
+}
+else if(/*condition*/)
+{
+// Statements;
+}
+else
+{
+// Statements
+}</code></pre>
+            </li><br>
+            <li><big>Switch Case Statement</big>
+                <pre class="language-c">
+<code>//It allows a variable to be tested for equality against a list of values (cases).
+switch(expression)
+{
+case constant-expression:
+statement1;
+statement2;
+break;
+case constant-expression:
+statement;
+break;
+...
+default:
+statement;
+}
+    </code></pre>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>6. Iterative Statements</u></h2>Iterative statements facilitate programmers to execute any block of code lines repeatedly and can be controlled as per conditions added by the programmer.<br><br></li></big>
+            </li><br>
+            <li><big>while Loop</big>
+                <pre class="language-c">
+<code>//It allows execution of statement inside the block of the loop until the condition of loop succeeds.
+while(/* condition */)
+{
+/* code */
+}</code></pre>
+            </li><br>
+            <li><big>do-while loop</big>
+                <pre class="language-c">
+<code>//It is an exit controlled loop. It is very similar to the while loop with one difference, i.e., the body of the do-while loop is executed at least once even if the expression is false
+do
+{
+/* code */
+}
+while(/* condition */);</code></pre>
+            </li><br>
+            <li><big>for loop</big>
+                <pre class="language-c">
+<code>//It is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like the array and linked list.
+for(int i = 0; i &lt count; i++)
+{
+/* code */
+}</code></pre>
+            </li><br>
+            <li><big>Break Statement</big>
+                <pre class="language-c">
+<code>//break keyword inside the loop is used to terminate the loop
+break;</code></pre>
+            </li><br>
+            <li><big>Continue Statement</big>
+                <pre class="language-c">
+<code>//continue keyword skips the rest of the current iteration of the loop and returns to the starting point of the loop
+continue;</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>7. Functions & Recursion</u></h2>Functions are used to divide an extensive program into smaller pieces. It can be called multiple times to provide reusability and modularity to the C program.<br><br></li></big>
+            <li><big>Function Definition</big>
+                <pre class="language-c">
+<code>return_type function_name(data_type parameter...){
+//code to be executed
+}</code></pre>
+            </li><br>
+            <li><big>Recursion</big>
+                <pre class="language-c">
+<code>//Recursion is when a function calls a copy of itself to work on a minor problem. And the function that calls itself is known as the Recursive function.
+void recurse()
+{
+... .. ...
+recurse();
+... .. ...
+}</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>8. Pointers</u></h2>Pointer is a variable that contains the address of another variable.<br><br></li></big>
+            <li><big>Declaration</big>
+                <pre class="language-c">
+<code>datatype *var_name;</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>9. Arrays</u></h2>An array is a collection of data items of the same type.<br><br></li></big>
+            <li><big>Declaration</big>
+                <pre class="language-c">
+<code>//data_type array_name[array_size];</code></pre>
+            </li><br>
+            <li><big>Accessing element</big>
+                <pre class="language-c">
+<code>int variable_name = array[index];</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>10. Strings</u></h2>A string is a 1-D character array terminated by a null character ('\0')<br><br></li></big>
+            <li><big>Declaration</big>
+                <pre class="language-c">
+<code>char str_name[size];</code></pre>
+            </li><br>
+            <li><big>gets() function</big>
+                <pre class="language-c">
+<code>//It allows you to enter multi-word string
+gets("string");</code></pre>
+            </li><br>
+            <li><big>puts() function</big>
+                <pre class="language-c">
+<code>//It is used to show string output
+puts("string");</code></pre>
+            </li><br>
+            <li><big>String Functions strlen()</big>
+                <pre class="language-c">
+<code>//It is used to calculate the length of the string
+strlen(string_name);</code></pre>
+            </li><br>
+            <li><big>strcpy() function</big>
+                <pre class="language-c">
+<code>//It is used to copy the content of second-string into the first string passed to it
+strcpy(destination, source);</code></pre>
+            </li><br>
+            <li><big>strcat() function</big>
+                <pre class="language-c">
+<code>//It is used to concatenate two strings
+strcat(first_string, second_string);</code></pre>
+            </li><br>
+            <li><big>strcmp() function</big>
+                <pre class="language-c">
+<code>//It is used to compare two strings
+strcmp(first_string, second_string);</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>11. Structures</u></h2>The structure is a collection of variables of different types under a single name. Defining structure means creating a new data type.<br><br></li></big>
+            <li><big>Structure syntax</big>
+                <pre class="language-c">
+<code>struct structureName
+{
+dataType member1;
+dataType member2;
+...
+};</code></pre>
+            </li><br>
+            <li><big>typedef keyword</big>
+                <pre class="language-c">
+<code>//typedef function allows users to provide alternative names for the primitive and user-defined data types.
+typedef struct structureName
+{
+dataType member1;
+dataType member2;
+...
+}new_name;</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>12. File Handling</u></h2>A set of methods for handling File IO (read/write/append) in C language.<br><br></li></big>
+            <li><big>FILE pointer</big>
+                <pre class="language-c">
+<code>FILE *filePointer;</code></pre>
+            </li><br>
+            <li><big>Opening a file</big>
+                <pre class="language-c">
+<code>//It is used to open file in C.
+filePointer = fopen(fileName.txt, w)</code></pre>
+            </li><br>
+            <li><big>fscanf() function</big>
+                <pre class="language-c">
+<code>//It is used to read the content of file.
+fscanf(FILE *stream, const char *format, ...);</code></pre>
+            </li><br>
+            <li><big>fprintf() function</big>
+                <pre class="language-c">
+<code>//It is used to write content into the file.
+fprintf(FILE *fptr, const char *str, ...);</code></pre>
+            </li><br>
+            <li><big>fgetc() function</big>
+                <pre class="language-c">
+<code>//It reads a character from a file opened in read mode. It returns EOF on reaching the end of file.
+fgetc(FILE *pointer);</code></pre>
+            </li><br>
+            <li><big>fputc() function</big>
+                <pre class="language-c">
+<code>//It writes a character to a file opened in write mode
+fputc(char, FILE *pointer);</code></pre>
+            </li><br>
+            <li><big>Closing a file</big>
+                <pre class="language-c">
+<code>//It closes the file.
+fclose(filePointer);</code></pre>
+            </li><br>
+
+<!-- ------------------------------------------------------------------------ -->
+        <big><li><h2><u>13. Dynamic Memory Allocation</u></h2>A set of functions for dynamic memory allocation from the heap. These methods are used to use the dynamic memory which makes our C programs more efficient.<br><br></li></big>
+            <li><big>malloc() function</big>
+                <pre class="language-c">
+<code>//Stands for 'Memory allocation' and reserves a block of memory with the given amount of bytes.
+ptr = (castType *)malloc(size);</code></pre>
+            </li><br>
+            <li><big>calloc() function</big>
+                <pre class="language-c">
+<code>//Stands for 'Contiguous allocation' and reserves n blocks of memory with the given amount of bytes.
+ptr = (castType *)calloc(n, size);</code></pre>
+            </li><br>
+            <li><big>free function</big>
+                <pre class="language-c">
+<code>//It is used to free the allocated memory.
+free(ptr);</code></pre>
+            </li><br>
+            <li><big>realloc() function</big>
+                <pre class="language-c">
+<code>//If the allocated memory is insufficient, then we can change the size of previously allocated memory using this function for efficiency purposes
+ptr = realloc(ptr, x);</code></pre>
+            </li><br>
+</body>
+
+
+<footer>
+    <p class="centre">copyright &copy; Khubaibcodes.co.in</p>
+</footer>
+</html>
