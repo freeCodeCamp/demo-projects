@@ -1,0 +1,80 @@
+body {
+  background: #1e555c;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+body #container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+body #container .main-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+body #container .length-control {
+  width: 250px;
+}
+body #container button {
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+body #container .btn-level,
+body #container .length-control {
+  display: inline-block;
+}
+body #container .btn-level .btn-level:nth-child(3),
+body #container .length-control .btn-level:nth-child(3) {
+  width: 40px;
+}
+body #container .timer {
+  border: 7px solid #13353a;
+  margin: 20px auto 10px auto;
+  width: 270px;
+  height: 160px;
+  border-radius: 50px;
+  position: relative;
+}
+body #container .timer .timer-wrapper {
+  position: absolute;
+  width: 190px;
+  height: 110px;
+  left: 50%;
+  top: 50%;
+  margin-left: -95px;
+  margin-top: -57px;
+}
+body #container .timer #time-left {
+  font-family: digital;
+  font-size: 80px;
+}
+body #container .timer .timer-control button:active {
+  color: #13353a;
+}
+
+@media screen and (max-width: 500px) {
+  #container {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+  }
+}
+.author {
+  text-align: center;
+  font-family: Share Tech Mono, sans;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #a50d0d;
+}
+.author a {
+  text-decoration: none;
+  color: #00264d;
+  line-height: 26px;
+}
