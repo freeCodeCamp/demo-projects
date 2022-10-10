@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: kotiswar-movies-review-app.herokuapp.com
+Token: 09f748855b07326e1eaf29502b0c57a0f6b5ac885c1d116252850f8034cabfea

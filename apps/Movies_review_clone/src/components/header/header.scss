@@ -1,0 +1,50 @@
+@import "../../common/colors.scss";
+
+.header{
+    background-color: $secondary-color;
+    height: 72px;
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Logo{
+    color: $primary-font;
+    font-weight: 600;
+    font-size: 20px;   
+}
+
+.user-image,.user-image img{
+    width: 45px;
+    height: 45px;
+}
+
+.Search_bar{
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    form{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+
+        button{
+            padding: 0px 8px;
+            font-size: 20px;
+            cursor: pointer;
+            height: 38px;
+        }
+
+        input{
+            font-size: 18px;
+            padding: 5px 5px 5px 10px;
+            width: 100%;
+            height: 38px;
+            outline: none;
+        }
+    }   
+
+}
