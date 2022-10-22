@@ -36,7 +36,7 @@
     "rollup-plugin-terser": "7.0.2"
   },
   "devDependencies": {
-    "concurrently": "7.4.0",
+    "concurrently": "7.5.0",
     "nodemon": "2.0.20"
   }
 }

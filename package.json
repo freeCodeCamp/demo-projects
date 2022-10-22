@@ -61,7 +61,7 @@
     "test:25--5-clock": "node test-server-starts.js apps/25--5-clock"
   },
   "devDependencies": {
-    "concurrently": "7.4.0",
+    "concurrently": "7.5.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "7.31.10",
     "jest": "27.5.1",
