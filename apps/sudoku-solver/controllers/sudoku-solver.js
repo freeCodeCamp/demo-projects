@@ -12,12 +12,18 @@ class SudokuSolver {
   }
 
   validate(puzzleString) {
-    if(puzzleString.length !== 81) {
+    if (puzzleString.length !== 81) {
       return [true, "Expected puzzle to be 81 characters long"];
     }
 
-    if(puzzleString.match(/[^1-9.]/gi)) {
+    if (puzzleString.match(/[^1-9.]/gi)) {
       return [true, "Invalid characters in puzzle"];
+    }
+
+    this.importString(puzzleString);
+    const legal = this.legalStateCheck({ emptyCellsAllowed: true });
+    if (!legal) {
+      return [true, "Puzzle cannot be solved"];
     }
 
     // No invalid data returns false and empty error string
@@ -45,20 +51,20 @@ class SudokuSolver {
     coord = coord.toUpperCase();
 
     // Check that it's a string and exactly 2 character long
-    if(typeof coord != 'string' || coord.length !== 2) {
+    if (typeof coord != 'string' || coord.length !== 2) {
       return [true, null, null];
     }
 
     // Row is 'A' minus the row letter's ascii value
     // only if it's A-I
-    if(coord[0].match(/[A-I]/)) {
+    if (coord[0].match(/[A-I]/)) {
       row = coord.charCodeAt(0) - 'A'.charCodeAt(0);
     } else {
       return [true, null, null]
     }
 
     // Parse number into integer, validate it's 1-9
-    if( parseInt(coord[1]) > 0 && parseInt(coord[1]) < 10) {
+    if (parseInt(coord[1]) > 0 && parseInt(coord[1]) < 10) {
       col = parseInt(coord[1]) - 1;
     } else {
       return [true, null, null]
@@ -101,7 +107,7 @@ class SudokuSolver {
   solve(puzzleString) {
     this.importString(puzzleString);
     // Check if the puzzle contains any empty squares
-    if(puzzleString.match(/\./gi)) {
+    if (puzzleString.match(/\./gi)) {
       this._recursions = 0;
       // If so, use the solver.
       return this.solveSudoku(this._puzzle)
@@ -178,11 +184,23 @@ class SudokuSolver {
 
   // Check an existing complete solution to see if it's correct/complete
   solutionCheck() {
+    return this.legalStateCheck({ emptyCellsAllowed: false });
+  }
+
+  // Check whether a given (solved / partially solved) board state contains only legal digits
+  // emptyCellsAllowed: optionally, also check whether the board is filled
+  legalStateCheck({ emptyCellsAllowed }) {
     for (let row = 0; row < HEIGHT; row++) {
       for (let col = 0; col < WIDTH; col++) {
         let num = this._puzzle[row][col];
+
+        // if empty cells are allowed, ignore zeros
+        if (!!emptyCellsAllowed && num === 0) {
+          continue;
+        }
+        
         this._puzzle[row][col] = 0;
-        if(num === 0 || !this.isSafe(this._puzzle,row, col, num)) {
+        if ((!emptyCellsAllowed && num === 0) || !this.isSafe(this._puzzle, row, col, num)) {
           this._puzzle[row][col] = num;
           return false;
         }
