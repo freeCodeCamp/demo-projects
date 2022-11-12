@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Motardo/book-exchange#readme",
   "devDependencies": {
-    "chai": "4.3.6",
+    "chai": "4.3.7",
     "chai-as-promised": "7.1.1",
     "chai-dom": "1.11.0",
     "chai-http": "4.3.0",
