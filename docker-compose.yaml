@@ -1,0 +1,245 @@
+services:
+  # # Rollup issue
+  # 25--5-clock:
+  #   build:
+  #     context: ./apps/25--5-clock
+  #   # env_file: ./apps/25--5-clock/.env
+  #   command: npm start
+  #   # volumes:
+  #   #   - .:/app/
+  #   #   - /app/node_modules
+  #   ports:
+  #     - 50005:50005
+
+  american-british-translator:
+    build: ./apps/american-british-translator
+    command: npm start
+    ports:
+      - 50010:3000
+
+  # # Database
+  # anonymous-message-board:
+  #   build: ./apps/anonymous-message-board
+  #   command: npm start
+  #   ports:
+  #     - 50020:3000
+
+  bar-chart:
+    build: ./apps/bar-chart
+    command: npm start
+    ports:
+      - 50025:3000
+
+  # # Rollup issue
+  # build-a-pinterest-clone:
+  #   build: ./apps/build-a-pinterest-clone
+  #   command: npm start
+  #   ports:
+  #     - 50030:3000
+
+  # Alpha Vantage API key
+  chart-the-stock-market:
+    build: ./apps/chart-the-stock-market
+    command: npm start
+    ports:
+      - 50035:3000
+
+  choropleth-map:
+    build: ./apps/choropleth-map
+    command: npm start
+    ports:
+      - 50037:3000
+
+  # # Rollup issue
+  # drum-machine:
+  #   build: ./apps/drum-machine
+  #   command: npm start
+  #   ports:
+  #     - 50038:3000
+
+  # # Database
+  # exercise-tracker:
+  #   build: ./apps/exercise-tracker
+  #   command: npm start
+  #   ports:
+  #     - 50040:3000
+
+  file-metadata-microservice:
+    build: ./apps/file-metadata-microservice
+    command: npm start
+    ports:
+      - 50050:3000
+
+  forum-proxy:
+    build: ./apps/forum-proxy
+    command: npm start
+    ports:
+      - 50060:3000
+
+  heat-map:
+    build: ./apps/heat-map
+    command: npm start
+    ports:
+      - 50064:3000
+
+  # # Database, Google Image keys
+  # image-search-abstraction-layer:
+  #   build: ./apps/image-search-abstraction-layer
+  #   command: npm start
+  #   ports:
+  #     - 50065:3000
+
+  # # Database
+  # issue-tracker:
+  #   build: ./apps/issue-tracker
+  #   command: npm start
+  #   ports:
+  #     - 50070:3000
+
+  # # Rollup issue
+  # javascript-calculator:
+  #   build: ./apps/javascript-calculator
+  #   command: npm start
+  #   ports:
+  #     - 50075:3000
+
+  # # Database, GitHub secrets, Google secrets
+  # manage-a-book-trading-club:
+  #   build: ./apps/manage-a-book-trading-club
+  #   command: npm start
+  #   ports:
+  #     - 50200:3000
+
+  metric-imperial-converter:
+    build: ./apps/metric-imperial-converter
+    command: npm start
+    ports:
+      - 50090:3000
+
+  # # Rollup issue
+  # p2p-video-chat-application:
+  #   build: ./apps/p2p-video-chat-application
+  #   command: npm start
+  #   ports:
+  #     - 50100:3000
+
+  # # Database
+  # personal-library:
+  #   build: ./apps/personal-library
+  #   command: npm start
+  #   ports:
+  #     - 50210:3000
+
+  personal-portfolio:
+    build: ./apps/personal-portfolio
+    command: npm start
+    ports:
+      - 50260:3000
+
+  product-landing-page:
+    build: ./apps/product-landing-page
+    command: npm start
+    ports:
+      - 50240:3000
+
+  random-quote-machine:
+    build: ./apps/random-quote-machine
+    command: npm start
+    ports:
+      - 50105:3000
+
+  request-header-parser-microservice:
+    build: ./apps/request-header-parser-microservice
+    command: npm start
+    ports:
+      - 50110:3000
+
+  scatterplot-graph:
+    build: ./apps/scatterplot-graph
+    command: npm start
+    ports:
+      - 50115:3000
+
+  secure-real-time-multiplayer-game:
+    build: ./apps/secure-real-time-multiplayer-game
+    command: npm start
+    ports:
+      - 50120:3000
+
+  stock-price-checker:
+    build: ./apps/stock-price-checker
+    command: npm start
+    ports:
+      - 50140:3000
+
+  # CACHE_TTL_MINUTES and IEX_API_KEY
+  stock-price-checker-proxy:
+    build: ./apps/stock-price-checker-proxy
+    command: npm start
+    ports:
+      - 50130:3000
+
+  sudoku-solver:
+    build: ./apps/sudoku-solver
+    command: npm start
+    ports:
+      - 50150:3000
+
+  survey-form:
+    build: ./apps/survey-form
+    command: npm start
+    ports:
+      - 50280:3000
+
+  technical-documentation-page:
+    build: ./apps/technical-documentation-page
+    command: npm start
+    ports:
+      - 50250:3000
+
+  timestamp-microservice:
+    build: ./apps/timestamp-microservice
+    command: npm start
+    ports:
+      - 50160:3000
+
+  treemap-diagram:
+    build: ./apps/treemap-diagram
+    command: npm start
+    ports:
+      - 50255:3000
+
+  tribute-page:
+    build: ./apps/tribute-page
+    command: npm start
+    ports:
+      - 50270:3000
+
+  # # TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, ACCESS_TOKEN, twitch update script (could run this
+  # # as a prestart script, then restart this container every 30 days or so)
+  # twitch-proxy:
+  #   build: ./apps/twitch-proxy
+  #   command: npm start
+  #   ports:
+  #     - 50170:3000
+
+  # # Database
+  # url-shortener-microservice:
+  #   build: ./apps/url-shortener-microservice
+  #   command: npm start
+  #   ports:
+  #     - 50180:3000
+
+  # # Database
+  # voting-app:
+  #   build: ./apps/voting-app
+  #   command: npm start
+  #   ports:
+  #     - 50185:3000
+
+  # OPEN_WEATHER_API_KEY
+  weather-proxy:
+    build: ./apps/weather-proxy
+    command: npm start
+    ports:
+      - 50190:3000
