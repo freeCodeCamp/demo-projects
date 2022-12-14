@@ -208,7 +208,7 @@ function callback(data) {
     .tickFormat(function (month) {
       var date = new Date(0);
       date.setUTCMonth(month);
-      var format = d3.timeFormat('%B');
+      var format = d3.utcFormat('%B');
       return format(date);
     })
     .tickSize(10, 1);
@@ -253,7 +253,7 @@ function callback(data) {
     .tickFormat(function (year) {
       var date = new Date(0);
       date.setUTCFullYear(year);
-      var format = d3.timeFormat('%Y');
+      var format = d3.utcFormat('%Y');
       return format(date);
     })
     .tickSize(10, 1);
@@ -389,7 +389,7 @@ function callback(data) {
       var date = new Date(d.year, d.month);
       var str =
         "<span class='date'>" +
-        d3.timeFormat('%Y - %B')(date) +
+        d3.utcFormat('%Y - %B')(date) +
         '</span>' +
         '<br />' +
         "<span class='temperature'>" +
