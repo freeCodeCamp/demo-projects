@@ -1,7 +1,5 @@
 /* global io */
 import $, { trim } from "jquery";
-// import * as SimplePeer from "simple-peer/simplepeer.min.js";
-// import SimplePeer from "simple-peer";
 import SimplePeer from "simple-peer/simplepeer.min.js";
 
 $(document).ready(async function () {
@@ -108,8 +106,8 @@ $(document).ready(async function () {
     });
 
     peer.on("error", function (error) {
-      alert("Sorry. Somme fatal error occured.");
-      console.log("Some fatal error occured : " + error);
+      alert("Sorry. Some fatal error occurred.");
+      console.log("Some fatal error occurred : " + error);
     });
   }
 });
