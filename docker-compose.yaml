@@ -1,12 +1,11 @@
 services:
-  # # Rollup issue
-  # 25--5-clock:
-  #   build:
-  #     context: ./apps/25--5-clock
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50005:3000
+  25--5-clock:
+    build:
+      context: ./apps/25--5-clock
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50005:3000
 
   american-british-translator:
     build:
@@ -33,14 +32,14 @@ services:
     ports:
       - 50025:3000
 
-  # # Rollup issue
-  # build-a-pinterest-clone:
-  #   build:
-  #     context: ./apps/build-a-pinterest-clone
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50030:3000
+  # GITHUB_KEY, GITHUB_SECRET, DB_URI, APP_URL, NODE_ENV
+  build-a-pinterest-clone:
+    build:
+      context: ./apps/build-a-pinterest-clone
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50030:3000
 
   # Alpha Vantage API key
   chart-the-stock-market:
@@ -59,14 +58,13 @@ services:
     ports:
       - 50037:3000
 
-  # # Rollup issue
-  # drum-machine:
-  #   build:
-  #     context: ./apps/drum-machine
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50038:3000
+  drum-machine:
+    build:
+      context: ./apps/drum-machine
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50038:3000
 
   # # Database
   # exercise-tracker:
@@ -77,13 +75,13 @@ services:
   #   ports:
   #     - 50040:3000
 
-  # file-metadata-microservice:
-  #   build:
-  #     context: ./apps/file-metadata-microservice
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50050:3000
+  file-metadata-microservice:
+    build:
+      context: ./apps/file-metadata-microservice
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50050:3000
 
   forum-proxy:
     build:
@@ -119,14 +117,13 @@ services:
   #   ports:
   #     - 50070:3000
 
-  # # Rollup issue
-  # javascript-calculator:
-  #   build:
-  #     context: ./apps/javascript-calculator
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50075:3000
+  javascript-calculator:
+    build:
+      context: ./apps/javascript-calculator
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50075:3000
 
   # # Database, GitHub secrets, Google secrets
   # manage-a-book-trading-club:
@@ -137,6 +134,14 @@ services:
   #   ports:
   #     - 50200:3000
 
+  markdown-previewer:
+    build:
+      context: ./apps/markdown-previewer
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50205:3000
+
   metric-imperial-converter:
     build:
       context: ./apps/metric-imperial-converter
@@ -145,14 +150,13 @@ services:
     ports:
       - 50090:3000
 
-  # # Rollup issue
-  # p2p-video-chat-application:
-  #   build:
-  #     context: ./apps/p2p-video-chat-application
-  #     dockerfile: ../../Dockerfile
-  #   command: npm start
-  #   ports:
-  #     - 50100:3000
+  p2p-video-chat-application:
+    build:
+      context: ./apps/p2p-video-chat-application
+      dockerfile: ../../Dockerfile
+    command: npm start
+    ports:
+      - 50100:3000
 
   # # Database
   # personal-library:

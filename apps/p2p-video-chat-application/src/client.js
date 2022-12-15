@@ -1,5 +1,7 @@
 /* global io */
 import $, { trim } from "jquery";
+// import * as SimplePeer from "simple-peer/simplepeer.min.js";
+// import SimplePeer from "simple-peer";
 import SimplePeer from "simple-peer/simplepeer.min.js";
 
 $(document).ready(async function () {
