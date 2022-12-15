@@ -219,6 +219,7 @@ class PadBank extends React.Component {
           <DrumPad
             clip={padBankArr[i].url}
             clipId={padBankArr[i].id}
+            key={padBankArr[i].id}
             keyCode={padBankArr[i].keyCode}
             keyTrigger={padBankArr[i].keyTrigger}
             power={this.props.power}
@@ -232,6 +233,7 @@ class PadBank extends React.Component {
           <DrumPad
             clip='#'
             clipId={padBankArr[i].id}
+            key={padBankArr[i].id}
             keyCode={padBankArr[i].keyCode}
             keyTrigger={padBankArr[i].keyTrigger}
             power={this.props.power}

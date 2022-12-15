@@ -257,7 +257,7 @@ class Timer extends React.Component {
         <div className='author'>
           {' '}
           Designed and Coded by <br />
-          <a href='https://goo.gl/6NNLMG' target='_blank'>
+          <a href='https://goo.gl/6NNLMG' target='_blank' rel='noreferrer'>
             Peter Weinberg
           </a>
         </div>
