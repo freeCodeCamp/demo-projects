@@ -1,31 +1,31 @@
 {
-	"name": "fcc-issue-tracker",
-	"version": "1.0.0",
-	"description": "Issue Tracker Boilerplate",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js",
-		"test": "PORT=3005 mocha --exit --ui tdd tests/"
-	},
-	"dependencies": {
-		"body-parser": "1.20.2",
-		"chai": "4.3.7",
-		"chai-http": "4.3.0",
-		"cors": "2.8.5",
-		"dotenv": "14.3.2",
-		"express": "4.18.2",
-		"mocha": "9.2.2",
-		"mongodb": "3.7.3",
-		"mongoose": "5.13.16"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-issuetracker"
-	},
-	"keywords": [
-		"node",
-		"hyperdev",
-		"express"
-	],
-	"license": "MIT"
+  "name": "fcc-issue-tracker",
+  "version": "1.0.0",
+  "description": "Issue Tracker Boilerplate",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "PORT=3005 mocha --exit --ui tdd tests/"
+  },
+  "dependencies": {
+    "body-parser": "1.20.2",
+    "chai": "4.3.7",
+    "chai-http": "4.3.0",
+    "cors": "2.8.5",
+    "dotenv": "14.3.2",
+    "express": "4.18.2",
+    "mocha": "9.2.2",
+    "mongodb": "3.7.3",
+    "mongoose": "5.13.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/boilerplate-project-issuetracker"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT"
 }

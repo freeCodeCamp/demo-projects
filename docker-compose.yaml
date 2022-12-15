@@ -32,14 +32,14 @@ services:
     ports:
       - 50025:3000
 
-  # GITHUB_KEY, GITHUB_SECRET, DB_URI, APP_URL, NODE_ENV
-  build-a-pinterest-clone:
-    build:
-      context: ./apps/build-a-pinterest-clone
-      dockerfile: ../../Dockerfile
-    command: npm start
-    ports:
-      - 50030:3000
+  # # GITHUB_KEY, GITHUB_SECRET, DB_URI, APP_URL, NODE_ENV
+  # build-a-pinterest-clone:
+  #   build:
+  #     context: ./apps/build-a-pinterest-clone
+  #     dockerfile: ../../Dockerfile
+  #   command: npm start
+  #   ports:
+  #     - 50030:3000
 
   # Alpha Vantage API key
   chart-the-stock-market:
