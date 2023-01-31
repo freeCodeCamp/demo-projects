@@ -1,6 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 const CONNECTION_STRING = process.env.DB_URI;
+const sanitizeHtml = require("sanitize-html");
 
 function ReplyHandler() {
   this.replyList = function (req, res) {
@@ -35,7 +36,7 @@ function ReplyHandler() {
     const now = new Date();
     const reply = {
       _id: new ObjectId(),
-      text: req.body.text,
+      text: sanitizeHtml(req.body.text),
       created_on: now,
       reported: false,
       delete_password: req.body.delete_password,
@@ -52,7 +53,7 @@ function ReplyHandler() {
             $set: { bumped_on: now },
             $push: { replies: reply },
           },
-          () => {}
+          () => { }
         );
       }
     );
@@ -73,7 +74,7 @@ function ReplyHandler() {
             "replies._id": new ObjectId(req.body.reply_id),
           },
           { $set: { "replies.$.reported": true } },
-          () => {}
+          () => { }
         );
       }
     );
