@@ -1,6 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectID;
 const CONNECTION_STRING = process.env.DB_URI;
+const sanitizeHtml = require("sanitize-html");
 
 function ThreadHandler() {
   this.threadList = function (req, res) {
@@ -41,7 +42,7 @@ function ThreadHandler() {
   this.newThread = function (req, res) {
     const board = req.params.board;
     const thread = {
-      text: req.body.text,
+      text: sanitizeHtml(req.body.text),
       created_on: new Date(),
       bumped_on: new Date(),
       reported: false,
@@ -73,7 +74,7 @@ function ThreadHandler() {
         collection.findOneAndUpdate(
           { _id: new ObjectId(req.body.report_id) },
           { $set: { reported: true } },
-          () => {}
+          () => { }
         );
       }
     );
