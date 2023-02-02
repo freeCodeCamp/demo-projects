@@ -34,7 +34,7 @@ but I _strongly_ recommend at least reading it first. Just in case it has not be
 - SSH into the VM with `ssh freecodecamp@<ip>`
 - `cd` to the `demo-projects` folder
 - `git fetch —all` to get new changes
-- `git pull origin master` to add the new changes
+- `git pull origin main` to add the new changes
 
 ## If updating all projects:
 
