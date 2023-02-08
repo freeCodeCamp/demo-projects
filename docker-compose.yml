@@ -5,7 +5,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50005:3000
 
@@ -15,7 +14,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50010:3000
 
@@ -26,7 +24,6 @@ services:
     environment:
       - PORT=3000
       - DB_URI=${ANONYMOUS_MESSAGE_BOARD_DB_URI}
-    command: npm start
     ports:
       - 50020:3000
 
@@ -36,7 +33,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50025:3000
 
@@ -50,7 +46,6 @@ services:
       - GITHUB_SECRET=${BUILD_A_PINTEREST_CLONE_GITHUB_SECRET}
       - DB_URI=${BUILD_A_PINTEREST_CLONE_DB_URI}
       - APP_URL=${BUILD_A_PINTEREST_CLONE_APP_URL}
-    command: npm start
     ports:
       - 50030:3000
 
@@ -61,7 +56,6 @@ services:
     environment:
       - PORT=3000
       - APIKEY=${CHART_THE_STOCK_MARKET_APIKEY}
-    command: npm start
     ports:
       - 50035:3000
 
@@ -71,7 +65,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50037:3000
 
@@ -81,7 +74,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50038:3000
 
@@ -92,7 +84,6 @@ services:
     environment:
       - PORT=3000
       - DB_URI=${EXERCISE_TRACKER_DB_URI}
-    command: npm start
     ports:
       - 50040:3000
 
@@ -102,7 +93,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50050:3000
 
@@ -112,7 +102,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50060:3000
 
@@ -122,7 +111,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50064:3000
 
@@ -135,7 +123,6 @@ services:
       - MONGO_URI=${IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI}
       - CSEID=${IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID}
       - APIKEY=${IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY}
-    command: npm start
     ports:
       - 50065:3000
 
@@ -146,7 +133,6 @@ services:
     environment:
       - PORT=3000
       - DB=${ISSUE_TRACKER_DB}
-    command: npm start
     ports:
       - 50070:3000
 
@@ -156,7 +142,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50075:3000
 
@@ -171,7 +156,6 @@ services:
       - GITHUB_SECRET=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET}
       - MONGO_URI=${MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI}
       - APP_URL=${MANAGE_A_BOOK_TRADING_CLUB_APP_URL}
-    command: npm start
     ports:
       - 50200:3000
 
@@ -181,7 +165,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50205:3000
 
@@ -191,7 +174,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50090:3000
 
@@ -201,7 +183,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50100:3000
 
@@ -212,7 +193,6 @@ services:
     environment:
       - PORT=3000
       - DB=${PERSONAL_LIBRARY_DB}
-    command: npm start
     ports:
       - 50210:3000
 
@@ -222,7 +202,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50260:3000
 
@@ -232,7 +211,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50240:3000
 
@@ -242,7 +220,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50105:3000
 
@@ -252,7 +229,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50110:3000
 
@@ -262,7 +238,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50115:3000
 
@@ -272,7 +247,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50120:3000
 
@@ -283,7 +257,6 @@ services:
     environment:
       - PORT=3000
       - DB_URI=${STOCK_PRICE_CHECKER_DB_URI}
-    command: npm start
     ports:
       - 50140:3000
 
@@ -295,7 +268,6 @@ services:
       - PORT=3000
       - CACHE_TTL_MINUTES=${STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES}
       - IEX_API_KEY=${STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY}
-    command: npm start
     ports:
       - 50130:3000
 
@@ -305,7 +277,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50150:3000
 
@@ -315,7 +286,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50280:3000
 
@@ -325,7 +295,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50250:3000
 
@@ -335,7 +304,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50160:3000
 
@@ -345,7 +313,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50255:3000
 
@@ -355,7 +322,6 @@ services:
       dockerfile: ../../Dockerfile
     environment:
       - PORT=3000
-    command: npm start
     ports:
       - 50270:3000
 
@@ -370,7 +336,6 @@ services:
       - TWITCH_CLIENT_ID=${TWITCH_PROXY_TWITCH_CLIENT_ID}
       - TWITCH_CLIENT_SECRET=${TWITCH_PROXY_TWITCH_CLIENT_SECRET}
       - ACCESS_TOKEN=${TWITCH_PROXY_ACCESS_TOKEN}
-    command: npm start
     ports:
       - 50170:3000
 
@@ -381,7 +346,6 @@ services:
     environment:
       - PORT=3000
       - DB_URI=${URL_SHORTENER_MICROSERVICE_DB_URI}
-    command: npm start
     ports:
       - 50180:3000
 
@@ -392,7 +356,6 @@ services:
     environment:
       - PORT=3000
       - MONGO_URI=${VOTING_APP_MONGO_URI}
-    command: npm start
     ports:
       - 50185:3000
 
@@ -403,6 +366,5 @@ services:
     environment:
       - PORT=3000
       - OPEN_WEATHER_API_KEY=${WEATHER_PROXY_OPEN_WEATHER_API_KEY}
-    command: npm start
     ports:
       - 50190:3000

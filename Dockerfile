@@ -4,3 +4,4 @@ WORKDIR /app
 # for rollup bundling
 COPY . . 
 RUN npm ci
+CMD ["npm", "start"]
