@@ -325,8 +325,6 @@ services:
     ports:
       - 50270:3000
 
-  # TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, ACCESS_TOKEN, twitch update script (could run this
-  # as a prestart script, then restart this container every 30 days or so)
   twitch-proxy:
     build:
       context: ./apps/twitch-proxy
@@ -335,9 +333,9 @@ services:
       - PORT=3000
       - TWITCH_CLIENT_ID=${TWITCH_PROXY_TWITCH_CLIENT_ID}
       - TWITCH_CLIENT_SECRET=${TWITCH_PROXY_TWITCH_CLIENT_SECRET}
-      - ACCESS_TOKEN=${TWITCH_PROXY_ACCESS_TOKEN}
     ports:
       - 50170:3000
+    restart: always
 
   url-shortener-microservice:
     build:
