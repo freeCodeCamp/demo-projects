@@ -1,7 +1,11 @@
 const portMap = require("../port-map.json");
-const { workspaces } = require("../package.json");
+const { readdirSync } = require("fs");
+const { join } = require("path");
 
-const names = workspaces.map((w) => w.split("/")[1]);
+// Filter out hidden files and the nightlife-coordination-app directory
+// until the project is replaced and is ready to be deployed
+const names = readdirSync(join(__dirname, "../apps"))
+  .filter((name) =>  !/(^|\/)\.[^/.]/g.test(name) && name !== "nightlife-coordination-app");
 
 describe("portMap", () => {
   it("should have unique ports", () => {
@@ -14,7 +18,7 @@ describe("portMap", () => {
     });
   });
 
-  it("should have entries for each workspace", () => {
+  it("should have entries for each project", () => {
     names.forEach((name) => {
       expect(Object.keys(portMap)).toContain(name);
     });
