@@ -335,6 +335,8 @@ services:
       - TWITCH_CLIENT_SECRET=${TWITCH_PROXY_TWITCH_CLIENT_SECRET}
     ports:
       - 50170:3000
+    # restart when the cron job to refresh the Twitch access token
+    # kills the node process / container
     restart: always
 
   url-shortener-microservice:
