@@ -3,9 +3,7 @@ services:
     container_name: 25--5-clock
     build:
       context: ./apps/25--5-clock
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50005:3000
 
@@ -13,9 +11,7 @@ services:
     container_name: american-british-translator
     build:
       context: ./apps/american-british-translator
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50010:3000
 
@@ -23,9 +19,8 @@ services:
     container_name: anonymous-message-board
     build:
       context: ./apps/anonymous-message-board
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB_URI=${ANONYMOUS_MESSAGE_BOARD_DB_URI}
     ports:
       - 50020:3000
@@ -34,19 +29,17 @@ services:
     container_name: bar-chart
     build:
       context: ./apps/bar-chart
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50025:3000
 
+  # Check later -- 404
   build-a-pinterest-clone:
     container_name: build-a-pinterest-clone
     build:
       context: ./apps/build-a-pinterest-clone
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - GITHUB_KEY=${BUILD_A_PINTEREST_CLONE_GITHUB_KEY}
       - GITHUB_SECRET=${BUILD_A_PINTEREST_CLONE_GITHUB_SECRET}
       - DB_URI=${BUILD_A_PINTEREST_CLONE_DB_URI}
@@ -58,9 +51,8 @@ services:
     container_name: chart-the-stock-market
     build:
       context: ./apps/chart-the-stock-market
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - APIKEY=${CHART_THE_STOCK_MARKET_APIKEY}
     ports:
       - 50035:3000
@@ -69,9 +61,7 @@ services:
     container_name: choropleth-map
     build:
       context: ./apps/choropleth-map
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50037:3000
 
@@ -79,9 +69,7 @@ services:
     container_name: drum-machine
     build:
       context: ./apps/drum-machine
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50038:3000
 
@@ -89,9 +77,8 @@ services:
     container_name: exercise-tracker
     build:
       context: ./apps/exercise-tracker
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB_URI=${EXERCISE_TRACKER_DB_URI}
     ports:
       - 50040:3000
@@ -100,9 +87,7 @@ services:
     container_name: file-metadata-microservice
     build:
       context: ./apps/file-metadata-microservice
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50050:3000
 
@@ -110,9 +95,7 @@ services:
     container_name: forum-proxy
     build:
       context: ./apps/forum-proxy
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50060:3000
 
@@ -120,9 +103,7 @@ services:
     container_name: heat-map
     build:
       context: ./apps/heat-map
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50064:3000
 
@@ -130,9 +111,8 @@ services:
     container_name: image-search-abstraction-layer
     build:
       context: ./apps/image-search-abstraction-layer
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - MONGO_URI=${IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI}
       - CSEID=${IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID}
       - APIKEY=${IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY}
@@ -143,9 +123,8 @@ services:
     container_name: issue-tracker
     build:
       context: ./apps/issue-tracker
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB=${ISSUE_TRACKER_DB}
     ports:
       - 50070:3000
@@ -154,9 +133,7 @@ services:
     container_name: javascript-calculator
     build:
       context: ./apps/javascript-calculator
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50075:3000
 
@@ -164,9 +141,8 @@ services:
     container_name: manage-a-book-trading-club
     build:
       context: ./apps/manage-a-book-trading-club
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - GITHUB_KEY=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY}
       - GITHUB_SECRET=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET}
       - MONGO_URI=${MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI}
@@ -178,9 +154,7 @@ services:
     container_name: markdown-previewer
     build:
       context: ./apps/markdown-previewer
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50205:3000
 
@@ -188,9 +162,7 @@ services:
     container_name: metric-imperial-converter
     build:
       context: ./apps/metric-imperial-converter
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50090:3000
 
@@ -198,9 +170,7 @@ services:
     container_name: p2p-video-chat-application
     build:
       context: ./apps/p2p-video-chat-application
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50100:3000
 
@@ -208,9 +178,8 @@ services:
     container_name: personal-library
     build:
       context: ./apps/personal-library
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB=${PERSONAL_LIBRARY_DB}
     ports:
       - 50210:3000
@@ -219,9 +188,7 @@ services:
     container_name: personal-portfolio
     build:
       context: ./apps/personal-portfolio
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50260:3000
 
@@ -229,9 +196,7 @@ services:
     container_name: product-landing-page
     build:
       context: ./apps/product-landing-page
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50240:3000
 
@@ -239,9 +204,7 @@ services:
     container_name: random-quote-machine
     build:
       context: ./apps/random-quote-machine
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50105:3000
 
@@ -249,9 +212,7 @@ services:
     container_name: request-header-parser-microservice
     build:
       context: ./apps/request-header-parser-microservice
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50110:3000
 
@@ -259,9 +220,7 @@ services:
     container_name: scatterplot-graph
     build:
       context: ./apps/scatterplot-graph
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50115:3000
 
@@ -269,9 +228,7 @@ services:
     container_name: secure-real-time-multiplayer-game
     build:
       context: ./apps/secure-real-time-multiplayer-game
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50120:3000
 
@@ -279,9 +236,8 @@ services:
     container_name: stock-price-checker
     build:
       context: ./apps/stock-price-checker
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB_URI=${STOCK_PRICE_CHECKER_DB_URI}
     ports:
       - 50140:3000
@@ -290,9 +246,8 @@ services:
     container_name: stock-price-checker-proxy
     build:
       context: ./apps/stock-price-checker-proxy
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - CACHE_TTL_MINUTES=${STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES}
       - IEX_API_KEY=${STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY}
     ports:
@@ -302,9 +257,7 @@ services:
     container_name: sudoku-solver
     build:
       context: ./apps/sudoku-solver
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50150:3000
 
@@ -312,9 +265,7 @@ services:
     container_name: survey-form
     build:
       context: ./apps/survey-form
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50280:3000
 
@@ -322,9 +273,7 @@ services:
     container_name: technical-documentation-page
     build:
       context: ./apps/technical-documentation-page
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50250:3000
 
@@ -332,9 +281,7 @@ services:
     container_name: timestamp-microservice
     build:
       context: ./apps/timestamp-microservice
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50160:3000
 
@@ -342,9 +289,7 @@ services:
     container_name: treemap-diagram
     build:
       context: ./apps/treemap-diagram
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50255:3000
 
@@ -352,9 +297,7 @@ services:
     container_name: tribute-page
     build:
       context: ./apps/tribute-page
-      dockerfile: ../../Dockerfile
-    environment:
-      - PORT=3000
+      dockerfile: ../Dockerfile.shared
     ports:
       - 50270:3000
 
@@ -362,9 +305,8 @@ services:
     container_name: twitch-proxy
     build:
       context: ./apps/twitch-proxy
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - TWITCH_CLIENT_ID=${TWITCH_PROXY_TWITCH_CLIENT_ID}
       - TWITCH_CLIENT_SECRET=${TWITCH_PROXY_TWITCH_CLIENT_SECRET}
     ports:
@@ -377,9 +319,8 @@ services:
     container_name: url-shortener-microservice
     build:
       context: ./apps/url-shortener-microservice
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - DB_URI=${URL_SHORTENER_MICROSERVICE_DB_URI}
     ports:
       - 50180:3000
@@ -388,9 +329,8 @@ services:
     container_name: voting-app
     build:
       context: ./apps/voting-app
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - MONGO_URI=${VOTING_APP_MONGO_URI}
     ports:
       - 50185:3000
@@ -399,9 +339,8 @@ services:
     container_name: weather-proxy
     build:
       context: ./apps/weather-proxy
-      dockerfile: ../../Dockerfile
+      dockerfile: ./Dockerfile
     environment:
-      - PORT=3000
       - OPEN_WEATHER_API_KEY=${WEATHER_PROXY_OPEN_WEATHER_API_KEY}
     ports:
       - 50190:3000
