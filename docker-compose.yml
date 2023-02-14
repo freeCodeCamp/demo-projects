@@ -1,5 +1,6 @@
 services:
   25--5-clock:
+    container_name: 25--5-clock
     build:
       context: ./apps/25--5-clock
       dockerfile: ../../Dockerfile
@@ -9,6 +10,7 @@ services:
       - 50005:3000
 
   american-british-translator:
+    container_name: american-british-translator
     build:
       context: ./apps/american-british-translator
       dockerfile: ../../Dockerfile
@@ -18,6 +20,7 @@ services:
       - 50010:3000
 
   anonymous-message-board:
+    container_name: anonymous-message-board
     build:
       context: ./apps/anonymous-message-board
       dockerfile: ../../Dockerfile
@@ -28,6 +31,7 @@ services:
       - 50020:3000
 
   bar-chart:
+    container_name: bar-chart
     build:
       context: ./apps/bar-chart
       dockerfile: ../../Dockerfile
@@ -37,6 +41,7 @@ services:
       - 50025:3000
 
   build-a-pinterest-clone:
+    container_name: build-a-pinterest-clone
     build:
       context: ./apps/build-a-pinterest-clone
       dockerfile: ../../Dockerfile
@@ -50,6 +55,7 @@ services:
       - 50030:3000
 
   chart-the-stock-market:
+    container_name: chart-the-stock-market
     build:
       context: ./apps/chart-the-stock-market
       dockerfile: ../../Dockerfile
@@ -60,6 +66,7 @@ services:
       - 50035:3000
 
   choropleth-map:
+    container_name: choropleth-map
     build:
       context: ./apps/choropleth-map
       dockerfile: ../../Dockerfile
@@ -69,6 +76,7 @@ services:
       - 50037:3000
 
   drum-machine:
+    container_name: drum-machine
     build:
       context: ./apps/drum-machine
       dockerfile: ../../Dockerfile
@@ -78,6 +86,7 @@ services:
       - 50038:3000
 
   exercise-tracker:
+    container_name: exercise-tracker
     build:
       context: ./apps/exercise-tracker
       dockerfile: ../../Dockerfile
@@ -88,6 +97,7 @@ services:
       - 50040:3000
 
   file-metadata-microservice:
+    container_name: file-metadata-microservice
     build:
       context: ./apps/file-metadata-microservice
       dockerfile: ../../Dockerfile
@@ -97,6 +107,7 @@ services:
       - 50050:3000
 
   forum-proxy:
+    container_name: forum-proxy
     build:
       context: ./apps/forum-proxy
       dockerfile: ../../Dockerfile
@@ -106,6 +117,7 @@ services:
       - 50060:3000
 
   heat-map:
+    container_name: heat-map
     build:
       context: ./apps/heat-map
       dockerfile: ../../Dockerfile
@@ -115,6 +127,7 @@ services:
       - 50064:3000
 
   image-search-abstraction-layer:
+    container_name: image-search-abstraction-layer
     build:
       context: ./apps/image-search-abstraction-layer
       dockerfile: ../../Dockerfile
@@ -127,6 +140,7 @@ services:
       - 50065:3000
 
   issue-tracker:
+    container_name: issue-tracker
     build:
       context: ./apps/issue-tracker
       dockerfile: ../../Dockerfile
@@ -137,6 +151,7 @@ services:
       - 50070:3000
 
   javascript-calculator:
+    container_name: javascript-calculator
     build:
       context: ./apps/javascript-calculator
       dockerfile: ../../Dockerfile
@@ -145,8 +160,8 @@ services:
     ports:
       - 50075:3000
 
-  # Database, GitHub secrets, Google secrets
   manage-a-book-trading-club:
+    container_name: manage-a-book-trading-club
     build:
       context: ./apps/manage-a-book-trading-club
       dockerfile: ../../Dockerfile
@@ -160,6 +175,7 @@ services:
       - 50200:3000
 
   markdown-previewer:
+    container_name: markdown-previewer
     build:
       context: ./apps/markdown-previewer
       dockerfile: ../../Dockerfile
@@ -169,6 +185,7 @@ services:
       - 50205:3000
 
   metric-imperial-converter:
+    container_name: metric-imperial-converter
     build:
       context: ./apps/metric-imperial-converter
       dockerfile: ../../Dockerfile
@@ -178,6 +195,7 @@ services:
       - 50090:3000
 
   p2p-video-chat-application:
+    container_name: p2p-video-chat-application
     build:
       context: ./apps/p2p-video-chat-application
       dockerfile: ../../Dockerfile
@@ -187,6 +205,7 @@ services:
       - 50100:3000
 
   personal-library:
+    container_name: personal-library
     build:
       context: ./apps/personal-library
       dockerfile: ../../Dockerfile
@@ -197,6 +216,7 @@ services:
       - 50210:3000
 
   personal-portfolio:
+    container_name: personal-portfolio
     build:
       context: ./apps/personal-portfolio
       dockerfile: ../../Dockerfile
@@ -206,6 +226,7 @@ services:
       - 50260:3000
 
   product-landing-page:
+    container_name: product-landing-page
     build:
       context: ./apps/product-landing-page
       dockerfile: ../../Dockerfile
@@ -215,6 +236,7 @@ services:
       - 50240:3000
 
   random-quote-machine:
+    container_name: random-quote-machine
     build:
       context: ./apps/random-quote-machine
       dockerfile: ../../Dockerfile
@@ -224,6 +246,7 @@ services:
       - 50105:3000
 
   request-header-parser-microservice:
+    container_name: request-header-parser-microservice
     build:
       context: ./apps/request-header-parser-microservice
       dockerfile: ../../Dockerfile
@@ -233,6 +256,7 @@ services:
       - 50110:3000
 
   scatterplot-graph:
+    container_name: scatterplot-graph
     build:
       context: ./apps/scatterplot-graph
       dockerfile: ../../Dockerfile
@@ -242,6 +266,7 @@ services:
       - 50115:3000
 
   secure-real-time-multiplayer-game:
+    container_name: secure-real-time-multiplayer-game
     build:
       context: ./apps/secure-real-time-multiplayer-game
       dockerfile: ../../Dockerfile
@@ -251,6 +276,7 @@ services:
       - 50120:3000
 
   stock-price-checker:
+    container_name: stock-price-checker
     build:
       context: ./apps/stock-price-checker
       dockerfile: ../../Dockerfile
@@ -261,6 +287,7 @@ services:
       - 50140:3000
 
   stock-price-checker-proxy:
+    container_name: stock-price-checker-proxy
     build:
       context: ./apps/stock-price-checker-proxy
       dockerfile: ../../Dockerfile
@@ -272,6 +299,7 @@ services:
       - 50130:3000
 
   sudoku-solver:
+    container_name: sudoku-solver
     build:
       context: ./apps/sudoku-solver
       dockerfile: ../../Dockerfile
@@ -281,6 +309,7 @@ services:
       - 50150:3000
 
   survey-form:
+    container_name: survey-form
     build:
       context: ./apps/survey-form
       dockerfile: ../../Dockerfile
@@ -290,6 +319,7 @@ services:
       - 50280:3000
 
   technical-documentation-page:
+    container_name: technical-documentation-page
     build:
       context: ./apps/technical-documentation-page
       dockerfile: ../../Dockerfile
@@ -299,6 +329,7 @@ services:
       - 50250:3000
 
   timestamp-microservice:
+    container_name: timestamp-microservice
     build:
       context: ./apps/timestamp-microservice
       dockerfile: ../../Dockerfile
@@ -308,6 +339,7 @@ services:
       - 50160:3000
 
   treemap-diagram:
+    container_name: treemap-diagram
     build:
       context: ./apps/treemap-diagram
       dockerfile: ../../Dockerfile
@@ -317,6 +349,7 @@ services:
       - 50255:3000
 
   tribute-page:
+    container_name: tribute-page
     build:
       context: ./apps/tribute-page
       dockerfile: ../../Dockerfile
@@ -326,6 +359,7 @@ services:
       - 50270:3000
 
   twitch-proxy:
+    container_name: twitch-proxy
     build:
       context: ./apps/twitch-proxy
       dockerfile: ../../Dockerfile
@@ -340,6 +374,7 @@ services:
     restart: always
 
   url-shortener-microservice:
+    container_name: url-shortener-microservice
     build:
       context: ./apps/url-shortener-microservice
       dockerfile: ../../Dockerfile
@@ -350,6 +385,7 @@ services:
       - 50180:3000
 
   voting-app:
+    container_name: voting-app
     build:
       context: ./apps/voting-app
       dockerfile: ../../Dockerfile
@@ -360,6 +396,7 @@ services:
       - 50185:3000
 
   weather-proxy:
+    container_name: weather-proxy
     build:
       context: ./apps/weather-proxy
       dockerfile: ../../Dockerfile
