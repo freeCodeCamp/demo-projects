@@ -2,7 +2,7 @@ name: Node.js CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   ci:
@@ -14,6 +14,43 @@ jobs:
         node-version: [16]
       fail-fast: false
 
+    env:
+      BUILD_A_PINTEREST_CLONE_GITHUB_KEY: ${{ secrets.BUILD_A_PINTEREST_CLONE_GITHUB_KEY }}
+      BUILD_A_PINTEREST_CLONE_GITHUB_SECRET: ${{ secrets.BUILD_A_PINTEREST_CLONE_GITHUB_SECRET }}
+      BUILD_A_PINTEREST_CLONE_DB_URI: ${{ secrets.BUILD_A_PINTEREST_CLONE_DB_URI }}
+      BUILD_A_PINTEREST_CLONE_APP_URL: ${{ secrets.BUILD_A_PINTEREST_CLONE_APP_URL }}
+
+      CHART_THE_STOCK_MARKET_APIKEY: ${{ secrets.CHART_THE_STOCK_MARKET_APIKEY }}
+
+      EXERCISE_TRACKER_DB_URI: ${{ secrets.EXERCISE_TRACKER_DB_URI }}
+
+      IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI: ${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI }}
+      IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID: ${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID }}
+      IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY: ${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY }}
+
+      ISSUE_TRACKER_DB: ${{ secrets.ISSUE_TRACKER_DB }}
+
+      MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY: ${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY }}
+      MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET: ${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET }}
+      MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI: ${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI }}
+      MANAGE_A_BOOK_TRADING_CLUB_APP_URL: ${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_APP_URL }}
+
+      PERSONAL_LIBRARY_DB: ${{ secrets.PERSONAL_LIBRARY_DB }}
+
+      STOCK_PRICE_CHECKER_DB_URI: ${{ secrets.STOCK_PRICE_CHECKER_DB_URI }}
+
+      STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES: ${{ secrets.STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES }}
+      STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY: ${{ secrets.STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY }}
+
+      TWITCH_PROXY_TWITCH_CLIENT_ID: ${{ secrets.TWITCH_PROXY_TWITCH_CLIENT_ID }}
+      TWITCH_PROXY_TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_PROXY_TWITCH_CLIENT_SECRET }}
+
+      URL_SHORTENER_MICROSERVICE_DB_URI: ${{ secrets.URL_SHORTENER_MICROSERVICE_DB_URI }}
+
+      VOTING_APP_MONGO_URI: ${{ secrets.VOTING_APP_MONGO_URI }}
+
+      WEATHER_PROXY_OPEN_WEATHER_API_KEY: ${{ secrets. WEATHER_PROXY_OPEN_WEATHER_API_KEY }}
+
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
@@ -23,14 +60,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Start database
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # v1.9.0
-
       - name: Install Dependencies
         run: npm ci
 
       - name: Lint Files
         run: npm run lint
 
+      - name: Build Projects
+        run: docker compose build
+
+      - name: Start projects
+        run: docker compose up -d
+
+      - name: Sleep For 15 Seconds
+        run: sleep 15
+
       - name: Run Tests
-        run: npm run test-local-or-ci
+        run: npm run test
