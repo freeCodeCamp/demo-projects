@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.DB_URI);
 
 app.use('/', express.static(process.cwd() +  '/public'));
+app.use('/', express.static(process.cwd() +  '/views'));
 app.use('/assets', express.static(process.cwd() +  '/assets'));
         
 app.use(session({
