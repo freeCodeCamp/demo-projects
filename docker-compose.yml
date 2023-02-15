@@ -33,7 +33,6 @@ services:
     ports:
       - 50025:3000
 
-  # Check later -- 404
   build-a-pinterest-clone:
     container_name: build-a-pinterest-clone
     build:
