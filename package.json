@@ -8,6 +8,8 @@
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
     "lint": "eslint apps --max-warnings 0",
+    "prebuild": "node scripts/copy-dockerignore.js",
+    "prestart": "node scripts/copy-dockerignore.js",
     "build": "docker compose build",
     "start": "docker compose up -d",
     "stop": "docker compose down",
