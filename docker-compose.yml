@@ -3,7 +3,7 @@ services:
     container_name: 25--5-clock
     build:
       context: ./apps/25--5-clock
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50005:3000
 
@@ -11,7 +11,7 @@ services:
     container_name: american-british-translator
     build:
       context: ./apps/american-british-translator
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50010:3000
 
@@ -29,7 +29,7 @@ services:
     container_name: bar-chart
     build:
       context: ./apps/bar-chart
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50025:3000
 
@@ -61,7 +61,7 @@ services:
     container_name: choropleth-map
     build:
       context: ./apps/choropleth-map
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50037:3000
 
@@ -69,7 +69,7 @@ services:
     container_name: drum-machine
     build:
       context: ./apps/drum-machine
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50038:3000
 
@@ -87,7 +87,7 @@ services:
     container_name: file-metadata-microservice
     build:
       context: ./apps/file-metadata-microservice
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50050:3000
 
@@ -95,7 +95,7 @@ services:
     container_name: forum-proxy
     build:
       context: ./apps/forum-proxy
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50060:3000
 
@@ -103,7 +103,7 @@ services:
     container_name: heat-map
     build:
       context: ./apps/heat-map
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50064:3000
 
@@ -133,7 +133,7 @@ services:
     container_name: javascript-calculator
     build:
       context: ./apps/javascript-calculator
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50075:3000
 
@@ -154,7 +154,7 @@ services:
     container_name: markdown-previewer
     build:
       context: ./apps/markdown-previewer
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50205:3000
 
@@ -162,7 +162,7 @@ services:
     container_name: metric-imperial-converter
     build:
       context: ./apps/metric-imperial-converter
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50090:3000
 
@@ -170,7 +170,7 @@ services:
     container_name: p2p-video-chat-application
     build:
       context: ./apps/p2p-video-chat-application
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50100:3000
 
@@ -188,7 +188,7 @@ services:
     container_name: personal-portfolio
     build:
       context: ./apps/personal-portfolio
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50260:3000
 
@@ -196,7 +196,7 @@ services:
     container_name: product-landing-page
     build:
       context: ./apps/product-landing-page
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50240:3000
 
@@ -204,7 +204,7 @@ services:
     container_name: random-quote-machine
     build:
       context: ./apps/random-quote-machine
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50105:3000
 
@@ -212,7 +212,7 @@ services:
     container_name: request-header-parser-microservice
     build:
       context: ./apps/request-header-parser-microservice
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50110:3000
 
@@ -220,7 +220,7 @@ services:
     container_name: scatterplot-graph
     build:
       context: ./apps/scatterplot-graph
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50115:3000
 
@@ -228,7 +228,7 @@ services:
     container_name: secure-real-time-multiplayer-game
     build:
       context: ./apps/secure-real-time-multiplayer-game
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50120:3000
 
@@ -257,7 +257,7 @@ services:
     container_name: sudoku-solver
     build:
       context: ./apps/sudoku-solver
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50150:3000
 
@@ -265,7 +265,7 @@ services:
     container_name: survey-form
     build:
       context: ./apps/survey-form
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50280:3000
 
@@ -273,7 +273,7 @@ services:
     container_name: technical-documentation-page
     build:
       context: ./apps/technical-documentation-page
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50250:3000
 
@@ -281,7 +281,7 @@ services:
     container_name: timestamp-microservice
     build:
       context: ./apps/timestamp-microservice
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50160:3000
 
@@ -289,7 +289,7 @@ services:
     container_name: treemap-diagram
     build:
       context: ./apps/treemap-diagram
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50255:3000
 
@@ -297,7 +297,7 @@ services:
     container_name: tribute-page
     build:
       context: ./apps/tribute-page
-      dockerfile: ../Dockerfile.shared
+      dockerfile: ../../shared.Dockerfile
     ports:
       - 50270:3000
 
