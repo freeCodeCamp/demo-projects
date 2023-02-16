@@ -60,7 +60,7 @@ class Calculator extends React.Component {
       expression = expression
         .replace(/x/g, '*')
         .replace(/-/g, '-')
-        .replace('--', '+0+0+0+0+0+0+');
+        .replace('--', '-');
       let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
       this.setState({
         currentVal: answer.toString(),
@@ -68,9 +68,8 @@ class Calculator extends React.Component {
           expression
             .replace(/\*/g, '⋅')
             .replace(/-/g, '-')
-            .replace('+0+0+0+0+0+0+', '-')
-            .replace(/(x|\/|\+)‑/, '$1-')
-            .replace(/^‑/, '-') +
+            .replace(/(x|\/|\+)-/, '$1-')
+            .replace(/^-/, '-') +
           '=' +
           answer,
         prevVal: answer,
