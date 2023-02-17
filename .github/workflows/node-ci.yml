@@ -32,7 +32,43 @@ jobs:
       - name: Create .env File
         run: |
           touch .env
+          echo ANONYMOUS_MESSAGE_BOARD_DB_URI=${{ secrets.ANONYMOUS_MESSAGE_BOARD_DB_URI }} >> .env
+
+          echo BUILD_A_PINTEREST_CLONE_GITHUB_KEY=${{ secrets.BUILD_A_PINTEREST_CLONE_GITHUB_KEY }} >> .env
+          echo BUILD_A_PINTEREST_CLONE_GITHUB_SECRET=${{ secrets.BUILD_A_PINTEREST_CLONE_GITHUB_SECRET }} >> .env
+          echo BUILD_A_PINTEREST_CLONE_DB_URI=${{ secrets.BUILD_A_PINTEREST_CLONE_DB_URI }} >> .env
+          echo BUILD_A_PINTEREST_CLONE_APP_URL=${{ secrets.BUILD_A_PINTEREST_CLONE_APP_URL }} >> .env
+
+          echo CHART_THE_STOCK_MARKET_APIKEY=${{ secrets.CHART_THE_STOCK_MARKET_APIKEY }} >> .env
+
           echo EXERCISE_TRACKER_DB_URI=${{ secrets.EXERCISE_TRACKER_DB_URI }} >> .env
+
+          echo IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI=${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI }} >> .env
+          echo IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID=${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID }} >> .env
+          echo IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY=${{ secrets.IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY }} >> .env
+
+          echo ISSUE_TRACKER_DB=${{ secrets.ISSUE_TRACKER_DB }} >> .env
+
+          echo MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY=${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY }} >> .env
+          echo MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET=${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET }} >> .env
+          echo MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI=${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI }} >> .env
+          echo MANAGE_A_BOOK_TRADING_CLUB_APP_URL=${{ secrets.MANAGE_A_BOOK_TRADING_CLUB_APP_URL }} >> .env
+
+          echo PERSONAL_LIBRARY_DB=${{ secrets.PERSONAL_LIBRARY_DB }} >> .env
+
+          echo STOCK_PRICE_CHECKER_DB_URI=${{ secrets.STOCK_PRICE_CHECKER_DB_URI }} >> .env
+
+          echo STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES=${{ secrets.STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES }} >> .env
+          echo STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY=${{ secrets.STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY }} >> .env
+
+          echo TWITCH_PROXY_TWITCH_CLIENT_ID=${{ secrets.TWITCH_PROXY_TWITCH_CLIENT_ID }} >> .env
+          echo TWITCH_PROXY_TWITCH_CLIENT_SECRET=${{ secrets.TWITCH_PROXY_TWITCH_CLIENT_SECRET }} >> .env
+
+          echo URL_SHORTENER_MICROSERVICE_DB_URI=${{ secrets.URL_SHORTENER_MICROSERVICE_DB_URI }} >> .env
+
+          echo VOTING_APP_MONGO_URI=${{ secrets.VOTING_APP_MONGO_URI }} >> .env
+
+          echo WEATHER_PROXY_OPEN_WEATHER_API_KEY=${{ secrets.WEATHER_PROXY_OPEN_WEATHER_API_KEY }} >> .env
 
       - name: Start Docker Development Environment
         run: docker compose up -d
