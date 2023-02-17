@@ -13,7 +13,8 @@ app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-mongo.connect(process.env.MONGO_URI, function(err, client) {
+mongo.connect(process.env.MONGO_URI, { useUnifiedTopology: true }, function(err, client) {
+  // var db = client.db('voting-app-v0');
   var db = client.db();
   console.log('Successfully connected to MongoDB');
 
