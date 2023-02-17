@@ -70,6 +70,9 @@ jobs:
 
           echo WEATHER_PROXY_OPEN_WEATHER_API_KEY=${{ secrets.WEATHER_PROXY_OPEN_WEATHER_API_KEY }} >> .env
 
+      - name: Build Projects
+        run: docker compose build
+
       - name: Start Docker Development Environment
         run: docker compose up -d
 
