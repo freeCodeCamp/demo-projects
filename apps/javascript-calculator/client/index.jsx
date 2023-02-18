@@ -54,23 +54,31 @@ class Calculator extends React.Component {
   handleEvaluate() {
     if (!this.state.currentVal.includes('Limit')) {
       let expression = this.state.formula;
+      let zeroOperationPattern = new RegExp(/[+-]+0/g)
+
+      expression = expression
+      .replace(/x/g, '*')
+      .replace(/‑/g, '-')
+
       while (endsWithOperator.test(expression)) {
         expression = expression.slice(0, -1);
       }
-      expression = expression
-        .replace(/x/g, '*')
-        .replace(/‑/g, '-')
-        .replace('--', '+0+0+0+0+0+0+');
-      let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
+      
+      let zeroPatternMatches = expression.match(zeroOperationPattern)
+      
+      if (zeroPatternMatches) {
+        zeroPatternMatches.forEach(match => expression = expression.replace(match, ''))
+      }
+  
+      let answer = eval(expression)
       this.setState({
         currentVal: answer.toString(),
         formula:
           expression
-            .replace(/\*/g, '⋅')
-            .replace(/-/g, '‑')
-            .replace('+0+0+0+0+0+0+', '‑-')
-            .replace(/(x|\/|\+)‑/, '$1-')
-            .replace(/^‑/, '-') +
+          .replace(/\*/g, '⋅')
+          .replace(/-/g, '‑')
+          .replace(/(x|\/|\+)‑/, '$1-')
+          .replace(/^‑/, '-') +
           '=' +
           answer,
         prevVal: answer,
