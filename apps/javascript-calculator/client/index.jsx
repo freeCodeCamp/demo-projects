@@ -12,9 +12,9 @@ const projectName = 'javascript-calculator';
 // coded by @no-stack-dub-sack (github) / @no_stack_sub_sack (codepen)
 
 // VARS:
-const isOperator = /[x/+‑]/,
-  endsWithOperator = /[x+‑/]$/,
-  endsWithNegativeSign = /\d[x/+‑]{1}‑$/,
+const isOperator = /[x/+-]/,
+  endsWithOperator = /[x+-/]$/,
+  endsWithNegativeSign = /\d[x/+-]{1}-$/,
   clearStyle = { background: '#ac3939' },
   operatorStyle = { background: '#666666' },
   equalsStyle = {
@@ -71,15 +71,16 @@ class Calculator extends React.Component {
       }
   
       let answer = eval(expression)
+
       this.setState({
         currentVal: answer.toString(),
         formula:
           expression
-          .replace(/\*/g, '⋅')
-          .replace(/-/g, '‑')
-          .replace(/(x|\/|\+)‑/, '$1-')
-          .replace(/^‑/, '-') +
-          '=' +
+            .replace(/\*/g, '⋅')
+            .replace(/-/g, '-')
+            .replace(/(x|\/|\+)-/, '$1-')
+            .replace(/^-/, '-') +
+           '=' +
           answer,
         prevVal: answer,
         evaluated: true
@@ -105,7 +106,7 @@ class Calculator extends React.Component {
             (endsWithNegativeSign.test(formula + value) ? formula : prevVal) +
             value
         });
-      } else if (value !== '‑') {
+      } else if (value !== '-') {
         this.setState({
           formula: prevVal + value
         });
@@ -203,7 +204,7 @@ class Calculator extends React.Component {
         <div className='author'>
           {' '}
           Designed and Coded By <br />
-          <a href='https://goo.gl/6NNLMG' target='_blank'>
+          <a href='https://goo.gl/6NNLMG' target='_blank' rel='noreferrer'>
             Peter Weinberg
           </a>
         </div>
@@ -254,9 +255,9 @@ class Buttons extends React.Component {
           id='subtract'
           onClick={this.props.operators}
           style={operatorStyle}
-          value='‑'
+          value='-'
         >
-          ‑
+          -
         </button>
         <button id='four' onClick={this.props.numbers} value='4'>
           4
