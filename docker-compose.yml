@@ -1,4 +1,11 @@
 services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - 28017:27017
+
   25--5-clock:
     container_name: 25--5-clock
     build:
@@ -22,6 +29,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB_URI=${ANONYMOUS_MESSAGE_BOARD_DB_URI}
+    depends_on:
+      - mongo
     ports:
       - 50020:3000
 
@@ -43,6 +52,8 @@ services:
       - GITHUB_SECRET=${BUILD_A_PINTEREST_CLONE_GITHUB_SECRET}
       - DB_URI=${BUILD_A_PINTEREST_CLONE_DB_URI}
       - APP_URL=${BUILD_A_PINTEREST_CLONE_APP_URL}
+    depends_on:
+      - mongo
     ports:
       - 50030:3000
 
@@ -79,6 +90,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB_URI=${EXERCISE_TRACKER_DB_URI}
+    depends_on:
+      - mongo
     ports:
       - 50040:3000
 
@@ -115,6 +128,8 @@ services:
       - MONGO_URI=${IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI}
       - CSEID=${IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID}
       - APIKEY=${IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY}
+    depends_on:
+      - mongo
     ports:
       - 50065:3000
 
@@ -125,6 +140,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB=${ISSUE_TRACKER_DB}
+    depends_on:
+      - mongo
     ports:
       - 50070:3000
 
@@ -146,6 +163,8 @@ services:
       - GITHUB_SECRET=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET}
       - MONGO_URI=${MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI}
       - APP_URL=${MANAGE_A_BOOK_TRADING_CLUB_APP_URL}
+    depends_on:
+      - mongo
     ports:
       - 50200:3000
 
@@ -180,6 +199,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB=${PERSONAL_LIBRARY_DB}
+    depends_on:
+      - mongo
     ports:
       - 50210:3000
 
@@ -238,6 +259,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB_URI=${STOCK_PRICE_CHECKER_DB_URI}
+    depends_on:
+      - mongo
     ports:
       - 50140:3000
 
@@ -321,6 +344,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - DB_URI=${URL_SHORTENER_MICROSERVICE_DB_URI}
+    depends_on:
+      - mongo
     ports:
       - 50180:3000
 
@@ -331,6 +356,8 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - MONGO_URI=${VOTING_APP_MONGO_URI}
+    depends_on:
+      - mongo
     ports:
       - 50185:3000
 
