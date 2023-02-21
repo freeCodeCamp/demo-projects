@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "wait-port -t 10000 3000"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

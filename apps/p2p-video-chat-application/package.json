@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "wait-port -t 10000 3000",
     "start": "node server.js",
     "dev": "concurrently \"rollup -c -w\" \"nodemon server.js\"",
     "prepare": "npm run build"
