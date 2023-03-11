@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Front end project for freeCodeCamp",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js",
     "test": "wait-port -t 10000 3000",
