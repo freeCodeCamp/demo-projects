@@ -80,9 +80,9 @@ g.call(
   .remove();
 
 const EDUCATION_FILE =
-  'https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/for_user_education.json';
+  'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json';
 const COUNTY_FILE =
-  'https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/counties.json';
+  'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json';
 
 Promise.all([d3.json(COUNTY_FILE), d3.json(EDUCATION_FILE)])
   .then(data => ready(data[0], data[1]))

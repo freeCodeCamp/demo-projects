@@ -271,7 +271,7 @@ class Timer extends React.Component {
           ref={audio => {
             this.audioBeep = audio;
           }}
-          src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav'
+          src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav'
         />
       </div>
     );
