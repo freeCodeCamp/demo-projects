@@ -33,7 +33,9 @@ jobs:
         run: cp sample.env .env
 
       - name: Start Projects
-        run: docker compose up -d
+        run: |
+          npm run build -- --no-cache
+          npm start
 
       - name: Sleep For 15 Seconds
         run: sleep 15
