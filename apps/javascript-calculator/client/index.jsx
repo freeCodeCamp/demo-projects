@@ -54,7 +54,7 @@ class Calculator extends React.Component {
   handleEvaluate() {
     if (!this.state.currentVal.includes('Limit')) {
       let expression = this.state.formula;
-      let zeroOperationPattern = new RegExp(/[+-]+0/g)
+      let zeroOperationPattern = new RegExp(/[+-]+0(?!\.)/g)
 
       expression = expression
       .replace(/x/g, '*')
