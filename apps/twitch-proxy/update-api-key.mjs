@@ -6,7 +6,7 @@ import { writeFileSync } from "fs";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(new URL(import.meta.url)));
-const envFilePath = join(`${__dirname}/../../apps/twitch-proxy/`, ".env");
+const envFilePath = join(`${__dirname}/`, ".env");
 config({ path: envFilePath });
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, PORT } = process.env;

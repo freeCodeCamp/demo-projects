@@ -1,12 +1,12 @@
 {
-	"name": "file_metadata",
-	"version": "0.0.1",
-	"description": "API project for freeCodeCamp",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js",
-		"test": "PORT=3005 mocha --exit --ui tdd tests/"
-	},
+  "name": "file_metadata",
+  "version": "0.0.1",
+  "description": "API project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "PORT=3005 mocha --exit --ui tdd tests/"
+  },
 	"dependencies": {
 		"chai": "4.3.7",
 		"chai-http": "4.3.0",
@@ -16,14 +16,14 @@
 		"mocha": "9.2.2",
 		"multer": "1.4.4"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://hyperdev.com/#!/project/welcome-project"
-	},
-	"keywords": [
-		"node",
-		"hyperdev",
-		"express"
-	],
-	"license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://hyperdev.com/#!/project/welcome-project"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT"
 }

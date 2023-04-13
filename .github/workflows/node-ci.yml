@@ -2,7 +2,7 @@ name: Node.js CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   ci:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [18]
       fail-fast: false
 
     steps:
@@ -23,14 +23,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Start database
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # v1.9.0
-
       - name: Install Dependencies
         run: npm ci
 
       - name: Lint Files
         run: npm run lint
 
+      - name: Create .env File For CI Builds
+        run: cp sample.env .env
+
+      - name: Start Projects
+        run: |
+          npm run build -- --no-cache
+          npm start
+
+      - name: Sleep For 15 Seconds
+        run: sleep 15
+
       - name: Run Tests
-        run: npm run test-local-or-ci
+        run: npm run test

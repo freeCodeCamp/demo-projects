@@ -5,3 +5,4 @@ node_modules
 apps/stock-price-checker-proxy/cache/
 apps/twitch-proxy/.data/
 apps/twitch-proxy/.logs/
+Caddyfile

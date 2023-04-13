@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "wait-port -t 10000 3000",
     "build": "rollup -c",
     "dev": "concurrently \"rollup -c -w\" \"nodemon server.js\"",
     "prepare": "npm run build"
@@ -31,12 +30,19 @@
     "passport-github": "1.1.0",
     "react": "15.7.0",
     "react-dom": "15.7.0",
-    "react-masonry-component": "6.3.0",
-    "rollup": "2.79.1",
-    "rollup-plugin-terser": "7.0.2"
+    "react-masonry-component": "6.3.0"
   },
   "devDependencies": {
+    "@babel/core": "7.20.5",
+    "@babel/preset-env": "7.20.2",
+    "@babel/preset-react": "7.18.6",
+    "@rollup/plugin-babel": "6.0.3",
+    "@rollup/plugin-commonjs": "23.0.4",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@rollup/plugin-replace": "5.0.1",
+    "@rollup/plugin-terser": "0.2.0",
     "concurrently": "7.6.0",
-    "nodemon": "2.0.22"
+    "nodemon": "2.0.22",
+    "rollup": "2.79.1"
   }
 }

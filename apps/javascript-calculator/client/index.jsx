@@ -194,7 +194,11 @@ class Calculator extends React.Component {
         <div className='author'>
           {' '}
           Designed and Coded By <br />
-          <a href='https://goo.gl/6NNLMG' target='_blank' rel='noreferrer'>
+          <a
+            href='https://www.freecodecamp.org/no-stack-dub-sack'
+            target='_blank'
+            rel='noreferrer'
+          >
             Peter Weinberg
           </a>
         </div>

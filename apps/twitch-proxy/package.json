@@ -4,6 +4,7 @@
   "description": "fCC Twitch API passthrough server",
   "main": "server.js",
   "scripts": {
+    "prestart": "node kill-node-process-cron.js & node update-api-key.mjs",
     "start": "node server.js"
   },
   "dependencies": {
@@ -11,6 +12,8 @@
     "cors": "2.8.5",
     "dotenv": "14.3.2",
     "express": "5.0.0-beta.1",
+    "node-cron": "3.0.2",
+    "node-fetch": "3.3.0",
     "request": "2.88.2",
     "winston": "3.8.2",
     "winston-daily-rotate-file": "3.10.0"

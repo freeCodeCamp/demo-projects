@@ -1,0 +1,503 @@
+networks:
+  proxy:
+
+services:
+
+  caddy:
+    image: caddy:2.4.5
+    container_name: caddy
+    restart: unless-stopped
+    networks:
+      - proxy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+    - 80:80
+    - 443:443
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    networks:
+      - proxy
+    ports:
+      - 28017:27017
+
+  25--5-clock:
+    container_name: 25--5-clock
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/25--5-clock
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50005:3000
+
+  american-british-translator:
+    container_name: american-british-translator
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/american-british-translator
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50010:3000
+
+  anonymous-message-board:
+    container_name: anonymous-message-board
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/anonymous-message-board
+      dockerfile: ./Dockerfile
+    environment:
+      - DB_URI=${ANONYMOUS_MESSAGE_BOARD_DB_URI}
+    depends_on:
+      - mongo
+    ports:
+      - 50020:3000
+
+  bar-chart:
+    container_name: bar-chart
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/bar-chart
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50025:3000
+
+  build-a-pinterest-clone:
+    container_name: build-a-pinterest-clone
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/build-a-pinterest-clone
+      dockerfile: ./Dockerfile
+    environment:
+      - GITHUB_KEY=${BUILD_A_PINTEREST_CLONE_GITHUB_KEY}
+      - GITHUB_SECRET=${BUILD_A_PINTEREST_CLONE_GITHUB_SECRET}
+      - DB_URI=${BUILD_A_PINTEREST_CLONE_DB_URI}
+      - APP_URL=${BUILD_A_PINTEREST_CLONE_APP_URL}
+    depends_on:
+      - mongo
+    ports:
+      - 50030:3000
+
+  chart-the-stock-market:
+    container_name: chart-the-stock-market
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/chart-the-stock-market
+      dockerfile: ./Dockerfile
+    environment:
+      - APIKEY=${CHART_THE_STOCK_MARKET_APIKEY}
+    ports:
+      - 50035:3000
+
+  choropleth-map:
+    container_name: choropleth-map
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/choropleth-map
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50037:3000
+
+  drum-machine:
+    container_name: drum-machine
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/drum-machine
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50038:3000
+
+  exercise-tracker:
+    container_name: exercise-tracker
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/exercise-tracker
+      dockerfile: ./Dockerfile
+    environment:
+      - DB_URI=${EXERCISE_TRACKER_DB_URI}
+    depends_on:
+      - mongo
+    ports:
+      - 50040:3000
+
+  file-metadata-microservice:
+    container_name: file-metadata-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/file-metadata-microservice
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50050:3000
+
+  forum-proxy:
+    container_name: forum-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/forum-proxy
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50060:3000
+
+  heat-map:
+    container_name: heat-map
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/heat-map
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50064:3000
+
+  image-search-abstraction-layer:
+    container_name: image-search-abstraction-layer
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/image-search-abstraction-layer
+      dockerfile: ./Dockerfile
+    environment:
+      - MONGO_URI=${IMAGE_SEARCH_ABSTRACTION_LAYER_MONGO_URI}
+      - CSEID=${IMAGE_SEARCH_ABSTRACTION_LAYER_CSEID}
+      - APIKEY=${IMAGE_SEARCH_ABSTRACTION_LAYER_APIKEY}
+    depends_on:
+      - mongo
+    ports:
+      - 50065:3000
+
+  issue-tracker:
+    container_name: issue-tracker
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/issue-tracker
+      dockerfile: ./Dockerfile
+    environment:
+      - DB=${ISSUE_TRACKER_DB}
+    depends_on:
+      - mongo
+    ports:
+      - 50070:3000
+
+  javascript-calculator:
+    container_name: javascript-calculator
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/javascript-calculator
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50075:3000
+
+  manage-a-book-trading-club:
+    container_name: manage-a-book-trading-club
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/manage-a-book-trading-club
+      dockerfile: ./Dockerfile
+    environment:
+      - GITHUB_KEY=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_KEY}
+      - GITHUB_SECRET=${MANAGE_A_BOOK_TRADING_CLUB_GITHUB_SECRET}
+      - MONGO_URI=${MANAGE_A_BOOK_TRADING_CLUB_MONGO_URI}
+      - APP_URL=${MANAGE_A_BOOK_TRADING_CLUB_APP_URL}
+    depends_on:
+      - mongo
+    ports:
+      - 50200:3000
+
+  markdown-previewer:
+    container_name: markdown-previewer
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/markdown-previewer
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50205:3000
+
+  metric-imperial-converter:
+    container_name: metric-imperial-converter
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/metric-imperial-converter
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50090:3000
+
+  p2p-video-chat-application:
+    container_name: p2p-video-chat-application
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/p2p-video-chat-application
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50100:3000
+
+  personal-library:
+    container_name: personal-library
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/personal-library
+      dockerfile: ./Dockerfile
+    environment:
+      - DB=${PERSONAL_LIBRARY_DB}
+    depends_on:
+      - mongo
+    ports:
+      - 50210:3000
+
+  personal-portfolio:
+    container_name: personal-portfolio
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/personal-portfolio
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50260:3000
+
+  product-landing-page:
+    container_name: product-landing-page
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/product-landing-page
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50240:3000
+
+  random-quote-machine:
+    container_name: random-quote-machine
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/random-quote-machine
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50105:3000
+
+  request-header-parser-microservice:
+    container_name: request-header-parser-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/request-header-parser-microservice
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50110:3000
+
+  scatterplot-graph:
+    container_name: scatterplot-graph
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/scatterplot-graph
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50115:3000
+
+  secure-real-time-multiplayer-game:
+    container_name: secure-real-time-multiplayer-game
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/secure-real-time-multiplayer-game
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50120:3000
+
+  stock-price-checker:
+    container_name: stock-price-checker
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/stock-price-checker
+      dockerfile: ./Dockerfile
+    environment:
+      - DB_URI=${STOCK_PRICE_CHECKER_DB_URI}
+    depends_on:
+      - mongo
+    ports:
+      - 50140:3000
+
+  stock-price-checker-proxy:
+    container_name: stock-price-checker-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/stock-price-checker-proxy
+      dockerfile: ./Dockerfile
+    environment:
+      - CACHE_TTL_MINUTES=${STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES}
+      - IEX_API_KEY=${STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY}
+    ports:
+      - 50130:3000
+
+  sudoku-solver:
+    container_name: sudoku-solver
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/sudoku-solver
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50150:3000
+
+  survey-form:
+    container_name: survey-form
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/survey-form
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50280:3000
+
+  technical-documentation-page:
+    container_name: technical-documentation-page
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/technical-documentation-page
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50250:3000
+
+  timestamp-microservice:
+    container_name: timestamp-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/timestamp-microservice
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50160:3000
+
+  treemap-diagram:
+    container_name: treemap-diagram
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/treemap-diagram
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50255:3000
+
+  tribute-page:
+    container_name: tribute-page
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/tribute-page
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50270:3000
+
+  twitch-proxy:
+    container_name: twitch-proxy
+    networks:
+      - proxy
+    build:
+      context: ./apps/twitch-proxy
+      dockerfile: ./Dockerfile
+    environment:
+      - TWITCH_CLIENT_ID=${TWITCH_PROXY_TWITCH_CLIENT_ID}
+      - TWITCH_CLIENT_SECRET=${TWITCH_PROXY_TWITCH_CLIENT_SECRET}
+    ports:
+      - 50170:3000
+    # restart when the cron job to refresh the Twitch access token
+    # kills the node process / container
+    restart: always
+
+  url-shortener-microservice:
+    container_name: url-shortener-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/url-shortener-microservice
+      dockerfile: ./Dockerfile
+    environment:
+      - DB_URI=${URL_SHORTENER_MICROSERVICE_DB_URI}
+    depends_on:
+      - mongo
+    ports:
+      - 50180:3000
+
+  voting-app:
+    container_name: voting-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/voting-app
+      dockerfile: ./Dockerfile
+    environment:
+      - MONGO_URI=${VOTING_APP_MONGO_URI}
+    depends_on:
+      - mongo
+    ports:
+      - 50185:3000
+
+  weather-proxy:
+    container_name: weather-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/weather-proxy
+      dockerfile: ./Dockerfile
+    environment:
+      - OPEN_WEATHER_API_KEY=${WEATHER_PROXY_OPEN_WEATHER_API_KEY}
+    ports:
+      - 50190:3000

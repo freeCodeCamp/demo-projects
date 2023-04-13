@@ -257,7 +257,11 @@ class Timer extends React.Component {
         <div className='author'>
           {' '}
           Designed and Coded by <br />
-          <a href='https://goo.gl/6NNLMG' target='_blank'>
+          <a
+            href='https://www.freecodecamp.org/no-stack-dub-sack'
+            target='_blank'
+            rel='noreferrer'
+          >
             Peter Weinberg
           </a>
         </div>
@@ -267,7 +271,7 @@ class Timer extends React.Component {
           ref={audio => {
             this.audioBeep = audio;
           }}
-          src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav'
+          src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav'
         />
       </div>
     );
