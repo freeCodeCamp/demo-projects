@@ -201,7 +201,7 @@ class SudokuSolver {
     // Puzzle was fetched from https://www.conceptispuzzles.com/index.aspx?uri=info/article/424
     // Recursion count was 49559 - rounded to 50000 for nice number + a bit of buffer.
     // Anything exceeding this should be an unsolvable puzzle.
-    if (this._recursions > 50000) {
+    if (this._recursions > 250000) {
       return false;
     }
     // If the sudoku grid has been filled, we are done
