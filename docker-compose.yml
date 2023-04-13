@@ -1,13 +1,34 @@
+networks:
+  proxy:
+
 services:
+
+  caddy:
+    image: caddy:2.4.5
+    container_name: caddy
+    restart: unless-stopped
+    networks:
+      - proxy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+    - 80:80
+    - 443:443
+
   mongo:
     image: mongo
     container_name: mongo
-    restart: always
+    restart: unless-stopped
+    networks:
+      - proxy
     ports:
       - 28017:27017
 
   25--5-clock:
     container_name: 25--5-clock
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/25--5-clock
       dockerfile: ../../shared.Dockerfile
@@ -16,6 +37,9 @@ services:
 
   american-british-translator:
     container_name: american-british-translator
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/american-british-translator
       dockerfile: ../../shared.Dockerfile
@@ -24,6 +48,9 @@ services:
 
   anonymous-message-board:
     container_name: anonymous-message-board
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/anonymous-message-board
       dockerfile: ./Dockerfile
@@ -36,6 +63,9 @@ services:
 
   bar-chart:
     container_name: bar-chart
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/bar-chart
       dockerfile: ../../shared.Dockerfile
@@ -44,6 +74,9 @@ services:
 
   build-a-pinterest-clone:
     container_name: build-a-pinterest-clone
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/build-a-pinterest-clone
       dockerfile: ./Dockerfile
@@ -59,6 +92,9 @@ services:
 
   chart-the-stock-market:
     container_name: chart-the-stock-market
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/chart-the-stock-market
       dockerfile: ./Dockerfile
@@ -69,6 +105,9 @@ services:
 
   choropleth-map:
     container_name: choropleth-map
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/choropleth-map
       dockerfile: ../../shared.Dockerfile
@@ -77,6 +116,9 @@ services:
 
   drum-machine:
     container_name: drum-machine
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/drum-machine
       dockerfile: ../../shared.Dockerfile
@@ -85,6 +127,9 @@ services:
 
   exercise-tracker:
     container_name: exercise-tracker
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/exercise-tracker
       dockerfile: ./Dockerfile
@@ -97,6 +142,9 @@ services:
 
   file-metadata-microservice:
     container_name: file-metadata-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/file-metadata-microservice
       dockerfile: ../../shared.Dockerfile
@@ -105,6 +153,9 @@ services:
 
   forum-proxy:
     container_name: forum-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/forum-proxy
       dockerfile: ../../shared.Dockerfile
@@ -113,6 +164,9 @@ services:
 
   heat-map:
     container_name: heat-map
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/heat-map
       dockerfile: ../../shared.Dockerfile
@@ -121,6 +175,9 @@ services:
 
   image-search-abstraction-layer:
     container_name: image-search-abstraction-layer
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/image-search-abstraction-layer
       dockerfile: ./Dockerfile
@@ -135,6 +192,9 @@ services:
 
   issue-tracker:
     container_name: issue-tracker
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/issue-tracker
       dockerfile: ./Dockerfile
@@ -147,6 +207,9 @@ services:
 
   javascript-calculator:
     container_name: javascript-calculator
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/javascript-calculator
       dockerfile: ../../shared.Dockerfile
@@ -155,6 +218,9 @@ services:
 
   manage-a-book-trading-club:
     container_name: manage-a-book-trading-club
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/manage-a-book-trading-club
       dockerfile: ./Dockerfile
@@ -170,6 +236,9 @@ services:
 
   markdown-previewer:
     container_name: markdown-previewer
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/markdown-previewer
       dockerfile: ../../shared.Dockerfile
@@ -178,6 +247,9 @@ services:
 
   metric-imperial-converter:
     container_name: metric-imperial-converter
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/metric-imperial-converter
       dockerfile: ../../shared.Dockerfile
@@ -186,6 +258,9 @@ services:
 
   p2p-video-chat-application:
     container_name: p2p-video-chat-application
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/p2p-video-chat-application
       dockerfile: ../../shared.Dockerfile
@@ -194,6 +269,9 @@ services:
 
   personal-library:
     container_name: personal-library
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/personal-library
       dockerfile: ./Dockerfile
@@ -206,6 +284,9 @@ services:
 
   personal-portfolio:
     container_name: personal-portfolio
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/personal-portfolio
       dockerfile: ../../shared.Dockerfile
@@ -214,6 +295,9 @@ services:
 
   product-landing-page:
     container_name: product-landing-page
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/product-landing-page
       dockerfile: ../../shared.Dockerfile
@@ -222,6 +306,9 @@ services:
 
   random-quote-machine:
     container_name: random-quote-machine
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/random-quote-machine
       dockerfile: ../../shared.Dockerfile
@@ -230,6 +317,9 @@ services:
 
   request-header-parser-microservice:
     container_name: request-header-parser-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/request-header-parser-microservice
       dockerfile: ../../shared.Dockerfile
@@ -238,6 +328,9 @@ services:
 
   scatterplot-graph:
     container_name: scatterplot-graph
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/scatterplot-graph
       dockerfile: ../../shared.Dockerfile
@@ -246,6 +339,9 @@ services:
 
   secure-real-time-multiplayer-game:
     container_name: secure-real-time-multiplayer-game
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/secure-real-time-multiplayer-game
       dockerfile: ../../shared.Dockerfile
@@ -254,6 +350,9 @@ services:
 
   stock-price-checker:
     container_name: stock-price-checker
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/stock-price-checker
       dockerfile: ./Dockerfile
@@ -266,6 +365,9 @@ services:
 
   stock-price-checker-proxy:
     container_name: stock-price-checker-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/stock-price-checker-proxy
       dockerfile: ./Dockerfile
@@ -277,6 +379,9 @@ services:
 
   sudoku-solver:
     container_name: sudoku-solver
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/sudoku-solver
       dockerfile: ../../shared.Dockerfile
@@ -285,6 +390,9 @@ services:
 
   survey-form:
     container_name: survey-form
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/survey-form
       dockerfile: ../../shared.Dockerfile
@@ -293,6 +401,9 @@ services:
 
   technical-documentation-page:
     container_name: technical-documentation-page
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/technical-documentation-page
       dockerfile: ../../shared.Dockerfile
@@ -301,6 +412,9 @@ services:
 
   timestamp-microservice:
     container_name: timestamp-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/timestamp-microservice
       dockerfile: ../../shared.Dockerfile
@@ -309,6 +423,9 @@ services:
 
   treemap-diagram:
     container_name: treemap-diagram
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/treemap-diagram
       dockerfile: ../../shared.Dockerfile
@@ -317,6 +434,9 @@ services:
 
   tribute-page:
     container_name: tribute-page
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/tribute-page
       dockerfile: ../../shared.Dockerfile
@@ -325,6 +445,8 @@ services:
 
   twitch-proxy:
     container_name: twitch-proxy
+    networks:
+      - proxy
     build:
       context: ./apps/twitch-proxy
       dockerfile: ./Dockerfile
@@ -339,6 +461,9 @@ services:
 
   url-shortener-microservice:
     container_name: url-shortener-microservice
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/url-shortener-microservice
       dockerfile: ./Dockerfile
@@ -351,6 +476,9 @@ services:
 
   voting-app:
     container_name: voting-app
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/voting-app
       dockerfile: ./Dockerfile
@@ -363,6 +491,9 @@ services:
 
   weather-proxy:
     container_name: weather-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
     build:
       context: ./apps/weather-proxy
       dockerfile: ./Dockerfile
