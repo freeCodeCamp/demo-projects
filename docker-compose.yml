@@ -4,7 +4,7 @@ networks:
 services:
 
   caddy:
-    image: caddy:2.4.5
+    image: caddy:2.6.4
     container_name: caddy
     restart: unless-stopped
     networks:
