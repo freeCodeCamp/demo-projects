@@ -21,14 +21,16 @@ class SudokuSolver {
     }
 
     // check for repeated characters in a row:
-    for(let i = 0; i < puzzleString.length; i++) {
-      if(puzzleString[i] != '.') {
-        let num = puzzleString[i];
-        if(!num.isSafe) {
-          return [true, "Invalid puzzle input."];
+    this.importString(puzzleString);
+    for (let row = 0; row < HEIGHT; row++) {
+      for (let col = 0; col < WIDTH; col++) {
+        let num = this._puzzle[row][col];
+        if(!this.isSafe(this._puzzle, row, col, num)) {
+          return [true, "Invalid Sudoku puzzle"];
         }
       }
     }
+    return true;
 
     // No invalid data returns false and empty error string
     return [false, ""];
