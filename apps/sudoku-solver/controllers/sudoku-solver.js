@@ -30,7 +30,6 @@ class SudokuSolver {
         }
       }
     }
-    return true;
 
     // No invalid data returns false and empty error string
     return [false, ""];
