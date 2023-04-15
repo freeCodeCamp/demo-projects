@@ -20,6 +20,16 @@ class SudokuSolver {
       return [true, "Invalid characters in puzzle"];
     }
 
+    // check for repeated characters in a row:
+    for(let i = 0; i < puzzleString.length; i++) {
+      if(puzzleString[i] != '.') {
+        let num = puzzleString[i];
+        if(!num.isSafe) {
+          return [true, "Invalid puzzle input."];
+        }
+      }
+    }
+
     // No invalid data returns false and empty error string
     return [false, ""];
   }
