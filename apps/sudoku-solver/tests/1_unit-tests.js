@@ -160,4 +160,26 @@ suite('UnitTests', () => {
       done();
     });
   });
+
+  suite('Validate input string', () => {
+    // Valid inputs pass
+    test('Valid inputs pass', done => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+
+      let [err] = solver.validate(input);
+      assert.isFalse(err);
+
+      done();
+    });
+
+    // Invalid strings fail
+    test('Invalid strings fail', done => {
+      const input = '.99..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      
+      let [err] = solver.validate(input);
+      assert.isTrue(err);
+
+      done();
+    });
+  });
 });
