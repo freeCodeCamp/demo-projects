@@ -20,7 +20,7 @@ class SudokuSolver {
       return [true, "Invalid characters in puzzle"];
     }
 
-    // check for repeated characters in a row:
+    // check for invalid original input:
     this.importString(puzzleString);
     for (let row = 0; row < HEIGHT; row++) {
       for (let col = 0; col < WIDTH; col++) {
