@@ -4,7 +4,6 @@ const HEIGHT = 9;
 class SudokuSolver {
   constructor() {
     this._puzzle = [];
-    // this._recursions = 0;
   }
 
   static validInput(input) {
@@ -102,7 +101,6 @@ class SudokuSolver {
     this.importString(puzzleString);
     // Check if the puzzle contains any empty squares
     if(puzzleString.match(/\./gi)) {
-      // this._recursions = 0;
       // If so, use the solver.
       return this.solveSudoku(this._puzzle)
     } else {
@@ -164,7 +162,7 @@ class SudokuSolver {
   // Searches the grid to find an entry that is still unassigned. If
   // found, the reference parameters row, col will be set the location
   // that is unassigned, and true is returned. If no unassigned entries
-  // remain, false is returned.
+  // remain, [10, 10] is returned.
   getUnassignedLocation(grid) {
     for (let row = 0; row < HEIGHT; row++) {
       for (let col = 0; col < WIDTH; col++) {
@@ -196,18 +194,11 @@ class SudokuSolver {
   // all unassigned locations in such a way to meet the requirements
   // for Sudoku solution (non-duplication across rows, columns, and boxes)
   solveSudoku(grid) {
-    // this._recursions++;
-    // // Tested the recursion count for the "hardest sudoku" puzzle
-    // // Puzzle was fetched from https://www.conceptispuzzles.com/index.aspx?uri=info/article/424
-    // // Recursion count was 49559 - rounded to 50000 for nice number + a bit of buffer.
-    // // Anything exceeding this should be an unsolvable puzzle.
-    // if (this._recursions > 250000) {
-    //   return false;
-    // }
-    
     // If the sudoku grid has been filled, we are done, acts as recursive check
     let [row, col] = this.getUnassignedLocation(grid)
-    if (row === 10 || col === 10) {
+    if (row=== 10 | col === 10)
+    {
+      // no unassigned locations remain, end recursion:
       return true;
     }
 
