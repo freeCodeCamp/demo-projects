@@ -160,4 +160,33 @@ suite('UnitTests', () => {
       done();
     });
   });
+
+  suite('Recursive limit testing', () => {
+    // Original problem string passes:
+    test('Valid long puzzle passes', done => {
+      const input = '........................................................8.................6......';
+
+      solver.importString(input);
+      assert.isTrue(solver.solutionCheck());
+      done();
+    });
+
+    // Slightly different input string that passes originally:
+    test('Shifted over one', done => {
+      const input = '.......................................................8..................6......';
+
+      solver.importString(input);
+      assert.isTrue(solver.solutionCheck());
+      done();
+    });
+
+    // Empty puzzle:
+    test('Empty input string', done => {
+      const input = '.................................................................................';
+      
+      solver.importString(input);
+      assert.isTrue(solver.solutionCheck());
+      done();
+    });
+  });
 });
