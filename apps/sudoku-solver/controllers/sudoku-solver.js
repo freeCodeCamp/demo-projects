@@ -8,26 +8,28 @@ class SudokuSolver {
   }
 
   static validInput(input) {
-    return typeof (input) === 'string' && input.length === 1 && !!input.match(/[1-9]/);
+    return (
+      typeof input === 'string' && input.length === 1 && !!input.match(/[1-9]/)
+    );
   }
 
   validate(puzzleString) {
     if (puzzleString.length !== 81) {
-      return [true, "Expected puzzle to be 81 characters long"];
+      return [true, 'Expected puzzle to be 81 characters long'];
     }
 
     if (puzzleString.match(/[^1-9.]/gi)) {
-      return [true, "Invalid characters in puzzle"];
+      return [true, 'Invalid characters in puzzle'];
     }
 
     this.importString(puzzleString);
     const legal = this.legalStateCheck({ emptyCellsAllowed: true });
     if (!legal) {
-      return [true, "Puzzle cannot be solved"];
+      return [true, 'Puzzle cannot be solved'];
     }
 
     // No invalid data returns false and empty error string
-    return [false, ""];
+    return [false, ''];
   }
 
   checkRowPlacement(puzzleString, row, value) {
@@ -42,7 +44,12 @@ class SudokuSolver {
 
   checkRegionPlacement(puzzleString, row, column, value) {
     this.importString(puzzleString);
-    return !this.usedInBox(this._puzzle, row - row % 3, column - column % 3, value)
+    return !this.usedInBox(
+      this._puzzle,
+      row - (row % 3),
+      column - (column % 3),
+      value
+    );
   }
 
   getCoordinate(coord) {
@@ -60,14 +67,14 @@ class SudokuSolver {
     if (coord[0].match(/[A-I]/)) {
       row = coord.charCodeAt(0) - 'A'.charCodeAt(0);
     } else {
-      return [true, null, null]
+      return [true, null, null];
     }
 
     // Parse number into integer, validate it's 1-9
     if (parseInt(coord[1]) > 0 && parseInt(coord[1]) < 10) {
       col = parseInt(coord[1]) - 1;
     } else {
-      return [true, null, null]
+      return [true, null, null];
     }
 
     return [false, row, col];
@@ -95,10 +102,12 @@ class SudokuSolver {
   }
 
   exportString() {
-    let output = "";
+    let output = '';
     for (let row = 0; row < WIDTH; row++) {
       for (let col = 0; col < HEIGHT; col++) {
-        output += this._puzzle[row][col] ? this._puzzle[row][col].toString() : ".";
+        output += this._puzzle[row][col]
+          ? this._puzzle[row][col].toString()
+          : '.';
       }
     }
     return output;
@@ -110,7 +119,7 @@ class SudokuSolver {
     if (puzzleString.match(/\./gi)) {
       this._recursions = 0;
       // If so, use the solver.
-      return this.solveSudoku(this._puzzle)
+      return this.solveSudoku(this._puzzle);
     } else {
       // If no, validate the solution
       return this.solutionCheck();
@@ -161,11 +170,12 @@ class SudokuSolver {
   isSafe(grid, row, col, num) {
     // Check if 'num' is not already placed in current row,
     // current column and current 3x3 box
-    return !this.usedInRow(grid, row, num) &&
+    return (
+      !this.usedInRow(grid, row, num) &&
       !this.usedInCol(grid, col, num) &&
-      !this.usedInBox(grid, row - row % 3, col - col % 3, num);
+      !this.usedInBox(grid, row - (row % 3), col - (col % 3), num)
+    );
   }
-
 
   // Searches the grid to find an entry that is still unassigned. If
   // found, the reference parameters row, col will be set the location
@@ -195,12 +205,15 @@ class SudokuSolver {
         let num = this._puzzle[row][col];
 
         // if empty cells are allowed, ignore zeros
-        if (!!emptyCellsAllowed && num === 0) {
+        if (emptyCellsAllowed && num === 0) {
           continue;
         }
-        
+
         this._puzzle[row][col] = 0;
-        if ((!emptyCellsAllowed && num === 0) || !this.isSafe(this._puzzle, row, col, num)) {
+        if (
+          (!emptyCellsAllowed && num === 0) ||
+          !this.isSafe(this._puzzle, row, col, num)
+        ) {
           this._puzzle[row][col] = num;
           return false;
         }
@@ -215,15 +228,14 @@ class SudokuSolver {
   // for Sudoku solution (non-duplication across rows, columns, and boxes)
   solveSudoku(grid) {
     this._recursions++;
-    // Tested the recursion count for the "hardest sudoku" puzzle
-    // Puzzle was fetched from https://www.conceptispuzzles.com/index.aspx?uri=info/article/424
-    // Recursion count was 49559 - rounded to 50000 for nice number + a bit of buffer.
-    // Anything exceeding this should be an unsolvable puzzle.
-    if (this._recursions > 50000) {
+    // 250000 is a good limit to ensure the speed of the algorithm.
+    // Certain puzzles like 9..8...........5............2..1...3.1.....6....4...7.7.86.........3.1..4.....2..
+    // take too long to brute force without bogging-down the server.
+    if (this._recursions > 250_000) {
       return false;
     }
     // If the sudoku grid has been filled, we are done
-    let [row, col] = this.getUnassignedLocation(grid)
+    let [row, col] = this.getUnassignedLocation(grid);
     if (row === 10 || col === 10) {
       return true;
     }
@@ -259,10 +271,7 @@ class SudokuSolver {
     return false;
   }
 
-  tryToSolve() {
-
-  }
+  tryToSolve() {}
 }
 
 module.exports = SudokuSolver;
-
