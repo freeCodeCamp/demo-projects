@@ -205,7 +205,7 @@ class SudokuSolver {
         let num = this._puzzle[row][col];
 
         // if empty cells are allowed, ignore zeros
-        if (!!emptyCellsAllowed && num === 0) {
+        if (emptyCellsAllowed && num === 0) {
           continue;
         }
 
@@ -230,9 +230,8 @@ class SudokuSolver {
     this._recursions++;
     // 250000 is a good limit to ensure the speed of the algorithm.
     // Certain puzzles like 9..8...........5............2..1...3.1.....6....4...7.7.86.........3.1..4.....2..
-    // can take up to a minute for a browser to brute force, so these edge cases cannot be reasonably covered
-    // without the detection of unsolvable puzzles becoming unreasonably slow in some cases as well.
-    if (this._recursions > 250000) {
+    // take too long to brute force without bogging-down the server.
+    if (this._recursions > 250_000) {
       return false;
     }
     // If the sudoku grid has been filled, we are done
