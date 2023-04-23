@@ -222,7 +222,7 @@ class Buttons extends React.Component {
         </button>
         <button
           id='divide'
-          onClick={this.props.operators}
+          onClick={this.state.currentValue !== '0' && this.props.operators}
           style={operatorStyle}
           value='/'
         >
@@ -230,7 +230,7 @@ class Buttons extends React.Component {
         </button>
         <button
           id='multiply'
-          onClick={this.props.operators}
+          onClick={this.state.currentValue !== '0' && this.props.operators}
           style={operatorStyle}
           value='x'
         >
