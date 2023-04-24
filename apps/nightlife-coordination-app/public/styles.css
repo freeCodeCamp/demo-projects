@@ -1,0 +1,178 @@
+body, html {
+    margin: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(30deg, rgba(2,0,36,1) 33%, rgba(215,27,200,1) 81%); 
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+.eventContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    overflow: scroll;
+    height: 70vh;
+}
+
+.eventContainerDashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    overflow: scroll;
+    height: 90vh;
+}
+
+.eventCard {
+    width: 700px;
+    border: 1px solid white;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.eventContent {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    width: 75%;
+}
+
+.eventImage {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    align-self: center;
+    justify-self: center;
+    margin-right: 10px;
+}
+
+.searchContainer {
+    margin-top: 20px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    width: 75%;
+    margin-right: 20px;
+    background-color: transparent;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+}
+
+.splashContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splash {
+    border: 2px solid white;
+    height: 200px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    color: white;
+}
+
+.splashText {
+    font-size: 3em;
+    color: white;
+}
+
+.splashTextDashboard {
+    font-size: 3em;
+    margin-top: 40px;
+}
+
+.nightLifeDivider {
+    width: 50%;
+    border: 1px solid white;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    right: 0;
+}
+
+.searchButton {
+    border-radius: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.searchButton:hover {
+    background-color: white;
+    color: black;
+    transition: background-color .5s;
+}
+
+.navButton {
+    border-radius: 20px;
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    margin-right: 20px;
+}
+
+.navButton:hover {
+    background-color: white;
+    color: black;
+    transition: background-color .5s;
+}
+
+.displayName {
+    color: white;
+    margin-right: 20px;
+}
+
+.eventCardButtonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.eventCardButton {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.eventCardButton:hover {
+    background-color: black;
+    color: white;
+    transition: background-color .5s;
+}
+
+.splashTextDashboard {
+    color: white;
+}
