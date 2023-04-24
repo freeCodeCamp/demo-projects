@@ -34,7 +34,7 @@ function RouteController() {
         const { eventId } = req.body
         const event = await Event.findById(eventId)
 
-        const updateUser = await User.findOneAndUpdate(
+        await User.findOneAndUpdate(
             { _id: req.user._id}, 
             { $push: { events: event } }
         )
@@ -49,7 +49,7 @@ function RouteController() {
         const { eventId } = req.body
         const event = await Event.findById(eventId)
 
-        const updateUser = await User.findOneAndUpdate(
+        await User.findOneAndUpdate(
             { _id: req.user._id}, 
             { $pull: { events: eventId } }
         )

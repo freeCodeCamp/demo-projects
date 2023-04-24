@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
             }
         } );
 
-    app.get("/auth/logout", (req, res) => {
+    app.get("/auth/logout", (req, res, next) => {
             req.session.destroy(err => {
                 if(err){
                     return next(err)
