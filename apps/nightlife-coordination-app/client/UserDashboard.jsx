@@ -1,7 +1,8 @@
 import React from "react";
 import EventCard from './EventCard.jsx';
+import PropTypes from 'prop-types';
 
-export default function UserDashboard({user, isGoingToEvent}) {
+function UserDashboard({user, isGoingToEvent}) {
 
     return(
         <div className="splashContainer">
@@ -26,3 +27,10 @@ export default function UserDashboard({user, isGoingToEvent}) {
         </div>
     )
 }
+
+UserDashboard.propTypes = {
+    isGoingToEvent: PropTypes.func.isRequired,
+    user: PropTypes.any.isRequired
+  };
+
+export default UserDashboard

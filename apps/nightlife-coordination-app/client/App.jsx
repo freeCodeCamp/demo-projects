@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import EventCard from './EventCard.jsx';
+import PropTypes from 'prop-types';
 
 const API_URL = window.location.origin;
 
@@ -61,5 +62,12 @@ function App({user, isGoingToEvent, searchValue, setSearchValue}){
         </div>
     );
 }
+
+App.propTypes = {
+    user: PropTypes.any.isRequired,
+    isGoingToEvent: PropTypes.func.isRequired,
+    searchValue: PropTypes.string.isRequired,
+    setSearchValue: PropTypes.func.isRequired,
+  };
   
 export default App;

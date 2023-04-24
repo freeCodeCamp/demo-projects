@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const API_URL = window.location.origin;
 
-export default function Navbar({ user, setCurrentPage, currentPage, searchQuery, setSearchQuery }) {
+function Navbar({ user, setCurrentPage, currentPage, searchQuery, setSearchQuery }) {
 
     function handleLogin() {
         if(searchQuery) {
@@ -29,7 +30,7 @@ export default function Navbar({ user, setCurrentPage, currentPage, searchQuery,
     }
 
     return (
-        <div class="navbar">
+        <div className="navbar">
 
             { user ? 
                 <>
@@ -51,3 +52,13 @@ export default function Navbar({ user, setCurrentPage, currentPage, searchQuery,
         </div>
     )
 }
+
+Navbar.propTypes = {
+    setCurrentPage: PropTypes.func.isRequired,
+    currentPage: PropTypes.string.isRequired,
+    searchQuery: PropTypes.string.isRequired,
+    setSearchQuery: PropTypes.func.isRequired,
+    user: PropTypes.any.isRequired,
+  };
+
+export default Navbar

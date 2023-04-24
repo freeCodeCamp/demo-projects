@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const API_URL = window.location.origin;
 
-export default function EventCard({event_id, img_url, name, description, attending, isRemoveable, user}) {
+function EventCard({event_id, img_url, name, description, attending, isRemoveable, user}) {
 
     function addEventToUser() {
         fetch(`${API_URL}/api/add/event`, {
@@ -60,12 +61,12 @@ export default function EventCard({event_id, img_url, name, description, attendi
                 {
                     isRemoveable ?
                         <div className="eventCardButtonContainer">
-                            <span>You're not going here</span>
+                            <span>You&#39;re not going here</span>
                             <button className="eventCardButton" onClick={() => addEventToUser()}>Add event</button>
                         </div>
                     :
                         <div className="eventCardButtonContainer">
-                            <span>You're going</span>
+                            <span>You&#39;re going</span>
                             <button className="eventCardButton" onClick={() => removeUserFromEvent()}>Remove event</button>
                         </div>
                 }
@@ -75,3 +76,15 @@ export default function EventCard({event_id, img_url, name, description, attendi
         </div>
     )
 }
+
+EventCard.propTypes = {
+    event_id: PropTypes.string.isRequired,
+    img_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    attending: PropTypes.string.isRequired,
+    isRemoveable: PropTypes.func.isRequired,
+    user: PropTypes.any.isRequired,
+  };
+
+export default EventCard
