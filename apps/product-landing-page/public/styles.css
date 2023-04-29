@@ -61,7 +61,7 @@ header {
   background-color: #eee;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   header {
     flex-wrap: wrap;
   }
@@ -71,7 +71,7 @@ header {
   width: 60vw;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .logo {
     margin-top: 15px;
     width: 100%;
@@ -90,7 +90,7 @@ header {
   margin-left: 20px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .logo > img {
     margin: 0 auto;
   }
@@ -100,7 +100,7 @@ nav {
   font-weight: 400;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   nav {
     margin-top: 10px;
     width: 100%;
@@ -122,7 +122,7 @@ nav > ul {
   justify-content: space-around;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   nav > ul {
     flex-direction: column;
   }
@@ -163,7 +163,7 @@ nav > ul {
   transition: background-color 1s;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   #hero {
     margin-top: 120px;
   }
@@ -206,7 +206,7 @@ nav > ul {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   #features {
     margin-top: 0;
   }
