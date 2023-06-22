@@ -1,0 +1,149 @@
+:root {
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-15: #d0d0d5;
+  --gray-75: #3b3b4f;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --error: #a94442;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--gray-90);
+  color: var(--gray-05);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 10px;
+}
+
+.freecodecamp-logo {
+  width: 100%;
+  height: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+
+.container {
+  width: 90%;
+}
+
+figure {
+  font-size: 1.5em;
+  padding: 30px;
+  min-height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+
+blockquote {
+  border: none;
+  quotes: '“' '”' '‘' '’';
+}
+
+.quote-text {
+  text-indent: -0.45em;
+}
+
+.quote-text::before {
+  content: open-quote;
+}
+
+.quote-text::after {
+  content: close-quote;
+}
+
+.quote-author {
+  margin-top: 20px;
+  font-size: 80%;
+  color: #99c9ff;
+  text-align: center;
+}
+
+.quote-author::before {
+  content: '\2014 \00A0';
+}
+
+figure,
+.button-container {
+  border: 3px solid var(--gray-05);
+}
+
+a,
+button {
+  background-color: var(--gray-75);
+  color: var(--gray-05);
+  border: 1px solid var(--gray-05);
+  text-decoration: none;
+  white-space: pre-line;
+  padding: 10px 16px;
+  font-size: 23px;
+  line-height: 1.3333333;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+}
+
+button {
+  margin-top: 5px;
+}
+
+a:hover,
+a:active,
+button:hover,
+button:active {
+  border-color: var(--gray-05);
+  background-color: var(--gray-05);
+  color: var(--gray-85);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+a.disabled,
+a.disabled:hover {
+  background-color: var(--gray-75);
+  border-color: var(--gray-15);
+  color: var(--gray-15);
+  opacity: 0.65;
+}
+
+@media (min-width: 700px) {
+  .container {
+    max-width: 540px;
+  }
+}
