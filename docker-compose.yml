@@ -433,6 +433,17 @@ services:
     ports:
       - 50250:3000
 
+  telephone-number-validator:
+    container_name: telephone-number-validator
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/telephone-number-validator
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50320:3000
+
   timestamp-microservice:
     container_name: timestamp-microservice
     restart: unless-stopped
