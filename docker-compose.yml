@@ -91,6 +91,17 @@ services:
     ports:
       - 50030:3000
 
+  cash-register:
+    container_name: cash-register
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/cash-register
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50330:3000
+
   chart-the-stock-market:
     container_name: chart-the-stock-market
     restart: unless-stopped
