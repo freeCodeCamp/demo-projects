@@ -12,7 +12,7 @@ const db = new Datastore({
 
 // cleaning cache data on app restart
 db.remove(
-  { $or: [{ data: {} }, { data: "Unknown symbol" }] },
+  { $or: [{ stockData: {} }, { stockData: "Unknown symbol" }] },
   { multi: true },
   (err, count) => {
     console.log("\nremoving garbage from cache...");
@@ -31,7 +31,7 @@ const getUID = (n = 8, symbols = _symbols) =>
     .map(() => symbols[Math.floor(Math.random() * symbols.length)])
     .join("");
 
-const { IEX_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
+const { ALPHA_VANTAGE_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
 
 const validTickerRegExp = /^[a-z]{1,6}$/;
 const isValidStock = stock => validTickerRegExp.test(stock);
@@ -60,30 +60,59 @@ router.get("/stock/:stock/quote", (req, res, next) => {
       if (err) return next(err);
       if (cached) {
         console.log(`rid: ${req_id} ** ${stock} from cache **`);
-        return res.json(cached.data);
+        return res.json(cached.stockData);
       }
       try {
         const { data } = await axios.get(
-          `https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${IEX_API_KEY}`
+          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stock}&apikey=${ALPHA_VANTAGE_API_KEY}`
         );
         console.log(`rid: ${req_id} !! ${stock} from api !!`);
-        res.json(data);
+        const temp = {...data?.['Global Quote']};
+        let stockData;
+        if (Object.keys(temp).length === 0 && temp.constructor === Object) {
+          stockData = "Unknown symbol"; // Mimic IEX API response for this case
+        } else {
+          const symbol = temp["01. symbol"];
+          const open = temp["02. open"];
+          const high = temp["03. high"];
+          const low = temp["04. low"];
+          const close = temp["05. price"];
+          const volume = temp["06. volume"];
+          const latestTradingDay = temp["07. latest trading day"];
+          const previousClose = temp["08. previous close"];
+          const change = temp["09. change"];
+          
+          const parseFloatAndRound = (value) => Number(parseFloat(value).toFixed(2));
+
+          stockData = {
+            symbol,
+            open: parseFloatAndRound(open),
+            high: parseFloatAndRound(high),
+            low: parseFloatAndRound(low),
+            close: parseFloatAndRound(close),
+            volume: Number(volume),
+            latestTradingDay: new Date(latestTradingDay),
+            previousClose: parseFloatAndRound(previousClose),
+            change: parseFloatAndRound(change),
+          };
+        }
+        res.json(stockData);
         db.update(
           {
             _id: stock
           },
-          { _id: stock, data, updatedAt: Date.now() },
+          { _id: stock, stockData, updatedAt: Date.now() },
           { upsert: true },
           () => console.log(`rid: ${req_id} ++ ${stock} stored ++`)
         );
       } catch (e) {
         if (e.response) {
-          res.status(e.response.status).json(e.response.data);
+          res.status(e.response.status).json(e.response.stockData);
           db.update(
             {
               _id: stock
             },
-            { _id: stock, data: e.response.data, updatedAt: Date.now() },
+            { _id: stock, stockData: e.response.stockData, updatedAt: Date.now() },
             { upsert: true }
           );
         } else {
