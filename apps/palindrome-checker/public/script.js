@@ -3,7 +3,7 @@ const checkPalindromeBtn = document.getElementById('btn');
 const resultDiv = document.getElementById('result');
 
 const checkForPalindrome = input => {
-  const hasSpecialCharactersOrDigits = /[\W\d]/.test(input);
+  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input);
 
   if (input === '') {
     alert('Please input a value');
