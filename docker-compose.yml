@@ -338,6 +338,17 @@ services:
     ports:
       - 50110:3000
 
+  roman-numeral-converter:
+    container_name: roman-numeral-converter
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/roman-numeral-converter
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50310:3000
+
   scatterplot-graph:
     container_name: scatterplot-graph
     restart: unless-stopped

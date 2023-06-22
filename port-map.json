@@ -24,6 +24,7 @@
   "p2p-video-chat-application": 50100,
   "random-quote-machine": 50105,
   "request-header-parser-microservice": 50110,
+  "roman-numeral-converter": 50310,
   "scatterplot-graph": 50115,
   "secure-real-time-multiplayer-game": 50120,
   "stock-price-checker-proxy": 50130,
