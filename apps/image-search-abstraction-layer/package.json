@@ -17,6 +17,6 @@
     "express": "4.18.2",
     "google-images": "2.1.0",
     "moment": "2.29.4",
-    "mongodb": "3.7.3"
+    "mongodb": "3.7.4"
   }
 }

@@ -15,7 +15,7 @@
     "dotenv": "14.3.2",
     "express": "4.18.2",
     "mocha": "9.2.2",
-    "mongodb": "3.7.3",
+    "mongodb": "3.7.4",
     "mongoose": "5.13.17"
   },
   "repository": {
