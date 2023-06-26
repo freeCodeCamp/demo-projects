@@ -7,7 +7,7 @@ const cors = require("cors");
 const Datastore = require("@seald-io/nedb");
 const db = new Datastore({
   filename: "./cache/db",
-  autoload: true,
+  autoload: true
 });
 
 // cleaning cache data on app restart
@@ -85,7 +85,7 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           ).toLocaleString("en-US", {
             month: "long",
             day: "numeric",
-            year: "numeric",
+            year: "numeric"
           });
           const previousClose = parseFloatAndRound(
             temp["08. previous close"],
@@ -110,13 +110,13 @@ router.get("/stock/:stock/quote", (req, res, next) => {
             open,
             previousClose,
             symbol,
-            volume,
+            volume
           };
         }
         res.json(stockData);
         db.update(
           {
-            _id: stock,
+            _id: stock
           },
           { _id: stock, stockData, updatedAt: Date.now() },
           { upsert: true },
@@ -127,12 +127,12 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           res.status(e.response.status).json(e.response.stockData);
           db.update(
             {
-              _id: stock,
+              _id: stock
             },
             {
               _id: stock,
               stockData: e.response.stockData,
-              updatedAt: Date.now(),
+              updatedAt: Date.now()
             },
             { upsert: true }
           );
