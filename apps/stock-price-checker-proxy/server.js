@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   if (err) {
     console.log(err.message, err.stack);
     res.status(500).json({ status: "internal server error" });
