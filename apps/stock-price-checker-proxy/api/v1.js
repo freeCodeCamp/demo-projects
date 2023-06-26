@@ -35,6 +35,7 @@ const { ALPHA_VANTAGE_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
 
 const validTickerRegExp = /^[a-z]{1,6}$/;
 const isValidStock = stock => validTickerRegExp.test(stock);
+const parseFloatAndRound = (value, digits) => Number(parseFloat(value).toFixed(digits));
 
 router.use(cors());
 
@@ -67,33 +68,36 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stock}&apikey=${ALPHA_VANTAGE_API_KEY}`
         );
         console.log(`rid: ${req_id} !! ${stock} from api !!`);
-        const temp = {...data?.['Global Quote']};
+        const temp = {...data?.["Global Quote"]};
         let stockData;
         if (Object.keys(temp).length === 0 && temp.constructor === Object) {
           stockData = "Unknown symbol"; // Mimic IEX API response for this case
         } else {
           const symbol = temp["01. symbol"];
-          const open = temp["02. open"];
-          const high = temp["03. high"];
-          const low = temp["04. low"];
-          const close = temp["05. price"];
-          const volume = temp["06. volume"];
-          const latestTradingDay = temp["07. latest trading day"];
-          const previousClose = temp["08. previous close"];
-          const change = temp["09. change"];
-          
-          const parseFloatAndRound = (value) => Number(parseFloat(value).toFixed(2));
+          const open = parseFloatAndRound(temp["02. open"], 2);
+          const high = parseFloatAndRound(temp["03. high"], 2);
+          const low = parseFloatAndRound(temp["04. low"], 2);
+          const close = parseFloatAndRound(temp["05. price"], 2);
+          const volume = Number(parseFloatAndRound(temp["06. volume"]), 2);
+          const latestTime = new Date(temp["07. latest trading day"]).toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric" });
+          const previousClose = parseFloatAndRound(temp["08. previous close"], 2);
+          const change = parseFloatAndRound(temp["09. change"], 2);
 
+          // Transform the response to match the IEX's as closely as possible
+          // with the available data
           stockData = {
+            change,
+            changePercent: parseFloatAndRound(((close - previousClose) / previousClose), 5),
+            close,
+            high,
+            latestPrice: close,
+            latestTime,
+            latestVolume: volume,
+            low,
+            open,
+            previousClose,
             symbol,
-            open: parseFloatAndRound(open),
-            high: parseFloatAndRound(high),
-            low: parseFloatAndRound(low),
-            close: parseFloatAndRound(close),
-            volume: Number(volume),
-            latestTradingDay: new Date(latestTradingDay),
-            previousClose: parseFloatAndRound(previousClose),
-            change: parseFloatAndRound(change),
+            volume
           };
         }
         res.json(stockData);
