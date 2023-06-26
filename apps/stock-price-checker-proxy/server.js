@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   if (err) {
     console.log(err.message, err.stack);
