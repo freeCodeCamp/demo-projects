@@ -7,7 +7,7 @@ const cors = require("cors");
 const Datastore = require("@seald-io/nedb");
 const db = new Datastore({
   filename: "./cache/db",
-  autoload: true
+  autoload: true,
 });
 
 // cleaning cache data on app restart
@@ -34,8 +34,9 @@ const getUID = (n = 8, symbols = _symbols) =>
 const { ALPHA_VANTAGE_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
 
 const validTickerRegExp = /^[a-z]{1,6}$/;
-const isValidStock = stock => validTickerRegExp.test(stock);
-const parseFloatAndRound = (value, digits) => Number(parseFloat(value).toFixed(digits));
+const isValidStock = (stock) => validTickerRegExp.test(stock);
+const parseFloatAndRound = (value, digits) =>
+  Number(parseFloat(value).toFixed(digits));
 
 router.use(cors());
 
@@ -68,7 +69,7 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stock}&apikey=${ALPHA_VANTAGE_API_KEY}`
         );
         console.log(`rid: ${req_id} !! ${stock} from api !!`);
-        const temp = {...data?.["Global Quote"]};
+        const temp = { ...data?.["Global Quote"] };
         let stockData;
         if (Object.keys(temp).length === 0 && temp.constructor === Object) {
           stockData = "Unknown symbol"; // Mimic IEX API response for this case
@@ -79,15 +80,27 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           const low = parseFloatAndRound(temp["04. low"], 2);
           const close = parseFloatAndRound(temp["05. price"], 2);
           const volume = Number(parseFloatAndRound(temp["06. volume"]), 2);
-          const latestTime = new Date(temp["07. latest trading day"]).toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric" });
-          const previousClose = parseFloatAndRound(temp["08. previous close"], 2);
+          const latestTime = new Date(
+            temp["07. latest trading day"]
+          ).toLocaleString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
+          const previousClose = parseFloatAndRound(
+            temp["08. previous close"],
+            2
+          );
           const change = parseFloatAndRound(temp["09. change"], 2);
 
           // Transform the response to match the IEX's as closely as possible
           // with the available data
           stockData = {
             change,
-            changePercent: parseFloatAndRound(((close - previousClose) / previousClose), 5),
+            changePercent: parseFloatAndRound(
+              (close - previousClose) / previousClose,
+              5
+            ),
             close,
             high,
             latestPrice: close,
@@ -97,13 +110,13 @@ router.get("/stock/:stock/quote", (req, res, next) => {
             open,
             previousClose,
             symbol,
-            volume
+            volume,
           };
         }
         res.json(stockData);
         db.update(
           {
-            _id: stock
+            _id: stock,
           },
           { _id: stock, stockData, updatedAt: Date.now() },
           { upsert: true },
@@ -114,9 +127,13 @@ router.get("/stock/:stock/quote", (req, res, next) => {
           res.status(e.response.status).json(e.response.stockData);
           db.update(
             {
-              _id: stock
+              _id: stock,
             },
-            { _id: stock, stockData: e.response.stockData, updatedAt: Date.now() },
+            {
+              _id: stock,
+              stockData: e.response.stockData,
+              updatedAt: Date.now(),
+            },
             { upsert: true }
           );
         } else {
