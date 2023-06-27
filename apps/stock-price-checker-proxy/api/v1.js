@@ -12,7 +12,7 @@ const db = new Datastore({
 
 // cleaning cache data on app restart
 db.remove(
-  { $or: [{ data: {} }, { data: "Unknown symbol" }] },
+  { $or: [{ stockData: {} }, { stockData: "Unknown symbol" }] },
   { multi: true },
   (err, count) => {
     console.log("\nremoving garbage from cache...");
@@ -31,10 +31,12 @@ const getUID = (n = 8, symbols = _symbols) =>
     .map(() => symbols[Math.floor(Math.random() * symbols.length)])
     .join("");
 
-const { IEX_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
+const { ALPHA_VANTAGE_API_KEY = "", CACHE_TTL_MINUTES = 10 } = process.env;
 
 const validTickerRegExp = /^[a-z]{1,6}$/;
-const isValidStock = stock => validTickerRegExp.test(stock);
+const isValidStock = (stock) => validTickerRegExp.test(stock);
+const parseFloatAndRound = (value, digits) =>
+  Number(parseFloat(value).toFixed(digits));
 
 router.use(cors());
 
@@ -60,30 +62,78 @@ router.get("/stock/:stock/quote", (req, res, next) => {
       if (err) return next(err);
       if (cached) {
         console.log(`rid: ${req_id} ** ${stock} from cache **`);
-        return res.json(cached.data);
+        return res.json(cached.stockData);
       }
       try {
         const { data } = await axios.get(
-          `https://cloud.iexapis.com/stable/stock/${stock}/quote?token=${IEX_API_KEY}`
+          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stock}&apikey=${ALPHA_VANTAGE_API_KEY}`
         );
         console.log(`rid: ${req_id} !! ${stock} from api !!`);
-        res.json(data);
+        const temp = { ...data?.["Global Quote"] };
+        let stockData;
+        if (Object.keys(temp).length === 0 && temp.constructor === Object) {
+          stockData = "Unknown symbol"; // Mimic IEX API response for this case
+        } else {
+          const symbol = temp["01. symbol"];
+          const open = parseFloatAndRound(temp["02. open"], 2);
+          const high = parseFloatAndRound(temp["03. high"], 2);
+          const low = parseFloatAndRound(temp["04. low"], 2);
+          const close = parseFloatAndRound(temp["05. price"], 2);
+          const volume = Number(parseFloatAndRound(temp["06. volume"]), 2);
+          const latestTime = new Date(
+            temp["07. latest trading day"]
+          ).toLocaleString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          });
+          const previousClose = parseFloatAndRound(
+            temp["08. previous close"],
+            2
+          );
+          const change = parseFloatAndRound(temp["09. change"], 2);
+
+          // Transform the response to match the IEX's as closely as possible
+          // with the available data
+          stockData = {
+            change,
+            changePercent: parseFloatAndRound(
+              (close - previousClose) / previousClose,
+              5
+            ),
+            close,
+            high,
+            latestPrice: close,
+            latestTime,
+            latestVolume: volume,
+            low,
+            open,
+            previousClose,
+            symbol,
+            volume
+          };
+        }
+        res.json(stockData);
         db.update(
           {
             _id: stock
           },
-          { _id: stock, data, updatedAt: Date.now() },
+          { _id: stock, stockData, updatedAt: Date.now() },
           { upsert: true },
           () => console.log(`rid: ${req_id} ++ ${stock} stored ++`)
         );
       } catch (e) {
         if (e.response) {
-          res.status(e.response.status).json(e.response.data);
+          res.status(e.response.status).json(e.response.stockData);
           db.update(
             {
               _id: stock
             },
-            { _id: stock, data: e.response.data, updatedAt: Date.now() },
+            {
+              _id: stock,
+              stockData: e.response.stockData,
+              updatedAt: Date.now()
+            },
             { upsert: true }
           );
         } else {

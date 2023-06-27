@@ -1,6 +1,7 @@
 networks:
   proxy:
 
+
 services:
 
   caddy:
@@ -12,8 +13,8 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
     ports:
-    - 80:80
-    - 443:443
+      - 80:80
+      - 443:443
 
   mongo:
     image: mongo
@@ -373,7 +374,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - CACHE_TTL_MINUTES=${STOCK_PRICE_CHECKER_PROXY_CACHE_TTL_MINUTES}
-      - IEX_API_KEY=${STOCK_PRICE_CHECKER_PROXY_IEX_API_KEY}
+      - ALPHA_VANTAGE_API_KEY=${STOCK_PRICE_CHECKER_PROXY_ALPHA_VANTAGE_API_KEY}
     ports:
       - 50130:3000
 
