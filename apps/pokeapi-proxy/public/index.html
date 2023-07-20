@@ -1,25 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Stock Price Checker Proxy</title>
-    <meta name="description" content="a freeCodeCamp utility api" />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéAPI Proxy</title>
+    <meta
+      name="description"
+      content="A utility API proxy for the freeCodeCamp curriculum"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <header>
-      <h1>
-        Stock Price Checker Proxy
-      </h1>
-    </header>
     <main>
-      Usage:
-      <pre>GET https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/[symbol]/quote</pre>
-      Where:
-      <pre>symbol = msft | goog | aapl | ...</pre>
+      <h1>PokéAPI Proxy</h1>
+      <div class="usage">
+        <h2>Usage</h2>
+        <p>
+          Use the endpoint
+          <code
+            >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/{name-or-id}</code
+          >
+          to get data for a Pokémon, where <code>{name-or-id}</code> is the
+          Pokémon's name or its id number in the
+          <a target="_blank" rel="noreferrer noopener">official Pokédex</a>.
+        </p>
+        <p>
+          Note that the name should be lowercase, have special characters
+          removed, and dash separated.
+        </p>
+        <h2>Example Requests</h2>
+        <p>Click any of the example requests below to see its response.</p>
+        <h3>Pikachu:</h3>
+        <ul>
+          <li>
+            <a
+              href="/api/pokemon/pikachu"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu</code
+              ></a
+            >
+          </li>
+          <li>
+            <a href="/api/pokemon/25" target="_blank" rel="noreferrer noopener">
+              <code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/25</code
+              >
+            </a>
+          </li>
+        </ul>
+        <h3>Nidoran♀ (Female):</h3>
+        <ul>
+          <li>
+            <a
+              href="/api/pokemon/nidoran-f"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/nidoran-f</code
+              ></a
+            >
+          </li>
+          <li>
+            <a href="/api/pokemon/29" target="_blank" rel="noreferrer noopener">
+              <code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/29</code
+              ></a
+            >
+          </li>
+        </ul>
+        <h3>Mr. Mime:</h3>
+        <ul>
+          <li>
+            <a
+              href="/api/pokemon/mr-mime"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/mr-mime</code
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="/api/pokemon/122"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/122</code
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>

@@ -1,25 +1,67 @@
-/* styles */
-/* called by your view template */
-
-* {
+html {
   box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
+  font-family: Lato, sans-serif;
+  background-color: #0a0a23;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.bold {
-  font-weight: bold;
+h1,
+h2,
+h3,
+p,
+code,
+pre,
+ul {
+  color: #fff;
+}
+
+.usage {
+  padding: 15px;
+  background-color: #0a0a23;
+  max-width: 95%;
+  border: 1px solid #fff;
 }
 
 p {
-  max-width: 600px;
+  margin-bottom: 1em;
+  line-height: 1.5rem;
 }
 
+code {
+  padding: 1px 4px;
+  overflow-wrap: anywhere;
+  background-color: #3b3b4f;
+  color: #dfdfe2;
+}
+
+ul {
+  margin: 1em;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .usage {
+    max-width: 70%;
+  }
+}
