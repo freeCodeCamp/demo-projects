@@ -316,6 +316,19 @@ services:
     ports:
       - 50260:3000
 
+  pokeapi-proxy:
+    container_name: pokeapi-proxy
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/pokeapi-proxy
+      dockerfile: ./Dockerfile
+    environment:
+      - CACHE_TTL_HOURS=${POKEAPI_PROXY_CACHE_TTL_HOURS}
+    ports:
+      - 50400:3000
+
   pokemon-search-app:
     container_name: pokemon-search-app
     restart: unless-stopped
