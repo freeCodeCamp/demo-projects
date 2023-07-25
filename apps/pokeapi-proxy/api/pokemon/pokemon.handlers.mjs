@@ -40,8 +40,9 @@ export const getPokemonData = async (req, res, next) => {
       weight
     };
 
-    // Cache simplified data and send it as a response
-    setCache(pokemonIdOrName, simplifiedPokemonData);
+    // Cache simplified data by id and name, then send it as a response
+    setCache(simplifiedPokemonData.id, simplifiedPokemonData);
+    setCache(simplifiedPokemonData.name, simplifiedPokemonData);
     res.send(simplifiedPokemonData);
   } catch (err) {
     // Set status code and message from the Axios response object
