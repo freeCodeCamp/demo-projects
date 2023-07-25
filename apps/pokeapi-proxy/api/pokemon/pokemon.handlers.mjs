@@ -44,7 +44,7 @@ export const getPokemonData = async (req, res, next) => {
     setCache(pokemonIdOrName, simplifiedPokemonData);
     res.send(simplifiedPokemonData);
   } catch (err) {
-    // Attempt to set the status code and message from the Axios response object
+    // Set status code and message from the Axios response object
     next({
       statusCode: err?.response?.status,
       message: err?.response?.data
