@@ -1,10 +1,11 @@
-import { fetchFromPokeAPI } from '../utils/fetch-from-pokeapi.mjs';
+import axios from 'axios';
 import { setCache } from '../utils/cache.mjs';
 
 export const getPokemonData = async (req, res, next) => {
   try {
     const { pokemonIdOrName } = req.params;
-    const { data } = await fetchFromPokeAPI(
+    console.log('Fetching Pokémon data from PokéAPI');
+    const { data } = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${pokemonIdOrName}`
     );
     const {
@@ -43,12 +44,9 @@ export const getPokemonData = async (req, res, next) => {
     // Cache simplified data by id and name, then send it as a response
     setCache(simplifiedPokemonData.id, simplifiedPokemonData);
     setCache(simplifiedPokemonData.name, simplifiedPokemonData);
+
     res.send(simplifiedPokemonData);
   } catch (err) {
-    // Set status code and message from the Axios response object
-    next({
-      statusCode: err?.response?.status,
-      message: err?.response?.data
-    });
+    next(err);
   }
 };
