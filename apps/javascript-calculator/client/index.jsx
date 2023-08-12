@@ -192,7 +192,6 @@ class Calculator extends React.Component {
           />
         </div>
         <div className='author'>
-          {' '}
           Designed and Coded By <br />
           <a
             href='https://www.freecodecamp.org/no-stack-dub-sack'
@@ -222,7 +221,7 @@ class Buttons extends React.Component {
         </button>
         <button
           id='divide'
-          onClick={this.props.operators}
+          onClick={this.state.currentValue !== 0 && this.props.operators}
           style={operatorStyle}
           value='/'
         >
@@ -230,7 +229,7 @@ class Buttons extends React.Component {
         </button>
         <button
           id='multiply'
-          onClick={this.props.operators}
+          onClick={this.state.currentValue !== 0 && this.props.operators}
           style={operatorStyle}
           value='x'
         >
