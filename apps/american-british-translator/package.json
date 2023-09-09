@@ -8,9 +8,9 @@
     "test": "mocha --timeout 5000 --require @babel/register --recursive --exit --ui tdd tests/"
   },
   "dependencies": {
-    "@babel/core": "7.22.11",
-    "@babel/preset-env": "7.22.14",
-    "@babel/register": "7.22.5",
+    "@babel/core": "7.22.17",
+    "@babel/preset-env": "7.22.15",
+    "@babel/register": "7.22.15",
     "body-parser": "1.20.2",
     "chai": "4.3.8",
     "chai-http": "4.4.0",

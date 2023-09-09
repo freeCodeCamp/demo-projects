@@ -13,9 +13,9 @@
     "express": "4.17.3"
   },
   "devDependencies": {
-    "@babel/core": "7.22.11",
-    "@babel/preset-env": "7.22.14",
-    "@babel/preset-react": "7.22.5",
+    "@babel/core": "7.22.17",
+    "@babel/preset-env": "7.22.15",
+    "@babel/preset-react": "7.22.15",
     "@rollup/plugin-babel": "6.0.3",
     "@rollup/plugin-commonjs": "23.0.7",
     "@rollup/plugin-node-resolve": "15.0.1",
