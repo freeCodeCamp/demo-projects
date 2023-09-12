@@ -316,6 +316,17 @@ services:
     ports:
       - 50260:3000
 
+  pokemon-search-app:
+    container_name: pokemon-search-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/pokemon-search-app
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50340:3000
+
   product-landing-page:
     container_name: product-landing-page
     restart: unless-stopped
@@ -337,17 +348,6 @@ services:
       dockerfile: ../../shared.Dockerfile
     ports:
       - 50105:3000
-
-  random-quote-machine-js:
-    container_name: random-quote-machine-js
-    restart: unless-stopped
-    networks:
-      - proxy
-    build:
-      context: ./apps/random-quote-machine-js
-      dockerfile: ../../shared.Dockerfile
-    ports:
-      - 50340:3000
 
   request-header-parser-microservice:
     container_name: request-header-parser-microservice
