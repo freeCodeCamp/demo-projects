@@ -1,6 +1,6 @@
 const pokemonID = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("pokemon-name");
-const defaultSprite = document.getElementById("default-sprite");
+const sprite = document.getElementById("sprite");
 const types = document.getElementById("types");
 const height = document.getElementById("height");
 const weight = document.getElementById("weight");
@@ -26,7 +26,8 @@ const getPokemon = async () => {
     pokemonID.innerHTML = `#${data.id}`;
     weight.innerHTML = `Weight: ${data.weight}`;
     height.innerHTML = `Height: ${data.height}`;
-    defaultSprite.src = data.sprites.front_default;
+    sprite.src = data.sprites.front_default;
+    sprite.alt = `${data.name} front default sprite`;
 
     // Set stats
     hp.innerHTML = data.stats[0].base_stat;
@@ -58,8 +59,9 @@ searchForm.addEventListener("submit", (e) => {
 function resetDisplay() {
   // reset to default display if pokemon is not found
 
-  // set image to gray
-  defaultSprite.src = "images/search.png";
+  // reset image src and alt
+  sprite.src = "";
+  sprite.alt = "";
 
   // reset stats
   pokemonName.innerHTML = "";

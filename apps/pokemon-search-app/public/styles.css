@@ -92,7 +92,8 @@ h1 {
 .bottom-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-width: 400px;
+  min-height: 305px;
 }
 
 .top-container {
@@ -113,9 +114,10 @@ h1 {
   font-size: 0.85rem;
 }
 
-#default-sprite {
+#sprite {
   margin: 20px 0;
-  width: 180px;
+  min-width: 180px;
+  min-height: 180px;
   align-self: center;
 }
 
