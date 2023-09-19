@@ -1,14 +1,20 @@
-import { getPokemonData } from './pokemon.handlers.mjs';
+import { getAllPokemonNamesAndRoutes, getPokemonData } from './pokemon.handlers.mjs';
 import {
-  checkCacheForPokemonData,
+  checkCache,
   validateNameOrId
 } from './pokemon.middleware.mjs';
 import express from 'express';
 const router = express.Router();
 
+router.get('/pokemon',
+  checkCache,
+  getAllPokemonNamesAndRoutes
+);
+
 router.get(
   '/pokemon/:pokemonIdOrName',
-  checkCacheForPokemonData,
+  checkCache,
+  getAllPokemonNamesAndRoutes,
   validateNameOrId,
   getPokemonData
 );
