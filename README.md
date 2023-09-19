@@ -180,6 +180,11 @@
 
 ### Main Curriculum
 
+- PokéAPI Proxy
+
+  - [Project description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/pokemon-search-app-project/build-a-pokemon-search-app)
+  - [Landing page](https://pokeapi-proxy.freecodecamp.rocks/)
+
 - Stock Price Checker Proxy
   - [Project description](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker)
   - [Landing page](https://stock-price-checker-proxy.freecodecamp.rocks/)
