@@ -22,21 +22,35 @@
         <h2>Usage</h2>
         <p>
           Use the endpoint
+          <code>https://pokeapi-proxy.freecodecamp.rocks/api/pokemon</code>
+          to see a list of all valid Pokémon names, id numbers, and URLs.
+        </p>
+        <p>
+          Use the endpoint
           <code
             >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/{name-or-id}</code
           >
           to get data for a Pokémon, where <code>{name-or-id}</code> is the
-          Pokémon's name or its id number in the
-          <a target="_blank" rel="noreferrer noopener">official Pokédex</a>.
+          Pokémon's name or id number.
         </p>
         <p>
-          Note that the name should be lowercase, have special characters
-          removed, and dash separated. Also, if the Pokémon has either ♀ or ♀ as
-          part of its name, the format is <code>{name-f}</code> or
+          Note: Pokémon names should be in lowercase, have special characters
+          removed, and be dash separated. Also, if the Pokémon has either ♀ or ♀
+          as part of its name, the format is <code>{name-f}</code> or
           <code>{name-m}</code>, respectively.
         </p>
         <h2>Example Requests</h2>
         <p>Click any of the example requests below to see its response.</p>
+        <h3>All valid Pokémon:</h3>
+        <ul>
+          <li>
+            <a href="/api/pokemon" target="_blank" rel="noreferrer noopener"
+              ><code
+                >https://pokeapi-proxy.freecodecamp.rocks/api/pokemon</code
+              ></a
+            >
+          </li>
+        </ul>
         <h3>Pikachu:</h3>
         <ul>
           <li>
