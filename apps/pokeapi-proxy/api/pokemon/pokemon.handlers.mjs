@@ -16,6 +16,7 @@ export const getAllPokemonNamesAndRoutes = async (req, res, next) => {
       allPokemonNamesAndRoutes = data.results.map(obj => {
         const { name, url } = obj;
         return {
+          id: Number(url.split('/').filter(Boolean).pop()),
           name,
           url: url.replace(
             'https://pokeapi.co/api/v2/',
