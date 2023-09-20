@@ -1,42 +1,48 @@
 import axios from 'axios';
 import { getCache, setCache } from '../utils/cache.mjs';
 
-export const getAllPokemonNamesAndRoutes = async (req, res, next) => {
+export const getPokemonEndpointResources = async (req, res, next) => {
   try {
     const { pokemonIdOrName } = req.params;
-    // Attempt to get all Pokémon names and routes from cache
-    let allPokemonNamesAndRoutes = getCache('allPokemonNamesAndRoutes');
+    // Attempt to get all resources for the Pokémon endpoint from the cache
+    let pokemonEndpointResources = getCache('pokemonEndpointResources');
 
-    if (!allPokemonNamesAndRoutes) {
-      console.log('Fetching all Pokémon names and routes from PokéAPI');
+    if (!pokemonEndpointResources) {
+      console.log(
+        'Fetching all resources for the Pokémon endpoint from PokéAPI'
+      );
       const { data } = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/?limit=9000`
       );
+      const { count, results } = data;
 
-      allPokemonNamesAndRoutes = data.results.map(obj => {
-        const { name, url } = obj;
-        return {
-          id: Number(url.split('/').filter(Boolean).pop()),
-          name,
-          url: url.replace(
-            'https://pokeapi.co/api/v2/',
-            `${req.protocol}://${req.get('host')}/api/`
-          )
-        };
-      });
+      pokemonEndpointResources = {
+        count,
+        results: results.map(obj => {
+          const { name, url } = obj;
+          return {
+            id: Number(url.split('/').filter(Boolean).pop()),
+            name,
+            url: url.replace(
+              'https://pokeapi.co/api/v2/',
+              `${req.protocol}://${req.get('host')}/api/`
+            )
+          };
+        })
+      };
 
       // Cache all Pokémon names and routes
-      setCache('allPokemonNamesAndRoutes', allPokemonNamesAndRoutes);
+      setCache('pokemonEndpointResources', pokemonEndpointResources);
     }
 
     if (pokemonIdOrName) {
       // User is requesting a specific Pokémon, so pass the data to the next middleware
       // for id or name validation
-      res.locals.allPokemonNamesAndRoutes = allPokemonNamesAndRoutes;
+      res.locals.pokemonEndpointResources = pokemonEndpointResources;
       next();
     } else {
       // User is requesting all Pokémon names and routes, so send the data as a response
-      res.send(allPokemonNamesAndRoutes);
+      res.send(pokemonEndpointResources);
     }
   } catch (err) {
     next(err);

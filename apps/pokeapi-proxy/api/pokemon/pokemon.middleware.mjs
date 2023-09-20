@@ -4,7 +4,7 @@ export const checkCache = (req, res, next) => {
   const { pokemonIdOrName } = req.params;
 
   try {
-    const cachedData = getCache(pokemonIdOrName || 'allPokemonNamesAndRoutes');
+    const cachedData = getCache(pokemonIdOrName || 'pokemonEndpointResources');
 
     if (cachedData) {
       console.log('Serving cached data');
@@ -20,12 +20,14 @@ export const checkCache = (req, res, next) => {
 export const validateNameOrId = async (req, res, next) => {
   try {
     const { pokemonIdOrName } = req.params;
-    const allPokemonNamesAndRoutes = res.locals.allPokemonNamesAndRoutes;
-    const validNamesAndIds = allPokemonNamesAndRoutes.reduce((arr, currObj) => {
-      arr.push(currObj.name);
-      arr.push(currObj.url.split('/').filter(Boolean).pop());
-      return arr;
-    }, []);
+    const validNamesAndIds = res.locals.pokemonEndpointResources.results.reduce(
+      (arr, currObj) => {
+        arr.push(currObj.name);
+        arr.push(currObj.url.split('/').filter(Boolean).pop());
+        return arr;
+      },
+      []
+    );
 
     if (validNamesAndIds.includes(pokemonIdOrName)) {
       next();
