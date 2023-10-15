@@ -19,7 +19,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "21.1.0",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-terser": "0.2.0",
+    "@rollup/plugin-terser": "0.4.4",
     "concurrently": "7.6.0",
     "nodemon": "2.0.22",
     "rollup": "2.79.1"
