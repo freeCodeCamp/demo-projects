@@ -13,8 +13,6 @@ app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-console.log(process.env.MONGO_URI);
-
 mongo.connect(
   process.env.MONGO_URI,
   { useUnifiedTopology: true },
