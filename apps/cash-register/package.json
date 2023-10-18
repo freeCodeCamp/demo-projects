@@ -1,0 +1,13 @@
+{
+  "name": "cash-register",
+  "version": "0.0.1",
+  "description": "JavaScript Algorithms and Data Structures project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "16.0.0",
+    "express": "4.17.3"
+  }
+}

@@ -26,6 +26,33 @@
   - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
   - [Example Project](https://personal-portfolio.freecodecamp.rocks/)
 
+## JavaScript Algorithms and Data Structures
+
+- Palindrome Checker
+
+  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/palindrome-checker-project/build-a-palindrome-checker)
+  - [Example project](https://palindrome-checker.freecodecamp.rocks/)
+
+- Roman Numeral Converter
+
+  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/roman-numeral-converter-project/build-a-roman-numeral-converter)
+  - [Example Project](https://roman-numeral-converter.freecodecamp.rocks/)
+
+- Telephone Number Validator
+
+  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/telephone-number-validator-project/build-a-telephone-number-validator)
+  - [Example Project](https://telephone-number-validator.freecodecamp.rocks/)
+
+- Cash Register
+
+  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/cash-register-project/build-a-cash-register)
+  - [Example Project](https://cash-register.freecodecamp.rocks/)
+
+- Pokémon Search App
+
+  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/pokemon-search-app-project/build-a-pokemon-search-app)
+  - [Example Project](https://pokemon-search-app.freecodecamp.rocks/)
+
 ## Data Visualization
 
 - Bar Chart

@@ -37,8 +37,8 @@ jobs:
           npm run build -- --no-cache
           npm start
 
-      - name: Sleep For 15 Seconds
-        run: sleep 15
+      - name: Sleep For 30 Seconds
+        run: sleep 30
 
       - name: Run Tests
         run: npm run test

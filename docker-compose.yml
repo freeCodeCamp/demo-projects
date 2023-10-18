@@ -91,6 +91,17 @@ services:
     ports:
       - 50030:3000
 
+  cash-register:
+    container_name: cash-register
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/cash-register
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50330:3000
+
   chart-the-stock-market:
     container_name: chart-the-stock-market
     restart: unless-stopped
@@ -268,6 +279,17 @@ services:
     ports:
       - 50100:3000
 
+  palindrome-checker:
+    container_name: palindrome-checker
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/palindrome-checker
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50300:3000
+
   personal-library:
     container_name: personal-library
     restart: unless-stopped
@@ -293,6 +315,17 @@ services:
       dockerfile: ../../shared.Dockerfile
     ports:
       - 50260:3000
+
+  pokemon-search-app:
+    container_name: pokemon-search-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/pokemon-search-app
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50340:3000
 
   product-landing-page:
     container_name: product-landing-page
@@ -326,6 +359,17 @@ services:
       dockerfile: ../../shared.Dockerfile
     ports:
       - 50110:3000
+
+  roman-numeral-converter:
+    container_name: roman-numeral-converter
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/roman-numeral-converter
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50310:3000
 
   scatterplot-graph:
     container_name: scatterplot-graph
@@ -410,6 +454,17 @@ services:
       dockerfile: ../../shared.Dockerfile
     ports:
       - 50250:3000
+
+  telephone-number-validator:
+    container_name: telephone-number-validator
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/telephone-number-validator
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50320:3000
 
   timestamp-microservice:
     container_name: timestamp-microservice
