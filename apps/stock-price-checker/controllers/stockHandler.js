@@ -12,6 +12,10 @@ const request = require('request');
 
 function StockHandler() {
   this.getData = function(stock, callback) {
+    if (!isValidStock(stock)) {
+      callback('stockData', { error: 'invalid symbol' });
+      return;
+    }
     request(
       `https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/${stock}/quote`,
       function(error, response, body) {
@@ -66,6 +70,12 @@ function StockHandler() {
       }
     });
   };
+}
+
+const validTickerRegExp = /^[a-z]{1,6}$/;
+const isValidStock = (stock) => {
+  const stockL = stock.toLowerCase().trim();
+  validTickerRegExp.test(stockL);
 }
 
 module.exports = StockHandler;
