@@ -16,6 +16,12 @@ const caddyfileHeader = `
 http:// {
   redir https://{host}{uri} permanent
 }
+
+www.freecodecamp.rocks {
+  handle /ping {
+    respond "pong" 200
+  }
+}
 `;
 
 let caddyfile = caddyfileHeader;
