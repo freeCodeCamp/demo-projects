@@ -37,7 +37,7 @@
           <canvas class="chart" id="<%= poll['_id'] %>"></canvas>
 
           <script type="text/javascript">
-            var keys = Object.keys('<%- options %>');
+            var keys = Object.keys(JSON.parse('<%- options %>'));
             var values = [];
             var bgColor = [];
             var colorSets = [
@@ -64,7 +64,7 @@
             var currentShade = Math.floor(Math.random() * 6);
 
             keys.forEach(key => {
-              values.push(<%- options %>[key]);
+              values.push(JSON.parse('<%- options %>')[key]);
               bgColor.push(colorSets[currentColor][currentShade]);
               if (currentShade >= 6) {
                 currentShade = 0;
