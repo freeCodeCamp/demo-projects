@@ -20,7 +20,7 @@
     "helmet": "3.23.3",
     "jsdom": "16.7.0",
     "mocha": "9.2.2",
-    "socket.io": "2.5.0"
+    "socket.io": "4.7.2"
   },
   "license": "MIT"
 }

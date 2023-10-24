@@ -118,10 +118,12 @@ io.sockets.on('connection', socket => {
     }
   });
   
-  socket.on('destroy-item', ({ playerId, coinValue, coinId }) => {
+  socket.on('destroy-item', async ({ playerId, coinValue, coinId }) => {
     if (!destroyedCoins.includes(coinId)) {
       const scoringPlayer = currPlayers.find(obj => obj.id === playerId);
-      const sock = io.sockets.connected[scoringPlayer.id];
+      const sock = (await io.fetchSockets()).find(
+        s => s.id === scoringPlayer.id
+      );
 
       scoringPlayer.score += coinValue;
       destroyedCoins.push(coinId);
