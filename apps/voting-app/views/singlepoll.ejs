@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<% include ./head %>
+<%- include("head") -%>
   
 <body>
-  <% include ./navigation %>
+  <%- include("navigation") -%>
 
   <div class="content-wrap">
     <% if (singlePoll) { %>
@@ -34,7 +34,7 @@
          <canvas class="chart" id="<%= singlePoll['_id'] %>"></canvas>
 
         <script type="text/javascript">
-          var keys = Object.keys(<%- options %>);
+          var keys = Object.keys(JSON.parse('<%- options %>'));
           var values = [];
           var bgColor = [];
           var colorSets = [
@@ -47,7 +47,7 @@
           var currentShade = Math.floor(Math.random() * 10);
           
           keys.forEach(key => {
-            values.push(<%- options %>[key]);          
+            values.push(JSON.parse('<%- options %>')[key]);
             bgColor.push(colorSets[currentColor][currentShade]);  
             if(currentShade >= 9){
               currentShade = 0;                
@@ -83,7 +83,7 @@
     <% } %>
   </div>
 
-  <% include ./footer %>
+  <%- include("footer") -%>
 </body>
 
 </html>

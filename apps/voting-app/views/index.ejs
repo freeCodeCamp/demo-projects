@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html>
+  <%- include("head"); -%>
 
-<% include ./head %>
-  
-<body>
-  <% include ./navigation %>
+  <body>
+    <%- include("navigation"); -%>
 
-  <div class="content-wrap">
-    <h1>FCC Voting App</h1>
-    <% if (allPolls) { %>
-       <% allPolls.forEach(poll => { %>
-         <% var options = JSON.stringify(poll['options']) %>
-         <% var keys = Object.keys(JSON.parse(options)) %>
-         
-         <div class="poll-wrap">
-           <div class="poll-title">
-            <div><%= poll['question'] %></div>
-            <div>Created by: <%= poll['creator'] %></div>            
-           </div>
-         
-           <form class="form" enctype="x-www-form-urlencoded" action="/vote/<%= poll['_id'] %>" method="post">
-            <select name="voteOptions" class="form-select">
-              <% keys.forEach(key => { %>
-                <option value="<%- key %>"><%= key %></option>
-              <% }) %>
-                <option value="Add option">Add option</option>
-            </select> 
-            <input type="text" name="newOption" value="New option" disabled>
-            <input type="submit" value="Vote">
-          </form>
-           
-          <div class="chart-wrap">
-             <canvas class="chart" id="<%= poll['_id'] %>"></canvas>
-  
-            <script type="text/javascript">
-              var keys = Object.keys(<%- options %>);
-              var values = [];
-              var bgColor = [];
-              var colorSets = [
-                ['#29004c', '#520198', '#6d01cb', '#941bfe', '#b867fe', '#dbb3ff'],
-                ['#fcf0cf', '#f7d988', '#f2c240', '#f0bb28', '#d7a10f', '#a77d0c'],
-                ['#00471b', '#008031', '#00b344', '#00e658', '#33ff81', '#80ffb0']
-              ];
-              
-              var currentColor = Math.floor(Math.random() * 3);
-              var currentShade = Math.floor(Math.random() * 6);
-              
-              keys.forEach(key => {
-                values.push(<%- options %>[key]);          
-                bgColor.push(colorSets[currentColor][currentShade]);  
-                if(currentShade >= 6){
-                  currentShade = 0;                
-                } else {
-                  currentShade++;                
+    <div class="content-wrap">
+      <h1>FCC Voting App</h1>
+      <% if (allPolls) { %> <% allPolls.forEach(poll => { %> <% var options =
+      JSON.stringify(poll['options']) %> <% var keys =
+      Object.keys(JSON.parse(options)) %>
+
+      <div class="poll-wrap">
+        <div class="poll-title">
+          <div><%= poll['question'] %></div>
+          <div>Created by: <%= poll['creator'] %></div>
+        </div>
+
+        <form
+          class="form"
+          enctype="x-www-form-urlencoded"
+          action="/vote/<%= poll['_id'] %>"
+          method="post"
+        >
+          <select name="voteOptions" class="form-select">
+            <% keys.forEach(key => { %>
+            <option value="<%- key %>"><%= key %></option>
+            <% }) %>
+            <option value="Add option">Add option</option>
+          </select>
+          <input type="text" name="newOption" value="New option" disabled />
+          <input type="submit" value="Vote" />
+        </form>
+
+        <div class="chart-wrap">
+          <canvas class="chart" id="<%= poll['_id'] %>"></canvas>
+
+          <script type="text/javascript">
+            var keys = Object.keys(JSON.parse('<%- options %>'));
+            var values = [];
+            var bgColor = [];
+            var colorSets = [
+              [
+                '#29004c',
+                '#520198',
+                '#6d01cb',
+                '#941bfe',
+                '#b867fe',
+                '#dbb3ff'
+              ],
+              [
+                '#fcf0cf',
+                '#f7d988',
+                '#f2c240',
+                '#f0bb28',
+                '#d7a10f',
+                '#a77d0c'
+              ],
+              ['#00471b', '#008031', '#00b344', '#00e658', '#33ff81', '#80ffb0']
+            ];
+
+            var currentColor = Math.floor(Math.random() * 3);
+            var currentShade = Math.floor(Math.random() * 6);
+
+            keys.forEach(key => {
+              values.push(JSON.parse('<%- options %>')[key]);
+              bgColor.push(colorSets[currentColor][currentShade]);
+              if (currentShade >= 6) {
+                currentShade = 0;
+              } else {
+                currentShade++;
+              }
+            });
+
+            new Chart(document.getElementById("<%- poll['_id'] %>"), {
+              type: 'pie',
+              data: {
+                labels: keys,
+                datasets: [
+                  {
+                    backgroundColor: bgColor,
+                    borderColor: 'black',
+                    data: values
+                  }
+                ]
+              },
+              options: {
+                responsive: false,
+                legend: {
+                  display: true,
+                  labels: {
+                    fontColor: 'black'
+                  }
                 }
-              });
-              
-              new Chart(document.getElementById("<%- poll['_id'] %>"), {
-                  type: 'pie',
-                  data: {
-                    labels: keys,
-                    datasets: [{
-                        backgroundColor: bgColor,
-                        borderColor: 'black',
-                        data: values
-                    }]
-                   },
-                   options: {
-                     responsive: false,
-                    legend: {
-                       display: true,
-                        labels: {
-                            fontColor: 'black'
-                        }
-                     }
-                    }
-              });
-            </script>
-          </div>
-        </div><br>
-       <% }) %>
-     <% } %>
-  </div>
+              }
+            });
+          </script>
+        </div>
+      </div>
+      <br />
+      <% }) %> <% } %>
+    </div>
 
-  <% include ./footer %>
-</body>
-
+    <%- include("footer"); -%>
+  </body>
 </html>
