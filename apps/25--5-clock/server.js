@@ -8,6 +8,10 @@ app.get('', (req, res) => {
   res.sendFile(`${process.cwd()}/index.html`);
 });
 
+app.get('/status/ping', (req, res) => {
+  res.send({ msg: 'ping' }).status(200);
+});
+
 const portNum = process.env.PORT || 3000;
 
 app.listen(portNum, () => {
