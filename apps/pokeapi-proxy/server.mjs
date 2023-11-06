@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/status/ping', (req, res) => {
+  res.send({ msg: 'pong' }).status(200);
+});
+
 // API routes
 app.use('/api', pokemonRouter);
 
