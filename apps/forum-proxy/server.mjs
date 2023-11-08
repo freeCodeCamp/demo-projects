@@ -12,9 +12,13 @@ const __dirname = dirname(fileURLToPath(new URL(import.meta.url)));
 
 app.get('/', (req, res) => {
   res.sendFile(join(__dirname, './views/index.html'));
-})
+});
 
-app.use(cors({optionsSuccessStatus: 200}));
+app.get('/status/ping', (req, res) => {
+  res.send({ msg: 'pong' }).status(200);
+});
+
+app.use(cors({ optionsSuccessStatus: 200 }));
 app.get('/latest', (req, res, next) => {
   fetch('https://forum.freecodecamp.org/latest.json')
     .then(response => response.json())
@@ -30,7 +34,7 @@ app.use((err, req, res) => res.status(500).json(err));
 
 const portNum = process.env.PORT || 3000;
 
-app.listen(portNum, function() {
+app.listen(portNum, function () {
   console.log(`Your app is listening on port ${portNum}`);
 });
 
