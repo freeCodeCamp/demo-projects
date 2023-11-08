@@ -46,6 +46,11 @@ body {
   box-shadow: 0 6px 6px #002ead;
 }
 
+label {
+  color: #0a0a23;
+  margin-bottom: 20px;
+}
+
 .palindrome-btn {
   width: 90px;
   border: none;
