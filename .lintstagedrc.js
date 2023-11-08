@@ -8,7 +8,7 @@ const completedStages = new Set();
 // if a lot of files are changed, it's faster to run prettier/eslint on the
 // whole project than to run them on each file separately
 module.exports = {
-  '*.(js|ts|tsx)': async files => {
+  '*.(js|jsx|ts|tsx)': async files => {
     if (completedStages.has('js')) return [];
 
     const ignoredIds = await Promise.all(
@@ -25,7 +25,7 @@ module.exports = {
       ];
     }
   },
-  '*.!(js|ts|tsx)': files => {
+  '*.!(js|jsx|ts|tsx)': files => {
     if (completedStages.has('not-js')) return [];
 
     if (files.length > 10) {
