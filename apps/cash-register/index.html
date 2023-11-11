@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
     <title>Cash Register</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -12,60 +16,60 @@
   <body>
     <main>
       <img
-      class="freecodecamp-logo"
-      src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
-      alt="freeCodeCamp Logo"
-    />
-    <h1>Cash Register Project</h1>
-    <div id="change-due"></div>
-    <div class="input-div">
-      <input
-        placeholder="Customer Cash"
-        type="number"
-        id="cash"
-        class="user-input"
-        value=""
+        class="freecodecamp-logo"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+        alt="freeCodeCamp Logo"
       />
+      <h1>Cash Register Project</h1>
+      <div id="change-due"></div>
+      <div class="input-div">
+        <input
+          placeholder="Customer Cash"
+          type="number"
+          id="cash"
+          class="user-input"
+          value=""
+        />
 
-      <button class="check-btn-styles" id="purchase-btn">Purchase</button>
-      <button class="check-btn-styles" id="new-btn">New item</button>
-    </div>
+        <button class="check-btn-styles" id="purchase-btn">Purchase</button>
+        <button class="check-btn-styles" id="new-btn">New item</button>
+      </div>
 
-    <div class="container">
-      <div class="top-display-screen-container">
-        <p id="message" class="price-screen">Total: $4.23</p>
-        <div class="connector"></div>
-      </div>
-      <div class="top-register">
-        <div class="btns-container">
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
-          <button class="btn"></button>
+      <div class="container">
+        <div class="top-display-screen-container">
+          <p id="message" class="price-screen">Total: $4.23</p>
+          <div class="connector"></div>
         </div>
-        <div id="cid" class="results">
-          <p class="change-title">Change in Drawer</p>
-          <p>Pennies: $1.01</p>
-          <p>Nickels: $2.05</p>
-          <p>Dimes: $3.10</p>
-          <p>Quarters: $4.25</p>
-          <p>Ones: $90</p>
-          <p>Fives: $55</p>
-          <p>Tens: $20</p>
-          <p>Twenties: $60</p>
-          <p>Hundreds: $100</p>
+        <div class="top-register">
+          <div class="btns-container">
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+          </div>
+          <div id="cid" class="results">
+            <p class="change-title">Change in Drawer</p>
+            <p>Pennies: $1.01</p>
+            <p>Nickels: $2.05</p>
+            <p>Dimes: $3.10</p>
+            <p>Quarters: $4.25</p>
+            <p>Ones: $90</p>
+            <p>Fives: $55</p>
+            <p>Tens: $20</p>
+            <p>Twenties: $60</p>
+            <p>Hundreds: $100</p>
+          </div>
+        </div>
+        <div class="bottom-register">
+          <div class="circle"></div>
         </div>
       </div>
-      <div class="bottom-register">
-        <div class="circle"></div>
-      </div>
-    </div>
-    <main>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
