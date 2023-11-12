@@ -1,8 +1,12 @@
 const { ESLint } = require('eslint');
 
 const cli = new ESLint();
+
+// This lets us abort if we've already run a stage for all files
 const completedStages = new Set();
 
+// if a lot of files are changed, it's faster to run prettier/eslint on the
+// whole project than to run them on each file separately
 module.exports = {
   '*.(js|jsx|ts|tsx)': async files => {
     if (completedStages.has('js')) return [];
