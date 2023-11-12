@@ -8,35 +8,41 @@ var passport = require('passport');
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 require('./config/passport')(passport);
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.DB_URI);
 
-app.use('/', express.static(process.cwd() +  '/public'));
-app.use('/', express.static(process.cwd() +  '/views'));
-app.use('/assets', express.static(process.cwd() +  '/assets'));
-        
-app.use(session({
-	secret: process.env.SECRET_SESSION || 'superSecureSecret',
-	  resave: true,
+app.use('/', express.static(process.cwd() + '/public'));
+app.use('/', express.static(process.cwd() + '/views'));
+app.use('/assets', express.static(process.cwd() + '/assets'));
+
+app.use(
+  session({
+    secret: process.env.SECRET_SESSION || 'superSecureSecret',
+    resave: true,
     saveUninitialized: true,
     store: new mongoStore({
       mongooseConnection: mongoose.connection
     })
-}));
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/status/ping', (req, res) => {
+  res.send({ msg: 'pong' }).status(200);
+});
+
 routes(app, passport);
 
 const portNum = process.env.PORT || 3000;
-app.listen(portNum,  function () {
-	console.log('Node.js listening on port ' + portNum + '...');
+app.listen(portNum, function () {
+  console.log('Node.js listening on port ' + portNum + '...');
 });
