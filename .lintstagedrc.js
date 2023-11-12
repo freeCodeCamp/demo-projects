@@ -15,13 +15,16 @@ module.exports = {
       files.map(file => cli.isPathIgnored(file))
     );
     const lintableFiles = files.filter((_, i) => !ignoredIds[i]);
+
     if (files.length > 10) {
       completedStages.add('js');
       return ['eslint --max-warnings=0 --cache --fix .', 'prettier --write .'];
     } else {
       return [
-        'eslint --max-warnings=0 --cache --fix ' + lintableFiles.join(' '),
-        ...files.map(filename => `prettier --write '${filename}'`)
+        `eslint --max-warnings=0 --cache --fix ${lintableFiles
+          .map(file => `"${file}"`)
+          .join(' ')}`,
+        ...files.map(filename => `prettier --write "${filename}"`)
       ];
     }
   },
@@ -33,7 +36,7 @@ module.exports = {
       return 'prettier --write .';
     } else {
       return files.map(
-        filename => `prettier --write --ignore-unknown '${filename}'`
+        filename => `prettier --write --ignore-unknown "${filename}"`
       );
     }
   }
