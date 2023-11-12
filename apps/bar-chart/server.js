@@ -9,7 +9,7 @@ app.get('', (req, res) => {
 });
 
 app.get('/status/ping', (req, res) => {
-  res.send({ msg: 'pong' }).status(200);
+  res.status(200).send({ msg: 'pong' });
 });
 
 const portNum = process.env.PORT || 3000;
