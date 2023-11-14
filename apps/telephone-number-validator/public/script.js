@@ -1,7 +1,7 @@
 const userInput = document.getElementById('user-input');
 const checkBtn = document.getElementById('check-btn');
 const clearBtn = document.getElementById('clear-btn');
-const resultDiv = document.getElementById('results-div');
+const resultsDiv = document.getElementById('results-div');
 
 const checkValidNumber = input => {
   if (input === '') {
@@ -26,7 +26,7 @@ const checkValidNumber = input => {
       `${phoneRegex.test(input) ? 'Valid' : 'Invalid'} U.S. number: ${input}`
     )
   );
-  resultDiv.appendChild(pTag);
+  resultsDiv.appendChild(pTag);
 };
 
 checkBtn.addEventListener('click', () => {
@@ -42,5 +42,5 @@ userInput.addEventListener('keydown', e => {
 });
 
 clearBtn.addEventListener('click', () => {
-  resultDiv.textContent = '';
+  resultsDiv.textContent = '';
 });
