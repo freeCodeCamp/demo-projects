@@ -49,10 +49,15 @@ h1 {
 
 .input-div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 10px 0 20px;
+}
+
+label {
+  font-size: 18px;
 }
 
 .user-input {
@@ -100,18 +105,18 @@ h1 {
   padding-top: 20px;
   background-color: #99c9ff;
   height: 250px;
-  width: 350px;
+  width: 325px;
 }
 
 .btns-container {
-  width: 30%;
+  width: 25%;
 }
 
 .btn {
   border-radius: 10%;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: black;
 }
 
@@ -141,7 +146,7 @@ h1 {
 .bottom-register {
   background-color: #99c9ff;
   height: 50px;
-  width: 400px;
+  width: 325px;
   margin-top: 10px;
 }
 
