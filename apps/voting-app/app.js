@@ -98,6 +98,10 @@ mongo.connect(
       return res.render('newpoll');
     });
 
+    app.get('/status/ping', function (req, res) {
+      res.status(200).send({ msg: 'pong' });
+    });
+
     app.post('/newpoll', function (req, res) {
       var optionArray = req.body.newoptions.split(',');
       var options = {};
