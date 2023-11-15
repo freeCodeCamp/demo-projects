@@ -1,14 +1,15 @@
 // Do not change code below this line
-const cid = [
-  ['Penny', 1.01],
-  ['Nickel', 2.05],
-  ['Dime', 3.1],
-  ['Quarter', 4.25],
-  ['One', 90],
-  ['Five', 55],
-  ['Ten', 20],
-  ['Twenty', 60],
-  ['One hundred', 100]
+let price = 19.5;
+let cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
 ];
 // Do not change code above this line
 
@@ -17,13 +18,12 @@ const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const newItemBtn = document.getElementById('new-btn');
-let newItemPrice = 4.23;
 
 const getNewPrice = () => {
   displayChangeDue.innerHTML = '';
   cash.value = '';
-  newItemPrice = Number((Math.random() * 200 + 1).toFixed(2));
-  message.innerHTML = `Total: $${newItemPrice}`;
+  price = Number((Math.random() * 200 + 1).toFixed(2));
+  message.innerHTML = `Total: $${price}`;
 };
 
 const formatResults = (status, change) => {
@@ -35,19 +35,20 @@ const formatResults = (status, change) => {
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < newItemPrice) {
-    alert('Customer does not have enough money to purchase item');
+  if (Number(cash.value) < price) {
+    alert('Customer does not have enough money to purchase item.');
     cash.value = '';
     return;
   }
 
-  if (Number(cash.value) === newItemPrice) {
-    displayChangeDue.innerHTML = 'No change due. Customer paid with exact cash';
+  if (Number(cash.value) === price) {
+    displayChangeDue.innerHTML =
+      'No change due. Customer paid with exact cash.';
     cash.value = '';
     return;
   }
 
-  let changeDue = Number(cash.value) - newItemPrice;
+  let changeDue = Number(cash.value) - price;
   let reversedCid = [...cid].reverse();
   let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
   let result = { status: 'OPEN', change: [] };
