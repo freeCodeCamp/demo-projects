@@ -17,14 +17,6 @@ const message = document.getElementById('message');
 const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
-const newItemBtn = document.getElementById('new-btn');
-
-const getNewPrice = () => {
-  displayChangeDue.innerHTML = '';
-  cash.value = '';
-  price = Number((Math.random() * 200 + 1).toFixed(2));
-  message.innerHTML = `Total: $${price}`;
-};
 
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `Status: ${status}`;
@@ -101,5 +93,3 @@ cash.addEventListener('keydown', e => {
     checkResults();
   }
 });
-
-newItemBtn.addEventListener('click', getNewPrice);
