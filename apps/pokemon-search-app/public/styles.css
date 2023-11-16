@@ -114,10 +114,15 @@ label {
   font-size: 0.85rem;
 }
 
+.sprite-container {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #sprite {
-  margin: 20px 0;
   width: 180px;
-  align-self: center;
 }
 
 #types {
