@@ -1,11 +1,15 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import { router as pokemonRouter } from './api/pokemon/pokemon.routes.mjs';
 const portNum = process.env.PORT || 3000;
 const app = express();
 
 // Serve static content and landing page
 app.use(express.static('public'));
+
+// CORS
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
