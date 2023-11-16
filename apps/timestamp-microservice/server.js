@@ -11,6 +11,10 @@ app.route('/').get((req, res) => {
   res.sendFile(`${process.cwd()}/views/index.html`);
 });
 
+app.get('/status/ping', (req, res) => {
+  res.status(200).send({ msg: 'pong' });
+});
+
 app.route(['/api/timestamp/:date?', '/api/:date?']).get((req, res) => {
   let date = null;
   // parse the date string
