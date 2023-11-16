@@ -51,12 +51,7 @@ const getPokemon = async () => {
   }
 };
 
-searchForm.addEventListener('submit', e => {
-  e.preventDefault();
-  getPokemon();
-});
-
-function resetDisplay() {
+const resetDisplay = () => {
   // reset to default display if pokemon is not found
 
   // reset image src and alt
@@ -75,4 +70,9 @@ function resetDisplay() {
   specialAttack.innerHTML = '';
   specialDefense.innerHTML = '';
   speed.innerHTML = '';
-}
+};
+
+searchForm.addEventListener('submit', e => {
+  e.preventDefault();
+  getPokemon();
+});
