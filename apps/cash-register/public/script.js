@@ -13,7 +13,6 @@ let cid = [
 ];
 // Do not change code above this line
 
-const message = document.getElementById('message');
 const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
