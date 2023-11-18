@@ -7,6 +7,10 @@ module.exports = function (app, db) {
     return res.sendFile('public/index.html', { root: __dirname });
   });
 
+  app.get('/status/ping', (req, res) => {
+    res.status(200).send({ msg: 'pong' });
+  });
+
   app.route('/recent').get(getRecent);
   app.get('/query/:searchQuery', getImages);
 
