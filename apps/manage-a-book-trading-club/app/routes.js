@@ -7,11 +7,13 @@ const books = require('./controllers/booksController');
 const requests = require('./controllers/requestsController');
 const trades = require('./controllers/tradesController');
 
-const { isLoggedIn, destroySession, saveSession, goHome, loginCallback } = session;
+const { isLoggedIn, destroySession, saveSession, goHome, loginCallback } =
+  session;
 const router = express.Router();
 
 router.get('/', (req, res) => res.redirect('/books'));
 
+router.get('/status/ping', (req, res) => res.status(200).send({ msg: 'pong' }));
 router.get('/login', session.showLogin);
 router.get('/logout', session.logout, destroySession, goHome);
 router.get('/auth/:strategy', session.login);
@@ -33,13 +35,23 @@ router.get('/books/:id/requests', books.bookRequests);
 
 router.get('/requests', requests.index);
 router.get('/requests/incoming', requests.incomingRequests);
-router.post('/requests/create', isLoggedIn, requests.ensureRequestIsValid, requests.addRequest);
+router.post(
+  '/requests/create',
+  isLoggedIn,
+  requests.ensureRequestIsValid,
+  requests.addRequest
+);
 router.get('/requests/new', isLoggedIn, requests.newRequest);
 router.post('/requests/new/:type', isLoggedIn, books.extractBooks);
 router.get('/requests/:id/cancel', isLoggedIn, requests.cancelRequest);
 router.get('/requests/:id/reject', isLoggedIn, requests.rejectRequest);
 router.get('/requests/:id/select', isLoggedIn, requests.selectBooks);
-router.post('/requests/:id/accept', isLoggedIn, books.isValidSelection, requests.acceptRequest);
+router.post(
+  '/requests/:id/accept',
+  isLoggedIn,
+  books.isValidSelection,
+  requests.acceptRequest
+);
 
 router.get('/trades', trades.index);
 
