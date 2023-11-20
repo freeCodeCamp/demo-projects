@@ -3,7 +3,8 @@ const checkPalindromeBtn = document.getElementById('btn');
 const resultDiv = document.getElementById('result');
 
 const checkForPalindrome = input => {
-  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input);
+  const originalInput = input; // Store for later output
+  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input.replace(/\s/g, '')); // Remove whitespace before checking for special characters and digits
 
   if (input === '') {
     alert('Please input a value');
@@ -18,7 +19,7 @@ const checkForPalindrome = input => {
   resultDiv.replaceChildren();
 
   const lowerCaseStr = input.replace(/[^A-Z0-9]/gi, '').toLowerCase();
-  let resultMsg = `${input} ${
+  let resultMsg = `${originalInput} ${
     lowerCaseStr === [...lowerCaseStr].reverse().join('') ? 'is' : 'is not'
   } a palindrome.`;
 
