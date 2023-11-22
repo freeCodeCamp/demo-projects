@@ -1,4 +1,3 @@
-// Do not change code below this line
 let price = 19.5;
 let cid = [
   ['PENNY', 0.5],
@@ -11,7 +10,6 @@ let cid = [
   ['TWENTY', 0],
   ['ONE HUNDRED', 0]
 ];
-// Do not change code above this line
 
 const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
