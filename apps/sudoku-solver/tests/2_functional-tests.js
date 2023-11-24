@@ -22,7 +22,7 @@ suite('Functional Tests', () => {
       chai.request(server)
         .post('/api/solve')
         .send({ puzzle: input })
-        .end((err, res) =>{
+        .end((err, res) => {
           assert.isObject(res.body);
           assert.property(res.body, 'solution');
           assert.equal(res.body.solution, output);
@@ -36,7 +36,7 @@ suite('Functional Tests', () => {
 
       chai.request(server)
         .post('/api/solve')
-        .end((err, res) =>{
+        .end((err, res) => {
           assert.isObject(res.body);
           assert.property(res.body, 'error');
           assert.deepEqual(res.body, error);
@@ -51,7 +51,7 @@ suite('Functional Tests', () => {
       chai.request(server)
         .post('/api/solve')
         .send({ puzzle: input })
-        .end((err, res) =>{
+        .end((err, res) => {
           assert.isObject(res.body);
           assert.property(res.body, 'error');
           assert.deepEqual(res.body, error);
@@ -68,7 +68,7 @@ suite('Functional Tests', () => {
       chai.request(server)
         .post('/api/solve')
         .send({ puzzle: shortStr })
-        .end((err, res) =>{
+        .end((err, res) => {
           assert.isObject(res.body);
           assert.property(res.body, 'error');
           assert.deepEqual(res.body, error);
@@ -87,11 +87,11 @@ suite('Functional Tests', () => {
 
     test('Puzzle Cannot be Solved', done => {
       const input = '779235418851496372432178956174569283395842761628713549283657194516924837947381625';
-      const error = {error: 'Puzzle cannot be solved'};
+      const error = { error: 'Puzzle cannot be solved' };
 
       chai.request(server)
         .post('/api/solve')
-        .send({puzzle: input})
+        .send({ puzzle: input })
         .end((err, res) => {
           assert.isObject(res.body);
           assert.property(res.body, 'error');
@@ -100,9 +100,9 @@ suite('Functional Tests', () => {
         });
     });
   });
-  
+
   suite('POST to /api/check', () => {
-    
+
     test('All fields filled in correctly, valid placement', done => {
       const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
       const coordinate = "A1";
@@ -124,7 +124,7 @@ suite('Functional Tests', () => {
       const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
       const coordinate = "A2";
       const value = "1";
-      const status = {valid: false, conflict: [ 'row' ]};
+      const status = { valid: false, conflict: ['row'] };
 
       chai.request(server)
         .post('/api/check')
@@ -142,7 +142,7 @@ suite('Functional Tests', () => {
       const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
       const coordinate = "A1";
       const value = "1";
-      const status = {valid: false, conflict: [ 'row', 'column' ]};
+      const status = { valid: false, conflict: ['row', 'column'] };
 
       chai.request(server)
         .post('/api/check')
@@ -160,7 +160,7 @@ suite('Functional Tests', () => {
       const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6.."
       const coordinate = "A1";
       const value = "5";
-      const status = {valid: false, conflict: [ 'row', 'column', 'region' ]};
+      const status = { valid: false, conflict: ['row', 'column', 'region'] };
 
       chai.request(server)
         .post('/api/check')
@@ -233,7 +233,7 @@ suite('Functional Tests', () => {
       const input = "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
       const coordinate1 = "K1";
       const coordinate2 = "A11";
-      const error = { error: 'Invalid coordinate'};
+      const error = { error: 'Invalid coordinate' };
 
       chai.request(server)
         .post('/api/check')
@@ -270,6 +270,18 @@ suite('Functional Tests', () => {
         });
     });
 
+    test("Cannot Solve Invalid Input", done => {
+      const input = ".99..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+      const error = { error: 'Puzzle cannot be solved' };
+      chai.request(server)
+        .post('/api/solve')
+        .send({ puzzle: input })
+        .end((err, res) => {
+          assert.isObject(res.body);
+          assert.property(res.body, 'error');
+          assert.deepEqual(res.body, error);
+          done();
+        });
+    });
   });
 });
-
