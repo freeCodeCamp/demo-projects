@@ -16,7 +16,7 @@ const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 
 const formatResults = (status, change) => {
-  displayChangeDue.innerHTML = `Status: ${status}`;
+  displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
   change.map(
     money => (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`)
   );
@@ -32,7 +32,7 @@ const checkCashRegister = () => {
 
   if (Number(cash.value) === price) {
     displayChangeDue.innerHTML =
-      'No change due - customer paid with exact cash';
+      '<p>No change due - customer paid with exact cash</p>';
     cash.value = '';
     return;
   }
@@ -49,7 +49,7 @@ const checkCashRegister = () => {
   );
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = 'Status: INSUFFICIENT_FUNDS');
+    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   }
 
   if (totalCID === changeDue) {
@@ -69,7 +69,7 @@ const checkCashRegister = () => {
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = 'Status: INSUFFICIENT_FUNDS');
+    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   }
 
   formatResults(result.status, result.change);
