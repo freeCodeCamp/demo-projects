@@ -67,10 +67,6 @@ label {
   font-size: 15px;
 }
 
-.change-title {
-  font-weight: bold;
-}
-
 .price-screen {
   border: 10px solid #99c9ff;
   background-color: black;
@@ -134,10 +130,10 @@ label {
   border-width: 3px;
 }
 
-.results {
+.cash-drawer-display {
   font-size: 1.1rem;
   background-color: white;
-  width: 50%;
+  width: 55%;
   height: 95%;
   color: black;
   padding: 10px;

@@ -49,8 +49,6 @@ const getPokemon = async () => {
 };
 
 const resetDisplay = () => {
-  // reset to default display if pokemon is not found
-
   // reset image src and alt
   sprite.src = '';
   sprite.alt = '';
