@@ -12,31 +12,34 @@ app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
 
 // get ip infos even if passing through a proxy like here
-app.enable('trust proxy'); 
+app.enable('trust proxy');
 
-app.route('/')
-  .get(function (req, res) {
-     res.sendFile(process.cwd() + '/views/index.html');
-  });
+app.route('/').get(function (req, res) {
+  res.sendFile(process.cwd() + '/views/index.html');
+});
 
-app.route('/api/whoami')
-  .get(function(req, res){
-    res.json({ipaddress: req.ip, language: req.headers['accept-language'], software: req.headers['user-agent']});
+app.route('/status/ping').get(function (req, res) {
+  res.status(200).send({ msg: 'pong' });
+});
+
+app.route('/api/whoami').get(function (req, res) {
+  res.json({
+    ipaddress: req.ip,
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent']
   });
+});
 
 // 404 Not Found Middleware
-app.use(function(req, res) {
-  res.status(404)
-    .type('text')
-    .send('Not Found');
-})
-
+app.use(function (req, res) {
+  res.status(404).type('text').send('Not Found');
+});
 
 const portNum = process.env.PORT || 3000;
 
 //Start our server and tests!
 app.listen(portNum, function () {
-  console.log("Listening on port " + portNum);
+  console.log('Listening on port ' + portNum);
 });
 
 module.exports = app;
