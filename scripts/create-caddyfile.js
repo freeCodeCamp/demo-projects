@@ -31,12 +31,7 @@ for (const serviceName in services) {
     continue;
   }
 
-  const exceptions = {
-    '25--5-clock': 'clock'
-  };
-  const subdomain = exceptions[serviceName]
-    ? exceptions[serviceName]
-    : serviceName;
+  const subdomain = serviceName === '25--5-clock' ? 'clock' : serviceName;
   const target = `${serviceName}:${
     services[serviceName].ports[0].split(':')[1]
   }`;
