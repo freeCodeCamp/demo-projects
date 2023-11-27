@@ -30,11 +30,19 @@ for (const serviceName in services) {
   if (serviceName === 'mongo' || serviceName === 'caddy') {
     continue;
   }
+
+  const exceptions = {
+    '25--5-clock': 'clock'
+  };
+  const subdomain = exceptions[serviceName]
+    ? exceptions[serviceName]
+    : serviceName;
   const target = `${serviceName}:${
     services[serviceName].ports[0].split(':')[1]
   }`;
+
   caddyfile += `
-${serviceName}.${process.env.DEMO_APPS_DOMAIN} {
+${subdomain}.${process.env.DEMO_APPS_DOMAIN} {
   reverse_proxy ${target}
 }
 `;
