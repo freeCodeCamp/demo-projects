@@ -1,6 +1,6 @@
 const pokemonID = document.getElementById('pokemon-id');
 const pokemonName = document.getElementById('pokemon-name');
-const sprite = document.getElementById('sprite');
+const spriteContainer = document.getElementById('sprite-container');
 const types = document.getElementById('types');
 const height = document.getElementById('height');
 const weight = document.getElementById('weight');
@@ -26,8 +26,9 @@ const getPokemon = async () => {
     pokemonID.textContent = `#${data.id}`;
     weight.textContent = `Weight: ${data.weight}`;
     height.textContent = `Height: ${data.height}`;
-    sprite.src = data.sprites.front_default;
-    sprite.alt = `${data.name} front default sprite`;
+    spriteContainer.innerHTML = `
+      <img id="sprite" src="${data.sprites.front_default}" alt="${data.name} front default sprite">
+    `;
 
     // Set stats
     hp.textContent = data.stats[0].base_stat;
@@ -49,9 +50,8 @@ const getPokemon = async () => {
 };
 
 const resetDisplay = () => {
-  // reset image src and alt
-  sprite.src = '';
-  sprite.alt = '';
+  const sprite = document.getElementById('sprite');
+  if (sprite) sprite.remove();
 
   // reset stats
   pokemonName.textContent = '';
