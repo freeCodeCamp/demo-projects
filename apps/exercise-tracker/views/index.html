@@ -11,13 +11,13 @@
     <div class="container">
       <h1>Exercise tracker</h1>
       <form action="/api/users" method="post">
-        <h3>Create a New User</h3>
+        <h2>Create a New User</h2>
         <p><code>POST /api/users</code></p>
         <input id="uname" type="text" name="username" placeholder="username" />
         <input type="submit" value="Submit" />
       </form>
       <form id="exercise-form" method="post">
-        <h3>Add exercises</h3>
+        <h2>Add exercises</h2>
         <p><code>POST /api/users/:_id/exercises</code></p>
         <input id="uid" type="text" name=":_id" placeholder=":_id" />
         <input id="desc" type="text" name="description" placeholder="description*" />
