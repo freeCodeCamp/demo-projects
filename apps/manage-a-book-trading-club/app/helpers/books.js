@@ -7,8 +7,9 @@ module.exports = (function BookHelpers() {
     return Book.update(
       { _id: { $in: created.takes } },
       { $push: { requests: created._id } },
-      { multi: true });
+      { multi: true }
+    );
   }
 
   return { handleCreatedRequest };
-}());
+})();

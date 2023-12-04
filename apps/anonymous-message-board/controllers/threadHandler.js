@@ -1,7 +1,7 @@
-const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectID;
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID;
 const CONNECTION_STRING = process.env.DB_URI;
-const sanitizeHtml = require("sanitize-html");
+const sanitizeHtml = require('sanitize-html');
 
 function ThreadHandler() {
   this.threadList = function (req, res) {
@@ -10,7 +10,7 @@ function ThreadHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection
           .find(
@@ -19,15 +19,15 @@ function ThreadHandler() {
               projection: {
                 reported: 0,
                 delete_password: 0,
-                "replies.delete_password": 0,
-                "replies.reported": 0,
-              },
+                'replies.delete_password': 0,
+                'replies.reported': 0
+              }
             }
           )
           .sort({ bumped_on: -1 })
           .limit(10)
           .toArray((err, docs) => {
-            docs.forEach((doc) => {
+            docs.forEach(doc => {
               doc.replycount = doc.replies.length;
               if (doc.replies.length > 3) {
                 doc.replies = doc.replies.slice(-3);
@@ -47,16 +47,16 @@ function ThreadHandler() {
       bumped_on: new Date(),
       reported: false,
       delete_password: req.body.delete_password,
-      replies: [],
+      replies: []
     };
     MongoClient.connect(
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.insertOne(thread, function () {
-          res.redirect("/b/" + board + "/");
+          res.redirect('/b/' + board + '/');
         });
       }
     );
@@ -69,16 +69,16 @@ function ThreadHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.findOneAndUpdate(
           { _id: new ObjectId(req.body.report_id) },
           { $set: { reported: true } },
-          () => { }
+          () => {}
         );
       }
     );
-    res.send("reported");
+    res.send('reported');
   };
 
   //check doc return to return right res
@@ -88,18 +88,18 @@ function ThreadHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.findOneAndDelete(
           {
             _id: new ObjectId(req.body.thread_id),
-            delete_password: req.body.delete_password,
+            delete_password: req.body.delete_password
           },
           (err, doc) => {
             if (doc.value === null) {
-              res.send("incorrect password");
+              res.send('incorrect password');
             } else {
-              res.send("success");
+              res.send('success');
             }
           }
         );

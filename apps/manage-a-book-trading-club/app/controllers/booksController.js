@@ -6,15 +6,14 @@ const requestsController = require('./requestsController');
 
 const booksController = (function booksController() {
   function findBookById(id) {
-    return Book
-      .findById(id)
+    return Book.findById(id)
       .select('name description owner requests')
       .populate({
         path: 'requests',
         populate: {
           path: 'requester',
-          model: 'User',
-        },
+          model: 'User'
+        }
       })
       .populate({
         path: 'requests',
@@ -23,9 +22,9 @@ const booksController = (function booksController() {
           model: 'Book',
           populate: {
             path: 'owner',
-            model: 'User',
-          },
-        },
+            model: 'User'
+          }
+        }
       })
       .populate({
         path: 'requests',
@@ -34,45 +33,44 @@ const booksController = (function booksController() {
           model: 'Book',
           populate: {
             path: 'owner',
-            model: 'User',
-          },
-        },
+            model: 'User'
+          }
+        }
       })
       .populate('owner');
   }
 
   function findBooks(where) {
-    return Book
-      .find(where)
+    return Book.find(where)
       .select('name description owner requests')
       .sort({ _id: -1 })
       .populate({
         path: 'requests',
         populate: {
           path: 'requester',
-          model: 'User',
-        },
+          model: 'User'
+        }
       })
       .populate({
         path: 'requests',
         populate: {
           path: 'takes',
-          model: 'Book',
-        },
+          model: 'Book'
+        }
       })
       .populate('owner');
   }
 
   function index(req, res, next) {
     findBooks({})
-      .then((books) => {
+      .then(books => {
         res.render('books/index', {
           books,
           title: 'Books',
           user: req.user,
           noItems: 'There are currently no books',
           active: 'books',
-          messages: req.flash('info'),
+          messages: req.flash('info')
         });
       })
       .catch(next);
@@ -80,14 +78,14 @@ const booksController = (function booksController() {
 
   function myIndex(req, res, next) {
     findBooks({ owner: req.user.id })
-      .then((books) => {
+      .then(books => {
         res.render('books/my-books', {
           books,
           title: 'My Books',
           user: req.user,
           noItems: 'You currently have no books',
           active: 'mybooks',
-          messages: req.flash('info'),
+          messages: req.flash('info')
         });
       })
       .catch(next);
@@ -98,17 +96,19 @@ const booksController = (function booksController() {
    * push book to book.owner's User.books
    */
   function createBook(book) {
-    return Book.create(book)
-      .then(created => User.findOneAndUpdate(
-          { _id: created.owner },
-          { $push: { books: created._id } }));
+    return Book.create(book).then(created =>
+      User.findOneAndUpdate(
+        { _id: created.owner },
+        { $push: { books: created._id } }
+      )
+    );
   }
 
   function addBook(req, res, next) {
     const book = {
       name: req.body.bookName,
       description: req.body.bookDescription,
-      owner: req.user._id,
+      owner: req.user._id
     };
     createBook(book)
       .then(() => {
@@ -119,26 +119,28 @@ const booksController = (function booksController() {
   }
 
   function ensureIsBookOwner(bookId, userId) {
-    return Book.findById(bookId)
-      .then((book) => {
-        if (book.owner.toString() !== userId) {
-          return Promise.reject({ notOwnBook: true });
-        }
-        return Promise.resolve(book);
-      });
+    return Book.findById(bookId).then(book => {
+      if (book.owner.toString() !== userId) {
+        return Promise.reject({ notOwnBook: true });
+      }
+      return Promise.resolve(book);
+    });
   }
 
   function deleteBook(book) {
-    return book.remove()
+    return book
+      .remove()
       .then(() =>
         // remove the book from the owner's [books]
         User.findOneAndUpdate(
           { _id: book.owner },
-          { $pull: { books: book._id } }))
+          { $pull: { books: book._id } }
+        )
+      )
       .then(() => requestsController.handleDeletedBook(book._id));
   }
 
- /*
+  /*
    * When a book is deleted:
    *  - remove book from Books collection
    *  - remove book from the owner's User.books
@@ -150,7 +152,7 @@ const booksController = (function booksController() {
    */
   function removeBook(req, res, next) {
     ensureIsBookOwner(req.params.id, req.user.id)
-      .catch((err) => {
+      .catch(err => {
         if (err.notOwnBook) {
           req.flash('info', { danger: 'Not authorized to delete that book' });
           return res.redirect('/books');
@@ -179,8 +181,9 @@ const booksController = (function booksController() {
           user: req.user,
           requestedBook: book,
           requests: book.requests,
-          messages: req.flash('info'),
-        }))
+          messages: req.flash('info')
+        })
+      )
       .catch(next);
   }
 
@@ -189,7 +192,7 @@ const booksController = (function booksController() {
    */
   function selectGives(req, res, next) {
     findBooks({ owner: req.user })
-      .then((books) => {
+      .then(books => {
         // eslint-disable-next-line no-underscore-dangle
         const selected = (req.session.gives || []).map(book => book._id);
         res.render('books/selectBooks', {
@@ -199,7 +202,7 @@ const booksController = (function booksController() {
           user: req.user,
           type: 'gives',
           noItems: 'You currently have no books',
-          messages: req.flash('info'),
+          messages: req.flash('info')
         });
       })
       .catch(next);
@@ -207,7 +210,7 @@ const booksController = (function booksController() {
 
   function selectTakes(req, res, next) {
     findBooks({ owner: { $ne: req.user } })
-      .then((books) => {
+      .then(books => {
         // eslint-disable-next-line no-underscore-dangle
         const selected = (req.session.takes || []).map(book => book._id);
         res.render('books/selectBooks', {
@@ -217,7 +220,7 @@ const booksController = (function booksController() {
           user: req.user,
           type: 'takes',
           noItems: 'There are currently no books',
-          messages: req.flash('info'),
+          messages: req.flash('info')
         });
       })
       .catch(next);
@@ -225,8 +228,11 @@ const booksController = (function booksController() {
 
   function getMatchingKeys(object, regex) {
     const keys = [];
-    Object.keys(object).forEach((key) => {
-      if (Object.prototype.hasOwnProperty.call(object, key) && regex.test(key)) {
+    Object.keys(object).forEach(key => {
+      if (
+        Object.prototype.hasOwnProperty.call(object, key) &&
+        regex.test(key)
+      ) {
         keys.push(key);
       }
     });
@@ -249,15 +255,21 @@ const booksController = (function booksController() {
 
     if (!gives.length) {
       invalidSelection = true;
-      req.flash('info', { warning: 'Trade must include at least one book to give' });
+      req.flash('info', {
+        warning: 'Trade must include at least one book to give'
+      });
     }
     if (!takes.length) {
       invalidSelection = true;
-      req.flash('info', { warning: 'Trade must include at least one book to take' });
+      req.flash('info', {
+        warning: 'Trade must include at least one book to take'
+      });
     }
     if (takes.length !== gives.length) {
       invalidSelection = true;
-      req.flash('info', { warning: 'The number of books given must equal the number taken' });
+      req.flash('info', {
+        warning: 'The number of books given must equal the number taken'
+      });
     }
     if (invalidSelection) {
       req.session[requestKey] = { gives, takes };
@@ -272,17 +284,21 @@ const booksController = (function booksController() {
   function extractBooks(req, res, next) {
     const ids = getMatchingKeys(req.body, /^book/).map(key => key.slice(4));
     Book.find({ _id: { $in: ids } })
-    .populate('owner')
-    .then((books) => {
-      if (req.params.type !== 'takes') {
-        req.session.gives = books.filter(book => book.owner.id === req.user.id);
-      }
-      if (req.params.type !== 'gives') {
-        req.session.takes = books.filter(book => book.owner.id !== req.user.id);
-      }
-      res.redirect('/requests/new');
-    })
-    .catch(next);
+      .populate('owner')
+      .then(books => {
+        if (req.params.type !== 'takes') {
+          req.session.gives = books.filter(
+            book => book.owner.id === req.user.id
+          );
+        }
+        if (req.params.type !== 'gives') {
+          req.session.takes = books.filter(
+            book => book.owner.id !== req.user.id
+          );
+        }
+        res.redirect('/requests/new');
+      })
+      .catch(next);
   }
 
   return {
@@ -294,8 +310,8 @@ const booksController = (function booksController() {
     selectGives,
     selectTakes,
     extractBooks,
-    isValidSelection,
+    isValidSelection
   };
-}());
+})();
 
 module.exports = booksController;

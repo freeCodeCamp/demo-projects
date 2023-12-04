@@ -4,7 +4,7 @@ const controls = (player, socket) => {
     if (e.keyCode === 83 || e.keyCode === 40) return 'down';
     if (e.keyCode === 65 || e.keyCode === 37) return 'left';
     if (e.keyCode === 68 || e.keyCode === 39) return 'right';
-  }
+  };
 
   document.onkeydown = e => {
     let dir = getKey(e);
@@ -15,7 +15,7 @@ const controls = (player, socket) => {
       // Pass current player position back to the server
       socket.emit('move-player', dir, { x: player.x, y: player.y });
     }
-  }
+  };
 
   document.onkeyup = e => {
     let dir = getKey(e);
@@ -26,7 +26,7 @@ const controls = (player, socket) => {
       // Pass current player position back to the server
       socket.emit('stop-player', dir, { x: player.x, y: player.y });
     }
-  }
-}
+  };
+};
 
 export default controls;

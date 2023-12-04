@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const Exercises = new Schema({
   description: {
@@ -25,7 +25,7 @@ const Exercises = new Schema({
 });
 
 // add current date to the exercise instance if necessary
-Exercises.pre('save', function(next) {
+Exercises.pre('save', function (next) {
   if (!this.date) {
     this.date = Date.now();
   }

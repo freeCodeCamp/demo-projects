@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const Users = new Schema({
   username: {
-    type: String, 
+    type: String,
     required: true,
     unique: true,
     maxlength: [30, 'username too long']

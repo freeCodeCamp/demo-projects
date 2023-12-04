@@ -1,9 +1,7 @@
 networks:
   proxy:
 
-
 services:
-
   caddy:
     image: caddy:2.7.5
     container_name: caddy

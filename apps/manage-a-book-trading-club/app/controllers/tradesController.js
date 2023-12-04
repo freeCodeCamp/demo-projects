@@ -8,13 +8,13 @@ function index(req, res, next) {
   Trade.find({})
     .populate('requester accepter')
     .sort({ _id: -1 })
-    .then((trades) => {
+    .then(trades => {
       res.render('trades/index', {
         trades,
         title: 'All Trades',
         user: req.user,
         active: 'trades',
-        messages: req.flash('info'),
+        messages: req.flash('info')
       });
     })
     .catch(next);
@@ -28,20 +28,18 @@ function create(req, res, next) {
     accepter: req.user._id,
     requester,
     gives,
-    takes,
+    takes
   })
-  .then((trade) => {
-    if (!trade) next('Could not create trade');
-    delete req.locals.request;
-    req.flash('info', { success: 'Trade successfuly created' });
-    res.redirect('/trades');
-  })
-  .catch(next);
+    .then(trade => {
+      if (!trade) next('Could not create trade');
+      delete req.locals.request;
+      req.flash('info', { success: 'Trade successfuly created' });
+      res.redirect('/trades');
+    })
+    .catch(next);
 }
-
 
 module.exports = {
   index,
-  create,
+  create
 };
-

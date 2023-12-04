@@ -3,7 +3,9 @@
 const passport = require('passport');
 
 function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
+  if (req.isAuthenticated()) {
+    return next();
+  }
   return res.redirect('/login');
 }
 
@@ -32,7 +34,9 @@ function login(req, res, next) {
   const strategy = req.params.strategy;
   let options;
 
-  if (strategy === 'google') { options = { scope: ['profile'] }; }
+  if (strategy === 'google') {
+    options = { scope: ['profile'] };
+  }
   passport.authenticate(strategy, options)(req, res, next);
 }
 
@@ -41,7 +45,7 @@ function loginCallback(req, res, next) {
   const options = {
     failureRedirect: '/login',
     failureFlash: true,
-    successFlash: { info: { success: 'Login successful' } },
+    successFlash: { info: { success: 'Login successful' } }
   };
   passport.authenticate(strategy, options)(req, res, next);
 }
@@ -54,5 +58,5 @@ module.exports = {
   goHome,
   showLogin,
   login,
-  loginCallback,
+  loginCallback
 };

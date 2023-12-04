@@ -7,8 +7,9 @@ module.exports = (function UserHelpers() {
     return User.update(
       { books: { $in: created.takes } },
       { $push: { receivedRequests: created._id } },
-      { multi: true });
+      { multi: true }
+    );
   }
 
   return { handleCreatedRequest };
-}());
+})();

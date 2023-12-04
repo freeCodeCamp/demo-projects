@@ -15,38 +15,38 @@ const _users = [
   'habathcx',
   'RobotCaleb',
   'noobs2ninjas',
-  'test_channel',
+  'test_channel'
 ];
 
 const reqOpts = {
   method: 'GET',
   headers: {
-    'Client-ID': twitchCID,
-  },
+    'Client-ID': twitchCID
+  }
 };
 const updateStaticData = async () => {
   try {
     const u = await request(`${baseApiUrl}/helix/users`, {
       ...reqOpts,
       qs: {
-        login: _users,
-      },
+        login: _users
+      }
     });
     const users = u.body;
     const user_id = JSON.parse(users).data.map(u => u.id);
     const s = await request(`${baseApiUrl}/helix/streams`, {
       ...reqOpts,
       qs: {
-        user_id,
-      },
+        user_id
+      }
     });
     const streams = s.body;
     const game_ids = JSON.parse(streams).data.map(s => s.game_id);
     const g = await request(`${baseApiUrl}/helix/games`, {
       ...reqOpts,
       qs: {
-        id: game_ids,
-      },
+        id: game_ids
+      }
     });
     const games = g.body;
     fs.writeFileSync(`${__dirname}/helix/users.json`, users);
@@ -73,7 +73,7 @@ const getKrakenUserData = async user => {
   });
 };
 const getAllKrakenData = async () =>
-  Promise.all(_users.map(getKrakenUserData)).then((data) => {
+  Promise.all(_users.map(getKrakenUserData)).then(data => {
     const out = {};
     data.forEach((d, i) => {
       out[_users[i]] = d;
@@ -92,5 +92,5 @@ const updateLegacyStaticData = async () => {
 
 module.exports = {
   updateStaticData,
-  updateLegacyStaticData,
+  updateLegacyStaticData
 };

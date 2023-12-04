@@ -1,12 +1,12 @@
-import { join, dirname } from "path";
+import { join, dirname } from 'path';
 
-import { config } from "dotenv";
-import fetch from "node-fetch";
-import { writeFileSync } from "fs";
-import { fileURLToPath } from "url";
+import { config } from 'dotenv';
+import fetch from 'node-fetch';
+import { writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(new URL(import.meta.url)));
-const envFilePath = join(`${__dirname}/`, ".env");
+const envFilePath = join(`${__dirname}/`, '.env');
 config({ path: envFilePath });
 
 const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, PORT } = process.env;
@@ -14,10 +14,10 @@ const { TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET, PORT } = process.env;
 const updateApiKey = async () => {
   const url = `https://id.twitch.tv/oauth2/token?client_id=${TWITCH_CLIENT_ID}&client_secret=${TWITCH_CLIENT_SECRET}&grant_type=client_credentials`;
   const keyObj = await fetch(url, {
-    method: "POST",
+    method: 'POST'
   })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+    .then(res => res.json())
+    .catch(err => console.log(err));
 
   const accessToken = keyObj.access_token;
   if (!accessToken) {

@@ -19,7 +19,7 @@ textarea {
 #solution-container,
 #text-input,
 #locale-select,
-input[type="button"] {
+input[type='button'] {
   font-size: 1.1em;
 }
 

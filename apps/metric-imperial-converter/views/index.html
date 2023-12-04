@@ -2,58 +2,77 @@
 <html>
   <head>
     <title>Metric/Imperial Converter</title>
-    <meta name="description" content="An example of the Free Code Camp Metric/Imperial Converter Project">
-    <link id="favicon" rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./public/style.css">
+    <meta
+      name="description"
+      content="An example of the Free Code Camp Metric/Imperial Converter Project"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./public/style.css" />
   </head>
   <body>
     <header>
       <h1>Metric/Imperial Converter</h1>
     </header>
-    <hr style='margin: 50px'>
+    <hr style="margin: 50px" />
     <section>
       <h3>Example usage</h3>
-      <code>/api/convert?input=4gal</code><br>
-      <code>/api/convert?input=1/2km</code><br>
-      <code>/api/convert?input=5.4/3lbs</code><br>
-      <code>/api/convert?input=kg</code><br>
+      <code>/api/convert?input=4gal</code><br />
+      <code>/api/convert?input=1/2km</code><br />
+      <code>/api/convert?input=5.4/3lbs</code><br />
+      <code>/api/convert?input=kg</code><br />
       <h3>Example return</h3>
-      <code>{ initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895 kilometers' }</code>
+      <code
+        >{ initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km',
+        string: '3.1 miles converts to 4.98895 kilometers' }</code
+      >
     </section>
-    <hr style='margin: 50px'>
+    <hr style="margin: 50px" />
     <section>
-      <div id='testui' >
+      <div id="testui">
         <h3 style="text-align: left">Front-End</h3>
         <form id="convertForm" class="border">
-          <input type="text" id="convertField" name="input" placeholder="3.1mi" style="width: 200px">
-          <input id="convert" type="submit" value='Convert!'>
+          <input
+            type="text"
+            id="convertField"
+            name="input"
+            placeholder="3.1mi"
+            style="width: 200px"
+          />
+          <input id="convert" type="submit" value="Convert!" />
         </form>
-        <p id='result'></p>
-        <code id='jsonResult'></code>
+        <p id="result"></p>
+        <code id="jsonResult"></code>
       </div>
     </section>
     <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.1.min.js"
+      integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      $(function() {
-        $('#convertForm').submit(function(event) {
+      $(function () {
+        $('#convertForm').submit(function (event) {
           event.preventDefault();
           $.ajax({
             url: '/api/convert',
             type: 'get',
             data: $('#convertForm').serialize(),
-            success: function(data) {
+            success: function (data) {
               $('#result').text(data.string || data);
               $('#jsonResult').text(JSON.stringify(data));
             }
           });
         });
       });
-   </script>
+    </script>
   </body>
 </html>

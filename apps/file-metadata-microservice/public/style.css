@@ -1,38 +1,37 @@
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #ECF0F1;
-	text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-color: #ecf0f1;
+  text-align: center;
 }
 
 .container {
-	padding: 0;
-	margin-top: 40px;
+  padding: 0;
+  margin-top: 40px;
 }
 
 .footer {
-	margin-top: 60px;
+  margin-top: 60px;
 }
 
 a {
-	color: #2574A9;
+  color: #2574a9;
 }
 
 input {
   display: block;
   position: relative;
   margin: 10px auto;
-
 }
 input#button {
   width: 230px;
 }
 .view {
-  position:relative;
+  position: relative;
   margin: auto;
   margin-top: 40px;
-  border: 1px  solid  #aaa;
+  border: 1px solid #aaa;
   padding: 20px;
   width: 60%;
   min-width: 400px;

@@ -12,13 +12,23 @@ const loadImage = src => {
   const img = new Image();
   img.src = src;
   return img;
-}
+};
 
-const bronzeCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/bronze-coin.png');
-const silverCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/silver-coin.png');
-const goldCoinArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/gold-coin.png');
-const mainPlayerArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/main-player.png');
-const otherPlayerArt = loadImage('https://cdn.freecodecamp.org/demo-projects/images/other-player.png');
+const bronzeCoinArt = loadImage(
+  'https://cdn.freecodecamp.org/demo-projects/images/bronze-coin.png'
+);
+const silverCoinArt = loadImage(
+  'https://cdn.freecodecamp.org/demo-projects/images/silver-coin.png'
+);
+const goldCoinArt = loadImage(
+  'https://cdn.freecodecamp.org/demo-projects/images/gold-coin.png'
+);
+const mainPlayerArt = loadImage(
+  'https://cdn.freecodecamp.org/demo-projects/images/main-player.png'
+);
+const otherPlayerArt = loadImage(
+  'https://cdn.freecodecamp.org/demo-projects/images/other-player.png'
+);
 
 let tick;
 let currPlayers = [];
@@ -34,11 +44,19 @@ socket.on('init', ({ id, players, coin }) => {
   cancelAnimationFrame(tick);
 
   // Create our player when we log on
-  const mainPlayer = new Player({ 
-    x: generateStartPos(canvasCalcs.playFieldMinX, canvasCalcs.playFieldMaxX, 5),
-    y: generateStartPos(canvasCalcs.playFieldMinY, canvasCalcs.playFieldMaxY, 5),
-    id, 
-    main: true 
+  const mainPlayer = new Player({
+    x: generateStartPos(
+      canvasCalcs.playFieldMinX,
+      canvasCalcs.playFieldMaxX,
+      5
+    ),
+    y: generateStartPos(
+      canvasCalcs.playFieldMinY,
+      canvasCalcs.playFieldMaxY,
+      5
+    ),
+    id,
+    main: true
   });
 
   controls(mainPlayer, socket);
@@ -57,7 +75,7 @@ socket.on('init', ({ id, players, coin }) => {
   socket.on('move-player', ({ id, dir, posObj }) => {
     const movingPlayer = currPlayers.find(obj => obj.id === id);
     movingPlayer.moveDir(dir);
-    
+
     // Force sync in case of lag
     movingPlayer.x = posObj.x;
     movingPlayer.y = posObj.y;
@@ -84,7 +102,7 @@ socket.on('init', ({ id, players, coin }) => {
   });
 
   // Handle endGame state
-  socket.on('end-game', result => endGame = result);
+  socket.on('end-game', result => (endGame = result));
 
   // Update scoring player's score
   socket.on('update-player', playerObj => {
@@ -92,7 +110,7 @@ socket.on('init', ({ id, players, coin }) => {
     scoringPlayer.score = playerObj.score;
   });
 
-  // Populate list of connected players and 
+  // Populate list of connected players and
   // create current coin when logging in
   currPlayers = players.map(val => new Player(val)).concat(mainPlayer);
   item = new Collectible(coin);
@@ -109,7 +127,12 @@ const draw = () => {
 
   // Create border for play field
   context.strokeStyle = 'white';
-  context.strokeRect(canvasCalcs.playFieldMinX, canvasCalcs.playFieldMinY, canvasCalcs.playFieldWidth, canvasCalcs.playFieldHeight);
+  context.strokeRect(
+    canvasCalcs.playFieldMinX,
+    canvasCalcs.playFieldMinY,
+    canvasCalcs.playFieldWidth,
+    canvasCalcs.playFieldHeight
+  );
 
   // Controls text
   context.fillStyle = 'white';
@@ -131,14 +154,22 @@ const draw = () => {
 
   // Remove destroyed coin
   if (item.destroyed) {
-    socket.emit('destroy-item', { playerId: item.destroyed, coinValue: item.value, coinId: item.id });
+    socket.emit('destroy-item', {
+      playerId: item.destroyed,
+      coinValue: item.value,
+      coinId: item.id
+    });
   }
 
   if (endGame) {
     context.fillStyle = 'white';
-    context.font = `13px 'Press Start 2P'`
-    context.fillText(`You ${endGame}! Restart and try again.`, canvasCalcs.canvasWidth / 2, 80);
+    context.font = `13px 'Press Start 2P'`;
+    context.fillText(
+      `You ${endGame}! Restart and try again.`,
+      canvasCalcs.canvasWidth / 2,
+      80
+    );
   }
 
   if (!endGame) tick = requestAnimationFrame(draw);
-}
+};

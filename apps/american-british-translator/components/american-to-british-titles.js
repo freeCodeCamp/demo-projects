@@ -5,4 +5,4 @@ module.exports = {
   'mx.': 'mx',
   'dr.': 'dr',
   'prof.': 'prof'
-}
+};

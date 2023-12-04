@@ -1,10 +1,9 @@
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family:sans-serif;
+  font-family: sans-serif;
   margin: 25px;
   color: #222;
   background-color: #f5f5f5;
@@ -12,7 +11,6 @@ body {
 
 h1 {
   font-weight: bold;
-  
 }
 
 .bold {
@@ -26,7 +24,7 @@ p {
 form {
   margin-bottom: 25px;
   padding: 15px;
-  background-color: #87D37C;
+  background-color: #87d37c;
   display: inline-block;
   width: 100%;
   max-width: 340px;
@@ -43,22 +41,22 @@ input {
   font-size: 16px;
 }
 
-input[type=submit] {
+input[type='submit'] {
   font-size: 16px;
   border-radius: 3px;
-  background-color: #E4F1FE;
+  background-color: #e4f1fe;
   border: 1px solid grey;
   box-shadow: 2px 2px #999;
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #FFFEC4;
+input[type='submit']:hover {
+  background-color: #fffec4;
 }
 
 code {
   font-family: monospace;
   font-size: 1.2em;
-  background-color: #FFFEC4;
+  background-color: #fffec4;
   padding: 2px;
 }

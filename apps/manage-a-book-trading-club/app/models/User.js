@@ -7,15 +7,15 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true,
+    required: true
   },
   provider: {
     type: String,
-    required: true,
+    required: true
   },
   providerId: {
     type: String,
-    required: true,
+    required: true
   },
   /* google: {
     id: String,
@@ -29,25 +29,31 @@ const userSchema = new Schema({
   fullName: String,
   city: {
     type: String,
-    default: 'an unspecified location',
+    default: 'an unspecified location'
   },
   state: String,
   address: String,
-  books: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Book',
-    required: true,
-  }],
-  receivedRequests: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Request',
-    required: true,
-  }],
-  trades: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Trades',
-    required: true,
-  }],
+  books: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Book',
+      required: true
+    }
+  ],
+  receivedRequests: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Request',
+      required: true
+    }
+  ],
+  trades: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Trades',
+      required: true
+    }
+  ]
 });
 
 // userSchema.methods.getBooks = function getBooks() {

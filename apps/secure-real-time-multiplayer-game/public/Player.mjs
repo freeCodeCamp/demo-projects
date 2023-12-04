@@ -14,7 +14,9 @@ class Player {
   }
 
   draw(context, coin, imgObj, currPlayers) {
-    const currDir = Object.keys(this.movementDirection).filter(dir => this.movementDirection[dir]);
+    const currDir = Object.keys(this.movementDirection).filter(
+      dir => this.movementDirection[dir]
+    );
     currDir.forEach(dir => this.movePlayer(dir, this.speed));
 
     if (this.isMain) {
@@ -40,27 +42,42 @@ class Player {
   }
 
   movePlayer(dir, speed) {
-    if (dir === 'up') this.y - speed >= canvasCalcs.playFieldMinY ? this.y -= speed : this.y -= 0;
-    if (dir === 'down') this.y + speed <= canvasCalcs.playFieldMaxY ? this.y += speed : this.y += 0;
-    if (dir === 'left') this.x - speed >= canvasCalcs.playFieldMinX ? this.x -= speed : this.x -= 0;
-    if (dir === 'right') this.x + speed <= canvasCalcs.playFieldMaxX ? this.x += speed : this.x += 0;
+    if (dir === 'up')
+      this.y - speed >= canvasCalcs.playFieldMinY
+        ? (this.y -= speed)
+        : (this.y -= 0);
+    if (dir === 'down')
+      this.y + speed <= canvasCalcs.playFieldMaxY
+        ? (this.y += speed)
+        : (this.y += 0);
+    if (dir === 'left')
+      this.x - speed >= canvasCalcs.playFieldMinX
+        ? (this.x -= speed)
+        : (this.x -= 0);
+    if (dir === 'right')
+      this.x + speed <= canvasCalcs.playFieldMaxX
+        ? (this.x += speed)
+        : (this.x += 0);
   }
 
   collision(item) {
     if (
-      (this.x < item.x + item.w &&
-        this.x + this.w > item.x &&
-        this.y < item.y + item.h &&
-        this.y + this.h > item.y)
+      this.x < item.x + item.w &&
+      this.x + this.w > item.x &&
+      this.y < item.y + item.h &&
+      this.y + this.h > item.y
     )
       return true;
   }
 
   calculateRank(arr) {
     const sortedScores = arr.sort((a, b) => b.score - a.score);
-    const mainPlayerRank = this.score === 0 ? arr.length : (sortedScores.findIndex(obj => obj.id === this.id) + 1);
+    const mainPlayerRank =
+      this.score === 0
+        ? arr.length
+        : sortedScores.findIndex(obj => obj.id === this.id) + 1;
 
-    return `Rank: ${mainPlayerRank} / ${arr.length}`
+    return `Rank: ${mainPlayerRank} / ${arr.length}`;
   }
 }
 

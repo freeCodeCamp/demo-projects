@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Sudoku Solver</title>
+    <meta
+      name="description"
+      content="An example for the fCC QA Sudoku Solver project"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../public/style.css" type="text/css" />
+  </head>
 
-<head>
-	<title>Sudoku Solver</title>
-	<meta name="description" content="An example for the fCC QA Sudoku Solver project" />
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="../public/style.css" type="text/css" />
-</head>
-
-<body>
-	<header>
-		<h1>
-			Sudoku Solver
-		</h1>
-	</header>
-	<div class="container">
-		<div class="form-container">
-			<form id="solve-form">
-				<textarea
-          rows="10"
-          cols="85"
-          id="text-input"
-          name="puzzle"
-        ></textarea>
-        <br />
-        <input type="button" value="Solve" id="solve-button"/>
-        <div id="error-msg"></div>
+  <body>
+    <header>
+      <h1>Sudoku Solver</h1>
+    </header>
+    <div class="container">
+      <div class="form-container">
+        <form id="solve-form">
+          <textarea
+            rows="10"
+            cols="85"
+            id="text-input"
+            name="puzzle"
+          ></textarea>
+          <br />
+          <input type="button" value="Solve" id="solve-button" />
+          <div id="error-msg"></div>
         </form>
         <form id="check-form">
-          <p>Coordinate (A1): <input id="coord" class="checker" type="text"></p>
-          <p>Value (1-9): <input class="checker" type="text" id="val"></p>
-          <input type="button" id="check-button" value="Check Placement">
+          <p>
+            Coordinate (A1): <input id="coord" class="checker" type="text" />
+          </p>
+          <p>Value (1-9): <input class="checker" type="text" id="val" /></p>
+          <input type="button" id="check-button" value="Check Placement" />
         </form>
         <span id="error"></span>
       </div>
@@ -40,265 +42,103 @@
         <table class="grid">
           <tbody>
             <tr>
-               <td class="A1 sudoku-input">
-                 
-              </td>
-               <td class="A2 sudoku-input">
-                 
-              </td>
-               <td class="A3 sudoku-input">
-                 
-              </td>
-               <td class="A4 sudoku-input">
-                 
-              </td>
-               <td class="A5 sudoku-input">
-                 
-              </td>
-               <td class="A6 sudoku-input">
-                 
-              </td>
-               <td class="A7 sudoku-input">
-                 
-              </td>
-               <td class="A8 sudoku-input">
-                 
-              </td>
-               <td class="A9 sudoku-input">
-                 
-              </td>
+              <td class="A1 sudoku-input"></td>
+              <td class="A2 sudoku-input"></td>
+              <td class="A3 sudoku-input"></td>
+              <td class="A4 sudoku-input"></td>
+              <td class="A5 sudoku-input"></td>
+              <td class="A6 sudoku-input"></td>
+              <td class="A7 sudoku-input"></td>
+              <td class="A8 sudoku-input"></td>
+              <td class="A9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="B1 sudoku-input">
-                 
-              </td>
-               <td class="B2 sudoku-input">
-                 
-              </td>
-               <td class="B3 sudoku-input">
-                 
-              </td>
-               <td class="B4 sudoku-input">
-                 
-              </td>
-               <td class="B5 sudoku-input">
-                 
-              </td>
-               <td class="B6 sudoku-input">
-                 
-              </td>
-               <td class="B7 sudoku-input">
-                 
-              </td>
-               <td class="B8 sudoku-input">
-                 
-              </td>
-               <td class="B9 sudoku-input">
-                 
-              </td>
+              <td class="B1 sudoku-input"></td>
+              <td class="B2 sudoku-input"></td>
+              <td class="B3 sudoku-input"></td>
+              <td class="B4 sudoku-input"></td>
+              <td class="B5 sudoku-input"></td>
+              <td class="B6 sudoku-input"></td>
+              <td class="B7 sudoku-input"></td>
+              <td class="B8 sudoku-input"></td>
+              <td class="B9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="C1 sudoku-input">
-                 
-              </td>
-               <td class="C2 sudoku-input">
-                 
-              </td>
-               <td class="C3 sudoku-input">
-                 
-              </td>
-               <td class="C4 sudoku-input">
-                 
-              </td>
-               <td class="C5 sudoku-input">
-                 
-              </td>
-               <td class="C6 sudoku-input">
-                 
-              </td>
-               <td class="C7 sudoku-input">
-                 
-              </td>
-               <td class="C8 sudoku-input">
-                 
-              </td>
-               <td class="C9 sudoku-input">
-                 
-              </td>
+              <td class="C1 sudoku-input"></td>
+              <td class="C2 sudoku-input"></td>
+              <td class="C3 sudoku-input"></td>
+              <td class="C4 sudoku-input"></td>
+              <td class="C5 sudoku-input"></td>
+              <td class="C6 sudoku-input"></td>
+              <td class="C7 sudoku-input"></td>
+              <td class="C8 sudoku-input"></td>
+              <td class="C9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="D1 sudoku-input">
-                 
-              </td>
-               <td class="D2 sudoku-input">
-                 
-              </td>
-               <td class="D3 sudoku-input">
-                 
-              </td>
-               <td class="D4 sudoku-input">
-                 
-              </td>
-               <td class="D5 sudoku-input">
-                 
-              </td>
-               <td class="D6 sudoku-input">
-                 
-              </td>
-               <td class="D7 sudoku-input">
-                 
-              </td>
-               <td class="D8 sudoku-input">
-                 
-              </td>
-               <td class="D9 sudoku-input">
-                 
-              </td>
+              <td class="D1 sudoku-input"></td>
+              <td class="D2 sudoku-input"></td>
+              <td class="D3 sudoku-input"></td>
+              <td class="D4 sudoku-input"></td>
+              <td class="D5 sudoku-input"></td>
+              <td class="D6 sudoku-input"></td>
+              <td class="D7 sudoku-input"></td>
+              <td class="D8 sudoku-input"></td>
+              <td class="D9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="E1 sudoku-input">
-                 
-              </td>
-               <td class="E2 sudoku-input">
-                 
-              </td>
-               <td class="E3 sudoku-input">
-                 
-              </td>
-               <td class="E4 sudoku-input">
-                 
-              </td>
-               <td class="E5 sudoku-input">
-                 
-              </td>
-               <td class="E6 sudoku-input">
-                 
-              </td>
-               <td class="E7 sudoku-input">
-                 
-              </td>
-               <td class="E8 sudoku-input">
-                 
-              </td>
-               <td class="E9 sudoku-input">
-                 
-              </td>
+              <td class="E1 sudoku-input"></td>
+              <td class="E2 sudoku-input"></td>
+              <td class="E3 sudoku-input"></td>
+              <td class="E4 sudoku-input"></td>
+              <td class="E5 sudoku-input"></td>
+              <td class="E6 sudoku-input"></td>
+              <td class="E7 sudoku-input"></td>
+              <td class="E8 sudoku-input"></td>
+              <td class="E9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="F1 sudoku-input">
-                 
-              </td>
-               <td class="F2 sudoku-input">
-                 
-              </td>
-               <td class="F3 sudoku-input">
-                 
-              </td>
-               <td class="F4 sudoku-input">
-                 
-              </td>
-               <td class="F5 sudoku-input">
-                 
-              </td>
-               <td class="F6 sudoku-input">
-                 
-              </td>
-               <td class="F7 sudoku-input">
-                 
-              </td>
-               <td class="F8 sudoku-input">
-                 
-              </td>
-               <td class="F9 sudoku-input">
-                 
-              </td>
+              <td class="F1 sudoku-input"></td>
+              <td class="F2 sudoku-input"></td>
+              <td class="F3 sudoku-input"></td>
+              <td class="F4 sudoku-input"></td>
+              <td class="F5 sudoku-input"></td>
+              <td class="F6 sudoku-input"></td>
+              <td class="F7 sudoku-input"></td>
+              <td class="F8 sudoku-input"></td>
+              <td class="F9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="G1 sudoku-input">
-                 
-              </td>
-               <td class="G2 sudoku-input">
-                 
-              </td>
-               <td class="G3 sudoku-input">
-                 
-              </td>
-               <td class="G4 sudoku-input">
-                 
-              </td>
-               <td class="G5 sudoku-input">
-                 
-              </td>
-               <td class="G6 sudoku-input">
-                 
-              </td>
-               <td class="G7 sudoku-input">
-                 
-              </td>
-               <td class="G8 sudoku-input">
-                 
-              </td>
-               <td class="G9 sudoku-input">
-                 
-              </td>
+              <td class="G1 sudoku-input"></td>
+              <td class="G2 sudoku-input"></td>
+              <td class="G3 sudoku-input"></td>
+              <td class="G4 sudoku-input"></td>
+              <td class="G5 sudoku-input"></td>
+              <td class="G6 sudoku-input"></td>
+              <td class="G7 sudoku-input"></td>
+              <td class="G8 sudoku-input"></td>
+              <td class="G9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="H1 sudoku-input">
-                 
-              </td>
-               <td class="H2 sudoku-input">
-                 
-              </td>
-               <td class="H3 sudoku-input">
-                 
-              </td>
-               <td class="H4 sudoku-input">
-                 
-              </td>
-               <td class="H5 sudoku-input">
-                 
-              </td>
-               <td class="H6 sudoku-input">
-                 
-              </td>
-               <td class="H7 sudoku-input">
-                 
-              </td>
-               <td class="H8 sudoku-input">
-                 
-              </td>
-               <td class="H9 sudoku-input">
-                 
-              </td>
+              <td class="H1 sudoku-input"></td>
+              <td class="H2 sudoku-input"></td>
+              <td class="H3 sudoku-input"></td>
+              <td class="H4 sudoku-input"></td>
+              <td class="H5 sudoku-input"></td>
+              <td class="H6 sudoku-input"></td>
+              <td class="H7 sudoku-input"></td>
+              <td class="H8 sudoku-input"></td>
+              <td class="H9 sudoku-input"></td>
             </tr>
             <tr>
-               <td class="I1 sudoku-input">
-                 
-              </td>
-               <td class="I2 sudoku-input">
-                 
-              </td>
-               <td class="I3 sudoku-input">
-                 
-              </td>
-               <td class="I4 sudoku-input">
-                 
-              </td>
-               <td class="I5 sudoku-input">
-                 
-              </td>
-               <td class="I6 sudoku-input">
-                 
-              </td>
-               <td class="I7 sudoku-input">
-                 
-              </td>
-               <td class="I8 sudoku-input">
-                 
-              </td>
-               <td class="I9 sudoku-input">
-                 
-              </td>
+              <td class="I1 sudoku-input"></td>
+              <td class="I2 sudoku-input"></td>
+              <td class="I3 sudoku-input"></td>
+              <td class="I4 sudoku-input"></td>
+              <td class="I5 sudoku-input"></td>
+              <td class="I6 sudoku-input"></td>
+              <td class="I7 sudoku-input"></td>
+              <td class="I8 sudoku-input"></td>
+              <td class="I9 sudoku-input"></td>
             </tr>
           </tbody>
         </table>

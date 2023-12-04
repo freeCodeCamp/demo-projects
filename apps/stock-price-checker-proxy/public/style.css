@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   margin: 2em;
 }
 
@@ -22,4 +22,3 @@ h1 {
 p {
   max-width: 600px;
 }
-
