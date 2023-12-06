@@ -66,7 +66,7 @@ class Calculator extends React.Component {
         currentVal: answer.toString(),
         formula:
           expression
-            .replace(/\*/g, '⋅')
+            .replace(/\*/g, 'x')// changed * to x
             .replace(/-/g, '-')
             .replace(/(x|\/|\+)-/, '$1-')
             .replace(/^-/, '-') +
