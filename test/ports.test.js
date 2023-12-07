@@ -47,5 +47,20 @@ describe('Project statuses', () => {
         throw new Error(`${err} for ${name} on port number ${portNum}`);
       }
     });
+    it(`Pinging ${name} should return a status code of 200 `, async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:${portNum}/status/ping`
+        );
+
+        // eslint-disable-next-line no-undef
+        expect(response.status).toBe(200);
+      } catch (err) {
+        // Throw and error here to fail this test
+        throw new Error(
+          `${err} for ${name} on port number ${portNum} : status code 200 not returned`
+        );
+      }
+    });
   }
 });
