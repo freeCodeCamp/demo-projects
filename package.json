@@ -7,7 +7,7 @@
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
-    "lint": "eslint apps --max-warnings 0",
+    "lint": "eslint apps test --max-warnings 0 && prettier apps test --check",
     "prebuild": "npm run create-caddyfile && node scripts/copy-dockerignore.js",
     "prestart": "npm run create-caddyfile && node scripts/copy-dockerignore.js",
     "build": "docker compose build",
