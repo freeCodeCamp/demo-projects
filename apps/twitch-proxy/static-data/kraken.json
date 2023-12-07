@@ -2,8 +2,7 @@
   "ESL_SC2": {
     "channels": {
       "mature": false,
-      "status":
-        "RERUN: StarCraft 2 - Terminator vs. Parting (PvP) - IEM Katowice 2015 - EU Qualifier",
+      "status": "RERUN: StarCraft 2 - Terminator vs. Parting (PvP) - IEM Katowice 2015 - EU Qualifier",
       "broadcaster_language": "en",
       "display_name": "ESL_SC2",
       "game": "StarCraft II",
@@ -13,14 +12,11 @@
       "created_at": "2012-05-02T09:59:20Z",
       "updated_at": "2016-10-10T22:04:21Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
       "banner": null,
-      "video_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-channel_offline_image-5a8657f8393c9d85-1920x1080.jpeg",
+      "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-channel_offline_image-5a8657f8393c9d85-1920x1080.jpeg",
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_banner-f8295b33d1846e75-480.jpeg",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_banner-f8295b33d1846e75-480.jpeg",
       "profile_banner_background_color": "#050506",
       "partner": true,
       "url": "https://www.twitch.tv/esl_sc2",
@@ -29,13 +25,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/esl_sc2",
         "follows": "https://api.twitch.tv/kraken/channels/esl_sc2/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/esl_sc2/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/esl_sc2/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/esl_sc2/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/esl_sc2/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/esl_sc2",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/esl_sc2/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/esl_sc2/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/esl_sc2/editors",
         "teams": "https://api.twitch.tv/kraken/channels/esl_sc2/teams",
         "videos": "https://api.twitch.tv/kraken/channels/esl_sc2/videos"
@@ -55,19 +48,14 @@
           "self": "https://api.twitch.tv/kraken/streams/esl_sc2"
         },
         "preview": {
-          "small":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-80x45.jpg",
-          "medium":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-320x180.jpg",
-          "large":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-640x360.jpg",
-          "template":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-{width}x{height}.jpg"
+          "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-80x45.jpg",
+          "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-320x180.jpg",
+          "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-640x360.jpg",
+          "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_esl_sc2-{width}x{height}.jpg"
         },
         "channel": {
           "mature": false,
-          "status":
-            "RERUN: StarCraft 2 - Terminator vs. Parting (PvP) - IEM Katowice 2015 - EU Qualifier",
+          "status": "RERUN: StarCraft 2 - Terminator vs. Parting (PvP) - IEM Katowice 2015 - EU Qualifier",
           "broadcaster_language": "en",
           "display_name": "ESL_SC2",
           "game": "StarCraft II",
@@ -77,14 +65,11 @@
           "created_at": "2012-05-02T09:59:20Z",
           "updated_at": "2016-10-10T22:04:21Z",
           "delay": null,
-          "logo":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
+          "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
           "banner": null,
-          "video_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-channel_offline_image-5a8657f8393c9d85-1920x1080.jpeg",
+          "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-channel_offline_image-5a8657f8393c9d85-1920x1080.jpeg",
           "background": null,
-          "profile_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_banner-f8295b33d1846e75-480.jpeg",
+          "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_banner-f8295b33d1846e75-480.jpeg",
           "profile_banner_background_color": "#050506",
           "partner": true,
           "url": "https://www.twitch.tv/esl_sc2",
@@ -93,13 +78,10 @@
           "_links": {
             "self": "http://api.twitch.tv/kraken/channels/esl_sc2",
             "follows": "http://api.twitch.tv/kraken/channels/esl_sc2/follows",
-            "commercial":
-              "http://api.twitch.tv/kraken/channels/esl_sc2/commercial",
-            "stream_key":
-              "http://api.twitch.tv/kraken/channels/esl_sc2/stream_key",
+            "commercial": "http://api.twitch.tv/kraken/channels/esl_sc2/commercial",
+            "stream_key": "http://api.twitch.tv/kraken/channels/esl_sc2/stream_key",
             "chat": "http://api.twitch.tv/kraken/chat/esl_sc2",
-            "subscriptions":
-              "http://api.twitch.tv/kraken/channels/esl_sc2/subscriptions",
+            "subscriptions": "http://api.twitch.tv/kraken/channels/esl_sc2/subscriptions",
             "editors": "http://api.twitch.tv/kraken/channels/esl_sc2/editors",
             "teams": "http://api.twitch.tv/kraken/channels/esl_sc2/teams",
             "videos": "http://api.twitch.tv/kraken/channels/esl_sc2/videos"
@@ -116,12 +98,10 @@
       "_id": 30220059,
       "name": "esl_sc2",
       "type": "user",
-      "bio":
-        "For standings, schedule, and results, visit http://www.intelextrememasters.com/",
+      "bio": "For standings, schedule, and results, visit http://www.intelextrememasters.com/",
       "created_at": "2012-05-02T09:59:20Z",
       "updated_at": "2016-10-10T22:34:10Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/esl_sc2"
       }
@@ -140,14 +120,11 @@
       "created_at": "2014-09-24T15:06:58Z",
       "updated_at": "2016-10-10T22:04:47Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/e066dae0-60c1-4570-8d08-c95f1c528142-profile_image-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/e066dae0-60c1-4570-8d08-c95f1c528142-profile_image-300x300.png",
       "banner": null,
-      "video_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-channel_offline_image-1570cf4930177aa3-1920x1080.jpeg",
+      "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-channel_offline_image-1570cf4930177aa3-1920x1080.jpeg",
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_banner-d418aed2c0ef7d35-480.jpeg",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_banner-d418aed2c0ef7d35-480.jpeg",
       "profile_banner_background_color": null,
       "partner": true,
       "url": "https://www.twitch.tv/ogamingsc2",
@@ -156,13 +133,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/ogamingsc2",
         "follows": "https://api.twitch.tv/kraken/channels/ogamingsc2/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/ogamingsc2/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/ogamingsc2/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/ogamingsc2/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/ogamingsc2/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/ogamingsc2",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/ogamingsc2/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/ogamingsc2/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/ogamingsc2/editors",
         "teams": "https://api.twitch.tv/kraken/channels/ogamingsc2/teams",
         "videos": "https://api.twitch.tv/kraken/channels/ogamingsc2/videos"
@@ -176,8 +150,7 @@
       "bio": "",
       "created_at": "2014-09-24T15:06:58Z",
       "updated_at": "2016-10-10T22:34:34Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_image-9021dccf9399929e-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_image-9021dccf9399929e-300x300.jpeg",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/ogamingsc2"
       }
@@ -196,14 +169,10 @@
           "self": "https://api.twitch.tv/kraken/streams/ogamingsc2"
         },
         "preview": {
-          "small":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-80x45.jpg",
-          "medium":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-320x180.jpg",
-          "large":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-640x360.jpg",
-          "template":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-{width}x{height}.jpg"
+          "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-80x45.jpg",
+          "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-320x180.jpg",
+          "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-640x360.jpg",
+          "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ogamingsc2-{width}x{height}.jpg"
         },
         "channel": {
           "mature": false,
@@ -217,14 +186,11 @@
           "created_at": "2014-09-24T15:06:58Z",
           "updated_at": "2016-10-10T22:04:47Z",
           "delay": null,
-          "logo":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_image-9021dccf9399929e-300x300.jpeg",
+          "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_image-9021dccf9399929e-300x300.jpeg",
           "banner": null,
-          "video_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-channel_offline_image-1570cf4930177aa3-1920x1080.jpeg",
+          "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-channel_offline_image-1570cf4930177aa3-1920x1080.jpeg",
           "background": null,
-          "profile_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_banner-d418aed2c0ef7d35-480.jpeg",
+          "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/ogamingsc2-profile_banner-d418aed2c0ef7d35-480.jpeg",
           "profile_banner_background_color": null,
           "partner": true,
           "url": "https://www.twitch.tv/ogamingsc2",
@@ -232,17 +198,12 @@
           "followers": 40895,
           "_links": {
             "self": "http://api.twitch.tv/kraken/channels/ogamingsc2",
-            "follows":
-              "http://api.twitch.tv/kraken/channels/ogamingsc2/follows",
-            "commercial":
-              "http://api.twitch.tv/kraken/channels/ogamingsc2/commercial",
-            "stream_key":
-              "http://api.twitch.tv/kraken/channels/ogamingsc2/stream_key",
+            "follows": "http://api.twitch.tv/kraken/channels/ogamingsc2/follows",
+            "commercial": "http://api.twitch.tv/kraken/channels/ogamingsc2/commercial",
+            "stream_key": "http://api.twitch.tv/kraken/channels/ogamingsc2/stream_key",
             "chat": "http://api.twitch.tv/kraken/chat/ogamingsc2",
-            "subscriptions":
-              "http://api.twitch.tv/kraken/channels/ogamingsc2/subscriptions",
-            "editors":
-              "http://api.twitch.tv/kraken/channels/ogamingsc2/editors",
+            "subscriptions": "http://api.twitch.tv/kraken/channels/ogamingsc2/subscriptions",
+            "editors": "http://api.twitch.tv/kraken/channels/ogamingsc2/editors",
             "teams": "http://api.twitch.tv/kraken/channels/ogamingsc2/teams",
             "videos": "http://api.twitch.tv/kraken/channels/ogamingsc2/videos"
           }
@@ -267,14 +228,11 @@
       "created_at": "2015-05-06T15:57:39Z",
       "updated_at": "2016-10-10T22:00:45Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
       "banner": null,
-      "video_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-channel_offline_image-0410bb4dec3a9991-1920x1080.jpeg",
+      "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-channel_offline_image-0410bb4dec3a9991-1920x1080.jpeg",
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_banner-c50d8ffd97fc7ffa-480.png",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_banner-c50d8ffd97fc7ffa-480.png",
       "profile_banner_background_color": null,
       "partner": false,
       "url": "https://www.twitch.tv/cretetion",
@@ -283,13 +241,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/cretetion",
         "follows": "https://api.twitch.tv/kraken/channels/cretetion/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/cretetion/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/cretetion/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/cretetion/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/cretetion/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/cretetion",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/cretetion/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/cretetion/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/cretetion/editors",
         "teams": "https://api.twitch.tv/kraken/channels/cretetion/teams",
         "videos": "https://api.twitch.tv/kraken/channels/cretetion/videos"
@@ -300,12 +255,10 @@
       "_id": 90401618,
       "name": "cretetion",
       "type": "user",
-      "bio":
-        "I am a retired Police Officer. I believe in the Thin Blue Line. I support Law Enforcement, Firefighters, and EMS. I am a Sheep Dog and I am part of a Pack. I want you to join my Pack. We can fight the Evil in the world together.",
+      "bio": "I am a retired Police Officer. I believe in the Thin Blue Line. I support Law Enforcement, Firefighters, and EMS. I am a Sheep Dog and I am part of a Pack. I want you to join my Pack. We can fight the Evil in the world together.",
       "created_at": "2015-05-06T15:57:39Z",
       "updated_at": "2016-10-10T22:30:43Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/cretetion"
       }
@@ -324,14 +277,10 @@
           "self": "https://api.twitch.tv/kraken/streams/cretetion"
         },
         "preview": {
-          "small":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-80x45.jpg",
-          "medium":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-320x180.jpg",
-          "large":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-640x360.jpg",
-          "template":
-            "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-{width}x{height}.jpg"
+          "small": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-80x45.jpg",
+          "medium": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-320x180.jpg",
+          "large": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-640x360.jpg",
+          "template": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cretetion-{width}x{height}.jpg"
         },
         "channel": {
           "mature": true,
@@ -345,14 +294,11 @@
           "created_at": "2015-05-06T15:57:39Z",
           "updated_at": "2016-10-10T22:00:45Z",
           "delay": null,
-          "logo":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
+          "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
           "banner": null,
-          "video_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-channel_offline_image-0410bb4dec3a9991-1920x1080.jpeg",
+          "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-channel_offline_image-0410bb4dec3a9991-1920x1080.jpeg",
           "background": null,
-          "profile_banner":
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_banner-c50d8ffd97fc7ffa-480.png",
+          "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_banner-c50d8ffd97fc7ffa-480.png",
           "profile_banner_background_color": null,
           "partner": false,
           "url": "https://www.twitch.tv/cretetion",
@@ -361,13 +307,10 @@
           "_links": {
             "self": "http://api.twitch.tv/kraken/channels/cretetion",
             "follows": "http://api.twitch.tv/kraken/channels/cretetion/follows",
-            "commercial":
-              "http://api.twitch.tv/kraken/channels/cretetion/commercial",
-            "stream_key":
-              "http://api.twitch.tv/kraken/channels/cretetion/stream_key",
+            "commercial": "http://api.twitch.tv/kraken/channels/cretetion/commercial",
+            "stream_key": "http://api.twitch.tv/kraken/channels/cretetion/stream_key",
             "chat": "http://api.twitch.tv/kraken/chat/cretetion",
-            "subscriptions":
-              "http://api.twitch.tv/kraken/channels/cretetion/subscriptions",
+            "subscriptions": "http://api.twitch.tv/kraken/channels/cretetion/subscriptions",
             "editors": "http://api.twitch.tv/kraken/channels/cretetion/editors",
             "teams": "http://api.twitch.tv/kraken/channels/cretetion/teams",
             "videos": "http://api.twitch.tv/kraken/channels/cretetion/videos"
@@ -383,8 +326,7 @@
   "freecodecamp": {
     "channels": {
       "mature": false,
-      "status":
-        "Greg working on Electron-Vue boilerplate w/ Akira #programming #vuejs #electron",
+      "status": "Greg working on Electron-Vue boilerplate w/ Akira #programming #vuejs #electron",
       "broadcaster_language": "en",
       "display_name": "FreeCodeCamp",
       "game": "Creative",
@@ -394,14 +336,11 @@
       "created_at": "2015-01-14T03:36:47Z",
       "updated_at": "2016-10-10T22:02:01Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
       "banner": null,
-      "video_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-channel_offline_image-b8e133c78cd51cb0-1920x1080.png",
+      "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-channel_offline_image-b8e133c78cd51cb0-1920x1080.png",
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_banner-6f5e3445ff474aec-480.png",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_banner-6f5e3445ff474aec-480.png",
       "profile_banner_background_color": null,
       "partner": false,
       "url": "https://www.twitch.tv/freecodecamp",
@@ -410,13 +349,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/freecodecamp",
         "follows": "https://api.twitch.tv/kraken/channels/freecodecamp/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/freecodecamp/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/freecodecamp/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/freecodecamp/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/freecodecamp/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/freecodecamp",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/freecodecamp/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/freecodecamp/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/freecodecamp/editors",
         "teams": "https://api.twitch.tv/kraken/channels/freecodecamp/teams",
         "videos": "https://api.twitch.tv/kraken/channels/freecodecamp/videos"
@@ -427,12 +363,10 @@
       "_id": 79776140,
       "name": "freecodecamp",
       "type": "user",
-      "bio":
-        "We help you learn to code, then practice by building projects for nonprofits. Learn Full-stack JavaScript, build a portfolio, and get a coding job by joining our open source community at https://freecodecamp.com",
+      "bio": "We help you learn to code, then practice by building projects for nonprofits. Learn Full-stack JavaScript, build a portfolio, and get a coding job by joining our open source community at https://freecodecamp.com",
       "created_at": "2015-01-14T03:36:47Z",
       "updated_at": "2016-10-10T22:31:55Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/freecodecamp"
       }
@@ -458,8 +392,7 @@
       "created_at": "2015-03-25T02:23:40Z",
       "updated_at": "2016-10-10T16:30:23Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/user-default-pictures/49988c7b-57bc-4dee-bd4f-6df4ad215d3a-profile_image-300x300.jpg",
+      "logo": "https://static-cdn.jtvnw.net/user-default-pictures/49988c7b-57bc-4dee-bd4f-6df4ad215d3a-profile_image-300x300.jpg",
       "banner": null,
       "video_banner": null,
       "background": null,
@@ -472,13 +405,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/storbeck",
         "follows": "https://api.twitch.tv/kraken/channels/storbeck/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/storbeck/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/storbeck/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/storbeck/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/storbeck/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/storbeck",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/storbeck/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/storbeck/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/storbeck/editors",
         "teams": "https://api.twitch.tv/kraken/channels/storbeck/teams",
         "videos": "https://api.twitch.tv/kraken/channels/storbeck/videos"
@@ -492,8 +422,7 @@
       "bio": null,
       "created_at": "2015-03-25T02:23:40Z",
       "updated_at": "2016-10-10T16:30:23Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/storbeck-profile_image-7ab13c2f781b601d-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/storbeck-profile_image-7ab13c2f781b601d-300x300.jpeg",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/storbeck"
       }
@@ -515,8 +444,7 @@
       "bio": "League of Legends, Music, Nerd Stuff, Chat.. blah blah blah",
       "created_at": "2009-06-07T15:04:54Z",
       "updated_at": "2016-10-10T03:00:57Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/habathcx"
       }
@@ -533,8 +461,7 @@
       "created_at": "2009-06-07T15:04:54Z",
       "updated_at": "2016-10-10T03:00:57Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
       "banner": null,
       "video_banner": null,
       "background": null,
@@ -547,13 +474,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/habathcx",
         "follows": "https://api.twitch.tv/kraken/channels/habathcx/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/habathcx/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/habathcx/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/habathcx/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/habathcx/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/habathcx",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/habathcx/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/habathcx/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/habathcx/editors",
         "teams": "https://api.twitch.tv/kraken/channels/habathcx/teams",
         "videos": "https://api.twitch.tv/kraken/channels/habathcx/videos"
@@ -587,13 +511,11 @@
       "created_at": "2014-01-13T04:07:33Z",
       "updated_at": "2016-10-10T18:01:58Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png",
       "banner": null,
       "video_banner": null,
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_banner-7167a1b68fb1c502-480.png",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_banner-7167a1b68fb1c502-480.png",
       "profile_banner_background_color": null,
       "partner": false,
       "url": "https://www.twitch.tv/robotcaleb",
@@ -602,13 +524,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/robotcaleb",
         "follows": "https://api.twitch.tv/kraken/channels/robotcaleb/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/robotcaleb/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/robotcaleb/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/robotcaleb/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/robotcaleb/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/robotcaleb",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/robotcaleb/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/robotcaleb/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/robotcaleb/editors",
         "teams": "https://api.twitch.tv/kraken/channels/robotcaleb/teams",
         "videos": "https://api.twitch.tv/kraken/channels/robotcaleb/videos"
@@ -622,8 +541,7 @@
       "bio": null,
       "created_at": "2014-01-13T04:07:33Z",
       "updated_at": "2016-10-10T18:01:58Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/robotcaleb"
       }
@@ -632,8 +550,7 @@
   "noobs2ninjas": {
     "channels": {
       "mature": false,
-      "status":
-        "Building a new hackintosh for #programming and gaming and having a few beers! Lets do this! #pcbuilding ",
+      "status": "Building a new hackintosh for #programming and gaming and having a few beers! Lets do this! #pcbuilding ",
       "broadcaster_language": "en",
       "display_name": "noobs2ninjas",
       "game": "Creative",
@@ -643,14 +560,11 @@
       "created_at": "2015-02-13T08:13:10Z",
       "updated_at": "2016-10-10T09:31:04Z",
       "delay": null,
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
       "banner": null,
-      "video_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-channel_offline_image-7f974925e9dc942c-1920x1080.jpeg",
+      "video_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-channel_offline_image-7f974925e9dc942c-1920x1080.jpeg",
       "background": null,
-      "profile_banner":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_banner-0a065656911e6d4d-480.jpeg",
+      "profile_banner": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_banner-0a065656911e6d4d-480.jpeg",
       "profile_banner_background_color": null,
       "partner": false,
       "url": "https://www.twitch.tv/noobs2ninjas",
@@ -659,13 +573,10 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/noobs2ninjas",
         "follows": "https://api.twitch.tv/kraken/channels/noobs2ninjas/follows",
-        "commercial":
-          "https://api.twitch.tv/kraken/channels/noobs2ninjas/commercial",
-        "stream_key":
-          "https://api.twitch.tv/kraken/channels/noobs2ninjas/stream_key",
+        "commercial": "https://api.twitch.tv/kraken/channels/noobs2ninjas/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/noobs2ninjas/stream_key",
         "chat": "https://api.twitch.tv/kraken/chat/noobs2ninjas",
-        "subscriptions":
-          "https://api.twitch.tv/kraken/channels/noobs2ninjas/subscriptions",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/noobs2ninjas/subscriptions",
         "editors": "https://api.twitch.tv/kraken/channels/noobs2ninjas/editors",
         "teams": "https://api.twitch.tv/kraken/channels/noobs2ninjas/teams",
         "videos": "https://api.twitch.tv/kraken/channels/noobs2ninjas/videos"
@@ -676,12 +587,10 @@
       "_id": 82534701,
       "name": "noobs2ninjas",
       "type": "user",
-      "bio":
-        "Live Programming my face off while hanging out with some of the most kick ass programmers on the planet.",
+      "bio": "Live Programming my face off while hanging out with some of the most kick ass programmers on the planet.",
       "created_at": "2015-02-13T08:13:10Z",
       "updated_at": "2016-10-10T09:31:04Z",
-      "logo":
-        "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
+      "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/noobs2ninjas"
       }
@@ -716,16 +625,16 @@
       "views": 3368,
       "followers": 20,
       "_links": {
-          "self": "https://api.twitch.tv/kraken/channels/test_channel",
-          "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows",
-          "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
-          "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
-          "chat": "https://api.twitch.tv/kraken/chat/test_channel",
-          "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
-          "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
-          "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
-          "teams": "https://api.twitch.tv/kraken/channels/test_channel/teams",
-          "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos"
+        "self": "https://api.twitch.tv/kraken/channels/test_channel",
+        "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows",
+        "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+        "chat": "https://api.twitch.tv/kraken/chat/test_channel",
+        "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+        "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
+        "teams": "https://api.twitch.tv/kraken/channels/test_channel/teams",
+        "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos"
       },
       "delay": null,
       "banner": null,

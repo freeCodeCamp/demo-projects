@@ -8,11 +8,12 @@ function fromBooks(books, user) {
 function fromRequests(requests, user) {
   if (!user) return 0;
   const requestsForUsersBooks = requests.filter(request =>
-    request.takes.map(book => book.owner.id).includes(user.id));
+    request.takes.map(book => book.owner.id).includes(user.id)
+  );
   return requestsForUsersBooks.length;
 }
 
 module.exports = {
   fromBooks,
-  fromRequests,
+  fromRequests
 };

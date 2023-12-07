@@ -7,19 +7,21 @@ const Schema = mongoose.Schema;
 const bookSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   description: String,
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
-  requests: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Request',
-    required: true,
-  }],
+  requests: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Request',
+      required: true
+    }
+  ]
 });
 
 // bookSchema.methods.getTakeRequests = function getTakeRequests() {

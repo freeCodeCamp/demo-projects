@@ -1,7 +1,7 @@
-const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectID;
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID;
 const CONNECTION_STRING = process.env.DB_URI;
-const sanitizeHtml = require("sanitize-html");
+const sanitizeHtml = require('sanitize-html');
 
 function ReplyHandler() {
   this.replyList = function (req, res) {
@@ -10,7 +10,7 @@ function ReplyHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection
           .find(
@@ -19,9 +19,9 @@ function ReplyHandler() {
               projection: {
                 reported: 0,
                 delete_password: 0,
-                "replies.delete_password": 0,
-                "replies.reported": 0,
-              },
+                'replies.delete_password': 0,
+                'replies.reported': 0
+              }
             }
           )
           .toArray((err, doc) => {
@@ -39,25 +39,25 @@ function ReplyHandler() {
       text: sanitizeHtml(req.body.text),
       created_on: now,
       reported: false,
-      delete_password: req.body.delete_password,
+      delete_password: req.body.delete_password
     };
     MongoClient.connect(
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.findOneAndUpdate(
           { _id: new ObjectId(req.body.thread_id) },
           {
             $set: { bumped_on: now },
-            $push: { replies: reply },
+            $push: { replies: reply }
           },
-          () => { }
+          () => {}
         );
       }
     );
-    res.redirect("/b/" + board + "/" + req.body.thread_id);
+    res.redirect('/b/' + board + '/' + req.body.thread_id);
   };
 
   this.reportReply = function (req, res) {
@@ -66,19 +66,19 @@ function ReplyHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.findOneAndUpdate(
           {
             _id: new ObjectId(req.body.thread_id),
-            "replies._id": new ObjectId(req.body.reply_id),
+            'replies._id': new ObjectId(req.body.reply_id)
           },
-          { $set: { "replies.$.reported": true } },
-          () => { }
+          { $set: { 'replies.$.reported': true } },
+          () => {}
         );
       }
     );
-    res.send("reported");
+    res.send('reported');
   };
 
   this.deleteReply = function (req, res) {
@@ -87,7 +87,7 @@ function ReplyHandler() {
       CONNECTION_STRING,
       { useUnifiedTopology: true },
       (err, client) => {
-        const db = client.db("anonymous-message-board-v0");
+        const db = client.db('anonymous-message-board-v0');
         const collection = db.collection(board);
         collection.findOneAndUpdate(
           {
@@ -95,16 +95,16 @@ function ReplyHandler() {
             replies: {
               $elemMatch: {
                 _id: new ObjectId(req.body.reply_id),
-                delete_password: req.body.delete_password,
-              },
-            },
+                delete_password: req.body.delete_password
+              }
+            }
           },
-          { $set: { "replies.$.text": "[deleted]" } },
+          { $set: { 'replies.$.text': '[deleted]' } },
           (err, doc) => {
             if (doc.value === null) {
-              res.send("incorrect password");
+              res.send('incorrect password');
             } else {
-              res.send("success");
+              res.send('success');
             }
           }
         );

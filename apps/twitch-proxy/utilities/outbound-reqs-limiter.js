@@ -1,10 +1,10 @@
 const {
-  outboundReqsLimiter: { active, maxOBReqsPerInterval, checkIntervalMs },
+  outboundReqsLimiter: { active, maxOBReqsPerInterval, checkIntervalMs }
 } = require('../config');
 const log = require('./logger');
 
 var outReqCounter = { tstamp: Date.now(), req: 0 };
-var outReqLimiter = function(req) {
+var outReqLimiter = function (req) {
   if (!active) return false;
   var now = Date.now();
   if (now - outReqCounter.tstamp <= checkIntervalMs) {
@@ -18,7 +18,7 @@ var outReqLimiter = function(req) {
     const {
       headers: { referer },
       ip,
-      originalUrl,
+      originalUrl
     } = req;
     log.warn(`>> RATE LIMITER - ${referer} - ${ip} - ${originalUrl}`);
     return true;

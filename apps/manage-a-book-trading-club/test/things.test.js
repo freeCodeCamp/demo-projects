@@ -7,38 +7,40 @@ const {
   it,
   before,
   testData,
-  mockApp,
+  mockApp
 } = require('./testSetup');
 
 describe('GET / the root', () =>
   it('should redirect to /books', () =>
-    chai.request(app)
+    chai
+      .request(app)
       .get('/')
-      .then(res => res.req.path.should.equal('/books')),
-  ),
-);
+      .then(res => res.req.path.should.equal('/books'))));
 
 describe('Books controller', () => {
   describe('GET /books', () => {
     it('should show a list of books in the exchange', () =>
-      chai.request(app)
+      chai
+        .request(app)
         .get('/books')
-        .then((res) => {
+        .then(res => {
           res.should.have.status(200);
           res.req.path.should.equal('/books');
           res.text.should.contain(testData.books0[0].name);
           const last = testData.books0.length - 1;
           res.text.should.contain(testData.books0[last].name);
-        }),
-    );
+        }));
   });
 
   describe('GET /books/my when logged in', () => {
     let res;
     before(() =>
-      chai.request(mockApp)
+      chai
+        .request(mockApp)
         .get('/books/my')
-        .then((response) => { res = response; }),
+        .then(response => {
+          res = response;
+        })
     );
 
     it('should show a form', () => {

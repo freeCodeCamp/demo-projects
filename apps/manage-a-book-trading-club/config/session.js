@@ -11,5 +11,5 @@ module.exports = session({
   secret: 'kfsvvxbbf',
   resave: false,
   saveUninitialized: false,
-  store: new MongoStore({ mongooseConnection: db }),
+  store: new MongoStore({ mongooseConnection: db })
 });

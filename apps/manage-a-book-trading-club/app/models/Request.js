@@ -9,18 +9,22 @@ const requestSchema = new Schema({
   requester: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
-  takes: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Book',
-    required: true,
-  }],
-  gives: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Book',
-    required: true,
-  }],
+  takes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Book',
+      required: true
+    }
+  ],
+  gives: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Book',
+      required: true
+    }
+  ]
 });
 
 try {

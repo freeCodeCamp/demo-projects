@@ -24,7 +24,7 @@ const testUsers = testData.users;
 const mockApp = express();
 const testUser = new User(testUsers[0]);
 mockApp.use((req, res, next) => {
-  req.isAuthenticated = (() => true);
+  req.isAuthenticated = () => true;
   req.user = testUser;
   next();
 });
@@ -48,5 +48,5 @@ module.exports = {
   before,
   beforeEach,
   after,
-  mockApp,
+  mockApp
 };

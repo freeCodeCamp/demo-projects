@@ -18,17 +18,17 @@ body {
     #f5f6f7 11%,
     #f5f6f7 80%,
     #d0d0d5 80%,
-     #d0d0d5 85%,
+    #d0d0d5 85%,
     #f5f6f7 85%,
     #f5f6f7 86%,
     #0a0a23 86%,
     #0a0a23 90%,
-     #f5f6f7 90%
+    #f5f6f7 90%
   );
 }
-  
+
 .nav {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-variant: small-caps;
   color: #ffffff;
   width: 100%;
@@ -41,10 +41,10 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
 }
- 
+
 .nav-btn {
   margin: 0 10px 0 0;
   align-self: flex-end;
@@ -59,19 +59,19 @@ body {
   -o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
   transition: background 0.3s linear 0s, color 0.3s linear 0s;
 }
-    
-.nav-btn:hover { 
+
+.nav-btn:hover {
   background-color: #3b3b4f;
 }
-   
+
 h1 {
   color: #0a0a23;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
 
 .content-wrap {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   padding: 15px;
   margin: 80px 20px 20px 20px;
 }
@@ -81,18 +81,18 @@ h1 {
   background-color: #d0d0d5;
   border: 2px solid #0a0a23;
 }
-  
+
 .textarea {
   resize: none;
   min-height: 150px;
   min-width: 30%;
   max-width: 100%;
 }
-  
+
 .block {
   display: block;
 }
-  
+
 .poll-wrap {
   cursor: pointer;
   color: #0a0a23;
@@ -104,18 +104,18 @@ h1 {
 }
 
 .poll-title {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
 }
-   
+
 .form {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 300px;
   display: -webkit-box;
   display: -moz-box;
@@ -134,7 +134,7 @@ h1 {
 }
 
 .chart-wrap {
-  display:none;
+  display: none;
 }
 
 .chart {

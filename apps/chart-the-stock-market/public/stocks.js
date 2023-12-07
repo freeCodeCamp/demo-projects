@@ -18,20 +18,20 @@ startLoading();
 function startLoading() {
   loading = true;
 
-  for(var i=0; i<allElements.length; i++) {
+  for (var i = 0; i < allElements.length; i++) {
     allElements[i].classList.add('wait');
   }
 }
 
 function doneLoading() {
-  for(var i=0; i<allElements.length; i++) {
+  for (var i = 0; i < allElements.length; i++) {
     allElements[i].classList.remove('wait');
   }
   loading = false;
 }
 
 function emitNewStock() {
-  if(!loading) {
+  if (!loading) {
     startLoading();
 
     socket.emit('newStock', {
@@ -41,7 +41,7 @@ function emitNewStock() {
 }
 
 function deleteStock(symbol) {
-  if(!loading) {
+  if (!loading) {
     startLoading();
     socket.emit('deleteStock', {
       symbol: symbol
@@ -50,54 +50,58 @@ function deleteStock(symbol) {
 }
 
 getStockBtn.addEventListener('click', emitNewStock);
-symbolInput.addEventListener('keyup', function(e) {
-  if(e.keyCode === 13) {
+symbolInput.addEventListener('keyup', function (e) {
+  if (e.keyCode === 13) {
     emitNewStock();
-   }
+  }
 });
 
 //////////// chart ////////////
-var myChart = new Chart(document.getElementById("stockCanvas"), {
+var myChart = new Chart(document.getElementById('stockCanvas'), {
   type: 'line',
   data: {},
-    options: {
-    scales:{
-      xAxes:[{
-        gridLines:{
-          color:'#999' 
-        },
-        ticks:{
-          fontColor: 'black' 
+  options: {
+    scales: {
+      xAxes: [
+        {
+          gridLines: {
+            color: '#999'
+          },
+          ticks: {
+            fontColor: 'black'
+          }
         }
-      }],
-      yAxes:[{
-        gridLines:{
-          color: '#999'
-        },
-        ticks:{
-          fontColor:'black'
-        },
-        scaleLabel: {
-          display: true,
-          labelString: 'Price (USD)'
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            color: '#999'
+          },
+          ticks: {
+            fontColor: 'black'
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Price (USD)'
+          }
         }
-      }],
+      ]
     },
     responsive: false,
     legend: {
       display: true,
-        'onClick': function (evt, item) {
+      onClick: function (evt, item) {
         deleteStock(item.text);
       },
-      'onHover': function() {
+      onHover: function () {
         stockCanvas.style.cursor = 'pointer';
       },
       labels: {
         fontColor: 'black'
-      },
+      }
     },
     hover: {
-      onHover: function() {
+      onHover: function () {
         stockCanvas.style.cursor = 'default';
       }
     }
@@ -109,11 +113,11 @@ socket.on('stopLoading', doneLoading);
 
 //see this link for example response data
 //https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=demo
-socket.on('updateStockData', function(newStockData) {
+socket.on('updateStockData', function (newStockData) {
   stockData = JSON.parse(newStockData);
   let datasets = [];
   const stockSymbols = Object.keys(stockData);
-  const colors = ['white','black','#666'];
+  const colors = ['white', 'black', '#666'];
   let stockDays;
 
   if (Object.keys(stockSymbols).length === 0) {
@@ -128,7 +132,7 @@ socket.on('updateStockData', function(newStockData) {
 
       // create array of prices
       stockDays.forEach(day => {
-        stockValues.push(stockData[symbol][day]["4. close"]);
+        stockValues.push(stockData[symbol][day]['4. close']);
       });
 
       //create object to push to datasets - to use in the chart

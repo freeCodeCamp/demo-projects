@@ -7,7 +7,7 @@ const validate = (req, res, next) => {
     params: { route },
     headers: { referer },
     query,
-    ip,
+    ip
   } = req;
   if (!route) return next({ status: 404, error: 'not found' });
   if (!validRoutes[route]) {
@@ -15,7 +15,7 @@ const validate = (req, res, next) => {
     return res.status(403).json({
       error: 'forbidden',
       status: 403,
-      msg: `unaccepted route: ${route} - see ${host} for infos`,
+      msg: `unaccepted route: ${route} - see ${host} for infos`
     });
   }
   const validQParams = validRoutes[route].q;
@@ -30,7 +30,7 @@ const validate = (req, res, next) => {
     return res.status(403).json({
       error: 'forbidden',
       status: 403,
-      msg: `unaccepted route query: ${route}?${_q} - see ${host} for infos`,
+      msg: `unaccepted route query: ${route}?${_q} - see ${host} for infos`
     });
   }
   next();
@@ -40,7 +40,7 @@ const validateLegacy = (req, res, next) => {
   const {
     params: { type },
     headers: { referer },
-    ip,
+    ip
   } = req;
   if (!type) return next({ status: 404, error: 'not found' });
   if (validLegacyRoutes.indexOf(type) === -1) {
@@ -48,7 +48,7 @@ const validateLegacy = (req, res, next) => {
     return next({
       error: 'forbidden',
       status: 403,
-      msg: `unaccepted route: ${type} - see ${host} for infos`,
+      msg: `unaccepted route: ${type} - see ${host} for infos`
     });
   }
   next();
@@ -56,5 +56,5 @@ const validateLegacy = (req, res, next) => {
 
 module.exports = {
   validate,
-  validateLegacy,
+  validateLegacy
 };

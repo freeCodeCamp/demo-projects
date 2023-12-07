@@ -9,27 +9,31 @@ const tradeSchema = new Schema({
   accepter: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
   requester: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
-  takes: [{
-    name: {
-      type: String,
-      required: true,
-    },
-    description: String,
-  }],
-  gives: [{
-    name: {
-      type: String,
-      required: true,
-    },
-    description: String,
-  }],
+  takes: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      description: String
+    }
+  ],
+  gives: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      description: String
+    }
+  ]
 });
 
 try {
@@ -38,4 +42,3 @@ try {
 } catch (err) {}
 
 module.exports = mongoose.model('Trade');
-

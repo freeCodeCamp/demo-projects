@@ -1,12 +1,6 @@
 'use strict';
 
-const {
-  chai,
-  describe,
-  it,
-  before,
-  mockApp,
-} = require('./testSetup');
+const { chai, describe, it, before, mockApp } = require('./testSetup');
 
 const newRequestsPath = '/requests/new';
 const createRequestsPath = '/requests/create';
@@ -16,9 +10,12 @@ const selectTakesPath = '/books/select/takes';
 describe(`GET ${newRequestsPath}`, () => {
   let res;
   before(() =>
-    chai.request(mockApp)
+    chai
+      .request(mockApp)
       .get(newRequestsPath)
-      .then((response) => { res = response; }),
+      .then(response => {
+        res = response;
+      })
   );
   it('should show a form to submit the request', () => {
     res.text.should.contain(`action="${createRequestsPath}"`);
@@ -35,9 +32,12 @@ describe('Select books to give', () => {
   describe(`GET ${selectGivesPath}`, () => {
     let res;
     before(() =>
-      chai.request(mockApp)
+      chai
+        .request(mockApp)
         .get(selectGivesPath)
-        .then((response) => { res = response; }),
+        .then(response => {
+          res = response;
+        })
     );
     it('should show a form', () => {
       /**

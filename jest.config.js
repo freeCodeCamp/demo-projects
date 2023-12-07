@@ -1,7 +1,5 @@
 const config = {
-  roots: [
-    "./test/"
-  ]
+  roots: ['./test/']
 };
 
 module.exports = config;

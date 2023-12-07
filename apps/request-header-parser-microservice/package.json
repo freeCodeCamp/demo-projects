@@ -7,14 +7,14 @@
     "start": "node server.js",
     "test": "PORT=3005 mocha --exit --ui tdd tests/"
   },
-	"dependencies": {
-		"chai": "4.3.10",
-		"chai-http": "4.4.0",
-		"cors": "2.8.5",
-		"dotenv": "14.3.2",
-		"express": "5.0.0-beta.1",
-		"mocha": "9.2.2"
-	},
+  "dependencies": {
+    "chai": "4.3.10",
+    "chai-http": "4.4.0",
+    "cors": "2.8.5",
+    "dotenv": "14.3.2",
+    "express": "5.0.0-beta.1",
+    "mocha": "9.2.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://hyperdev.com/#!/project/welcome-project"

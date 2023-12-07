@@ -7,7 +7,7 @@ const User = require('../app/models/User.js');
 const githubAuth = {
   clientID: process.env.GITHUB_KEY,
   clientSecret: process.env.GITHUB_SECRET,
-  callbackURL: `${process.env.APP_URL}auth/github/callback`,
+  callbackURL: `${process.env.APP_URL}auth/github/callback`
 };
 
 //const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -29,7 +29,7 @@ const linkedinAuth = {
 
 function findOrCreateUser(profile, done) {
   return User.findOne({ provider: profile.provider, providerId: profile.id })
-    .then((user) => {
+    .then(user => {
       if (user) return done(null, user);
       const newUser = new User();
       newUser.provider = profile.provider;
@@ -42,8 +42,7 @@ function findOrCreateUser(profile, done) {
       if (profile.provider === 'linkedin') {
         newUser.city = ((profile._json || {}).location || {}).name;
       }
-      return newUser.save()
-        .then(() => done(null, newUser));
+      return newUser.save().then(() => done(null, newUser));
     })
     .catch(done);
 }
@@ -59,11 +58,11 @@ function Passport(passport) {
     });
   });
 
-  passport.use(new GitHubStrategy(githubAuth,
-  (token, refreshToken, profile, done) => {
-    process.nextTick(() => findOrCreateUser(profile, done));
-  }));
-
+  passport.use(
+    new GitHubStrategy(githubAuth, (token, refreshToken, profile, done) => {
+      process.nextTick(() => findOrCreateUser(profile, done));
+    })
+  );
 
   /* 
     passport.use(new GoogleStrategy(googleAuth,

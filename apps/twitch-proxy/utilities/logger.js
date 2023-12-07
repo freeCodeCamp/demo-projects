@@ -8,12 +8,12 @@ const _format = printf(info => {
 });
 
 const {
-  logLevels: { _default, file, filePath },
+  logLevels: { _default, file, filePath }
 } = require('../config');
 
 const logger = createLogger({
   format: combine(timestamp(), _format),
-  transports: [new transports.Console({ level: _default })],
+  transports: [new transports.Console({ level: _default })]
 });
 
 if (file) {
@@ -23,14 +23,15 @@ if (file) {
       datePattern: 'YYYY-MM-DD',
       maxSize: '10m',
       maxFiles: '2d',
-      level: file,
+      level: file
     })
   );
 }
 
 logger.info(
-  `logger initialized with console level: ${_default}, file level: ${file ||
-    'none'}`
+  `logger initialized with console level: ${_default}, file level: ${
+    file || 'none'
+  }`
 );
 
 module.exports = logger;

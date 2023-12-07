@@ -10,10 +10,10 @@ const alice = {
   google: {
     id: '1',
     username: 'googleAlice',
-    displayName: 'Alice B. Google',
+    displayName: 'Alice B. Google'
   },
   city: 'Atlanta',
-  address: '123 Something A',
+  address: '123 Something A'
 };
 
 const bob = {
@@ -23,10 +23,10 @@ const bob = {
   github: {
     id: '1',
     username: 'githubBob',
-    displayName: 'Robert J. Github',
+    displayName: 'Robert J. Github'
   },
   city: 'Boston',
-  address: '123 Something B',
+  address: '123 Something B'
 };
 
 const charlie = {
@@ -36,36 +36,36 @@ const charlie = {
   github: {
     id: '2',
     username: 'githubChuck',
-    displayName: 'Charles Q. Github',
+    displayName: 'Charles Q. Github'
   },
   city: 'Charleston',
-  address: '123 Something C',
+  address: '123 Something C'
 };
 
 // Books
 const artichoke = {
   name: 'Artickoke',
-  description: 'Mary Washingtom heirloom',
+  description: 'Mary Washingtom heirloom'
 };
 
 const butternut = {
   name: 'Butternut',
-  description: '20 books',
+  description: '20 books'
 };
 
 const carrot = {
   name: 'Carrot',
-  description: '100 Danvers half long',
+  description: '100 Danvers half long'
 };
 
 const cookies = {
   name: 'Cookies',
-  description: '24 Chocolate Chip',
+  description: '24 Chocolate Chip'
 };
 
 const figJam = {
   name: 'Fig Jam',
-  description: 'Organic, local, 1 pint',
+  description: 'Organic, local, 1 pint'
 };
 
 const users = [alice, bob, charlie];
@@ -77,28 +77,30 @@ function seedDb() {
     .then(() => Book.remove({}))
     .then(() => Request.remove({}))
     .then(() => User.create(users))
-    .then((savedUsers) => {
+    .then(savedUsers => {
       const testBooks0 = books0.map(book => ({
         name: book.name,
         description: book.description,
         // eslint-disable-next-line no-underscore-dangle
-        owner: savedUsers[0]._id,
+        owner: savedUsers[0]._id
       }));
       const testBooks1 = books1.map(book => ({
         name: book.name,
         description: book.description,
         // eslint-disable-next-line no-underscore-dangle
-        owner: savedUsers[1]._id,
+        owner: savedUsers[1]._id
       }));
       return Book.create(testBooks0.concat(testBooks1));
     })
-    .then(books => Request.create({
-      requester: books[0].owner,
-      // eslint-disable-next-line no-underscore-dangle
-      gives: [books[0]._id],
-      // eslint-disable-next-line no-underscore-dangle
-      takes: [books[books.length - 1]._id],
-    }))
+    .then(books =>
+      Request.create({
+        requester: books[0].owner,
+        // eslint-disable-next-line no-underscore-dangle
+        gives: [books[0]._id],
+        // eslint-disable-next-line no-underscore-dangle
+        takes: [books[books.length - 1]._id]
+      })
+    )
     .catch(console.error);
 }
 
@@ -106,5 +108,5 @@ module.exports = {
   users,
   books0,
   books1,
-  seedDb,
+  seedDb
 };

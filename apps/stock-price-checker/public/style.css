@@ -8,11 +8,11 @@ form input {
 }
 
 hr {
-  margin: 50px
+  margin: 50px;
 }
 
 hr:last-of-type {
-  margin-top: 200px
+  margin-top: 200px;
 }
 
 div#testui {

@@ -1,7 +1,8 @@
 code {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
-section, header {
-    margin: 50px;
+section,
+header {
+  margin: 50px;
 }

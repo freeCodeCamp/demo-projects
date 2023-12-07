@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // Set up mongoose connection
 function connection(dbUrl) {
   mongoose.Promise = global.Promise;
-  mongoose.connect(dbUrl, { 
+  mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
@@ -15,4 +15,3 @@ function connection(dbUrl) {
 }
 
 module.exports = connection;
-

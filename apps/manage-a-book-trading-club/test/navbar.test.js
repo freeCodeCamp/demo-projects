@@ -7,7 +7,7 @@ const {
   chai,
   mockApp,
   app,
-  testData,
+  testData
 } = require('./testSetup');
 
 const user = testData.users[0];
@@ -15,32 +15,31 @@ const loggedInNavText = [
   'Logout',
   `>${user.username} <span`,
   'href="/users/',
-  'My Books',
+  'My Books'
 ];
 
-const notLoggedInNavText = [
-  'Login',
-];
+const notLoggedInNavText = ['Login'];
 
 const alwaysNavText = [
-  'href="/books"',
+  'href="/books"'
   // 'href="/requests"',
 ];
-
 
 describe('Navbar', () => {
   describe('Logged in', () => {
     let response;
     before(() =>
-      chai.request(mockApp)
+      chai
+        .request(mockApp)
         .get('/')
-        .then((res) => { response = res; }),
+        .then(res => {
+          response = res;
+        })
     );
-    loggedInNavText.concat(alwaysNavText).forEach((text) => {
-      it(`should contain ${text}`, () =>
-        response.text.should.contain(text));
+    loggedInNavText.concat(alwaysNavText).forEach(text => {
+      it(`should contain ${text}`, () => response.text.should.contain(text));
     });
-    notLoggedInNavText.forEach((text) => {
+    notLoggedInNavText.forEach(text => {
       it(`should not contain ${text}`, () =>
         response.text.should.not.contain(text));
     });
@@ -49,15 +48,18 @@ describe('Navbar', () => {
   describe('Not Logged in', () => {
     let response;
     before(() =>
-      chai.request(app)
+      chai
+        .request(app)
         .get('/')
-        .then((res) => { response = res; }),
+        .then(res => {
+          response = res;
+        })
     );
-    notLoggedInNavText.concat(alwaysNavText).forEach((text) => {
+    notLoggedInNavText.concat(alwaysNavText).forEach(text => {
       it(`should contain ${text}`, () =>
         response.text.match(/<nav(.*)<\/nav>/)[0].should.contain(text));
     });
-    loggedInNavText.forEach((text) => {
+    loggedInNavText.forEach(text => {
       it(`should not contain ${text}`, () =>
         response.text.match(/<nav(.*)<\/nav>/)[0].should.not.contain(text));
     });

@@ -1,11 +1,6 @@
 'use strict';
 
-const {
-  User,
-  describe,
-  it,
-  testData,
-} = require('./testSetup');
+const { User, describe, it, testData } = require('./testSetup');
 
 const testUsers = testData.users;
 
