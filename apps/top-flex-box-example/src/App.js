@@ -2,7 +2,6 @@ import { Sandpack } from "@codesandbox/sandpack-react"
 
 function App() {
   return (
-    <div id="editor">
       <Sandpack
         files={{
           "styles.css": {
@@ -48,7 +47,6 @@ function App() {
         theme={'dark'}
         template="static"
       />
-    </div>
   );
 }
 
