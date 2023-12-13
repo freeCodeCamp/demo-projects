@@ -5,30 +5,12 @@ function App() {
     <div id="editor">
       <Sandpack
         files={{
-          "/index.html": {
-            code: `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <div class="flex-container">
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-    </div>
-</body>
-</html>`
-          },
           "styles.css": {
             active: true,
             code: `
 .flex-container {
   /* display: flex; */
+  gap: 12px;
 }
 
 /* this selector selects all divs inside of .flex-container */
@@ -40,14 +22,31 @@ function App() {
 }
           `
           },
-          "index.js": {
-            hidden: true,
-          }
+          "index.html": {
+            code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex-container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>`
+          },
         }}
         options={{
           editorHeight: "100vh",
         }}
         theme={'dark'}
+        template="static"
       />
     </div>
   );
