@@ -23,7 +23,7 @@ img {
 body {
   height: 100vh;
   font-family: sans-serif;
-  background-color: #0a0a23;
+  background-color: #1b1b32;
   color: #0a0a23;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -41,7 +41,7 @@ main {
 }
 
 h1 {
-  color: #fff;
+  color: #f5f6f7;
   font-size: 1.7em;
   text-align: center;
 }
@@ -49,9 +49,8 @@ h1 {
 .container {
   width: 325px;
   margin: 25px 0;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #fff;
+  background-color: #f5f6f7;
+  border: 1px solid #f5f6f7;
   border-radius: 15px;
   box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
 }
@@ -85,8 +84,8 @@ label {
   width: 80px;
   border-radius: 20px;
   text-align: center;
-  background-color: #8923b8;
-  color: #fff;
+  background-color: #7f21ab;
+  color: #f5f6f7;
   outline: none;
   border: none;
 }
@@ -158,17 +157,17 @@ table {
   border-spacing: 0;
   width: 100%;
   font-size: 1 rem;
-  color: #fff;
-  background-color: #8923b8;
+  color: #f5f6f7;
+  background-color: #7f21ab;
 }
 
 th:nth-child(even),
 td:nth-child(even) {
-  border-left: 5px solid #fff;
+  border-left: 5px solid #f5f6f7;
 }
 
 tr {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid #f5f6f7;
 }
 
 td,
