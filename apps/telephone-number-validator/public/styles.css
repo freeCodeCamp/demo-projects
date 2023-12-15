@@ -13,7 +13,7 @@
 body {
   background-color: #3b3b4f;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--phone-colors);
+  color: #0a0a23;
 }
 
 main {
@@ -47,6 +47,9 @@ h1 {
   margin: 30px auto;
   border-radius: 15px;
   border: 15px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .phone-background {
@@ -61,6 +64,10 @@ h1 {
   height: 10px;
   border-radius: 50%;
   margin: auto;
+}
+
+label {
+  margin: 10px auto 5px;
 }
 
 #user-input {
@@ -100,13 +107,13 @@ h1 {
 
 #results-div {
   overflow-y: auto;
-  height: 290px;
+  height: 265px;
+  width: 100%;
 }
 
 .results-text {
   font-size: 1.2rem;
   padding: 5px;
-  color: black;
   text-align: var(--center-text);
   margin: 10px 0;
 }

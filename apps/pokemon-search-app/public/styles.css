@@ -21,26 +21,36 @@ img {
 /* Project styling */
 
 body {
+  height: 100vh;
   font-family: sans-serif;
-  background-color: #0a0a23;
+  background-color: #1b1b32;
   color: #0a0a23;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.freecodecamp-logo {
+  height: 30px;
+  margin: 25px 0;
 }
 
 h1 {
-  color: #fff;
-  margin-top: 20px;
+  color: #f5f6f7;
+  font-size: 1.7em;
+  text-align: center;
 }
 
 .container {
   width: 325px;
-  margin: 30px 0;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #fff;
+  margin: 25px 0;
+  background-color: #f5f6f7;
+  border: 1px solid #f5f6f7;
   border-radius: 15px;
   box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
 }
@@ -52,10 +62,15 @@ h1 {
 }
 
 #search-form {
+  flex-wrap: wrap;
   margin: 10px 0;
   padding: 5px;
   border-radius: 8px 8px 0 0;
   gap: 10px;
+}
+
+label {
+  align-self: center;
 }
 
 #search-input {
@@ -69,16 +84,10 @@ h1 {
   width: 80px;
   border-radius: 20px;
   text-align: center;
-  background-color: #a230d7;
+  background-color: #7f21ab;
+  color: #f5f6f7;
   outline: none;
   border: none;
-}
-
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
 }
 
 .output {
@@ -92,8 +101,8 @@ h1 {
 .bottom-container {
   display: flex;
   flex-direction: column;
-  min-width: 400px;
-  min-height: 305px;
+  width: 100%;
+  min-height: 325px;
 }
 
 .top-container {
@@ -114,11 +123,15 @@ h1 {
   font-size: 0.85rem;
 }
 
+.sprite-container {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #sprite {
-  margin: 20px 0;
-  min-width: 180px;
-  min-height: 180px;
-  align-self: center;
+  width: 180px;
 }
 
 #types {
@@ -144,17 +157,17 @@ table {
   border-spacing: 0;
   width: 100%;
   font-size: 1 rem;
-  color: #fff;
-  background-color: #a230d7;
+  color: #f5f6f7;
+  background-color: #7f21ab;
 }
 
 th:nth-child(even),
 td:nth-child(even) {
-  border-left: 5px solid #fff;
+  border-left: 5px solid #f5f6f7;
 }
 
 tr {
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid #f5f6f7;
 }
 
 td,
@@ -238,6 +251,10 @@ th {
 }
 
 @media screen and (min-width: 550px) {
+  h1 {
+    font-size: 2em;
+  }
+
   .container {
     width: 450px;
   }

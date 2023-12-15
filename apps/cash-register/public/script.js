@@ -1,33 +1,24 @@
-// Do not change code below this line
-const cid = [
-  ['Penny', 1.01],
-  ['Nickel', 2.05],
-  ['Dime', 3.1],
-  ['Quarter', 4.25],
-  ['One', 90],
-  ['Five', 55],
-  ['Ten', 20],
-  ['Twenty', 60],
-  ['One hundred', 100]
+let price = 3.26;
+let cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
 ];
-// Do not change code above this line
 
-const message = document.getElementById('message');
 const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
-const newItemBtn = document.getElementById('new-btn');
-let newItemPrice = 4.23;
-
-const getNewPrice = () => {
-  displayChangeDue.innerHTML = '';
-  cash.value = '';
-  newItemPrice = Number((Math.random() * 200 + 1).toFixed(2));
-  message.innerHTML = `Total: $${newItemPrice}`;
-};
+const priceScreen = document.getElementById('price-screen');
+const cashDrawerDisplay = document.getElementById('cash-drawer-display');
 
 const formatResults = (status, change) => {
-  displayChangeDue.innerHTML = `Status: ${status}`;
+  displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
   change.map(
     money => (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`)
   );
@@ -35,19 +26,20 @@ const formatResults = (status, change) => {
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < newItemPrice) {
-    alert('Customer does not have enough money to purchase item');
+  if (Number(cash.value) < price) {
+    alert('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
   }
 
-  if (Number(cash.value) === newItemPrice) {
-    displayChangeDue.innerHTML = 'No change due. Customer paid with exact cash';
+  if (Number(cash.value) === price) {
+    displayChangeDue.innerHTML =
+      '<p>No change due - customer paid with exact cash</p>';
     cash.value = '';
     return;
   }
 
-  let changeDue = Number(cash.value) - newItemPrice;
+  let changeDue = Number(cash.value) - price;
   let reversedCid = [...cid].reverse();
   let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
   let result = { status: 'OPEN', change: [] };
@@ -59,7 +51,7 @@ const checkCashRegister = () => {
   );
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = 'Status: INSUFFICIENT_FUNDS');
+    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   }
 
   if (totalCID === changeDue) {
@@ -79,12 +71,11 @@ const checkCashRegister = () => {
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = 'Status: INSUFFICIENT_FUNDS');
+    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
   }
 
   formatResults(result.status, result.change);
-  cash.value = '';
-  return;
+  updateUI(result.change);
 };
 
 const checkResults = () => {
@@ -94,11 +85,41 @@ const checkResults = () => {
   checkCashRegister();
 };
 
+const updateUI = change => {
+  const currencyNameMap = {
+    PENNY: 'Pennies',
+    NICKEL: 'Nickels',
+    DIME: 'Dimes',
+    QUARTER: 'Quarters',
+    ONE: 'Ones',
+    FIVE: 'Fives',
+    TEN: 'Tens',
+    TWENTY: 'Twenties',
+    'ONE HUNDRED': 'Hundreds'
+  };
+  // Update cid if change is passed in
+  if (change) {
+    change.forEach(changeArr => {
+      const targetArr = cid.find(cidArr => cidArr[0] === changeArr[0]);
+      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+    });
+  }
+
+  cash.value = '';
+  priceScreen.textContent = `Total: $${price}`;
+  cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
+    ${cid
+      .map(money => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
+      .join('')}  
+  `;
+};
+
 purchaseBtn.addEventListener('click', checkResults);
+
 cash.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
     checkResults();
   }
 });
 
-newItemBtn.addEventListener('click', getNewPrice);
+updateUI();

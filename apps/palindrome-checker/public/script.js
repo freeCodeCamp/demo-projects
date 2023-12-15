@@ -1,30 +1,26 @@
 const userInput = document.getElementById('text-input');
-const checkPalindromeBtn = document.getElementById('btn');
+const checkPalindromeBtn = document.getElementById('check-btn');
 const resultDiv = document.getElementById('result');
 
 const checkForPalindrome = input => {
-  const hasSpecialCharactersOrDigits = /[\W\d_]/.test(input);
+  const originalInput = input; // Store for later output
 
   if (input === '') {
     alert('Please input a value');
     return;
   }
 
-  if (hasSpecialCharactersOrDigits === true) {
-    alert('Input should not include numbers and special characters');
-    return;
-  }
-  // Remove the previous result.
+  // Remove the previous result
   resultDiv.replaceChildren();
 
-  const lowerCaseStr = input.replace(/[^A-Z0-9]/gi, '').toLowerCase();
-  let resultMsg = `${input} ${
+  const lowerCaseStr = input.replace(/[^A-Za-z0-9]/gi, '').toLowerCase();
+  let resultMsg = `<strong>${originalInput}</strong> ${
     lowerCaseStr === [...lowerCaseStr].reverse().join('') ? 'is' : 'is not'
   } a palindrome.`;
 
   const pTag = document.createElement('p');
   pTag.className = 'user-input';
-  pTag.appendChild(document.createTextNode(resultMsg));
+  pTag.innerHTML = resultMsg;
   resultDiv.appendChild(pTag);
 
   // Show the result.

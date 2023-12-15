@@ -12,7 +12,6 @@
     <title>Palindrome Checker</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <main class="container">
       <img
@@ -22,25 +21,22 @@
       />
       <h1 class="title">Is it a Palindrome?</h1>
       <div class="palindrome-div">
-        <input
-          class="palindrome-input"
-          id="text-input"
-          value=""
-          type="text"
-          placeholder="Type in a word"
-        />
-        <button class="palindrome-btn" id="btn">Check</button>
+        <label for="text-input"
+          >Enter in text to check for a palindrome:
+        </label>
+        <input class="palindrome-input" id="text-input" value="" type="text" />
+        <button class="palindrome-btn" id="check-btn">Check</button>
         <div class="results-div hidden" id="result"></div>
       </div>
       <div class="palindrome-definition-div">
         <p class="palindrome-definition">
           <span role="img" aria-label="light-bulb">&#128161;</span>
-          A <b>palindrome</b> is a word or phrase that can be read the same way
-          forwards and backwards.
+          A <dfn>palindrome</dfn> is a word or sentence that's spelled the same
+          way both forward and backward, ignoring punctuation, case, and
+          spacing.
         </p>
       </div>
     </main>
-
     <script src="script.js"></script>
   </body>
 </html>
