@@ -101,7 +101,8 @@ const updateUI = change => {
   if (change) {
     change.forEach(changeArr => {
       const targetArr = cid.find(cidArr => cidArr[0] === changeArr[0]);
-      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+      const difference = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+      targetArr[1] = difference > 0 ? difference : 0;
     });
   }
 
