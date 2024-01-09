@@ -55,7 +55,7 @@ const checkCashRegister = () => {
   }
 
   if (totalCID === changeDue) {
-    formatResults('CLOSED', cid);
+    result.status = "CLOSED";
   }
 
   for (let i = 0; i <= reversedCid.length; i++) {
@@ -67,7 +67,9 @@ const checkCashRegister = () => {
         changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
         count++;
       }
-      result.change.push([reversedCid[i][0], count * denominations[i]]);
+      if (count > 0) {
+        result.change.push([reversedCid[i][0], count * denominations[i]]);
+      }
     }
   }
   if (changeDue > 0) {
