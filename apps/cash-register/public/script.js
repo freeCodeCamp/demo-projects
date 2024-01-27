@@ -62,12 +62,15 @@ const checkCashRegister = () => {
     if (changeDue > denominations[i] && changeDue > 0) {
       let count = 0;
       let total = reversedCid[i][1];
-      while (total > 0 && changeDue >= denominations[i]) {
+      while (total - denominations[i] >= 0 && changeDue >= denominations[i]) {
         total -= denominations[i];
         changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
         count++;
       }
-      result.change.push([reversedCid[i][0], count * denominations[i]]);
+      result.change.push([
+        reversedCid[i][0],
+        (count * denominations[i]).toFixed(2)
+      ]);
     }
   }
   if (changeDue > 0) {
@@ -109,7 +112,9 @@ const updateUI = change => {
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map(money => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
+      .map(
+        money => `<p>${currencyNameMap[money[0]]}: $${money[1].toFixed(2)}</p>`
+      )
       .join('')}  
   `;
 };
