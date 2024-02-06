@@ -69,7 +69,7 @@ const checkCashRegister = () => {
       }
       
       if (count > 0) {
-        result.change.push([reversedCid[i][0], count * denominations[i]]);
+        result.change.push([reversedCid[i][0], (count * denominations[i]).toFixed(2)]);
       }
     }
   }
