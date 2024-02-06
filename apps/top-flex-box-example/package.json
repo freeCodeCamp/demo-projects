@@ -1,0 +1,27 @@
+{
+  "name": "top-flexbox-example-one",
+  "version": "0.0.1",
+  "description": "Front end project for freeCodeCamp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@codesandbox/sandpack-react": "^2.10.0",
+    "dotenv": "16.0.0",
+    "express": "4.17.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.2",
+    "@babel/preset-env": "7.23.2",
+    "@babel/preset-react": "7.22.15",
+    "@rollup/plugin-babel": "6.0.4",
+    "@rollup/plugin-commonjs": "23.0.7",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@rollup/plugin-replace": "5.0.5",
+    "@rollup/plugin-terser": "0.2.0",
+    "rollup": "2.79.1"
+  }
+}
