@@ -16,7 +16,7 @@
     "dotenv": "14.3.2",
     "express": "4.18.2",
     "google-images": "2.1.0",
-    "moment": "2.29.4",
+    "moment": "2.30.1",
     "mongodb": "3.7.4"
   }
 }
