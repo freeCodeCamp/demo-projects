@@ -31,7 +31,7 @@
     "cookie-parser": "1.4.6",
     "dotenv": "14.3.2",
     "express": "4.18.2",
-    "express-session": "1.17.3",
+    "express-session": "1.18.0",
     "font-awesome": "4.7.0",
     "helmet": "3.23.3",
     "mongoose": "5.13.22",
