@@ -4,7 +4,6 @@ const translateHandler = async () => {
   const errorArea = document.getElementById('error-msg');
   const translatedArea = document.getElementById('translated-sentence');
 
-  const stuff = { text: textArea.value, locale: localeArea.value };
   errorArea.innerText = '';
   translatedArea.innerText = '';
 
@@ -14,7 +13,7 @@ const translateHandler = async () => {
       Accept: 'application/json',
       'Content-type': 'application/json'
     },
-    body: JSON.stringify(stuff)
+    body: JSON.stringify({ text: textArea.value, locale: localeArea.value })
   });
 
   const parsed = await data.json();
