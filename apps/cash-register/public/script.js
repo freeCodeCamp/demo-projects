@@ -67,9 +67,12 @@ const checkCashRegister = () => {
         changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
         count++;
       }
-      
+
       if (count > 0) {
-        result.change.push([reversedCid[i][0], (count * denominations[i]).toFixed(2)]);
+        result.change.push([
+          reversedCid[i][0],
+          (count * denominations[i]).toFixed(2)
+        ]);
       }
     }
   }
