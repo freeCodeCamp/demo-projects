@@ -18,6 +18,7 @@ http:// {
 }
 
 www.freecodecamp.rocks {
+  tls internal
   handle /ping {
     respond "pong" 200
   }
@@ -38,6 +39,7 @@ for (const serviceName in services) {
 
   caddyfile += `
 ${subdomain}.${process.env.DEMO_APPS_DOMAIN} {
+  tls internal
   reverse_proxy ${target}
 }
 `;
