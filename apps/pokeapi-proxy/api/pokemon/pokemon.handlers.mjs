@@ -11,6 +11,8 @@ export const getPokemonEndpointResources = async (req, res, next) => {
       console.log(
         'Fetching all resources for the Pokémon endpoint from PokéAPI'
       );
+      const host = req.get('host');
+      const protocol = host.match(/localhost\:\d+/) ? 'http' : 'https';
       const { data } = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/?limit=9000`
       );
@@ -20,12 +22,13 @@ export const getPokemonEndpointResources = async (req, res, next) => {
         count,
         results: results.map(obj => {
           const { name, url } = obj;
+
           return {
             id: Number(url.split('/').filter(Boolean).pop()),
             name,
             url: url.replace(
               'https://pokeapi.co/api/v2/',
-              `${req.protocol}://${req.get('host')}/api/`
+              `${protocol}://${host}/api/`
             )
           };
         })
