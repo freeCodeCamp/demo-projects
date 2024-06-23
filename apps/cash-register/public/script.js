@@ -19,39 +19,43 @@ const cashDrawerDisplay = document.getElementById('cash-drawer-display');
 
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
-  change.map(
-    money => (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`)
-  );
-  return;
+  displayChangeDue.innerHTML += change
+    .map(
+      ([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`
+    )
+    .join('');
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < price) {
+  const cashInCents = Math.round(Number(cash.value) * 100);
+  const priceInCents = Math.round(price * 100);
+  if (cashInCents < priceInCents) {
     alert('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
   }
 
-  if (Number(cash.value) === price) {
+  if (cashInCents === priceInCents) {
     displayChangeDue.innerHTML =
       '<p>No change due - customer paid with exact cash</p>';
     cash.value = '';
     return;
   }
 
-  let changeDue = Number(cash.value) - price;
-  let reversedCid = [...cid].reverse();
-  let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
-  let result = { status: 'OPEN', change: [] };
-  let totalCID = parseFloat(
-    cid
-      .map(total => total[1])
-      .reduce((prev, curr) => prev + curr)
-      .toFixed(2)
-  );
+  let changeDue = cashInCents - priceInCents;
+  const reversedCid = [...cid]
+    .reverse()
+    .map(([denominationName, amount]) => [
+      denominationName,
+      Math.round(amount * 100)
+    ]);
+  const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
+  const result = { status: 'OPEN', change: [] };
+  const totalCID = reversedCid.reduce((prev, [_, amount]) => prev + amount, 0);
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    return;
   }
 
   if (totalCID === changeDue) {
@@ -60,20 +64,20 @@ const checkCashRegister = () => {
 
   for (let i = 0; i <= reversedCid.length; i++) {
     if (changeDue >= denominations[i] && changeDue > 0) {
-      let count = 0;
-      let total = reversedCid[i][1];
-      while (total > 0 && changeDue >= denominations[i]) {
-        total -= denominations[i];
-        changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
-        count++;
-      }
+      const [denominationName, total] = reversedCid[i];
+      const possibleChange = Math.min(total, changeDue);
+      const count = Math.floor(possibleChange / denominations[i]);
+      const amountInChange = count * denominations[i];
+      changeDue -= amountInChange;
+
       if (count > 0) {
-        result.change.push([reversedCid[i][0], count * denominations[i]]);
+        result.change.push([denominationName, amountInChange / 100]);
       }
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    return;
   }
 
   formatResults(result.status, result.change);
@@ -101,9 +105,12 @@ const updateUI = change => {
   };
   // Update cid if change is passed in
   if (change) {
-    change.forEach(changeArr => {
-      const targetArr = cid.find(cidArr => cidArr[0] === changeArr[0]);
-      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+    change.forEach(([changeDenomination, changeAmount]) => {
+      const targetArr = cid.find(
+        ([denominationName, _]) => denominationName === changeDenomination
+      );
+      targetArr[1] =
+        (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
     });
   }
 
@@ -111,8 +118,11 @@ const updateUI = change => {
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map(money => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
-      .join('')}  
+      .map(
+        ([denominationName, amount]) =>
+          `<p>${currencyNameMap[denominationName]}: $${amount}</p>`
+      )
+      .join('')}
   `;
 };
 
