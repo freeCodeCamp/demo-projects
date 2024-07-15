@@ -7,3 +7,7 @@ apps/twitch-proxy/.data/
 apps/twitch-proxy/.logs/
 Caddyfile
 .eslintcache
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

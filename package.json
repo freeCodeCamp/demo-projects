@@ -15,10 +15,14 @@
     "start": "docker compose up -d",
     "stop": "docker compose down",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "playwright:run": "playwright test",
+    "playwright:watch": "playwright test --ui"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.1",
     "@types/jest": "^29.5.10",
+    "@types/node": "^20.14.10",
     "axios": "1.6.0",
     "eslint-config-prettier": "8.7.0",
     "eslint-plugin-react": "7.34.0",
