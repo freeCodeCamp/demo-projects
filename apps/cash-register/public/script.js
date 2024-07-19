@@ -107,7 +107,7 @@ const updateUI = change => {
   if (change) {
     change.forEach(([changeDenomination, changeAmount]) => {
       const targetArr = cid.find(
-        ([denominationName, _]) => denominationName === changeDenomination
+        ([denominationName]) => denominationName === changeDenomination
       );
       targetArr[1] =
         (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
