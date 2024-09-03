@@ -17,6 +17,8 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Sleep For 30 Seconds
+        run: sleep 30
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
