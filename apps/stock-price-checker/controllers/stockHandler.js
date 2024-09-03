@@ -82,7 +82,7 @@ function StockHandler() {
 const validTickerRegExp = /^[a-z]{1,6}$/;
 const isValidStock = stock => {
   const stockL = stock.toLowerCase().trim();
-  validTickerRegExp.test(stockL);
+  return validTickerRegExp.test(stockL);
 };
 
 module.exports = StockHandler;

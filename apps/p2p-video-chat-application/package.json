@@ -14,7 +14,7 @@
     "express": "4.19.2",
     "jquery": "3.7.1",
     "simple-peer": "9.11.1",
-    "socket.io": "4.7.2"
+    "socket.io": "4.7.5"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "21.1.0",
