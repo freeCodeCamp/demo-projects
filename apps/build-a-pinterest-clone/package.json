@@ -20,7 +20,7 @@
     "@rollup/plugin-commonjs": "21.1.0",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-replace": "5.0.7",
-    "body-parser": "1.20.2",
+    "body-parser": "1.20.3",
     "connect-mongo": "3.2.0",
     "dotenv": "14.3.2",
     "express": "5.0.0-beta.3",
