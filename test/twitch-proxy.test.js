@@ -1,6 +1,6 @@
 // TODO: Remove once types for Jest are recognized
 /* eslint-disable no-undef */
-const axios = require('axios').default;
+const axios = require('axios');
 const portMap = require('../port-map.json');
 const twitchProxyPort = portMap['twitch-proxy'];
 
@@ -12,7 +12,9 @@ describe('helix api', () => {
     // eslint-disable-next-line no-undef
     expect(response.status).toBe(200);
     // eslint-disable-next-line no-undef
-    expect(response.data.data).toHaveLength(1);
+    const result = response.data;
+    console.log(result);
+    expect(result.data).toHaveLength(1);
   });
 
   it('should return ESL_SC2 stream data', async () => {
@@ -20,7 +22,9 @@ describe('helix api', () => {
       `http://localhost:${twitchProxyPort}/helix/streams?user_login=ESL_SC2`
     );
     expect(response.status).toBe(200);
-    expect(response.data.data).toHaveLength(1);
+    const result = response.data;
+    console.log(result);
+    expect(result.data).toHaveLength(1);
   });
 
   it('should return Farmer Simulator 19 (Game ID: 504689) game data', async () => {
@@ -28,7 +32,9 @@ describe('helix api', () => {
       `http://localhost:${twitchProxyPort}/helix/streams?user_login=ESL_SC2`
     );
     expect(response.status).toBe(200);
-    expect(response.data.data).toHaveLength(1);
+    const result = response.data;
+    console.log(result);
+    expect(result.data).toHaveLength(1);
   });
 });
 
