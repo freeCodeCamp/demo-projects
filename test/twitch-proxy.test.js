@@ -13,7 +13,6 @@ describe('helix api', () => {
     expect(response.status).toBe(200);
     // eslint-disable-next-line no-undef
     const result = response.data;
-    console.log(result);
     expect(result.data).toHaveLength(1);
   });
 
@@ -23,7 +22,6 @@ describe('helix api', () => {
     );
     expect(response.status).toBe(200);
     const result = response.data;
-    console.log(result);
     expect(result.data).toHaveLength(1);
   });
 
@@ -33,7 +31,6 @@ describe('helix api', () => {
     );
     expect(response.status).toBe(200);
     const result = response.data;
-    console.log(result);
     expect(result.data).toHaveLength(1);
   });
 });

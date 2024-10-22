@@ -4,7 +4,7 @@
   "description": "fCC Twitch API passthrough server",
   "main": "server.js",
   "scripts": {
-    "prestart": "node kill-node-process-cron.js & node update-api-key.mjs",
+    "prestart": "node kill-node-process-cron.js",
     "start": "node server.js"
   },
   "dependencies": {
