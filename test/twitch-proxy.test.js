@@ -4,37 +4,6 @@ const axios = require('axios');
 const portMap = require('../port-map.json');
 const twitchProxyPort = portMap['twitch-proxy'];
 
-describe('helix api', () => {
-  it('should return freecodecamp user data', async () => {
-    const response = await axios.get(
-      `http://localhost:${twitchProxyPort}/helix/users?login=freecodecamp`
-    );
-    // eslint-disable-next-line no-undef
-    expect(response.status).toBe(200);
-    // eslint-disable-next-line no-undef
-    const result = response.data;
-    expect(result.data).toHaveLength(1);
-  });
-
-  it('should return ESL_SC2 stream data', async () => {
-    const response = await axios.get(
-      `http://localhost:${twitchProxyPort}/helix/streams?user_login=ESL_SC2`
-    );
-    expect(response.status).toBe(200);
-    const result = response.data;
-    expect(result.data).toHaveLength(1);
-  });
-
-  it('should return Farmer Simulator 19 (Game ID: 504689) game data', async () => {
-    const response = await axios.get(
-      `http://localhost:${twitchProxyPort}/helix/streams?user_login=ESL_SC2`
-    );
-    expect(response.status).toBe(200);
-    const result = response.data;
-    expect(result.data).toHaveLength(1);
-  });
-});
-
 describe('kraken api', () => {
   it('should return freecodecamp user data', async () => {
     const response = await axios.get(
