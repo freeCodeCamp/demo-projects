@@ -1,6 +1,6 @@
 const baseUrl = port => {
   if (process.env.DEMO_APPS_DOMAIN === 'localhost') {
-    const url = new URL('https://localhost');
+    const url = new URL('http://localhost');
     url.port = port;
     return url;
   }
