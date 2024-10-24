@@ -1,4 +1,3 @@
-// TODO: Remove eslint-disable-next-line no-undef the minute expect can be labelled as defined
 const { readdirSync } = require('fs');
 const { join } = require('path');
 const portMap = require('../port-map.json');
