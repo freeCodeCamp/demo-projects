@@ -2,8 +2,16 @@ image: gitpod/workspace-mongodb
 ports:
   - port: 27017
     onOpen: ignore
+  - port: 50000-50200
+    onOpen: ignore
+    # Set to public for tests to have access across ports
+    # Technically, could be configured with `credentials: true` in fetch calls too
+    visibility: public
 tasks:
+  - before: |
+      export DEMO_APPS_DOMAIN=$(gp url)
   - init: |
+      cp sample.env .env
       npm ci
       mkdir /workspace/log
       mongod --fork --dbpath /data/db --logpath /workspace/log/mongod.log

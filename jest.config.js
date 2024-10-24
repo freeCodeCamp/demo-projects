@@ -1,5 +1,6 @@
 const config = {
-  roots: ['./test/']
+  roots: ['./test/'],
+  setupFiles: ['dotenv/config']
 };
 
 module.exports = config;

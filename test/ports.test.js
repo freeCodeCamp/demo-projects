@@ -1,6 +1,5 @@
 // TODO: Remove eslint-disable-next-line no-undef the minute expect can be labelled as defined
 const { readdirSync } = require('fs');
-const axios = require('axios');
 const { join } = require('path');
 const portMap = require('../port-map.json');
 
@@ -9,6 +8,8 @@ const portMap = require('../port-map.json');
 const names = readdirSync(join(__dirname, '../apps')).filter(
   name => !/(^|\/)\.[^/.]/g.test(name) && name !== 'nightlife-coordination-app'
 );
+
+const { baseUrl } = require('./jest-utils.js');
 
 describe('portMap', () => {
   it('should have unique ports', () => {
@@ -35,10 +36,11 @@ describe('Project statuses', () => {
 
   for (const name of projectNames) {
     const portNum = portMap[name];
+    const BASE_URL = baseUrl(portNum);
 
     it(`${name} should be running on port ${portNum}`, async () => {
       try {
-        const response = await axios.get(`http://localhost:${portNum}`);
+        const response = await fetch(BASE_URL);
 
         // eslint-disable-next-line no-undef
         expect(response.status).toBe(200);
@@ -49,9 +51,7 @@ describe('Project statuses', () => {
     });
     it(`Pinging ${name} should return a status code of 200 `, async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:${portNum}/status/ping`
-        );
+        const response = await fetch(new URL('/status/ping', BASE_URL));
 
         // eslint-disable-next-line no-undef
         expect(response.status).toBe(200);
