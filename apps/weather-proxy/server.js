@@ -2,6 +2,7 @@ require('dotenv').config();
 var request = require('request');
 var path = require('path');
 var imgLinks = require('./data/imgLinks.json');
+var cities = require('./data/cities.json');
 var express = require('express');
 var app = express();
 
@@ -48,6 +49,18 @@ app.get('/status/ping', (req, res) => {
 });
 
 app.use('/images', express.static('images'));
+
+app.get('/api/city/:city', function (req, res) {
+  const city = req.params.city.toLocaleLowerCase();
+
+  if (cities[city]) {
+    res.status(200).json(cities[city]);
+  } else {
+    res.status(404).json({
+      error: `Weather information for city '${city}' not found.`
+    });
+  }
+});
 
 app.get('/api/current', function (req, res) {
   var longitude = req.query.lon;
