@@ -12,7 +12,7 @@ export const getPokemonEndpointResources = async (req, res, next) => {
         'Fetching all resources for the Pokémon endpoint from PokéAPI'
       );
       const host = req.get('host');
-      const protocol = host.match(/localhost\:\d+/) ? 'http' : 'https';
+      const protocol = host.match(/localhost:\d+/) ? 'http' : 'https';
       const { data } = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/?limit=9000`
       );
