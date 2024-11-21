@@ -17,32 +17,44 @@
         background-color: #ff9;
         padding: 3px;
       }
-      p.usage {
+
+      p.usage,
+      p.examples {
         display: block;
         background-color: #d0e7d0;
         padding: 15px;
         border-radius: 15px;
         max-width: 900px;
         line-height: 1.5em;
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
       }
     </style>
   </head>
   <body>
     <h2>freeCodeCamp Weather API Passthrough</h2>
     <p class="usage">
-      USAGE:<br />
-      Use the endpoint:
-      <code>https://weather-proxy.freecodecamp.rocks/</code>. Use this endpoint
-      to get the weather at a location. To prevent abuses this server accepts
-      <code>GET</code> requests only, and serves only the route
-      <code>/api/current?lon=:longitude&lat=:latitude</code>. Images links are
-      included in the JSON under <code>weather[0].icon</code>. This is enough to
-      complete the challenge.
-      <br />
-      Example:
-      <br />
-      Request:
+      <strong>Usage:</strong><br />
+      Use <code>https://weather-proxy.freecodecamp.rocks/</code> to get weather
+      information for a location in JSON format. This server only accepts
+      <code>GET</code> requests, and only serves the routes
+      <code>/api/city/:city</code> and
+      <code>/api/current?lon=:longitude&lat=:latitude</code>.
+    </p>
+
+    <p class="examples">
+      <strong>Example Requests:</strong><br />
+      <a
+        href="https://weather-proxy.freecodecamp.rocks/api/city/new york"
+        target="_blank"
+        ><code
+          >https://weather-proxy.freecodecamp.rocks/api/city/new york</code
+        ></a
+      ><br />
+      This endpoint does not return the current weather and the only available
+      cities for this endpoint are <code>New York</code>, <code>Chicago</code>,
+      <code>Los Angeles</code>, <code>Tokyo</code>, and
+      <code>London</code>.<br />
+      To get the current weather for any location use:<br />
       <a
         href="https://weather-proxy.freecodecamp.rocks/api/current?lat=35&lon=139"
         target="_blank"
@@ -51,7 +63,10 @@
         ></a
       >
       <br />
-      Response:
+    </p>
+
+    <p class="examples">
+      <strong>Example Response:</strong><br />
       <code>
         { "coord": { "lon": 139, "lat": 35 }, "weather": [ { "id": 801, "main":
         "Clouds", "description": "few clouds", "icon":
@@ -61,8 +76,10 @@
         "wind": { "speed": 1.34, "deg": 177, "gust": 2.68 }, "clouds": { "all":
         16 }, "dt": 1597922946, "sys": { "type": 3, "id": 2019346, "country":
         "JP", "sunrise": 1597867673, "sunset": 1597915636 }, "timezone": 32400,
-        "id": 1851632, "name": "Shuzenji", "cod": 200 }
-      </code>
+        "id": 1851632, "name": "Shuzenji", "cod": 200 } </code
+      ><br />
+      Images links are included in the JSON under <code>weather[0].icon</code>.
+      This is enough to complete the challenge.
     </p>
     <script>
       (function (i, s, o, g, r, a, m) {
