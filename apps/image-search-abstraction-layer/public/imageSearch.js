@@ -37,16 +37,20 @@ function updateURL() {
   var queryTest = /\S/;
 
   if (selected == 'query' && queryTest.test(queryValue)) {
-    url += 'query/' + queryValue + '?page=' + pageValue;
+    url +=
+      'query/' +
+      encodeURIComponent(queryValue) +
+      '?page=' +
+      encodeURIComponent(pageValue);
     if (sizeValue != 'All') {
-      url += '&size=' + sizeValue;
+      url += '&size=' + encodeURIComponent(sizeValue);
     }
   }
   if (selected == 'recent') {
     url += 'recent/';
   }
 
-  urlDiv.innerHTML = url;
+  urlDiv.textContent = url;
   urlDiv.setAttribute('href', url);
 }
 
