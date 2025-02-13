@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG Creatures Proxy</title>
+    <meta
+      name="description"
+      content="A utility API proxy for the freeCodeCamp curriculum"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>RPG Creatures Proxy</h1>
+      <div class="usage">
+        <h2>Usage</h2>
+        <p>
+          Use the endpoint
+          <code
+            >https://rpg-creatures-proxy.freecodecamp.rocks/api/creatures</code
+          >
+          to see a list of all valid creature names and id numbers.
+        </p>
+        <p>
+          Use the endpoint
+          <code
+            >https://rpg-creatures-proxy.freecodecamp.rocks/api/creatures/{name-or-id}</code
+          >
+          to get data for a creature, where <code>{name-or-id}</code> is the
+          creature's name or id number.
+        </p>
+        <h2>Example Requests</h2>
+        <p>Click any of the example requests below to see its response.</p>
+        <h3>All valid Creatures:</h3>
+        <ul>
+          <li>
+            <a href="/api/creatures" target="_blank" rel="noreferrer noopener"
+              ><code
+                >https://rpg-creatures-proxy.freecodecamp.rocks/api/creatures</code
+              ></a
+            >
+          </li>
+        </ul>
+        <h3>Pyrolynx:</h3>
+        <ul>
+          <li>
+            <a
+              href="/api/creatures/pyrolynx"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><code
+                >https://rpg-creatures-proxy.freecodecamp.rocks/api/creatures/pyrolynx</code
+              ></a
+            >
+          </li>
+          <li>
+            <a
+              href="/api/creatures/1"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <code
+                >https://rpg-creatures-proxy.freecodecamp.rocks/api/creatures/1</code
+              >
+            </a>
+          </li>
+        </ul>
+        <h3>Available Creatures:</h3>
+        <div class="tables-wrap">
+          <table tabindex="0">
+            <caption class="sr-only">
+              List of available creatures 1 through 10
+            </caption>
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Pyrolynx</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Aquoroc</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Voltadon</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Floraspine</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Cryostag</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Terradon</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Emberapod</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Lunaclaw</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Quillquake</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Mystifin</td>
+              </tr>
+            </tbody>
+          </table>
+          <table tabindex="0">
+            <caption class="sr-only">
+              List of available creatures 11 through 20
+            </caption>
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>11</td>
+                <td>Dracilume</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Thornaconda</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Frostbyte</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Graviboa</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Zephyreon</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>Blazebore</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Brontogale</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>Shadeelisk</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>Titanule</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>Faegis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
