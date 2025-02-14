@@ -1,5 +1,5 @@
 {
-  "name": "rpg-creatures-search-app",
+  "name": "rpg-creature-search-app",
   "version": "0.0.1",
   "description": "JavaScript Algorithms and Data Structures project for freeCodeCamp",
   "main": "server.js",
