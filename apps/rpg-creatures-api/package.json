@@ -1,7 +1,7 @@
 {
-  "name": "rpg-creatures-proxy",
+  "name": "rpg-creatures-api",
   "version": "1.0.0",
-  "description": "RPG Creatures Proxy",
+  "description": "RPG Creatures API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

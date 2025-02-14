@@ -10,7 +10,7 @@ const creatureCase = creature =>
 
 router.get('/creatures', (req, res) => res.json(minCreatures));
 
-router.get('/creatures/:creatureNameOrId', (req, res) => {
+router.get('/creature/:creatureNameOrId', (req, res) => {
   const { creatureNameOrId } = req.params;
 
   const creatureFound = creatures.find(
