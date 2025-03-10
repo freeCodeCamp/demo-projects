@@ -18,8 +18,7 @@ const getCreature = async () => {
   try {
     const creatureNameOrId = searchInput.value.toLowerCase();
     const response = await fetch(
-      `http://localhost:3111/api/creature/${creatureNameOrId}`
-      // `https://rpg-creatures-api.freecodecamp.rocks/api/creature/${creatureNameOrId}`
+      `https://rpg-creatures-api.freecodecamp.rocks/api/creature/${creatureNameOrId}`
     );
     const data = await response.json();
 
