@@ -14,6 +14,7 @@
     "create-caddyfile": "node scripts/create-caddyfile.js",
     "start": "docker compose up -d",
     "stop": "docker compose down",
+    "format": "prettier --write .",
     "prepare": "husky install",
     "test": "jest"
   },
