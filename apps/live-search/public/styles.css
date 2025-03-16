@@ -1,0 +1,12 @@
+#search-container {
+  width: 300px;
+  margin: auto;
+}
+.result-item {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+.result-item:hover {
+  background-color: #f0f0f0;
+}
