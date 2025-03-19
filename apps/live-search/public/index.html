@@ -3,16 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <title>Live Search</title>
+    <meta
+      name="description"
+      content="A utility API proxy for the freeCodeCamp curriculum"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="search-container">
-      <h1>Search for fruits...</h1>
-      <input id="search-input" type="text" placeholder="Search for fruits..." />
-      <div id="results"></div>
-    </div>
-
-    <script src="script.js"></script>
+    <main>
+      <h1>Live Search API</h1>
+      <div class="usage">
+        <h2>Usage</h2>
+        <p>
+          Use the endpoint
+          <code>https://live-search.freecodecamp.rocks/api/?q={query}</code>
+          to filter through fruits, where <code>query</code> is your query
+          parameter.
+        </p>
+        <h2>Example Requests</h2>
+        <ul>
+          <li>
+            <a href="/api/pokemon" target="_blank" rel="noreferrer noopener"
+              ><code>https://live-search.freecodecamp.rocks/api/?q=a</code></a
+            >
+            <span
+              ><b>:</b> returns a list of fruits containing the letter
+              <code>a</code></span
+            >
+          </li>
+          <li>
+            <a href="/api/pokemon" target="_blank" rel="noreferrer noopener"
+              ><code
+                >https://live-search.freecodecamp.rocks/api/?q=berry</code
+              ></a
+            >
+            <span
+              ><b>:</b> returns a list of fruits containing the letters
+              <code>berry</code></span
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
   </body>
 </html>
