@@ -7,13 +7,14 @@
   },
   "description": "Example projects for the freeCodeCamp.org curriculum",
   "scripts": {
-    "lint": "eslint apps test --max-warnings 0 && prettier apps test --check",
+    "lint": "eslint apps test --max-warnings 0 && prettier --check .",
     "prebuild": "npm run create-caddyfile && node scripts/copy-dockerignore.js",
     "prestart": "npm run create-caddyfile && node scripts/copy-dockerignore.js",
     "build": "docker compose build",
     "create-caddyfile": "node scripts/create-caddyfile.js",
     "start": "docker compose up -d",
     "stop": "docker compose down",
+    "format": "prettier --write .",
     "prepare": "husky install",
     "test": "jest"
   },
