@@ -20,7 +20,7 @@
   "devDependencies": {
     "chai": "4.4.1",
     "chai-as-promised": "7.1.2",
-    "chai-dom": "1.12.0",
+    "chai-dom": "1.12.1",
     "chai-http": "4.4.0",
     "mocha": "9.2.2"
   },
