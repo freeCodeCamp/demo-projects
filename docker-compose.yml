@@ -371,6 +371,28 @@ services:
     ports:
       - 50110:3000
 
+  rpg-creature-api:
+    container_name: rpg-creature-api
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/rpg-creature-api
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50350:3000
+
+  rpg-creature-search-app:
+    container_name: rpg-creature-search-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/rpg-creature-search-app
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50360:3000
+
   roman-numeral-converter:
     container_name: roman-numeral-converter
     restart: unless-stopped
