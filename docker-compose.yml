@@ -226,13 +226,13 @@ services:
     ports:
       - 50075:3000
 
-  live-search:
-    container_name: live-search
+  fruit-search:
+    container_name: fruit-search
     restart: unless-stopped
     networks:
       - proxy
     build:
-      context: ./apps/live-search
+      context: ./apps/fruit-search
       dockerfile: ../../shared.Dockerfile
     ports:
       - 50080:3000
