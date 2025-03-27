@@ -226,6 +226,17 @@ services:
     ports:
       - 50075:3000
 
+  fruit-search:
+    container_name: fruit-search
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/fruit-search
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50080:3000
+
   manage-a-book-trading-club:
     container_name: manage-a-book-trading-club
     restart: unless-stopped

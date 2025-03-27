@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Search</title>
+    <meta
+      name="description"
+      content="A utility API proxy for the freeCodeCamp curriculum"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Fruit Search API</h1>
+      <div class="usage">
+        <h2>Usage</h2>
+        <p>
+          Use the endpoint
+          <code
+            >https://fruit-search.freecodecamp.rocks/api/fruits?q={query}</code
+          >
+          to filter through fruits, where <code>query</code> is your query
+          parameter.
+        </p>
+        <h2>Example Requests</h2>
+        <ul>
+          <li>
+            <a href="/api/fruits?q=a" target="_blank" rel="noreferrer noopener">
+              <code
+                >https://fruit-search.freecodecamp.rocks/api/fruits?q=a</code
+              ></a
+            >
+            <span
+              >returns a list of fruits containing the letter
+              <code>a</code>.</span
+            >
+          </li>
+          <li>
+            <a
+              href="/api/fruits?q=berry"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <code
+                >https://fruit-search.freecodecamp.rocks/api/?q=berry</code
+              ></a
+            >
+            <span
+              >returns a list of fruits containing the word
+              <code>berry</code>.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
