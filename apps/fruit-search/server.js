@@ -6,9 +6,13 @@ const fruitRoutes = require('./app/routes/fruitRoutes');
 
 const app = express();
 app.use(cors());
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(process.cwd(), 'public')));
+
+app.get('/status/ping', (req, res) => {
+  res.send({ msg: 'pong' }).status(200);
+});
 
 app.use('/api', fruitRoutes);
 
