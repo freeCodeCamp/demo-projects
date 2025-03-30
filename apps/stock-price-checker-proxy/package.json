@@ -11,7 +11,7 @@
     "axios": "1.8.4",
     "cors": "2.8.5",
     "dotenv": "14.3.2",
-    "express": "4.19.2"
+    "express": "4.21.2"
   },
   "repository": {
     "url": "https://stock-price-checker-proxy.freecodecamp.rocks"
