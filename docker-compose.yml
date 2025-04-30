@@ -338,17 +338,6 @@ services:
     ports:
       - 50400:3000
 
-  pokemon-search-app:
-    container_name: pokemon-search-app
-    restart: unless-stopped
-    networks:
-      - proxy
-    build:
-      context: ./apps/pokemon-search-app
-      dockerfile: ../../shared.Dockerfile
-    ports:
-      - 50340:3000
-
   product-landing-page:
     container_name: product-landing-page
     restart: unless-stopped
