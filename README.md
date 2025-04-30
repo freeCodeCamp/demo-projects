@@ -23,6 +23,7 @@
   - [Example Project](https://technical-documentation-page.freecodecamp.rocks/)
 
 - Personal Portfolio
+
   - [Project Description](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
   - [Example Project](https://personal-portfolio.freecodecamp.rocks/)
 
@@ -48,10 +49,10 @@
   - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/cash-register-project/build-a-cash-register)
   - [Example Project](https://cash-register.freecodecamp.rocks/)
 
-- Pokémon Search App
+- RPG Creature Search App
 
-  - [Project Description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/pokemon-search-app-project/build-a-pokemon-search-app)
-  - [Example Project](https://pokemon-search-app.freecodecamp.rocks/)
+  - [Project Description](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app)
+  - [Example Project](https://rpg-creature-search-app.freecodecamp.rocks/)
 
 ## Data Visualization
 
@@ -71,9 +72,12 @@
   - [Example Project](https://heat-map.freecodecamp.rocks/)
 
 - Choropleth Map
+
   - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map)
   - [Example Project](https://choropleth-map.freecodecamp.rocks/)
+
 - Treemap Diagram
+
   - [Project Description](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
   - [Example Project](https://treemap-diagram.freecodecamp.rocks/)
 
@@ -100,6 +104,7 @@
   - [Example project](https://exercise-tracker.freecodecamp.rocks/)
 
 - File Metadata
+
   - [Project description](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/file-metadata-microservice)
   - [Example project](https://file-metadata-microservice.freecodecamp.rocks/)
 
@@ -126,6 +131,7 @@
   - [Example project](https://sudoku-solver.freecodecamp.rocks/)
 
 - American British Translator
+
   - [Project description](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
   - [Example project](https://american-british-translator.freecodecamp.rocks/)
 
@@ -142,6 +148,7 @@
   - [Example project](https://anonymous-message-board.freecodecamp.rocks/)
 
 - Secure Real Time Multiplayer Game
+
   - [Project description](https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game)
   - [Example project](https://secure-real-time-multiplayer-game.freecodecamp.rocks/)
 
@@ -173,6 +180,7 @@
   - [Example project](https://manage-a-book-trading-club.freecodecamp.rocks/)
 
 - Voting App
+
   - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-voting-app)
   - [Landing page](https://voting-app.freecodecamp.rocks/)
 
@@ -180,12 +188,13 @@
 
 ### Main Curriculum
 
-- PokéAPI Proxy
+- RPG Creature API
 
-  - [Project description](https://www.freecodecamp.org/learn/2022/javascript-algorithms-and-data-structures/pokemon-search-app-project/build-a-pokemon-search-app)
-  - [Landing page](https://pokeapi-proxy.freecodecamp.rocks/)
+  - [Project description](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app)
+  - [Landing page](https://rpg-creature-api.freecodecamp.rocks/)
 
 - Stock Price Checker Proxy
+
   - [Project description](https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker)
   - [Landing page](https://stock-price-checker-proxy.freecodecamp.rocks/)
 
@@ -202,5 +211,6 @@
   - [Landing page](https://weather-proxy.freecodecamp.rocks/)
 
 - Use the Twitch JSON API Proxy
+
   - [Project description](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/use-the-twitch-json-api)
   - [Landing page](https://twitch-proxy.freecodecamp.rocks/)
