@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "7.27.1",
-    "@babel/preset-env": "7.27.1",
+    "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-commonjs": "21.1.0",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.27.1",
-    "@babel/preset-env": "7.27.1",
+    "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-commonjs": "23.0.7",
