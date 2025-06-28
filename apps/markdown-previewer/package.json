@@ -9,7 +9,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "dotenv": "16.0.0",
+    "dotenv": "16.6.1",
     "express": "4.21.2"
   },
   "devDependencies": {
