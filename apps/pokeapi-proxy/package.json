@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "1.10.0",
     "cors": "2.8.5",
-    "dotenv": "16.3.1",
+    "dotenv": "16.6.1",
     "express": "4.21.2",
     "node-cache": "5.1.2"
   }
