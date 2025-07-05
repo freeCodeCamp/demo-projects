@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Card API</title>
+    <meta
+      name="description"
+      content="A utility API for the freeCodeCamp curriculum"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Magic Card API</h1>
+      <div class="usage">
+        <h2>Usage</h2>
+        <p>
+          Use the endpoint
+          <code>https://magic-tcg-api.freecodecamp.rocks/api/cards</code>
+          to see a list of all valid magic card names and ID numbers.
+        </p>
+        <p>
+          Use the endpoint
+          <code
+            >https://magic-tcg-api.freecodecamp.rocks/api/cards/{name-or-id}</code
+          >
+          to get data for a card, where <code>{name-or-id}</code> is the card's
+          name or ID number.
+        </p>
+        <h2>Example Requests</h2>
+        <p>Click any of the example requests below to see its response.</p>
+        <h3>All valid Cards:</h3>
+        <ul>
+          <li>
+            <a href="/api/cards" target="_blank" rel="noreferrer noopener"
+              ><code
+                >https://magic-tcg-api.freecodecamp.rocks/api/cards</code
+              ></a
+            >
+          </li>
+        </ul>
+        <h3>Ancestor's Chosen:</h3>
+        <ul>
+          <li>
+            <a
+              href="/api/cards/Ancestor's Chosen"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><code
+                >https://magic-tcg-api.freecodecamp.rocks/api/cards/Ancestor's
+                Chosen</code
+              ></a
+            >
+          </li>
+        </ul>
+        <h3>Available Cards:</h3>
+        <div class="tables-wrap">
+          <table tabindex="0">
+            <caption class="sr-only">
+              List of available cards 1 through 10
+            </caption>
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5f8287b1-5bb6-5f4c-ad17-316a40d5bb0c</td>
+                <td>Ancestor's Chosen</td>
+              </tr>
+              <tr>
+                <td>57aaebc1-850c-503d-9f6e-bb8d00d8bf7c</td>
+                <td>Angel Of Mercy</td>
+              </tr>
+              <tr>
+                <td>c5655330-5131-5f40-9d3e-0549d88c6e9e</td>
+                <td>Angelic Blessing</td>
+              </tr>
+              <tr>
+                <td>55bd38ca-dc73-5c06-8f80-a6ddd2f44382</td>
+                <td>Angelic Chorus</td>
+              </tr>
+              <tr>
+                <td>60b93108-8790-591b-844e-c3d311698767</td>
+                <td>Angelic Wall</td>
+              </tr>
+              <tr>
+                <td>fac6ad26-f8c2-51bd-9f6a-a1b0940b4cef</td>
+                <td>Aura of Silence</td>
+              </tr>
+              <tr>
+                <td>6adaf14d-43e3-521a-adf1-960c808e5b1a</td>
+                <td>Aven Cloudchaser</td>
+              </tr>
+              <tr>
+                <td>a69b404f-144a-5317-b10e-7d9dce135b24</td>
+                <td>Ballista Squad</td>
+              </tr>
+              <tr>
+                <td>6d268c95-c176-5766-9a46-c14f739aba1c</td>
+                <td>Bandage</td>
+              </tr>
+              <tr>
+                <td>56f4935b-f6c5-59b9-88bf-9bcce20247ce</td>
+                <td>Beacon of Immortality</td>
+              </tr>
+            </tbody>
+          </table>
+          <table tabindex="0">
+            <caption class="sr-only">
+              List of available cards 11 through 20
+            </caption>
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0d2a4e1d-cc12-5675-8044-9a7bc7d60050</td>
+                <td>Benalish Knight</td>
+              </tr>
+              <tr>
+                <td>81daea6a-2735-5a46-a2da-b65a2ad5738f</td>
+                <td>Cho-Manno, Revolutionary</td>
+              </tr>
+              <tr>
+                <td>7fef665c-36a1-5f7a-9299-cf8938708710</td>
+                <td>Condemn</td>
+              </tr>
+              <tr>
+                <td>2f9c211e-1869-5b3f-94ea-f73b7910a5af</td>
+                <td>Demystify</td>
+              </tr>
+              <tr>
+                <td>668c64a2-cecb-5f48-af16-d7a64814d3e7</td>
+                <td>Field Marshal</td>
+              </tr>
+              <tr>
+                <td>d68306e2-9877-5987-84b3-12b8234c8eec</td>
+                <td>Ghost Warden</td>
+              </tr>
+              <tr>
+                <td>c19bcfc2-fc10-5040-8239-1c193098df47</td>
+                <td>Hail of Arrows</td>
+              </tr>
+              <tr>
+                <td>36fcaa1e-64e3-56e3-950c-907db167e41f</td>
+                <td>Heart of Light</td>
+              </tr>
+              <tr>
+                <td>60f49caf-3583-5f85-b4b3-08dca73a8628</td>
+                <td>High Ground</td>
+              </tr>
+              <tr>
+                <td>02e23fa1-b2f0-528c-b331-12a0c27bc5eb</td>
+                <td>Holy Day</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
