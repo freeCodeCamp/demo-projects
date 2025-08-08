@@ -124,6 +124,17 @@ services:
     ports:
       - 50037:3000
 
+  dnd-monster-api:
+    container_name: dnd-monster-api
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/dnd-monster-api
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50410:3000
+
   drum-machine:
     container_name: drum-machine
     restart: unless-stopped
