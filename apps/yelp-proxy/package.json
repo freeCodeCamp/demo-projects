@@ -1,0 +1,21 @@
+{
+  "name": "fcc-yelp-api-passthrough",
+  "version": "2.0.0",
+  "description": "fCC Yelp API passthrough server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@seald-io/nedb": "2.2.2",
+    "cors": "2.8.5",
+    "dotenv": "14.3.2",
+    "express": "5.0.0-beta.3",
+    "node-cron": "3.0.3",
+    "node-fetch": "3.3.0",
+    "request": "2.88.2",
+    "winston": "3.12.0",
+    "winston-daily-rotate-file": "3.10.0"
+  },
+  "license": "MIT"
+}
