@@ -100,6 +100,17 @@ services:
     ports:
       - 50330:3000
 
+  cat-facts-api:
+    container_name: cat-facts-api
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/cat-facts-api
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50410:3000
+
   chart-the-stock-market:
     container_name: chart-the-stock-market
     restart: unless-stopped
