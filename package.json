@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.10",
-    "axios": "1.12.2",
+    "axios": "1.13.1",
     "eslint-config-prettier": "8.10.2",
     "eslint-plugin-react": "7.37.4",
     "husky": "8.0.3",
