@@ -1,34 +1,34 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 let notes = [
-    {
-        id: 1,
-        content: "HTML is easy",
-        date: "2023-1-1",
-        important: true
-    },
-    {
-        id: 2,
-        content: "Browser can execute only JavaScript",
-        date: "2023-1-2",
-        important: false
-    },
-    {
-        id: 3,
-        content: "GET and POST are the most important methods of HTTP protocol",
-        date: "2023-1-3",
-        important: true
-    }
-]
+  {
+    id: 1,
+    content: 'HTML is easy',
+    date: '2023-1-1',
+    important: true
+  },
+  {
+    id: 2,
+    content: 'Browser can execute only JavaScript',
+    date: '2023-1-2',
+    important: false
+  },
+  {
+    id: 3,
+    content: 'GET and POST are the most important methods of HTTP protocol',
+    date: '2023-1-3',
+    important: true
+  }
+];
 
-const getFrontPageHtml = (noteCount) => {
-    return `
+const getFrontPageHtml = noteCount => {
+  return `
     <!DOCTYPE html>
     <html>
       <head>
@@ -55,11 +55,11 @@ const getFrontPageHtml = (noteCount) => {
         </div>
       </body>
     </html>
-  `
-}
+  `;
+};
 
 const getNotesPageHtml = () => {
-    return `
+  return `
     <!DOCTYPE html>
     <html>
       <head>
@@ -101,40 +101,40 @@ const getNotesPageHtml = () => {
         <script src="form-handler.js"></script>
       </body>
     </html>
-  `
-}
+  `;
+};
 
 app.get('/', (req, res) => {
-    const page = getFrontPageHtml(notes.length)
-    res.send(page)
-})
+  const page = getFrontPageHtml(notes.length);
+  res.send(page);
+});
 
 app.get('/notes', (req, res) => {
-    const page = getNotesPageHtml()
-    res.send(page)
-})
+  const page = getNotesPageHtml();
+  res.send(page);
+});
 
 app.get('/data.json', (req, res) => {
-    res.json(notes)
-})
+  res.json(notes);
+});
 
 app.post('/get_notes', (req, res) => {
-    const localNotes = req.body.localNotes || []
-    const allNotes = notes.concat(localNotes)
-    res.json(allNotes)
-})
+  const localNotes = req.body.localNotes || [];
+  const allNotes = notes.concat(localNotes);
+  res.json(allNotes);
+});
 
 app.post('/new_note', (req, res) => {
-    const note = req.body.note
+  const note = req.body.note;
 
-    if (note) {
-        console.log('Note received (not saved to server):', note)
-    }
+  if (note) {
+    console.log('Note received (not saved to server):', note);
+  }
 
-    res.redirect('/notes')
-})
+  res.redirect('/notes');
+});
 
-const PORT = 3001
+const PORT = 3001;
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`)
-})
+  console.log(`Server running on http://localhost:${PORT}`);
+});
