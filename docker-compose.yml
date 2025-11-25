@@ -248,6 +248,17 @@ services:
     ports:
       - 50080:3000
 
+  full-stack-open-notes-app:
+    container_name: full-stack-open-notes-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/full-stack-open-notes-app
+      dockerfile: ../../shared.Dockerfile
+    ports:
+      - 50085:3000
+
   manage-a-book-trading-club:
     container_name: manage-a-book-trading-club
     restart: unless-stopped
