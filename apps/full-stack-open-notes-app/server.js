@@ -6,6 +6,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
+app.get('/status/ping', (req, res) => {
+  res.status(200).send({ msg: 'pong' });
+});
+
 let notes = [
   {
     id: 1,
