@@ -54,6 +54,17 @@ class Calculator extends React.Component {
   handleEvaluate() {
     if (!this.state.currentVal.includes('Limit')) {
       let expression = this.state.formula;
+      if (
+        expression === '' ||
+        isOperator.test(expression[0]) ||
+        endsWithOperator.test(expression)
+      ) {
+        this.setState({
+          currentVal: 'Invalid Input',
+          formula: ''
+        });
+        return;
+      }
       while (endsWithOperator.test(expression)) {
         expression = expression.slice(0, -1);
       }
@@ -61,20 +72,28 @@ class Calculator extends React.Component {
         .replace(/x/g, '*')
         .replace(/-/g, '-')
         .replace('--', '-');
-      let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
-      this.setState({
-        currentVal: answer.toString(),
-        formula:
-          expression
-            .replace(/\*/g, '⋅')
-            .replace(/-/g, '-')
-            .replace(/(x|\/|\+)-/, '$1-')
-            .replace(/^-/, '-') +
-          '=' +
-          answer,
-        prevVal: answer,
-        evaluated: true
-      });
+      try {
+        let answer =
+          Math.round(1000000000000 * eval(expression)) / 1000000000000;
+        this.setState({
+          currentVal: answer.toString(),
+          formula:
+            expression
+              .replace(/\*/g, '⋅')
+              .replace(/-/g, '-')
+              .replace(/(x|\/|\+)-/, '$1-')
+              .replace(/^-/, '-') +
+            '=' +
+            answer,
+          prevVal: answer,
+          evaluated: true
+        });
+      } catch (e) {
+        this.setState({
+          currentVal: 'Invalid Input',
+          formula: ''
+        });
+      }
     }
   }
 
