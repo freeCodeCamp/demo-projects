@@ -30,7 +30,7 @@
     "connect-mongo": "3.2.0",
     "cookie-parser": "1.4.7",
     "dotenv": "14.3.2",
-    "express": "4.21.2",
+    "express": "4.22.1",
     "express-session": "1.18.2",
     "font-awesome": "4.7.0",
     "helmet": "3.23.3",
