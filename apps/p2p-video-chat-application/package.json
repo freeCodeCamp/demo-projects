@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "dotenv": "14.3.2",
-    "express": "4.21.2",
+    "express": "4.22.1",
     "jquery": "3.7.1",
     "simple-peer": "9.11.1",
     "socket.io": "4.8.1"
