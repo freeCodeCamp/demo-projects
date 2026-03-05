@@ -16,7 +16,7 @@
     "express": "4.21.2",
     "mocha": "9.2.2",
     "mongodb": "3.7.4",
-    "mongoose": "5.13.22"
+    "mongoose": "6.13.6"
   },
   "repository": {
     "type": "git",
