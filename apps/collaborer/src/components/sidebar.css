@@ -29,14 +29,22 @@
   text-decoration: none;
 }
 
-.org-switcher summary {
-  cursor: pointer;
-  list-style: none;
+.org-switcher summary,
+.org-current {
   padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--quaternary-background);
   border-radius: var(--radius-sm);
   font-size: var(--text-size-sm);
   font-weight: 700;
+}
+
+.org-switcher summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.org-current {
+  margin: 0;
 }
 
 .org-switcher summary::-webkit-details-marker {

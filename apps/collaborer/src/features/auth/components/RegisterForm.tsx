@@ -66,6 +66,8 @@ export function RegisterForm({ redirectTo }: RegisterFormProps) {
       window.location.href = redirectTo ?? '/dashboard';
     } catch (error) {
       if (error instanceof ApiError && error.details) {
+        // Field-level messages below are already enough to act on — a
+        // generic banner on top of them would just be noise.
         const nextFieldErrors: FieldErrors = {};
         for (const detail of error.details) {
           if (isFieldName(detail.path)) {
@@ -73,12 +75,13 @@ export function RegisterForm({ redirectTo }: RegisterFormProps) {
           }
         }
         setFieldErrors(nextFieldErrors);
+      } else {
+        setFormError(
+          error instanceof ApiError
+            ? error.message
+            : 'Something went wrong. Please try again.'
+        );
       }
-      setFormError(
-        error instanceof ApiError
-          ? error.message
-          : 'Something went wrong. Please try again.'
-      );
       setSubmitting(false);
     }
   }

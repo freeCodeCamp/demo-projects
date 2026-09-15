@@ -16,6 +16,7 @@
 }
 
 .form-input {
+  width: 100%;
   font: inherit;
   font-size: var(--text-size-sm);
   padding: var(--space-sm) var(--space-md);
@@ -41,6 +42,41 @@
 
 .form-required-mark {
   color: var(--danger-color);
+}
+
+.form-input-group {
+  position: relative;
+  display: flex;
+}
+
+.form-input-group .form-input {
+  flex: 1;
+  padding-right: var(--space-2xl);
+}
+
+.form-input-toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--space-sm);
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  font: inherit;
+  font-size: var(--text-size-sm);
+  font-weight: 700;
+  color: var(--highlight-color);
+  cursor: pointer;
+}
+
+.form-input-toggle:focus-visible {
+  outline: var(--border-focus);
+  outline-offset: 1px;
+}
+
+.form-input-toggle[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .form-error {

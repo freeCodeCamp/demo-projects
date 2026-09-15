@@ -40,9 +40,7 @@ export function ProfilePage() {
   }
   if (session.status === 'unauthenticated') {
     if (typeof window !== 'undefined') {
-      window.location.href = `/login?redirect=${encodeURIComponent(
-        window.location.pathname
-      )}`;
+      window.location.href = `/login?redirect=${encodeURIComponent(window.location.pathname)}`;
     }
     return <></>;
   }
@@ -102,7 +100,6 @@ export function ProfilePage() {
   return (
     <div>
       <section>
-        <h2>Profile</h2>
         <form className='form' onSubmit={handleSaveProfile} noValidate>
           <Alert variant='error'>{profileError}</Alert>
           <Alert variant='success' onDismiss={() => setProfileSuccess(false)}>

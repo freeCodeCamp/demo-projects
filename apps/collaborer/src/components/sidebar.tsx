@@ -79,23 +79,31 @@ export function Sidebar() {
           </a>
         </div>
 
-        {orgState.status === 'ready' && (
-          <details className='org-switcher'>
-            <summary>{orgState.current.name}</summary>
-            <div className='org-switcher-menu'>
-              {orgState.organizations.map(org => (
-                <button
-                  key={org.id}
-                  type='button'
-                  className='org-switcher-item'
-                  onClick={() => orgState.setCurrent(org.id)}
-                >
-                  {org.name}
-                </button>
-              ))}
-            </div>
-          </details>
-        )}
+        {orgState.status === 'ready' &&
+          (orgState.organizations.length > 1 ? (
+            <details className='org-switcher'>
+              <summary>{orgState.current.name}</summary>
+              <div className='org-switcher-menu'>
+                {orgState.organizations
+                  .filter(org => org.id !== orgState.current.id)
+                  .map(org => (
+                    <button
+                      key={org.id}
+                      type='button'
+                      className='org-switcher-item'
+                      onClick={() => orgState.setCurrent(org.id)}
+                    >
+                      {org.name}
+                    </button>
+                  ))}
+              </div>
+            </details>
+          ) : (
+            // Nothing to switch to with only one organization — a dropdown
+            // that only ever shows the org you're already on reads as a
+            // broken toggle, not a disabled feature.
+            <p className='org-current'>{orgState.current.name}</p>
+          ))}
 
         <form
           className='sidebar-search'
@@ -120,9 +128,7 @@ export function Sidebar() {
             <a
               key={link.href}
               href={link.href}
-              className={`sidebar-link ${
-                pathname === link.href ? 'sidebar-link-active' : ''
-              }`}
+              className={`sidebar-link ${pathname === link.href ? 'sidebar-link-active' : ''}`}
               aria-current={pathname === link.href ? 'page' : undefined}
             >
               {link.label}
