@@ -1,0 +1,11 @@
+dist
+node_modules
+.env
+
+server/data/
+server/storage/*
+!server/storage/.gitkeep
+server/storage-test/
+*.db
+*.db-wal
+*.db-shm

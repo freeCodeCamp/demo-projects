@@ -1,0 +1,15 @@
+---
+import AppLayout from '../layouts/app-layout.astro';
+import { AnalyticsPage } from '../features/analytics/components/AnalyticsPage';
+
+import '../styles/pages.css';
+---
+
+<AppLayout title="Analytics — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Analytics</h1>
+    </header>
+    <AnalyticsPage client:load />
+  </main>
+</AppLayout>

@@ -1,0 +1,18 @@
+---
+import AppLayout from '../../../layouts/app-layout.astro';
+import { ProjectDetailPage } from '../../../features/projects/components/ProjectDetailPage';
+
+import '../../../styles/pages.css';
+
+const { id } = Astro.params as { id: string };
+const projectId = Number(id);
+---
+
+<AppLayout title="Project — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Project</h1>
+    </header>
+    <ProjectDetailPage projectId={projectId} client:load />
+  </main>
+</AppLayout>

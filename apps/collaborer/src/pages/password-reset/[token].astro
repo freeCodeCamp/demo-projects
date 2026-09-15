@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/layout.astro';
+import { Nav } from '../../components/nav';
+import { ResetPasswordForm } from '../../features/auth/components/ResetPasswordForm';
+
+import '../../styles/pages.css';
+
+const { token } = Astro.params as { token: string };
+---
+
+<Layout title="Set a new password — Collaborer">
+  <Nav brand="Collaborer" slot="nav" client:load />
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Set a new password</h1>
+    </header>
+    <ResetPasswordForm token={token} client:load />
+  </main>
+</Layout>

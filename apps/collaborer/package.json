@@ -1,0 +1,49 @@
+{
+  "dependencies": {
+    "@astrojs/node": "^11.1.4",
+    "@astrojs/react": "^6",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/utilities": "^3.2.2",
+    "astro": "^7",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "@eslint/js": "^10",
+    "@testing-library/jest-dom": "^7",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^10",
+    "eslint-config-prettier": "^10",
+    "eslint-plugin-astro": "^1",
+    "eslint-plugin-jsx-a11y": "^6",
+    "jsdom": "^30",
+    "prettier": "^3",
+    "prettier-plugin-astro": "^0.14",
+    "typescript": "^6",
+    "typescript-eslint": "^8",
+    "vitest": "^4"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "name": "collaborer",
+  "packageManager": "pnpm@10.34.5",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev --host --ignore-lock",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "preinstall": "npx only-allow pnpm",
+    "preview": "astro preview",
+    "test": "vitest",
+    "typecheck": "astro check"
+  },
+  "type": "module",
+  "version": "0.0.1"
+}

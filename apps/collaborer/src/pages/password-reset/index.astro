@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/layout.astro';
+import { Nav } from '../../components/nav';
+import { ForgotPasswordForm } from '../../features/auth/components/ForgotPasswordForm';
+
+import '../../styles/pages.css';
+---
+
+<Layout title="Reset password — Collaborer">
+  <Nav brand="Collaborer" slot="nav" client:load />
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Reset your password</h1>
+    </header>
+    <ForgotPasswordForm client:load />
+  </main>
+</Layout>

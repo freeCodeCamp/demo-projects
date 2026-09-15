@@ -1,3 +1,7 @@
+# Collaborer formats itself independently (own prettier defaults,
+# different from the root .prettierrc)
+apps/collaborer/**
+
 # Ignore minified libraries
 apps/voting-app/public/*.min.js
 # Ignore bundles

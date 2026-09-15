@@ -1,0 +1,100 @@
+.task-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.task-detail-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.subtask-progress {
+  font-weight: 400;
+  font-size: var(--text-size-sm);
+  color: var(--quaternary-color);
+}
+
+.subtask-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-md);
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.subtask-item label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-size-sm);
+}
+
+.subtask-title-done {
+  text-decoration: line-through;
+  color: var(--quaternary-color);
+}
+
+.subtask-add-form {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.attachment-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-md);
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--quaternary-background);
+  font-size: var(--text-size-sm);
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-lg);
+}
+
+.comment-item {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.comment-header {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-size-sm);
+}
+
+.comment-author {
+  font-weight: 700;
+}
+
+.comment-body {
+  white-space: pre-wrap;
+  font-size: var(--text-size-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.comment-actions {
+  display: flex;
+  gap: var(--space-sm);
+}

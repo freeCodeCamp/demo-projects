@@ -1,0 +1,15 @@
+---
+import AppLayout from '../../layouts/app-layout.astro';
+import { SettingsPage } from '../../features/organizations/components/SettingsPage';
+
+import '../../styles/pages.css';
+---
+
+<AppLayout title="Organization settings — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Organization settings</h1>
+    </header>
+    <SettingsPage client:load />
+  </main>
+</AppLayout>

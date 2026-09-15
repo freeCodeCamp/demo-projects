@@ -1,3 +1,7 @@
+# Collaborer is TypeScript and lints itself independently
+# (apps/collaborer/eslint.config.mjs) — the root config has no TS parser
+apps/collaborer/**
+
 # Ignore minified libraries
 apps/voting-app/public/*.min.js
 # Ignore bundles

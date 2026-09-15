@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/prod.js",
+    "migrate": "tsx src/db/migrate.ts",
+    "seed": "tsx db/seeds/seed.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2",
+    "express": "^5",
+    "express-rate-limit": "^8",
+    "helmet": "^8",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.3.0",
+    "nodemailer": "^9.0.6",
+    "ws": "^8",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2",
+    "@types/express": "^5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^24",
+    "@types/nodemailer": "^8.0.1",
+    "@types/ws": "^8",
+    "tsx": "^4",
+    "typescript": "^5",
+    "vitest": "^4"
+  }
+}
