@@ -16,8 +16,6 @@
 # --- Owned by none (negate rule above) ---
 
 *.md
-package.json
-pnpm-lock.yaml
 
 # -------------------------------------------------
 # All files in the root are owned by dev team
@@ -25,7 +23,5 @@ pnpm-lock.yaml
 
 /* @freecodecamp/dev-team
 
-# --- Owned by none (negate rule above) ---
-
-/package.json
-/pnpm-lock.yaml
+package.json @freecodecamp/package-approvers
+package-lock.json @freecodecamp/package-approvers
