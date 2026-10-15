@@ -1,0 +1,17 @@
+---
+import AppLayout from '../layouts/app-layout.astro';
+import { SearchPage } from '../features/search/components/SearchPage';
+
+import '../styles/pages.css';
+
+const initialQuery = Astro.url.searchParams.get('q')?.trim() ?? '';
+---
+
+<AppLayout title="Search — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Search</h1>
+    </header>
+    <SearchPage initialQuery={initialQuery} client:load />
+  </main>
+</AppLayout>

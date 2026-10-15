@@ -1,0 +1,15 @@
+---
+import AppLayout from '../layouts/app-layout.astro';
+import { ProfilePage } from '../features/auth/components/ProfilePage';
+
+import '../styles/pages.css';
+---
+
+<AppLayout title="Profile — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Profile</h1>
+    </header>
+    <ProfilePage client:load />
+  </main>
+</AppLayout>

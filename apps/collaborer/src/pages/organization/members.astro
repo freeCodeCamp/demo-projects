@@ -1,0 +1,15 @@
+---
+import AppLayout from '../../layouts/app-layout.astro';
+import { MembersPage } from '../../features/organizations/components/MembersPage';
+
+import '../../styles/pages.css';
+---
+
+<AppLayout title="Members — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Organization members</h1>
+    </header>
+    <MembersPage client:load />
+  </main>
+</AppLayout>

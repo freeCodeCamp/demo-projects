@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/layout.astro';
+import { Nav } from '../components/nav';
+import { LoginForm } from '../features/auth/components/LoginForm';
+import { safeRedirectPath } from '../lib/utils/redirect';
+
+import '../styles/pages.css';
+
+const redirectTo = safeRedirectPath(Astro.url.searchParams.get('redirect'));
+---
+
+<Layout title="Log in — Collaborer">
+  <Nav brand="Collaborer" slot="nav" client:load />
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Log in</h1>
+    </header>
+    <LoginForm redirectTo={redirectTo} client:load />
+  </main>
+</Layout>

@@ -1,0 +1,48 @@
+.pie-chart {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.pie-chart-svg {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.pie-chart-empty {
+  fill: var(--quaternary-background);
+}
+
+/* The donut variant is a solid pie with a circle of the page's own
+   background painted over the center — simpler than drawing true ring
+   arcs, and it blends in identically since it matches body's background. */
+.pie-chart-hole {
+  fill: var(--secondary-background);
+}
+
+.pie-chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  font-size: var(--text-size-sm);
+}
+
+.pie-chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.pie-chart-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  flex-shrink: 0;
+}
