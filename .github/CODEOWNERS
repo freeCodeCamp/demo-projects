@@ -25,3 +25,5 @@
 
 package.json @freecodecamp/package-approvers
 package-lock.json @freecodecamp/package-approvers
+/renovate.json @freecodecamp/package-approvers
+/.github/CODEOWNERS @freecodecamp/package-approvers
