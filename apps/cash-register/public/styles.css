@@ -12,6 +12,7 @@
 body {
   background-color: var(--dark-blue);
   color: var(--light-gray);
+  min-width: 320px;
 }
 
 main {
@@ -98,10 +99,9 @@ label {
   display: flex;
   justify-content: space-around;
   border-radius: 35px 35px 0 0;
-  padding-top: 20px;
+  padding: 20px 0;
   background-color: #99c9ff;
-  height: 250px;
-  width: 325px;
+  min-height: 250px;
 }
 
 .btns-container {
@@ -142,7 +142,7 @@ label {
 .bottom-register {
   background-color: #99c9ff;
   height: 50px;
-  width: 325px;
+  width: 100%;
   margin-top: 10px;
 }
 
