@@ -21,6 +21,6 @@
     "@rollup/plugin-node-resolve": "15.3.1",
     "@rollup/plugin-replace": "5.0.7",
     "@rollup/plugin-terser": "0.2.0",
-    "rollup": "2.79.2"
+    "rollup": "2.80.0"
   }
 }
