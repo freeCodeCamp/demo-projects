@@ -9,7 +9,7 @@
   "dependencies": {
     "@seald-io/nedb": "2.2.2",
     "axios": "1.13.2",
-    "cors": "2.8.5",
+    "cors": "2.8.6",
     "dotenv": "14.3.2",
     "express": "4.21.2"
   },
