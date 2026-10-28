@@ -1,0 +1,17 @@
+---
+import Layout from './layout.astro';
+import { Sidebar } from '../components/sidebar';
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <Sidebar slot="nav" client:load />
+  <div class="app-main">
+    <slot />
+  </div>
+</Layout>

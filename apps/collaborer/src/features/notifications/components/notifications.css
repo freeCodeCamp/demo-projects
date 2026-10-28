@@ -1,0 +1,41 @@
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-lg);
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--quaternary-background);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font: inherit;
+  font-size: var(--text-size-sm);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.notification-item-unread {
+  font-weight: 700;
+}
+
+.notification-dot {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}

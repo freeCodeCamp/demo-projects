@@ -1,0 +1,43 @@
+.modal {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  background: var(--primary-background);
+  color: var(--primary-color);
+  max-width: 480px;
+  width: 90vw;
+  /* The global reset zeroes every element's margin, which also wipes out the
+     `margin: auto` the UA stylesheet relies on to center a <dialog> shown via
+     showModal() — without this it pins to the inset (top-left). */
+  margin: auto;
+}
+
+.modal::backdrop {
+  background: var(--gray-90-translucent);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--text-size-md);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: var(--text-size-lg);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: var(--space-lg);
+}
