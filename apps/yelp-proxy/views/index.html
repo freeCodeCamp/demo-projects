@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>fCC Yelp API</title>
+    <style media="screen">
+      body {
+        font-family: sans-serif;
+        color: #222;
+        background-color: #f7f7f7;
+        padding: 10px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      code {
+        background-color: #ff9;
+        padding: 3px;
+      }
+      p.usage {
+        display: block;
+        background-color: #d0e7d0;
+        padding: 15px;
+        border-radius: 15px;
+        max-width: 900px;
+        line-height: 1.5em;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Free Code Camp Yelp API</h2>
+    <p class="usage">
+      USAGE:<br />
+      Replace the Yelp API <strong>base URL</strong>
+      <code>https://api.twitch.tv/helix</code> with
+      <code>https://yelp-proxy.freecodecamp.rocks/yelp</code>. Use this endpoint
+      according to the
+      <a href="https://www.yelp.com/dataset" target="_blank"
+        >Yelp API documentation</a
+      >.<br /><br />
+      NOTES:<br />
+      - This server caches data to lower the request rate. To prevent abuses
+      this server accepts <code>GET</code> requests only, and serves only routes
+      <code>/users?(login=|id=)</code>, <code>/games?id=</code>, and
+      <code>/streams?(user_id|user_login)</code>. These are more than enough to
+      complete the challenge.<br /><br />
+      - This server will keep providing a static snapshot of the old API data,
+      for the routes
+      <code>reviews/:star | business/city </code> at the endpoint
+      <code>https://yelp-proxy.freecodecamp.rocks/yelp</code>. It will serve
+      data ONLY for the businesses listed in the challenge description, at
+      <a
+        href="https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app"
+        >freeCodeCamp - Build a Nightlife Coordination App</a
+      >.
+    </p>
+  </body>
+</html>
