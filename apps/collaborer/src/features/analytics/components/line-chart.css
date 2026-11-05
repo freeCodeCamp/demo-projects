@@ -1,0 +1,39 @@
+.line-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.line-chart-svg {
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+}
+
+.line-chart-baseline {
+  stroke: var(--quaternary-background);
+  stroke-width: 1;
+}
+
+.line-chart-line {
+  stroke: var(--highlight-color);
+  stroke-width: 2;
+}
+
+.line-chart-marker {
+  fill: var(--highlight-color);
+}
+
+.line-chart-point:hover .line-chart-marker,
+.line-chart-point:focus-within .line-chart-marker {
+  fill: var(--primary-color);
+}
+
+.line-chart-axis-label {
+  fill: var(--quaternary-color);
+  font-size: var(--text-size-xs);
+}
+
+.line-chart-table {
+  max-width: 320px;
+}

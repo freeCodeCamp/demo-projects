@@ -1,0 +1,70 @@
+.nav {
+  --primary-color: var(--gray-00);
+  --primary-color-translucent: var(--gray-00-translucent);
+  --secondary-background: var(--gray-80);
+  --quaternary-background: var(--gray-75);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-site-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding: 0 var(--space-md);
+  background: var(--gray-90);
+  color: var(--gray-00);
+}
+
+.nav-start {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.brand {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.brand:hover {
+  color: var(--yellow-gold);
+}
+
+.brand:visited {
+  color: inherit;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-link:visited {
+  color: inherit;
+}
+
+.nav-divider {
+  width: 1px;
+  height: var(--header-height);
+  background: var(--secondary-background);
+}

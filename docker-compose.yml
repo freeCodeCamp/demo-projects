@@ -135,6 +135,19 @@ services:
     ports:
       - 50037:3000
 
+  collaborer:
+    container_name: collaborer
+    restart: unless-stopped
+    networks:
+      - proxy
+    build:
+      context: ./apps/collaborer
+      dockerfile: ./Dockerfile
+    environment:
+      - AUTH_SECRET=${COLLABORER_AUTH_SECRET}
+    ports:
+      - 50420:3000
+
   drum-machine:
     container_name: drum-machine
     restart: unless-stopped

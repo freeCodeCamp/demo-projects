@@ -1,0 +1,43 @@
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.bar-chart-svg {
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+}
+
+.bar-chart-baseline {
+  stroke: var(--quaternary-background);
+  stroke-width: 1;
+}
+
+.bar-chart-fill {
+  fill: var(--highlight-color);
+}
+
+/* Signals interactivity without a floating tooltip — the exact value is
+   already a direct label above each bar, so a native <title> covers hover
+   text and this covers the visual affordance. */
+.bar-chart-bar:hover .bar-chart-fill,
+.bar-chart-bar:focus-within .bar-chart-fill {
+  fill: var(--primary-color);
+}
+
+.bar-chart-value {
+  fill: var(--primary-color);
+  font-size: var(--text-size-xs);
+  font-weight: 700;
+}
+
+.bar-chart-label {
+  fill: var(--quaternary-color);
+  font-size: var(--text-size-xs);
+}
+
+.bar-chart-table {
+  max-width: 320px;
+}

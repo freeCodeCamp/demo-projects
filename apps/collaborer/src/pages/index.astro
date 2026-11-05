@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/layout.astro';
+import { Nav } from '../components/nav';
+
+import '../styles/pages.css';
+import '../styles/landing.css';
+---
+
+<Layout title="Collaborer — Project management for teams">
+  <Nav brand="Collaborer" slot="nav" client:load />
+  <main id="main-content" class="main landing" tabindex="-1">
+    <header class="header">
+      <h1>Plan projects. Track work. Ship together.</h1>
+      <p>
+        Collaborer brings your team's projects, tasks, and conversations into one place — with
+        Kanban boards, comments, and real-time updates.
+      </p>
+    </header>
+
+    <div class="cta">
+      <a class="btn btn-primary btn-lg" href="/register">Get started</a>
+      <a class="btn btn-secondary btn-lg" href="/login">Log in</a>
+    </div>
+  </main>
+</Layout>

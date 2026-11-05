@@ -1,0 +1,125 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-label {
+  font-weight: 700;
+  font-size: var(--text-size-sm);
+}
+
+.form-input {
+  width: 100%;
+  font: inherit;
+  font-size: var(--text-size-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--quaternary-background);
+  background: var(--primary-background);
+  color: var(--primary-color);
+}
+
+.form-input:focus-visible {
+  outline: var(--border-focus);
+  outline-offset: 1px;
+}
+
+.form-input[aria-invalid='true'] {
+  border-color: var(--danger-color);
+}
+
+.form-input[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-required-mark {
+  color: var(--danger-color);
+}
+
+.form-input-group {
+  position: relative;
+  display: flex;
+}
+
+.form-input-group .form-input {
+  flex: 1;
+  padding-right: var(--space-2xl);
+}
+
+.form-input-toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--space-sm);
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  font: inherit;
+  font-size: var(--text-size-sm);
+  font-weight: 700;
+  color: var(--highlight-color);
+  cursor: pointer;
+}
+
+.form-input-toggle:focus-visible {
+  outline: var(--border-focus);
+  outline-offset: 1px;
+}
+
+.form-input-toggle[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-error {
+  color: var(--danger-color);
+  font-size: var(--text-size-sm);
+}
+
+.form-hint {
+  color: var(--quaternary-color);
+  font-size: var(--text-size-sm);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.form-footer {
+  font-size: var(--text-size-sm);
+  color: var(--quaternary-color);
+}
+
+.alert {
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-size-sm);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-lg);
+}
+
+/* Inside a .form, the flex `gap` already provides this spacing — a margin on
+   top of that would double it up. */
+.form > .alert {
+  margin-bottom: 0;
+}
+
+.alert-error {
+  background: var(--danger-background);
+  color: var(--danger-color);
+}
+
+.alert-success {
+  background: var(--success-background);
+  color: var(--success-color);
+}
