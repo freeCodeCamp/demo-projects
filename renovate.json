@@ -2,5 +2,12 @@
   "extends": [
     "github>freecodecamp/renovate-config:schedule-weekend",
     "github>freecodecamp/renovate-config:automerge"
+  ],
+  "packageRules": [
+    {
+      "description": "Docker updates wait for a person: no required check builds them.",
+      "matchManagers": ["dockerfile", "docker-compose", "devcontainer"],
+      "automerge": false
+    }
   ]
 }
