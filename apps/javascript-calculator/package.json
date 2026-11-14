@@ -13,7 +13,7 @@
     "express": "4.22.3"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
+    "@babel/core": "7.29.13",
     "@babel/preset-env": "7.29.7",
     "@babel/preset-react": "7.29.7",
     "@rollup/plugin-babel": "6.1.0",
