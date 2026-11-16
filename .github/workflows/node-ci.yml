@@ -18,6 +18,9 @@ jobs:
         with:
           node-version-file: package.json
 
+      - name: Install npm
+        run: npm install --global npm@12.2.2
+
       - name: Install Dependencies
         run: npm ci
 
