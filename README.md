@@ -1,5 +1,17 @@
 # Example Certification Projects
 
+## Development
+
+Use Node.js 26.13 or newer in the Node 26 release line and npm 12. Install
+dependencies with:
+
+```console
+npm ci
+```
+
+To build and start the complete Docker Compose stack, copy `sample.env` to
+`.env`, then run `npm run build` and `npm start` from the repository root.
+
 ## Responsive Web Design
 
 - Tribute Page

@@ -12,6 +12,7 @@ tasks:
       export DEMO_APPS_DOMAIN=$(gp url)
   - init: |
       cp sample.env .env
+      npm install --global npm@12.2.2
       npm ci
       mkdir /workspace/log
       mongod --fork --dbpath /data/db --logpath /workspace/log/mongod.log
