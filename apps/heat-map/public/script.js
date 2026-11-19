@@ -386,7 +386,7 @@ function callback(data) {
       return legendThreshold(data.baseTemperature + d.variance);
     })
     .on('mouseover', function (event, d) {
-      var date = new Date(d.year, d.month);
+      var date = new Date(d.year, d.month + 1);
       var str =
         "<span class='date'>" +
         d3.utcFormat('%Y - %B')(date) +
