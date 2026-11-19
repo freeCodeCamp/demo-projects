@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/layout.astro';
+import { Nav } from '../../components/nav';
+import { AcceptInvitationPage } from '../../features/organizations/components/AcceptInvitationPage';
+
+import '../../styles/pages.css';
+
+const { token } = Astro.params as { token: string };
+---
+
+<Layout title="Accept invitation — Collaborer">
+  <Nav brand="Collaborer" slot="nav" client:load />
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Join an organization</h1>
+    </header>
+    <AcceptInvitationPage token={token} client:load />
+  </main>
+</Layout>

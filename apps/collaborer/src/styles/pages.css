@@ -1,0 +1,138 @@
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+}
+
+.header {
+  margin-bottom: var(--space-lg);
+}
+
+.main-wide {
+  max-width: none;
+}
+
+.loading-state,
+.empty-state,
+.error-state {
+  color: var(--quaternary-color);
+  padding: var(--space-lg) 0;
+}
+
+.error-state {
+  color: var(--danger-color);
+}
+
+.page-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.page-section {
+  margin-top: var(--space-2xl);
+}
+
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.card h2 {
+  font-size: var(--text-size-md);
+  margin-bottom: var(--space-md);
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-xs) 0;
+  font-size: var(--text-size-sm);
+}
+
+.stat-row-value {
+  font-weight: 700;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--quaternary-background);
+  font-size: var(--text-size-sm);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.list-item-meta {
+  color: var(--quaternary-color);
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  font-size: var(--text-size-sm);
+  font-weight: 700;
+}
+
+.badge-danger {
+  background: var(--danger-background);
+  color: var(--danger-color);
+}
+
+.badge-warning {
+  background: var(--yellow-background);
+  color: var(--yellow-color);
+}
+
+.badge-neutral {
+  background: var(--tertiary-background);
+  color: var(--tertiary-color);
+}
+
+.project-card {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.project-card:hover {
+  border-color: var(--primary-color-translucent);
+  text-decoration: none;
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.project-card-header h2,
+.project-card-header h3 {
+  margin: 0;
+  font-size: var(--text-size-md);
+}

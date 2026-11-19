@@ -1,0 +1,15 @@
+---
+import AppLayout from '../layouts/app-layout.astro';
+import { NotificationsPage } from '../features/notifications/components/NotificationsPage';
+
+import '../styles/pages.css';
+---
+
+<AppLayout title="Notifications — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Notifications</h1>
+    </header>
+    <NotificationsPage client:load />
+  </main>
+</AppLayout>

@@ -1,0 +1,19 @@
+---
+import AppLayout from '../../../layouts/app-layout.astro';
+import { KanbanBoard } from '../../../features/tasks/components/KanbanBoard';
+
+import '../../../styles/pages.css';
+
+const { id } = Astro.params as { id: string };
+const projectId = Number(id);
+---
+
+<AppLayout title="Board — Collaborer">
+  <main id="main-content" class="main main-wide" tabindex="-1">
+    <header class="header">
+      <h1>Kanban board</h1>
+      <a href={`/projects/${projectId}`}>← Back to project</a>
+    </header>
+    <KanbanBoard projectId={projectId} client:load />
+  </main>
+</AppLayout>

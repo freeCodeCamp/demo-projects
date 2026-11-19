@@ -1,0 +1,11 @@
+packages:
+  - '.'
+  - 'server'
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild
+blockExoticSubdeps: true
+minimumReleaseAge: 4320
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 20160
+engineStrict: true

@@ -1,0 +1,50 @@
+---
+import '../global.css';
+import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-lato" preload />
+    <Font cssVariable="--font-hack" />
+    <title>{title}</title>
+    <ClientRouter />
+    <script>
+      document.addEventListener('astro:after-swap', () => {
+        document.getElementById('main-content')?.focus();
+      });
+    </script>
+  </head>
+  <body class="dark-palette">
+    <script is:inline>
+      (function () {
+        function applyTheme() {
+          const stored = localStorage.getItem('theme');
+          if (stored === 'light') {
+            document.body.classList.remove('dark-palette');
+            document.body.classList.add('light-palette');
+          }
+        }
+        // Inline scripts are not run during page transitions so the theme
+        // needs re-applying
+        document.addEventListener('astro:after-swap', applyTheme);
+
+        applyTheme();
+      })();
+    </script>
+    <slot name="nav" />
+    <slot />
+  </body>
+</html>

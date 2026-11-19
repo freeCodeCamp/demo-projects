@@ -1,0 +1,15 @@
+---
+import AppLayout from '../layouts/app-layout.astro';
+import { DashboardPage } from '../features/dashboard/components/DashboardPage';
+
+import '../styles/pages.css';
+---
+
+<AppLayout title="Dashboard — Collaborer">
+  <main id="main-content" class="main" tabindex="-1">
+    <header class="header">
+      <h1>Dashboard</h1>
+    </header>
+    <DashboardPage client:load />
+  </main>
+</AppLayout>
