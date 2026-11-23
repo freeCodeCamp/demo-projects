@@ -50,33 +50,35 @@ class Calculator extends React.Component {
     });
     setTimeout(() => this.setState({ currentVal: this.state.prevVal }), 1000);
   }
-
   handleEvaluate() {
     if (!this.state.currentVal.includes('Limit')) {
       let expression = this.state.formula;
-      while (endsWithOperator.test(expression)) {
-        expression = expression.slice(0, -1);
-      }
+  
+      // Validate and sanitize the expression
       expression = expression
-        .replace(/x/g, '*')
-        .replace(/-/g, '-')
-        .replace('--', '-');
-      let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
-      this.setState({
-        currentVal: answer.toString(),
-        formula:
-          expression
-            .replace(/\*/g, '⋅')
-            .replace(/-/g, '-')
-            .replace(/(x|\/|\+)-/, '$1-')
-            .replace(/^-/, '-') +
-          '=' +
-          answer,
-        prevVal: answer,
-        evaluated: true
-      });
+        .replace(/[^0-9x/\-+]/g, '') // Remove invalid characters
+        .replace(/x/g, '*') // Replace 'x' with '*' for multiplication
+  
+      try {
+        // Evaluate the sanitized expression
+        let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
+        this.setState({
+          currentVal: answer.toString(),
+          formula: expression + '=' + answer,
+          prevVal: answer,
+          evaluated: true
+        });
+      } catch (error) {
+        // Handle evaluation errors
+        this.setState({
+          currentVal: 'Error',
+          formula: 'Error',
+          evaluated: true
+        });
+      }
     }
   }
+  
 
   handleOperators(e) {
     if (!this.state.currentVal.includes('Limit')) {
