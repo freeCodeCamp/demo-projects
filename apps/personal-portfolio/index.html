@@ -214,4 +214,65 @@
 
     <!-- END FOOTER SECTION -->
   </body>
+  <script>
+    const modal = document.createElement('div');
+    const background = document.createElement('div');
+    const title = document.createElement('h1');
+    const text = document.createElement('p');
+    const doNot = document.createElement('p');
+    const button = document.createElement('button');
+    const body = document.querySelector('body');
+    const oldOverflow = body.style.overflow;
+    body.style.overflow = "hidden";
+    background.style.position = "absolute";
+    background.style.width = "100%";
+    background.style.height = "100%";
+    background.style.top = 0;
+    background.style.left = 0;
+    background.style.backgroundColor = "black";
+    background.style.opacity = "0.5";
+    background.style.zIndex = "10";
+    modal.style.width = "90vw";
+    modal.style.maxWidth = "500px";
+    modal.style.position = "absolute";
+    modal.style.top = "32.5vh";
+    modal.style.left = 0;
+    modal.style.right = 0;
+    modal.style.margin = "auto";
+    modal.style.zIndex = "20";
+    modal.style.border = "1px solid red";
+    modal.style.backgroundColor = "pink";
+    modal.style.color = "black";
+    modal.style.textAlign = "center";
+    modal.style.padding = "1rem";
+    button.style.border = "1px solid red";
+    button.style.backgroundColor = "pink";
+    button.style.fontSize = "2rem";
+    button.style.padding = "1rem";
+    button.style.cursor = "pointer";
+    text.style.fontSize = "1.5rem";
+    doNot.style.fontSize = "2rem";
+    doNot.style.fontWeight = "bold";
+    title.innerText = "DEMO";
+    text.innerText = "You should create a similar project with your own unique style and content.";
+    doNot.innerText = "Do not copy this project.";
+    button.innerText = "I understand.";
+    button.onclick = () => {
+      body.removeChild(modal);
+      body.removeChild(background);
+      body.style.overflow = oldOverflow;
+    }
+    button.onmouseenter = () => {
+      button.style.backgroundColor = "red";
+    }
+    button.onmouseleave = () => {
+      button.style.backgroundColor = "pink";
+    }
+    body.appendChild(modal);
+    modal.appendChild(title);
+    modal.appendChild(text);
+    modal.appendChild(doNot);
+    modal.appendChild(button);
+    body.appendChild(background);
+  </script>
 </html>
